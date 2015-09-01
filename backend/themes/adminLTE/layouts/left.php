@@ -45,7 +45,7 @@ use backend\components\EasyThumbnailImage;
                         'activateParents'=>true,
                         'items' => [
                             [
-                                'url' => ['/site/index'],
+                                'url' => ['/site/dashboard'],
                                 'label' => 'Dashboard',
                                 'options'=> ['class'=>'treeview'],
                                 'icon' => 'bar-chart'
@@ -56,8 +56,8 @@ use backend\components\EasyThumbnailImage;
                                 'options'=> ['class'=>'treeview'],
                                 'url'=>['/pipeline/index'],
                                 'items' => [
-                                    ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/pipeline/index']],
-                                    ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/project/index']],
+                                    ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/province/index']],
+                                    ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/country/index']],
                                     //['label' => 'Misc Project', 'icon'=>'heartbeat', 'url'=>['/project/listother']],
                                 ],
                             ],

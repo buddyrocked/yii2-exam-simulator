@@ -44,6 +44,21 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionDashboard()
+    {
+        $this->layout = 'main';
+        Yii::$app->getSession()->setFlash('success', [
+                         'type' => 'success',
+                         'duration' => 5000000,
+                         'icon' => 'fa fa-info-circle',
+                         'message' => 'Welcome To Rialachas Exam Simulator',
+                         'title' => 'Welcome',
+                         'positonY' => 'bottom',
+                         'positonX' => 'right'
+                     ]);
+        return $this->render('dashboard');
+    }
+
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {

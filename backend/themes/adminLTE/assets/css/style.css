@@ -1626,8 +1626,8 @@ ul.newsticker, ul.newsticker-quotes {
     top: 8px;
 }
 
-.navbar-custom-menu ul.navbar-nav li.user-menu {
-    background: #c0392b;
+.navbar-custom-menu ul.navbar-nav li a{
+    color: #BBB !important;
 }
 
 .navbar-custom-menu ul.navbar-nav li.dropdown.tasks-menu a{
@@ -1635,11 +1635,13 @@ ul.newsticker, ul.newsticker-quotes {
     padding: 25px 15px 20px 15px;
 }
 
-.navbar-custom-menu ul.navbar-nav li.dropdown.tasks-menu a:hover {
-    background: #dd4b39 !important;
-}
 
 .main-header .sidebar-toggle:before {
     content: "\f0c9";
     font-size: 2.8em;
+}
+
+.skin-red-light .main-header .navbar {
+    background-color: #FFF;
+    color: #BBB;
 }

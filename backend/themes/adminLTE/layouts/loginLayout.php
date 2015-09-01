@@ -47,14 +47,18 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                 <li><?php echo Html::a('Features', '#features'); ?></li>
                 <li><?php echo Html::a('About', '#about'); ?></li>
                 <li><?php echo Html::a('Contact', '#contact'); ?></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
+                <?php if (Yii::$app->user->isGuest): ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><?php echo Html::a('Login', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
                             <li role="separator" class="divider"></li>
                             <li><?php echo Html::a('Registration', ['/user-management/auth/registration'], ['class'=>'external']); ?></li>
                         </ul>
-                </li>
+                    </li>
+                <?php else: ?>
+                    <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
+                <?php endif; ?>
             </ul>
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->            
