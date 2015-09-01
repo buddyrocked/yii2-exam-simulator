@@ -12,7 +12,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-8">
-                
+                <div class="index-intro">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div>
+                <a class="btn btn-danger btn-lg">Take a Test <i class="fa fa-chevron-right"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -69,7 +74,16 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="services" id="features">
     <div class="container">
         <div class="row">
-            <div class="col-md-8"></div>
+            <div class="col-md-8">   
+                <div class="title-section">
+                    <span></span>
+                </div>
+                <div class="service-img">             
+               <div class="mockup-browser">
+                    <?= Html::img('@web/uploads/img/browser.jpg', ['style'=>'width:100%;']); ?>
+               </div> 
+               </div>
+            </div>
             <div class="col-md-4">                
                 <div class="title-section">
                     <span>Our Features</span>

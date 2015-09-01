@@ -115,7 +115,7 @@ use yii\helpers\Html;
         </div>
     </div>
 </div>
-
+<!--
 <div class="services"  id="features">
     <div class="container">
         <div class="row">
@@ -292,3 +292,4 @@ use yii\helpers\Html;
         </div>
     </div>
 </div>
+-->
