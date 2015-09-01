@@ -1,0 +1,204 @@
+body {
+	font-family: sans-serif;
+	font-size: 13px;
+}
+
+a {
+	text-decoration: none;
+	color: #000 !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.line {
+	border-bottom: 1px solid #000;
+	width: 100%;
+}
+
+
+table {
+	width: 100%;
+	position: relative;
+}
+
+tbody tr th {
+	border-bottom: 1px solid #111;
+	font-weight: bold;
+	text-align: left;
+	padding: 20px 0 5px 0;
+	position: relative;
+}
+
+tbody tr td {
+	padding: 2px 0;
+	position: relative;
+}
+.pegawai-detail-photo {
+	display: inline-block;
+	position: absolute;
+	right: 80px;
+	top: 120px;
+	width: 150px;
+	float: right;
+	border: 4px double #000;
+}
+
+.pegawai-detail-photo img {
+	width: 100%;
+}
+
+.label {
+	font-weight: normal !important;
+	width: 200px;
+}
+
+.riwayat-section {
+	margin-top: 20px;
+	page-break-inside:avoid;
+}
+
+.riwayat-section .title {
+	border-bottom: 1px solid #111;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.pull-right {
+	position: absolute;
+	right: 0px;
+}
+
+.summary {
+	display: none !important;
+}
+
+.riwayat-section table {
+	font-size: 12px;
+	border-collapse: collapse !important;
+	border: 1px solid #000 !important;
+}
+
+.riwayat-section table thead th {
+	background: #ccc;
+	border: 1px solid #000 !important;
+	padding: 10px;
+	text-transform: uppercase !important;
+}
+
+.riwayat-section table thead th a {
+	border:none;
+	color: #000 !important;
+	text-decoration: none;
+}
+
+.riwayat-section table tbody td {
+	border: 1px solid #000;
+	border-bottom: none;
+	border-top: none;
+	padding: 10px 10px 10px 10px !important;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.riwayat-section table tfoot td {
+	border: 1px solid #000;
+	border-bottom: none;
+	border-top: 1px solid #000;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+
+.riwayat-section table.no-border {
+	border: none;
+}
+
+.list-data .summary {
+	display: none !important;
+}
+
+.list-data .title {
+	font-weight: bold;
+	text-transform:uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.list-data table {
+	border-spacing: 10px;
+	font-size: 10px;
+	border-collapse: collapse !important;
+	border: 1px solid #000 !important;
+}
+
+.list-data table thead th {
+	background: #ccc;
+	border: 1px solid #000 !important;
+	padding: 10px;
+	text-transform: uppercase !important;
+}
+
+.list-data table thead td {
+	background: #eee;
+	border: 1px solid #000 !important;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase !important;
+}
+
+
+.list-data table td {
+	border: 1px solid #000;
+	padding: 5px 5px 5px 5px !important;
+	text-align: center;
+	text-transform: uppercase;
+	width: auto;
+}
+
+.list-data table tbody td {
+	border: 1px solid #000;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+	text-transform: uppercase;
+	width: auto;
+}
+
+.list-data .not-set {
+	display: none !important;
+
+}
+
+.list-data table.table-report thead tr:nth-child(1) th {
+    background: #FFF;
+    color: #FFF;
+    border: 1px solid #fff;
+    display: none !important;
+    border-bottom: 1px solid #000 !important;
+    height: 0px;
+}
+
+.list-data table thead tr:nth-child(2) th {
+    border: 1px solid #000 !important;
+}
+
+.list-data table.noborder {
+	border: none;
+	text-align: left;
+}
+
+.list-data table.noborder td {
+	border: none;
+}
+
+.table.table-report tr th {
+    border: 1px solid #ddd !important;
+}
+
+

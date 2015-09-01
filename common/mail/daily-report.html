@@ -1,0 +1,182 @@
+
+<table class="full-width">
+	<tr>
+        <td></td>
+		<td  style="width:600px; margin:0 auto;"> 
+            <img src="<?= $message->embed($imageFileName); ?>" style="width:200px;">
+        </td>
+		<td></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>Name</td>
+		<td> : Name</td>
+	</tr>
+	<tr>
+		<td>Charged Hours</td>
+		<td> : 8 Hours ?></td>
+	</tr>
+	<tr>
+		<td>Date</td>
+		<td> : 2015-07-01</td>
+	</tr>
+</table>
+<h3>Finished Tasks</h3>
+<?php
+    $finishedTasks = new ActiveDataProvider([
+        'query' => $model->getTasks()->where(['status'=>2]),
+    ]);
+
+    echo GridView::widget([
+    'dataProvider' => $finishedTasks,
+    'summary' => '',
+    'options' => [
+    	'class'=>'full-width'
+    ],
+    'showFooter'=>true,
+    'columns' => [
+               
+                    [
+                        'attribute' => 'name',
+                        'header' => 'Task',
+                        'content'=>function($data){
+                             return $this->render('@backend/views/dailyreport/_list', ['model'=>$data]);              
+                        },
+                        'footer'=>'Chargeable Hour(s)',
+                        'footerOptions'=>[
+                            'class'=>'text-right text-bold text-upper sub-total-footer'
+                        ]
+                    ],
+                    [
+                        'attribute' => 'value',
+                        'format' => 'raw',
+                        'header' => 'Hour',
+                        'value'=>function ($model, $key, $index, $widget){
+                            return $model->hour;                
+                        },
+                        'contentOptions'=>[
+                            'class'=>'text-bold text-center hour-cell'
+                        ],
+                        'footer'=>CountTotal::pageTotal($finishedTasks->models, 'hour'),
+                        'footerOptions'=>[
+                            'class'=>'text-center text-bold sub-total-footer'
+                        ]
+                    ],
+                    
+                ],
+]); ?>
+
+<h3>Outstanding Tasks</h3>
+<?php
+    $outstandingTasks = new ActiveDataProvider([
+        'query' => $model->getTasks()->where(['status'=>1]),
+    ]);
+
+    echo GridView::widget([
+    'dataProvider' => $outstandingTasks,
+    'summary' => '',
+    'options' => [
+    	'class'=>'full-width'
+    ],
+    'showFooter'=>true,
+    'columns' => [
+                    [
+                        'attribute' => 'name',
+                        'header' => 'Task',
+                        'content'=>function($data){
+                             return $this->render('@backend/views/dailyreport/_list', ['model'=>$data]);              
+                        },
+                        'footer'=>'Chargeable Hour(s)',
+                        'footerOptions'=>[
+                            'class'=>'text-right text-bold text-upper sub-total-footer'
+                        ]
+                    ],
+                    [
+                        'attribute' => 'value',
+                        'format' => 'raw',
+                        'header' => 'Hour',
+                        'value'=>function ($model, $key, $index, $widget){
+                            return $model->hour;                
+                        },
+                        'contentOptions'=>[
+                            'class'=>'text-bold text-center hour-cell'
+                        ],
+                        'footer'=>CountTotal::pageTotal($outstandingTasks->models, 'hour'),
+                        'footerOptions'=>[
+                            'class'=>'text-center text-bold sub-total-footer'
+                        ]
+                    ],
+                    
+                ],
+]); ?>
+
+
+<h3>Planned Tasks</h3>
+<?php
+    $plannedTasks = new ActiveDataProvider([
+        'query' => $model->getTasks()->where(['status'=>0]),
+    ]);
+
+    echo GridView::widget([
+    'dataProvider' => $plannedTasks,
+    'summary' => '',
+    'options' => [
+    	'class'=>'full-width'
+    ],
+    'showFooter'=>true,
+    'columns' => [
+                    [
+                        'attribute' => 'name',
+                        'header' => 'Task',
+                        'content'=>function($data){
+                             return $this->render('@backend/views/dailyreport/_list', ['model'=>$data]);              
+                        },
+                        'footer'=>'Chargeable Hour(s)',
+                        'footerOptions'=>[
+                            'class'=>'text-right text-bold text-upper sub-total-footer'
+                        ]
+                    ],
+                    [
+                        'attribute' => 'value',
+                        'format' => 'raw',
+                        'header' => 'Hour',
+                        'value'=>function ($model, $key, $index, $widget){
+                            return $model->hour;                
+                        },
+                        'contentOptions'=>[
+                            'class'=>'text-bold text-center hour-cell'
+                        ],
+                        'footer'=>CountTotal::pageTotal($plannedTasks->models, 'hour'),
+                        'footerOptions'=>[
+                            'class'=>'text-center text-bold sub-total-footer'
+                        ]
+                    ],
+                    
+                ],
+]); ?>
+
+<h3>Issues</h3>
+<?= GridView::widget([
+        'dataProvider' => new ActiveDataProvider([
+        'query' => $model->getNotes()->where(['type'=>1]),
+    ]),
+    'summary'=>'',
+    'showHeader'=>false,
+    'columns' => [
+        'description:html',
+    ],
+]); ?>
+
+<h3>Notes</h3>
+<?= GridView::widget([
+        'dataProvider' => new ActiveDataProvider([
+        'query' => $model->getNotes()->where(['type'=>2]),
+    ]),
+    'summary'=>'',
+    'showHeader'=>false,
+    'columns' => [
+        'description:html',
+    ],
+]); ?>
+<?= Html::a('Go to App <i class="fa fa-chevron-right"></i>', Url::to('conservir.rialachas.com'), ['class'=>'btn btn-info']) ?>
