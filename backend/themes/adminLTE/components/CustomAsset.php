@@ -32,6 +32,9 @@ class CustomAsset extends AssetBundle
         'js/jquery.newsTicker.js',
         'js/masonry.pkgd.min.js',
         'js/holder.min.js',
+        'js/jquery.scrollTo.js',
+        'js/jquery.parallax.js',
+        'js/jquery.nav.js',
         'js/app.js'
     ];
     

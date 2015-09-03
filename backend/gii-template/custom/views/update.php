@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = <?= $generator->generateString('Update') ?>;
         <div class="col-md-12">
             <div class="container-menu">
                 <div class="upper-menu">
-                    <div class="title-icon"><i class="fa fa-male"></i></div>
+                    <div class="title-icon"><i class="fa fa-list-alt"></i></div>
                     <div class="upper-menu-title">
                     <?= "<?= " ?>Html::encode($this->title) ?>
                     </div>
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = <?= $generator->generateString('Update') ?>;
                     <div class="row">
                         <div class="col-md-12">
                             <div class="text-right">
-                            <?= "<?= " ?>Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-info']) ?>
+                            <?= "<?= " ?>Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-danger outline']) ?>
                             </div>
 						    <?= "<?= " ?>$this->render('_form', [
 						        'model' => $model,

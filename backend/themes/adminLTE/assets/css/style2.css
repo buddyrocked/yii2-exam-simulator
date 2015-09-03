@@ -1063,7 +1063,7 @@ label {
 }
 
 #login-header {
-    background: #2196F3;
+    background: #f25454;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     height: 50px;
@@ -1269,8 +1269,10 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .main-header .logo {
+    background-color: #f25454 !important;
     height: 80px !important;
 }
+
 
 .main-sidebar, .left-side {
     padding-top:80px !important;
@@ -1280,7 +1282,7 @@ ul.newsticker, ul.newsticker-quotes {
     background: #fff;
     border-bottom: 0px solid #1ABC9C;
     border-radius: 5px;
-    color: #e74c3c;
+    color: #f25454;
     margin-top: 0px;
     padding-bottom: 20px;
     position: relative;
@@ -1299,7 +1301,7 @@ ul.newsticker, ul.newsticker-quotes {
  
 
 #login-container label {
-    color: #e74c3c;
+    color: #f25454;
 }
 
 #login-header {
@@ -1389,7 +1391,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .process-link {
-    border-bottom: 5px solid #e74c3c;
+    border-bottom: 5px solid #f25454;
     display: inline-block;
     margin: 0 auto;
     font-size: 1.5em;
@@ -1424,7 +1426,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .process-item-1 {
-    border-right: 0px solid #e74c3c;    
+    border-right: 0px solid #f25454;    
     bottom: -50px;
     opacity: 0;
 }
@@ -1453,7 +1455,7 @@ ul.newsticker, ul.newsticker-quotes {
 } 
 
 .process-item-2 {
-    border-right: 0px solid #e74c3c;
+    border-right: 0px solid #f25454;
     bottom: -50px;
     opacity: 0;
 }
@@ -1497,7 +1499,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .process-icon {
-    color: #e74c3c;
+    color: #f25454;
     padding: 10px 0 0 0;
     font-size: 5em;
     text-align: center;
@@ -1528,7 +1530,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .services-item i {
-    color: #e74c3c;
+    color: #f25454;
 }
 
 .services-item-title {
@@ -1545,7 +1547,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .title-section span {
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid #f25454;
     font-size: 2em;
     font-weight: bold;
     padding: 10px 0;
@@ -1572,7 +1574,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .navbar-top {
-    background-color: #e74c3c;
+    background-color: #f25454;
     height: 0px;
     display: none;
 }
@@ -1586,7 +1588,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .navbar-nav.nav-login li a {
-    color: #e74c3c;
+    color: #f25454;
     font-size: 1.2em;
 }
 
@@ -1600,7 +1602,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .contact {
-    background: #e74c3c;
+    background: #f25454;
     min-height: 300px;
 }
 

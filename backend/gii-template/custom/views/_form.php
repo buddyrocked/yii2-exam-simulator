@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
 } ?>
     <div class="form-group form-action">
     	<?= "<?= " ?>Html::a('<i class="fa fa-remove"></i> Cancel', ['index'], ['class' => 'btn btn-danger']) ?>
-        <?= "<?= " ?>Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-info' : 'btn btn-info']) ?>
+        <?= "<?= " ?>Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>
     </div>
 
     <?= "<?php " ?>ActiveForm::end(); ?>

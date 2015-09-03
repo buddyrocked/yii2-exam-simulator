@@ -93,7 +93,7 @@ footer {
 }
 
 .footer {
-    background: #c0392b;
+    background: #bf4343;
     border: none;
     color: #fff;
     text-align: center;

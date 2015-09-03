@@ -54,8 +54,11 @@ use backend\components\EasyThumbnailImage;
                                 'label' => 'Data Master',
                                 'icon' => 'briefcase',
                                 'options'=> ['class'=>'treeview'],
-                                'url'=>['/pipeline/index'],
+                                'url'=>['/subject/index'],
                                 'items' => [
+                                    ['label' => 'Subject & Question', 'icon'=>'map', 'url'=>['/subject/index']],
+                                    ['label' => 'Passage', 'icon'=>'twitch', 'url'=>['/passage/index']],
+                                    ['label' => 'Profile', 'icon'=>'male', 'url'=>['/profile/index']],
                                     ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/province/index']],
                                     ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/country/index']],
                                     //['label' => 'Misc Project', 'icon'=>'heartbeat', 'url'=>['/project/listother']],
@@ -63,12 +66,12 @@ use backend\components\EasyThumbnailImage;
                             ],
                             [
                                 'label' => 'User Management',
-                                'icon' => 'user',
+                                'icon' => 'laptop',
                                 'options'=> ['class'=>'treeview'],
                                 'url'=>'#',
                                 'items'=>UserManagementModule::menuItems()
                             ],
-                            [
+                            /*[
                                 'label' => 'Frontend routes',
                                 'icon' => 'user',
                                 'options'=> ['class'=>'treeview'],
@@ -82,7 +85,7 @@ use backend\components\EasyThumbnailImage;
                                     ['label'=>'E-mail confirmation', 'url'=>['/user-management/auth/confirm-email']],
                                 ],
                             ],
-                            /*[
+                            [
                                 'label' => 'Client & Supplier',
                                 'icon' => 'male',
                                 'options'=> ['class'=>'treeview'],

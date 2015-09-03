@@ -531,11 +531,26 @@ td.visible-lg, th.visible-lg {
 
 .treeview .treeview-menu li a {
     font-size: 12px !important;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-.treeview a i {
-    color: #dd4b39;
+.treeview a {
+    border-top: 1px solid #f1f1f1;
+    padding: 20px !important;
+}
+
+.treeview a {
+    font-size: 16px;
+}
+
+.treeview a span {
+    color: #888;
+    padding-left: 10px;
+}
+
+.treeview > a > i {
+    color: #f25454;
+    font-size: 20px;
 }
 
 .label {
@@ -671,7 +686,7 @@ label {
 }
 
 .title-icon {
-    background: #dd4b39;
+    background: #f25454;
     color: #FFF;
     display: inline-block;
     font-size: 1.5em;
@@ -1323,7 +1338,7 @@ ul.newsticker, ul.newsticker-quotes {
     background: #fff;
     border-bottom: 0px solid #1ABC9C;
     border-radius: 5px;
-    color: #e74c3c;
+    color: #f25454;
     margin-top: 0px;
     padding-bottom: 20px;
     position: relative;
@@ -1342,11 +1357,11 @@ ul.newsticker, ul.newsticker-quotes {
  
 
 #login-container label {
-    color: #e74c3c;
+    color: #f25454;
 }
 
 #login-header {
-    background: #dd4b39;
+    background: #f25454;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     font-weight: bold;
@@ -1416,7 +1431,7 @@ ul.newsticker, ul.newsticker-quotes {
 
 
 .process {
-    background: #e74c3c;
+    background: #f25454;
     color: #FFF;
     min-height: 100px;
     padding: 30px 0 50px 0;
@@ -1572,7 +1587,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .services-item i {
-    color: #e74c3c;
+    color: #f25454;
 }
 
 .services-item-title {
@@ -1603,7 +1618,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .navbar-top {
-    background-color: #e74c3c;
+    background-color: #f25454;
     height: 0px;
     display: none;
 }
@@ -1613,7 +1628,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .navbar-nav.nav-login li a {
-    color: #e74c3c;
+    color: #f25454;
     font-size: 1.2em;
 }
 
@@ -1630,15 +1645,20 @@ ul.newsticker, ul.newsticker-quotes {
     color: #BBB !important;
 }
 
-.navbar-custom-menu ul.navbar-nav li.dropdown.tasks-menu a{
+.navbar-custom-menu ul.navbar-nav li.dropdown.tasks-menu > a{
     font-size: 2.8em;
     padding: 25px 15px 20px 15px;
 }
 
 
 .main-header .sidebar-toggle:before {
+    color: #888;
     content: "\f0c9";
     font-size: 2.8em;
+}
+
+.main-header .sidebar-toggle:hover {
+    background: transparent !important;
 }
 
 .skin-red-light .main-header .navbar {
@@ -1646,3 +1666,21 @@ ul.newsticker, ul.newsticker-quotes {
     color: #BBB;
 }
 
+
+.skin-red-light .wrapper, .skin-red-light .main-sidebar, .skin-red-light .left-side {
+    background-color: #FFF !important; 
+}
+
+
+.skin-red-light .main-header .logo {
+    background-color: #f25454 !important;
+}
+
+.user-panel {
+    /*background: #f25454;
+    color: #fff;*/
+}
+
+.hiddenx {
+    display: none;
+}

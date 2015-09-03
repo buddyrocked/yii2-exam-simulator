@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-12">
             <div class="container-menu">
                 <div class="upper-menu">
-                    <div class="title-icon"><i class="fa fa-male"></i></div>
+                    <div class="title-icon"><i class="fa fa-list-alt"></i></div>
                     <div class="upper-menu-title">
                     <?= "<?= " ?>Html::encode($this->title) ?>
                     </div>
@@ -37,68 +37,68 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                         <div class="text-right">
-                            <?= "<?= " ?>Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-info']) ?>
+                            <?= "<?= " ?>Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
-                <?php if(!empty($generator->searchModelClass)): ?>
-                <?= "   <?php " . ($generator->indexWidgetType === 'grid' ? "// " : "") ?>echo $this->render('_search', ['model' => $searchModel]); ?>
-                <?php endif; ?>
+                        <?php if(!empty($generator->searchModelClass)): ?>
+                        <?= "   <?php " . ($generator->indexWidgetType === 'grid' ? "// " : "") ?>echo $this->render('_search', ['model' => $searchModel]); ?>
+                        <?php endif; ?>
 
 
-                <?php if ($generator->indexWidgetType === 'grid'): ?>
-                    <?= "   <?php " ?>\yii\widgets\Pjax::begin(); ?>
-                    <?= "<?= " ?>GridView::widget([
-                        'dataProvider' => $dataProvider,
-                        <?= !empty($generator->searchModelClass) ? "'filterModel' => \$searchModel,\n        'columns' => [\n" : "'columns' => [\n"; ?>
-                            ['class' => 'yii\grid\SerialColumn'],
+                        <?php if ($generator->indexWidgetType === 'grid'): ?>
+                            <?= "   <?php " ?>\yii\widgets\Pjax::begin(); ?>
+                            <?= "<?= " ?>GridView::widget([
+                                'dataProvider' => $dataProvider,
+                                <?= !empty($generator->searchModelClass) ? "'filterModel' => \$searchModel,\n        'columns' => [\n" : "'columns' => [\n"; ?>
+                                    ['class' => 'yii\grid\SerialColumn'],
 
-                        <?php
-                        $count = 0;
-                        if (($tableSchema = $generator->getTableSchema()) === false) {
-                            foreach ($generator->getColumnNames() as $name) {
-                                if (++$count < 6) {
-                                    echo "            '" . $name . "',\n";
+                                <?php
+                                $count = 0;
+                                if (($tableSchema = $generator->getTableSchema()) === false) {
+                                    foreach ($generator->getColumnNames() as $name) {
+                                        if (++$count < 6) {
+                                            echo "            '" . $name . "',\n";
+                                        } else {
+                                            echo "            // '" . $name . "',\n";
+                                        }
+                                    }
                                 } else {
-                                    echo "            // '" . $name . "',\n";
+                                    foreach ($tableSchema->columns as $column) {
+                                        $format = $generator->generateColumnFormat($column);
+                                        if (++$count < 6) {
+                                            echo "            '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
+                                        } else {
+                                            echo "            // '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
+                                        }
+                                    }
                                 }
-                            }
-                        } else {
-                            foreach ($tableSchema->columns as $column) {
-                                $format = $generator->generateColumnFormat($column);
-                                if (++$count < 6) {
-                                    echo "            '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
-                                } else {
-                                    echo "            // '" . $column->name . ($format === 'text' ? "" : ":" . $format) . "',\n";
-                                }
-                            }
-                        }
-                        ?>
+                                ?>
 
-                        [
-                            'class' => 'yii\grid\ActionColumn',
-                            'template' => '<div class="btn-group">{view} {update} {delete}</div>',
-                            'buttons' => [
-                                            'view' => function ($url, $model, $key) {
-                                                return Html::a('<i class="fa fa-search"></i>', $url, ['class'=>'btn btn-xs btn-info']);
-                                            },
-                                            'update' => function ($url, $model, $key) {
-                                                return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-info']);
-                                            },
-                                            'delete' => function ($url, $model, $key) {
-                                                return Html::a('<i class="fa fa-trash"></i>', $url, ['class'=>'btn btn-xs btn-info', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
-                                            },
-                            ]
-                        ],
-                    ],
-                ]); ?>
-                <?php else: ?>
-                    <?= "<?= " ?>ListView::widget([
-                        'dataProvider' => $dataProvider,
-                        'itemOptions' => ['class' => 'item'],
-                        'itemView' => function ($model, $key, $index, $widget) {
-                            return Html::a(Html::encode($model-><?= $nameAttribute ?>), ['view', <?= $urlParams ?>]);
-                        },
-                    ]) ?>
-                <?php endif; ?>
+                                [
+                                    'class' => 'yii\grid\ActionColumn',
+                                    'template' => '<div class="btn-group">{view} {update} {delete}</div>',
+                                    'buttons' => [
+                                                    'view' => function ($url, $model, $key) {
+                                                        return Html::a('<i class="fa fa-search"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
+                                                    },
+                                                    'update' => function ($url, $model, $key) {
+                                                        return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
+                                                    },
+                                                    'delete' => function ($url, $model, $key) {
+                                                        return Html::a('<i class="fa fa-trash"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
+                                                    },
+                                    ]
+                                ],
+                            ],
+                        ]); ?>
+                        <?php else: ?>
+                            <?= "<?= " ?>ListView::widget([
+                                'dataProvider' => $dataProvider,
+                                'itemOptions' => ['class' => 'item'],
+                                'itemView' => function ($model, $key, $index, $widget) {
+                                    return Html::a(Html::encode($model-><?= $nameAttribute ?>), ['view', <?= $urlParams ?>]);
+                                },
+                            ]) ?>
+                        <?php endif; ?>
                 <?= "   <?php " ?>\yii\widgets\Pjax::end(); ?>
                         </div>
                     </div>
