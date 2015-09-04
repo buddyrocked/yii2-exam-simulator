@@ -53,7 +53,7 @@ class Question extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['level', 'is_random'], 'required'],
+            [['level', 'is_random', 'question', 'time'], 'required'],
             [['subject_id', 'passage_id', 'level', 'time', 'is_random'], 'integer'],
             [['question'], 'string'],
             [['created', 'updated'], 'safe'],
@@ -86,6 +86,14 @@ class Question extends \yii\db\ActiveRecord
     public function getSubject()
     {
         return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPassage()
+    {
+        return $this->hasOne(Passage::className(), ['id' => 'passage_id']);
     }
 
     /**

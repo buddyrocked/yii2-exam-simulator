@@ -10,14 +10,19 @@ use yii\widgets\ActiveForm;
 
 <div class="passage-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+                                        'id' => 'form-passage',
+                                        'enableAjaxValidation'=>false,
+                                        'options'=>[
+                                            'class'=>'form-ajax-modal',
+                                        ]
+                                    ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
     <div class="form-group form-action">
-    	<?= Html::a('<i class="fa fa-remove"></i> Cancel', ['index'], ['class' => 'btn btn-danger']) ?>
         <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>
     </div>
 

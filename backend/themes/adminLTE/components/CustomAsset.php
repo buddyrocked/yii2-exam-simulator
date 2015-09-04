@@ -22,6 +22,7 @@ class CustomAsset extends AssetBundle
         'css/jquery-ui.min.css',
         'css/jquery.tagsinput.css',
         'css/font-awesome.css',
+        'css/jquery.msg.css',
         'css/style.css',
     ];
     public $js = [
@@ -35,6 +36,8 @@ class CustomAsset extends AssetBundle
         'js/jquery.scrollTo.js',
         'js/jquery.parallax.js',
         'js/jquery.nav.js',
+        'js/jquery.center.min.js',
+        'js/jquery.msg.min.js',
         'js/app.js'
     ];
     

@@ -5,27 +5,17 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Passage;
 use backend\models\PassageSearch;
-use yii\web\Controller;
+use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * PassageController implements the CRUD actions for Passage model.
  */
 class PassageController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
+    
     /**
      * Lists all Passage models.
      * @return mixed
@@ -66,6 +56,26 @@ class PassageController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Creates a new Passage model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionAdd()
+    {
+        $model = new Passage();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['status'=>'1', 'message' => 'Data has been saved.'];
+        } else {
+            return $this->renderAjax('add', [
                 'model' => $model,
             ]);
         }

@@ -5,7 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\QuestionOption;
 use backend\models\QuestionOptionSearch;
-use yii\web\Controller;
+use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -14,18 +14,7 @@ use yii\filters\VerbFilter;
  */
 class QuestionoptionController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
+    
     /**
      * Lists all QuestionOption models.
      * @return mixed

@@ -1,10 +1,17 @@
 $(document).ready(function(){
+		
+
         $('#btn-add').click(function(e){
             var self = $(this);
             var container = self.attr('data-container');
             var ipt = self.attr('data-html');
             $(container).append($(ipt).html());
             e.preventDefault();
+        });
+
+        $('.btn-msg').click(function(e){
+        	$.msg({ autoUnblock : false, clickUnblock : false });
+        	e.preventDefault();
         });
 
         $('.btn-toggle').click(function(e){
@@ -16,19 +23,24 @@ $(document).ready(function(){
         $('.form-ajax').on('beforeSubmit', function(event, jqXHR, settings) {
             var form = $(this);
             if(form.find('.has-error').length) {
-                    return false;
+            	return false;
+            }else{
+        		$.msg({ autoUnblock : false, clickUnblock : false });
             }
 
             $.ajax({
-                    url: form.attr('action'),
-                    type: 'post',
-                    data: form.serialize(),
-                    success: function(data) {
-                            console.log(data);
-                            alert(data.message);
-                            $.pjax.defaults.timeout = false;
-                            $.pjax.reload({container:'#grid-question'});
-                    }
+                url: form.attr('action'),
+                type: 'post',
+                data: form.serialize(),
+                success: function(data) {
+                        console.log(data);
+                        alert(data.message);
+                        $.msg('unblock',0,1);
+                        $.pjax.defaults.timeout = false;
+                        $.pjax.reload({container:'#grid-question'});
+                        $.pjax.reload({container:'#pjax-form-question'});
+                        
+                }
             });
 
             return false;
@@ -95,6 +107,9 @@ $(document).ready(function(){
         
 
         $('.btn-modal').click(function(e){
+
+
+
         	var self = $(this);
         	var url = self.attr('href');
         	var title = self.attr('title');
@@ -189,10 +204,40 @@ $(document).ready(function(){
 
 				    e.preventDefault();
 		        });
+
+		        
+	        	$('.form-ajax-modal').on('beforeSubmit', function(event, jqXHR, settings) {
+	        		
+		            var form = $(this);
+		            if(form.find('.has-error').length) {
+		            	return false;
+		            }else{
+		        		$.msg({ autoUnblock : false, clickUnblock : false, z:5000 });
+		            }
+
+		            $.ajax({
+		                url: form.attr('action'),
+		                type: 'post',
+		                data: form.serialize(),
+		                success: function(data) {
+		                        console.log(data);
+		                        $('#myModal').modal('hide');
+		                        alert(data.message);
+		                        $.msg('unblock',0,1);
+		                        $.pjax.defaults.timeout = false;
+		                        $.pjax.reload({container:'#pjax-passage'});
+		                }
+		            });
+
+		            return false;
+			    });
 		    })
 		    .fail(function() {
 		    	alert( "error occured" );
 		    });
+
+
+
 		    e.preventDefault();
         });
 

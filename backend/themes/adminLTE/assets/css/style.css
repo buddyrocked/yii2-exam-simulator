@@ -396,7 +396,7 @@ td.visible-lg, th.visible-lg {
 }
 
 .data-thumb {
-    border: 4px solid #2196F3;
+    border: 4px solid #f25454;
     border-radius: 50%;
     display: inline-block;
     float: left;
@@ -564,7 +564,7 @@ label {
 
 .container-menu {
     background: #fff;
-    border: 0px solid #f0f0f0;
+    border: 1px solid #f0f0f0;
     display: block;
     margin-bottom: 20px;
 }
@@ -1683,4 +1683,8 @@ ul.newsticker, ul.newsticker-quotes {
 
 .hiddenx {
     display: none;
+}
+
+.text-danger {
+    color:#f25454 !important;
 }

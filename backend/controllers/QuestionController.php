@@ -9,7 +9,7 @@ use backend\models\QuestionSearch;
 use backend\models\QuestionOption;
 use backend\models\QuestionDomain;
 use backend\models\Subject;
-use yii\web\Controller;
+use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
@@ -20,17 +20,7 @@ use yii\helpers\ArrayHelper;
  */
 class QuestionController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
+    
 
     /**
      * Lists all Question models.
@@ -86,12 +76,113 @@ class QuestionController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $modelsOption = $model->questionOptions;
+        $modelsDomain = $model->questionDomains;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $oldIDdomains = ArrayHelper::map($modelsDomain, 'id', 'id');
+            $modelsDomain = Model::createMultiple(QuestionDomain::classname());
+            $deletedIDdomains = array_diff($oldIDdomains, array_filter(ArrayHelper::map($modelsDomain, 'id', 'id')));
+            
+            $oldIDoptions = ArrayHelper::map($modelsOption, 'id', 'id');
+            $modelsOption = Model::createMultiple(QuestionOption::classname());
+            $deletedIDoptions = array_diff($oldIDoptions, array_filter(ArrayHelper::map($modelsOption, 'id', 'id')));
+
+
+            Model::loadMultiple($modelsDomain, Yii::$app->request->post());
+            Model::loadMultiple($modelsOption, Yii::$app->request->post());
+
+            // ajax validation
+            if (Yii::$app->request->isAjax) {
+                /*Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($modelsQuestion),
+                    ActiveForm::validate($model)
+                );*/
+            }
+
+            // validate all models
+            $valid = $model->validate();
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsDomain) && $valid;
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsOption) && $valid;
+            //var_dump($valid); exit;
+            if($valid){
+                $transaction = Yii::$app->db->beginTransaction();  
+                try{                          
+                    
+                    //$subject = Subject::findOne($id);
+                    //$model->id_question = $model->generateNumber($subject->name);
+                    if($flag = $model->save(false)):    
+                        if (! empty($deletedIDoptions)) {
+                            QuestionOption::deleteAll(['id' => $deletedIDoptions]);
+                        }
+                        if($flag){
+                            foreach ($modelsOption as $modelOption) {
+                                $modelOption->question_id = $model->id;
+                                if(!($flag = $modelOption->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag){
+                            if (! empty($deletedIDdomains)) {
+                                QuestionDomain::deleteAll(['id' => $deletedIDdomains]);
+                            }
+                            foreach ($modelsDomain as $modelDomain) {
+                                $modelDomain->question_id = $model->id;
+                                if(!($flag = $modelDomain->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag):
+                            $transaction->commit();
+                            Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'info',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data has been saved.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+
+                            return $this->redirect(['/subject/view', 'id'=>$model->subject_id]);
+                        endif;
+
+                    endif;                    
+
+                }catch(Exception $e){
+                    $transaction->rollBack();
+                    Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'danger',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data failed to save.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+                    return $this->render('update', [
+                        'model' => $model,
+                        'modelsOption' => $modelsOption,
+                        'modelsDomain' => $modelsDomain,
+                    ]);
+                }
+            }
+        
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'modelsOption' => $modelsOption,
+                'modelsDomain' => $modelsDomain,
             ]);
         }
     }
@@ -104,9 +195,21 @@ class QuestionController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $subject_id = $model->subject_id;
+        $model->delete();
 
-        return $this->redirect(['index']);
+        Yii::$app->getSession()->setFlash('success', [
+            'type' => 'info',
+            'duration' => 500000,
+            'icon' => 'fa fa-volume-up',
+            'message' => 'Data has been deleted.',
+            'title' => 'Information',
+            'positonY' => 'bottom',
+            'positonX' => 'right'
+        ]);
+
+        return $this->redirect(['/subject/view', 'id'=>$subject_id]);
     }
 
     /**

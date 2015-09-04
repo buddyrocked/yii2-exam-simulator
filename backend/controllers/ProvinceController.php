@@ -5,7 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Province;
 use backend\models\ProvinceSearch;
-use yii\web\Controller;
+use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -14,17 +14,7 @@ use yii\filters\VerbFilter;
  */
 class ProvinceController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
+    
 
     /**
      * Lists all Province models.

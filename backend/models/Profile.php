@@ -88,4 +88,34 @@ class Profile extends \yii\db\ActiveRecord
     public function getUser(){
         return $this->hasOne(User::className(), ['id'=>'user_id']);
     }
+
+    public function getFullName(){
+        if($this->display_surname_preference == 0):
+            $name = $this->surname.' '.$this->middle_name.' '.$this->first_name.' '.$this->suffix;
+        else:
+            $name = $this->first_name.' '.$this->middle_name.' '.$this->surname.' '.$this->suffix;
+        endif;
+
+        return $name; 
+    }
+
+    public function getProvince(){
+        return $this->hasOne(Province::className(), ['id'=>'province_id']);
+    }
+
+    public function getCountry(){
+        return $this->hasOne(Country::className(), ['id'=>'country_id']);
+    }
+
+    public function getGender(){
+        return $this->hasOne(Gender::className(), ['id'=>'gender_id']);
+    }
+
+    public function getPrefix(){
+        return $this->hasOne(Prefix::className(), ['id'=>'prefix_id']);
+    }
+
+    public function getFullAddress(){
+        return $this->street1.'<br />'.$this->street2.'<br />'.$this->city.' '.(isset($this->province->name)?$this->province->name:'').'<br />'.(isset($this->country->name)?$this->country->name:'').' - '.$this->postal_code;
+    }
 }

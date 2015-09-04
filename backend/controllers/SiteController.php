@@ -4,6 +4,8 @@ namespace backend\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\BaseController as Controller;
+use backend\models\Profile;
+use backend\models\Subject;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 use backend\models\UploadForm;
@@ -14,7 +16,7 @@ use yii\web\UploadedFile;
  */
 class SiteController extends Controller
 {
-    public $freeAccess = true;
+    public $freeAccessActions = ['index'];
 
     public $layout = 'loginLayout';
     
@@ -56,7 +58,11 @@ class SiteController extends Controller
                          'positonY' => 'bottom',
                          'positonX' => 'right'
                      ]);
-        return $this->render('dashboard');
+
+        return $this->render('dashboard', [
+            'profile'=>Profile::find()->where(['user_id'=>Yii::$app->user->identity->id])->one(),
+            'subjects'=>Subject::find()
+        ]);
     }
 
     public function actionLogin()

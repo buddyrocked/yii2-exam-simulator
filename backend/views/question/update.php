@@ -23,11 +23,10 @@ $this->params['breadcrumbs'][] = 'Update';
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="text-right">
-                            <?= Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-danger outline']) ?>
-                            </div>
 						    <?= $this->render('_form', [
 						        'model' => $model,
+                                'modelsOption' => $modelsOption,
+                                'modelsDomain' => $modelsDomain,
 						    ]) ?>
 						</div>
 					</div>

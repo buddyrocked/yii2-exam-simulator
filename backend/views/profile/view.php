@@ -23,12 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-action">
+                            <div class="form-group form-action well">
                                 <div class="text-right">
                                 <?= Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-danger outline']) ?>
                                 <?= Html::a('<i class="fa fa-pencil"></i> Update', ['update', 'id' => $model->id], ['class' => 'btn btn-danger outline']) ?>
                                 <?= Html::a('<i class="fa fa-trash"></i> Delete', ['delete', 'id' => $model->id], [
-                                    'class' => 'btn btn-danger',
+                                    'class' => 'btn btn-danger outline',
                                     'data' => [
                                         'confirm' => 'Are you sure you want to delete this item?',
                                         'method' => 'post',

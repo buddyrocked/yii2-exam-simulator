@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Html;
+use kartik\helpers\Html;
 use yii\widgets\DetailView;
 use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
@@ -138,6 +138,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <div>&nbsp;</div>
                                                 <div class="col-md-12 hiddenx">
                                                     <div class="question-form">
+                                                    <?php \yii\widgets\Pjax::begin(['id'=>'pjax-form-question']); ?>
                                                     <?php $form = ActiveForm::begin([
                                                                                     'id' => 'dynamic-form',
                                                                                     'action'=>Url::to(['/question/add', 'id'=>$model->id]),
@@ -147,6 +148,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                             ]); ?>
                                                     <div class="row">
                                                         <div class="col-sm-6">
+                                                            <?php \yii\widgets\Pjax::begin(['id'=>'pjax-passage']); ?>
                                                             <?= $form->field($modelQuestion, 'passage_id')->widget(Select2::className(),  [
                                                                                                                 'data' => ArrayHelper::map(Passage::find()->all(), 'id', 'name'),
                                                                                                                 'options'=>['placeholder'=>'Choose Passage'],
@@ -164,9 +166,21 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                                                             }
                                                                                                                         });
                                                                                                                     }"
-                                                                                                                ]
+                                                                                                                ],
+                                                                                                                'addon' => [
+                                                                                                                    'append' => [
+                                                                                                                        'content' => Html::a('<i class="fa fa-plus"></i>', ['/passage/add'], [
+                                                                                                                            'class' => 'btn btn-danger btn-modal', 
+                                                                                                                            'title' => 'Create new passage', 
+                                                                                                                            'data-toggle' => 'tooltip'
+                                                                                                                        ]),
+                                                                                                                        'asButton' => true
+                                                                                                                    ]
+    ]
                                                                                                             ]) ?>
+
                                                              <div id="response-address"></div>
+                                                            <?php \yii\widgets\Pjax::end(); ?>
                                                         </div>
                                                         <div class="col-sm-2">
                                                              <?= $form->field($modelQuestion, 'level')->widget(Select2::className(),  [
@@ -301,13 +315,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-12">
-                                                            <div class="form-group form-action">
+                                                            <div class="form-group form-action well">
                                                                 <?= Html::submitButton($modelQuestion->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <?php ActiveForm::end(); ?>
+                                                    <?php \yii\widgets\Pjax::end(); ?>
                                                     </div>
                                                 </div>
                                                 <div>&nbsp;</div>
@@ -326,13 +341,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             'attribute'=>'passage_id',
                                                             'format'=>'raw',
                                                             'value'=>function($data){
-                                                                return $data->passage_id;
+                                                                return (isset($data->passage->name)?$data->passage->name:'');
                                                             }
                                                         ],
                                                         'question:html',
                                                         'level',
                                                         [
-                                                            'attribute'=>'passage_id',
+                                                            'attribute'=>'time',
                                                             'format'=>'raw',
                                                             'value'=>function($data){
                                                                 return $data->time.' Minutes';
@@ -354,7 +369,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                                 </button>
                                                                                                 <ul class="dropdown-menu" role="menu">
                                                                                                     <!--<li>{view}</li>-->
-                                                                                                    <!--<li>{update}</li>-->
+                                                                                                    <li>{update}</li>
                                                                                                     <li>{delete}</li>
                                                                                                 </ul>
                                                                                             </div>',
@@ -363,10 +378,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 return GhostHtml::a('<i class="fa fa-search"></i> view', $url, ['class'=>'btn-modal']);
                                                                             },
                                                                             'update' => function ($url, $model, $key) {
-                                                                                return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/projectmember/update', 'id'=>$model->id]), ['class'=>'btn-modal']);
+                                                                                return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'btn-modal']);
                                                                             },
                                                                             'delete' => function ($url, $model, $key) {
-                                                                                return GhostHtml::a('<i class="fa fa-trash"></i> delete', Url::to(['/projectmember/delete', 'id'=>$model->id]), ['class'=>'', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
+                                                                                return GhostHtml::a('<i class="fa fa-trash"></i> delete', Url::to(['/question/delete', 'id'=>$model->id]), ['class'=>'', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
                                                                             },
                                                             ]
                                                         ],

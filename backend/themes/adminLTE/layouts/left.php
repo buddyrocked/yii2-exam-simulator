@@ -61,7 +61,7 @@ use backend\components\EasyThumbnailImage;
                                     ['label' => 'Profile', 'icon'=>'male', 'url'=>['/profile/index']],
                                     ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/province/index']],
                                     ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/country/index']],
-                                    //['label' => 'Misc Project', 'icon'=>'heartbeat', 'url'=>['/project/listother']],
+                                    ['label' => 'Gender', 'icon'=>'gender', 'url'=>['/gender/index']],
                                 ],
                             ],
                             [
