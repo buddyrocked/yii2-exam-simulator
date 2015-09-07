@@ -957,12 +957,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ikimea/Browser.git",
-                "reference": "f321c8e6aea829f9a7b85e357f77e78892ad8881"
+                "reference": "3fb8a2498ed36d49832d95f1da0c4cc055a64728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ikimea/Browser/zipball/f321c8e6aea829f9a7b85e357f77e78892ad8881",
-                "reference": "f321c8e6aea829f9a7b85e357f77e78892ad8881",
+                "url": "https://api.github.com/repos/Ikimea/Browser/zipball/3fb8a2498ed36d49832d95f1da0c4cc055a64728",
+                "reference": "3fb8a2498ed36d49832d95f1da0c4cc055a64728",
                 "shasum": ""
             },
             "require": {
@@ -997,7 +997,7 @@
             "keywords": [
                 "browser"
             ],
-            "time": "2015-08-12 14:38:43"
+            "time": "2015-08-26 20:05:14"
         },
         {
             "name": "imagine/imagine",
@@ -1323,12 +1323,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-detail-view.git",
-                "reference": "b4296b417b96de94688973a3c312fed854236550"
+                "reference": "f6f36a0eefd2cf46d6246ba7bd65b0f6f6169c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/b4296b417b96de94688973a3c312fed854236550",
-                "reference": "b4296b417b96de94688973a3c312fed854236550",
+                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/f6f36a0eefd2cf46d6246ba7bd65b0f6f6169c24",
+                "reference": "f6f36a0eefd2cf46d6246ba7bd65b0f6f6169c24",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1363,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-08-23 11:35:27"
+            "time": "2015-09-04 15:13:02"
         },
         {
             "name": "kartik-v/yii2-grid",
@@ -1371,12 +1371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "90203f01b4bddf8a30033a604130f6f5c2613b29"
+                "reference": "f3fe827cb0f69ecf107a91626afe9d36b9a4bded"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/90203f01b4bddf8a30033a604130f6f5c2613b29",
-                "reference": "90203f01b4bddf8a30033a604130f6f5c2613b29",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/f3fe827cb0f69ecf107a91626afe9d36b9a4bded",
+                "reference": "f3fe827cb0f69ecf107a91626afe9d36b9a4bded",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1407,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-08-20 05:53:45"
+            "time": "2015-09-03 17:18:54"
         },
         {
             "name": "kartik-v/yii2-helpers",
@@ -3035,12 +3035,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/date-range-picker.git",
-                "reference": "1a244b3bd98bd0280e346ef6a48115354f640004"
+                "reference": "7806a57b7da694d8cbe643e7354f2fb53afc7c37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/date-range-picker/zipball/1a244b3bd98bd0280e346ef6a48115354f640004",
-                "reference": "1a244b3bd98bd0280e346ef6a48115354f640004",
+                "url": "https://api.github.com/repos/webvimark/date-range-picker/zipball/7806a57b7da694d8cbe643e7354f2fb53afc7c37",
+                "reference": "7806a57b7da694d8cbe643e7354f2fb53afc7c37",
                 "shasum": ""
             },
             "type": "library",
@@ -3051,7 +3051,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "dangrossman daterangepicker yii 2 gridview",
-            "time": "2014-11-24 19:38:27"
+            "time": "2015-09-01 14:14:43"
         },
         {
             "name": "webvimark/grid-bulk-actions",

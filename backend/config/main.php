@@ -16,7 +16,7 @@ return [
         'user-management' => [
             'class' => 'webvimark\modules\UserManagement\UserManagementModule',
             'enableRegistration' => true,
-            'emailConfirmationRequired'=> true,
+            'emailConfirmationRequired'=> false,
             'useEmailAsLogin'=>true,
             // Here you can set your handler to change layout for any controller or action
             // Tip: you can use this event in any module

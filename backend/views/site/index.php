@@ -256,4 +256,55 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<div class="pricing">
+    <div class="container">
+        <div class="row">            
+            <div class="title-section text-center">
+                <span>Pricing</span>
+            </div>
+            <figure class="mockup-grid__item col-md-4">
+                <div class="mockup-pricing paint-area">
+                    <h3 class="mockup-heading mockup-heading--box paint-area"><span>Free</span></h3>
+                    <div class="mockup-bigtext"><span class="paint-area paint-area--text">$0</span></div>
+                    <div class="mockup-list-wrap paint-area">
+                        <ul class="mockup-list paint-area paint-area--text">
+                            <li>1 exam</li>
+                            <li>200 questions</li>
+                            <li>Basic toolset</li>
+                        </ul>
+                    </div>
+                    <button class="mockup-button paint-area"><span>Sign up</span> <i class="fa fa-chevron-right"></i></button>
+                </div>
+            </figure>
+            <figure class="mockup-grid__item col-md-4">
+                <div class="mockup-pricing paint-area">
+                    <h3 class="mockup-heading mockup-heading--box paint-area"><span>Professional</span></h3>
+                    <div class="mockup-bigtext"><span class="paint-area paint-area--text">$99</span></div>
+                    <div class="mockup-list-wrap paint-area">
+                        <ul class="mockup-list paint-area paint-area--text">
+                            <li>10 Exams</li>
+                            <li>2000 questions</li>
+                            <li>Advanced toolset</li>
+                        </ul>
+                    </div>
+                    <button class="mockup-button paint-area"><span>Sign up</span> <i class="fa fa-chevron-right"></i></button>
+                </div>
+            </figure>
+            <figure class="mockup-grid__item col-md-4">
+                <div class="mockup-pricing paint-area">
+                    <h3 class="mockup-heading mockup-heading--box paint-area"><span>Premium</span></h3>
+                    <div class="mockup-bigtext"><span class="paint-area paint-area--text">$199</span></div>
+                    <div class="mockup-list-wrap paint-area">
+                        <ul class="mockup-list paint-area paint-area--text">
+                            <li>Unlimited Exams</li>
+                            <li>Unlimited questions</li>
+                            <li>Full toolset</li>
+                        </ul>
+                    </div>
+                    <button class="mockup-button paint-area"><span>Sign up</span> <i class="fa fa-chevron-right"></i></button>
+                </div>
+            </figure>
+        </div>    
+    </div>
+</div>
 
