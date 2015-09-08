@@ -37,8 +37,8 @@ $(document).ready(function(){
                         alert(data.message);
                         //$.msg('unblock',0,1);
                         $.pjax.defaults.timeout = false;
-                        $.pjax.reload({container:'#pjax-form-question', async:false});
-                        $.pjax.reload({container:'#grid-question', async:false});
+                        //$.pjax.reload({container:'#pjax-form-question', async:false});
+                        $.pjax.reload({container:'#grid-question'});
                         
                 }
             });

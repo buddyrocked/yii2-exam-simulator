@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
                         
 
-                            <?php \yii\widgets\Pjax::begin(); ?>
+                            <?php //\yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ],
                                 ],
                             ]); ?>
-                            <?php \yii\widgets\Pjax::end(); ?>
+                            <?php //\yii\widgets\Pjax::end(); ?>
                         </div>
                     </div>
                 </div>
