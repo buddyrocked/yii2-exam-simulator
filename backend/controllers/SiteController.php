@@ -6,6 +6,7 @@ use yii\filters\AccessControl;
 use backend\controllers\BaseController as Controller;
 use backend\models\Profile;
 use backend\models\Subject;
+use backend\models\Simulation;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 use backend\models\UploadForm;
@@ -61,7 +62,8 @@ class SiteController extends Controller
 
         return $this->render('dashboard', [
             'profile'=>Profile::find()->where(['user_id'=>Yii::$app->user->identity->id])->one(),
-            'subjects'=>Subject::find()
+            'subjects'=>Subject::find(),
+            'simulations'=>Simulation::find()->where(['user_id'=>Yii::$app->user->identity->id])
         ]);
     }
 

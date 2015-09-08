@@ -109,7 +109,11 @@ class Question extends \yii\db\ActiveRecord
      */
     public function getQuestionOptions()
     {
-        return $this->hasMany(QuestionOption::className(), ['question_id' => 'id']);
+        if($this->is_random == false):
+            return $this->hasMany(QuestionOption::className(), ['question_id' => 'id']);
+        else:
+            return $this->hasMany(QuestionOption::className(), ['question_id' => 'id'])->orderBy('RAND()');
+        endif;
     }
 
     public function getLastNumber(){

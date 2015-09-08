@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="login-content first-content" id="index-content">
+<div class="login-content first-content parallax" id="index-content">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-8">

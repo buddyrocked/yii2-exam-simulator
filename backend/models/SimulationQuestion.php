@@ -1,0 +1,76 @@
+<?php
+
+namespace backend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "simulation_question".
+ *
+ * @property integer $id
+ * @property integer $simulation_id
+ * @property integer $question_id
+ * @property integer $status
+ *
+ * @property Question $question
+ * @property Simulation $simulation
+ * @property SimulationQuestionAnswer[] $simulationQuestionAnswers
+ */
+class SimulationQuestion extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'simulation_question';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['simulation_id', 'question_id', 'status'], 'required'],
+            [['simulation_id', 'question_id', 'status'], 'integer']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'simulation_id' => 'Simulation ID',
+            'question_id' => 'Question ID',
+            'status' => 'Status',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getQuestion()
+    {
+        return $this->hasOne(Question::className(), ['id' => 'question_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSimulation()
+    {
+        return $this->hasOne(Simulation::className(), ['id' => 'simulation_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSimulationQuestionAnswers()
+    {
+        return $this->hasMany(SimulationQuestionAnswer::className(), ['simulation_question_id' => 'id']);
+    }
+}

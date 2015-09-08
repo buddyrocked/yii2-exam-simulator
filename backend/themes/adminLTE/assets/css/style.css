@@ -41,6 +41,10 @@ body {
     color: #676a6c;
 }
 
+.bg-white {
+    background: #fff !important;
+}
+
 .pad10 {
     padding: 10px !important;
 }

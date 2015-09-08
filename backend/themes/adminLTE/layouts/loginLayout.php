@@ -63,7 +63,9 @@ $this->title = UserManagementModule::t('front', 'Authorization');
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->            
 </div>
+<div class="content-main">
 <?= $content ?>
+</div>
 <div class="contact">
     <div class="container">
         <div class="row">

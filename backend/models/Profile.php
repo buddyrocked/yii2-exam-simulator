@@ -89,6 +89,7 @@ class Profile extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id'=>'user_id']);
     }
 
+    
     public function getFullName(){
         if($this->display_surname_preference == 0):
             $name = $this->surname.' '.$this->middle_name.' '.$this->first_name.' '.$this->suffix;

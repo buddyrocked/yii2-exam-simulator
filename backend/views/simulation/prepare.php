@@ -1,0 +1,79 @@
+<?php
+/* @var $this yii\web\View */
+use webvimark\modules\UserManagement\components\GhostHtml;
+use webvimark\modules\UserManagement\UserManagementModule;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\helpers\Url;
+use yii\data\ActiveDataProvider;
+use backend\components\EasyThumbnailImage;
+
+$this->title = 'Exam Simulator';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="login-content first-content" id="index-content">
+	<div class="row">    
+        <div class="col-md-8"> 
+            <div class="container-menu">
+                <div class="upper-menu">
+                    <div class="upper-menu-title">
+                        Simulation Detail
+                    </div>
+                </div>
+                <div class="middle-menu bg-white">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h1 class="bebas"><?= $model->name; ?></h1>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="wellx text-center">
+                                        <h2 class="text-bold bebas"><?= $model->question_number; ?></h2>
+                                        <div>Questions</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="wellx text-center">
+                                        <h2 class="text-bold bebas"><?= $model->time; ?></h2>
+                                        <div>Minutes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">&nbsp;</div>
+                        <div class="col-md-12">
+                            <label>Description : </label>
+                            <div class="well">
+                                <?= Html::decode($model->desc); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        	<div class="container-menu">
+                <div class="middle-menu bg-white">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Price : </label>
+                            <div class="well">
+                                <h1 class="text-center bebas text-bold">$ 0.00/ Free</h1>
+                            </div>
+                            <?= Html::a('<i class="fa fa-check"></i> Start your exam', ['start', 'id' => $model->id], [
+                                    'class' => 'btn btn-danger btn-block btn-lg',
+                                    'data' => [
+                                        'confirm' => 'Are you sure you want to start exam simulation?',
+                                        'method' => 'post',
+                                    ],
+                                ]) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

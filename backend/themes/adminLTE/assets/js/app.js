@@ -25,7 +25,7 @@ $(document).ready(function(){
             if(form.find('.has-error').length) {
             	return false;
             }else{
-        		$.msg({ autoUnblock : false, clickUnblock : false });
+        		//$.msg({ autoUnblock : false, clickUnblock : false });
             }
 
             $.ajax({
@@ -35,10 +35,10 @@ $(document).ready(function(){
                 success: function(data) {
                         console.log(data);
                         alert(data.message);
-                        $.msg('unblock',0,1);
+                        //$.msg('unblock',0,1);
                         $.pjax.defaults.timeout = false;
-                        $.pjax.reload({container:'#grid-question'});
-                        $.pjax.reload({container:'#pjax-form-question'});
+                        $.pjax.reload({container:'#pjax-form-question', async:false});
+                        $.pjax.reload({container:'#grid-question', async:false});
                         
                 }
             });

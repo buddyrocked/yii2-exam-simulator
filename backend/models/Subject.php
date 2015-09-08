@@ -5,6 +5,7 @@ namespace backend\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "subject".
@@ -92,11 +93,29 @@ class Subject extends \yii\db\ActiveRecord
     }
 
     public function getLastNumber(){
-        return $this::find()->andWhere(['like', 'id_subject', $this->name.'%', false]);
+        return $this::find();
     }
 
     public function generateNumber(){
         $lastNumber = $this->getLastNumber();
         return $this->name.str_pad($lastNumber->count() + 1, 4, '0', STR_PAD_LEFT);
+    }
+
+    public function getQuestionByDomain($domain){
+        $limit = ($domain->percentage / $this->question_number) * 100;
+        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id'])->where(['question_domain.domain_id'=>$domain->id])->limit($limit)->orderBy('RAND()');
+    }
+
+    public function getQuestionForSimulations(){
+        $domains = $this->domains;
+
+        $questions = [];
+
+        foreach($domains as $domain):
+            $domainQuestions = $this->getQuestionByDomain($domain)->asArray()->all();
+            $questions = array_merge($questions, $domainQuestions);
+        endforeach;
+
+        return $questions;
     }
 }

@@ -1724,6 +1724,13 @@ ul.newsticker, ul.newsticker-quotes {
     display: block;
 }
 
+.content-main {
+    min-height: 600px;
+}
+
+.site-error {
+    padding: 120px 30px;
+}
 
 .pricing {
     padding-bottom: 50px;

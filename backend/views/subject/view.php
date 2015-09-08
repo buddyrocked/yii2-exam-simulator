@@ -268,7 +268,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     'widgetBody' => '.container-items', // required: css class selector
                                                                     'widgetItem' => '.item', // required: css class
                                                                     'limit' => 10, // the maximum times, an element can be cloned (default 999)
-                                                                    'min' => 1, // 0 or 1 (default 1)
+                                                                    'min' => 4, // 0 or 1 (default 1)
                                                                     'insertButton' => '.add-item', // css class
                                                                     'deleteButton' => '.remove-item', // css class
                                                                     'model' => $modelsOption[0],
@@ -361,6 +361,21 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             }
                                                         ],
                                                         [
+                                                            'attribute'=>'domains',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                $domains = $data->questionDomains;
+                                                                if($domains != NULL):
+                                                                    foreach ($domains as $key => $domain) {
+                                                                        $d[] = $domain->domain->name;
+                                                                    }
+                                                                    return implode(',', $d);
+                                                                else:
+                                                                    return '';
+                                                                endif;
+                                                            }
+                                                        ],
+                                                        [
                                                             'class' => 'yii\grid\ActionColumn',
                                                             'template' => '<div class="btn-group pull-right">                                                                     
                                                                                                 <button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -378,7 +393,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 return GhostHtml::a('<i class="fa fa-search"></i> view', $url, ['class'=>'btn-modal']);
                                                                             },
                                                                             'update' => function ($url, $model, $key) {
-                                                                                return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'btn-modal']);
+                                                                                return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'']);
                                                                             },
                                                                             'delete' => function ($url, $model, $key) {
                                                                                 return GhostHtml::a('<i class="fa fa-trash"></i> delete', Url::to(['/question/delete', 'id'=>$model->id]), ['class'=>'', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);

@@ -77,7 +77,7 @@ class QuestionController extends Controller
     {
         $model = $this->findModel($id);
         $modelsOption = $model->questionOptions;
-        $modelsDomain = $model->questionDomains;
+        $modelsDomain = ($model->questionDomains != null)?$model->questionDomains:[new QuestionDomain];
 
         if ($model->load(Yii::$app->request->post())) {
 
