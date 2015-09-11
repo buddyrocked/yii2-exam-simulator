@@ -329,3 +329,39 @@ $(document).ready(function(){
 function removeTR(){
 	console.log($(this));
 }
+
+function initialize() {
+	var latlng = new google.maps.LatLng(-6.272198, 106.724870);
+    var settings = {
+        zoom: 15,
+        center: latlng,
+        mapTypeControl: true,
+        mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+        navigationControl: true,
+        navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-rialachas"), settings);
+
+    var companyPos = new google.maps.LatLng(-6.272198,106.724870);
+    var companyMarker = new google.maps.Marker({
+        position: companyPos,
+        map: map,
+        title:"Bintaro Office: \n PT Rialachas \n Jalan Cut Mutia 1 FG-2 No. 42A Bintaro Sektor 7 \n Tangerang Selatan, Indonesia"
+    });
+
+    var contentString = '<div class="hexagon-logo" id=""><div class="hexagon-icon"><span class="fa-stack fa-lg font-map"><i class="fa fa-circle fa-stack-2x black"></i><i class="fa fa-home fa-stack-1x fa-inverse"></i></span></div></div><div class="center bold">PT Rialachas Office</div>';
+     
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    google.maps.event.addListener(companyMarker, 'click', function() {
+      infowindow.open(map,companyMarker);
+    });
+}
+
+$(document).ready(function(){
+	initialize();
+});

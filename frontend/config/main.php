@@ -36,6 +36,11 @@ return [
                 //'baseUrl' => '@backend/themes/budi-layout',
             ],
         ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'suffix' => '.html',
+        ],
     ],
     'params' => $params,
 ];

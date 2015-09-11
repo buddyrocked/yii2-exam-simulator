@@ -40,7 +40,8 @@
         "yiisoft/yii2-imagine": "^2.0@dev",
         "sammaye/yii2-audittrail": "dev-master",
         "kartik-v/yii2-checkbox-x": "*",
-        "payum/paypal-express-checkout-nvp": "^1.0@dev"
+        "payum/paypal-express-checkout-nvp": "^1.0@dev",
+        "funson86/yii2-blog": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

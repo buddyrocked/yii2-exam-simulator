@@ -35,6 +35,7 @@ class FrontendAsset extends AssetBundle
         'js/jquery.scrollTo.js',
         'js/jquery.parallax.js',
         'js/jquery.nav.js',
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyBgA9x1eyjMKLAln_0LTAkMPcIJFC0M9os&amp;sensor=false',
         'js/app.js'
     ];
     

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e2761d2e211af88e6dfa37125e4b8e1",
+    "hash": "1151b976408775f89ce39f9f1fcf6edd",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -907,6 +907,50 @@
                 "wysiwyg"
             ],
             "time": "2015-05-13 16:59:24"
+        },
+        {
+            "name": "funson86/yii2-blog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/funson86/yii2-blog.git",
+                "reference": "657458955e9b6bbbb7e4e584752d67089b675a49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/funson86/yii2-blog/zipball/657458955e9b6bbbb7e4e584752d67089b675a49",
+                "reference": "657458955e9b6bbbb7e4e584752d67089b675a49",
+                "shasum": ""
+            },
+            "require": {
+                "mihaildev/yii2-ckeditor": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "funson86\\blog\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "funson86\\blog\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Funson Lee",
+                    "email": "funson86@gmail.com"
+                }
+            ],
+            "description": "Yii2 Blog for other application",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2015-08-07 03:54:44"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2816,6 +2860,57 @@
             "time": "2015-07-15 08:24:12"
         },
         {
+            "name": "mihaildev/yii2-ckeditor",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MihailDev/yii2-ckeditor.git",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mihaildev\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mihail",
+                    "email": "mihail.kucher@gmail.com",
+                    "homepage": "https://github.com/MihailDev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 CKEditor",
+            "homepage": "https://github.com/MihailDev/yii2-ckeditor",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "wysiwyg",
+                "yii"
+            ],
+            "time": "2014-11-19 22:04:08"
+        },
+        {
             "name": "payum/core",
             "version": "1.0.0-BETA1",
             "target-dir": "Payum/Core",
@@ -4440,7 +4535,8 @@
         "kartik-v/yii2-detail-view": 20,
         "yiisoft/yii2-imagine": 20,
         "sammaye/yii2-audittrail": 20,
-        "payum/paypal-express-checkout-nvp": 20
+        "payum/paypal-express-checkout-nvp": 20,
+        "funson86/yii2-blog": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

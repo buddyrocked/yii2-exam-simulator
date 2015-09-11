@@ -1805,3 +1805,24 @@ ul.newsticker, ul.newsticker-quotes {
     float: right;
     margin: 0 0px 0px 10px;
 }
+
+.site-contact {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+#map-rialachas {
+    height: 300px;
+    width: 100%;
+}
+
+.site-contact-desc {
+    background: #fff;
+
+}
+
+.line {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
