@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-$this->title = 'My Yii Application';
+$this->title = 'PT Rialachas | Our Training Program';
 ?>
 
 <div class="login-content2 first-content parallax" id="index-content">

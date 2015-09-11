@@ -44,7 +44,7 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
         </div>
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
-                <li class="active"><?php echo Html::a('Homes', ['/'], ['class'=>'external']); ?></li>
+                <li class="active"><?php echo Html::a('Homes', ['index'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Consultancy Services', ['services'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Training', ['training'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Product', ['product'], ['class'=>'external']); ?></li>
