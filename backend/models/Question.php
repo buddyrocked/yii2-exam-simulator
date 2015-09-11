@@ -116,6 +116,15 @@ class Question extends \yii\db\ActiveRecord
         endif;
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getQuestionRightOptions()
+    {
+        return $this->hasMany(QuestionOption::className(), ['question_id' => 'id'])->where(['is_correct'=>true]);
+        
+    }
+
     public function getLastNumber(){
         return $this::find()->andWhere(['subject_id' => $this->subject_id]);
     }

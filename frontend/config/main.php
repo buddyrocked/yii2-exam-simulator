@@ -28,6 +28,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                                '@app/views' => '@backend/themes/adminLTE'
+                            ],
+                //'baseUrl' => '@backend/themes/budi-layout',
+            ],
+        ],
     ],
     'params' => $params,
 ];

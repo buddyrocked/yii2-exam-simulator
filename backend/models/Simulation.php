@@ -122,4 +122,12 @@ class Simulation extends \yii\db\ActiveRecord
         return $lists[$this->timer_mode];
     }
 
+    public function getScore(){
+        return $this->getSimulationQuestions()->with(['simulationQuestionAnswers','question'=>function($query){
+            $query->with('questionOptions')->where('is_correct'=>1)
+        }])->select('simulation_question.id, simulation_question.question_id');
+    }
+
+
+
 }

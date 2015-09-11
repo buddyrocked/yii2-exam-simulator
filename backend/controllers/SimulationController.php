@@ -231,4 +231,10 @@ class SimulationController extends Controller
 
         return $this->redirect(['/site/dashboard']);
     }
+
+    public function getScore($id){
+        $model = Simulation::findOne($id);
+        $qustions = $model->getSimulationQuestions()->select('id')->all()->assArray();
+        //$answer = 
+    }
 }

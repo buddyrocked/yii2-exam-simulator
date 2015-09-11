@@ -23,6 +23,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="well">
                                 <h1 class="bebas">Congratulation Guys..!!!</h1>
                                 <div>Exam Simulation already finish.</div>
+                                <pre>
+                                <?php print_r($model->getScore()->asArray()->all()); ?>
+                                </pre>
                             </div>
                         </div>
                     </div>
