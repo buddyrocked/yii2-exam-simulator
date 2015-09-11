@@ -10,7 +10,7 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->title = UserManagementModule::t('front', 'Authorization');
+//$this->title = UserManagementModule::t('front', 'Authorization');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -38,25 +38,20 @@ $this->title = UserManagementModule::t('front', 'Authorization');
             </button>
             <a class="navbar-brand" href="#">
                 <div>
-                <img src="" alt="">                </div>
+                <?= Html::img('@web/uploads/logo.png', ['style'=>'']); ?>               
+                </div>
             </a>
         </div>
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
                 <li class="active"><?php echo Html::a('Homes', ['/'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Features', '#features'); ?></li>
-                <li><?php echo Html::a('About', '#about'); ?></li>
-                <li><?php echo Html::a('Contact', '#contact'); ?></li>
-                <?php if (Yii::$app->user->isGuest): ?>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><?php echo Html::a('Login', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
-                            <li role="separator" class="divider"></li>
-                            <li><?php echo Html::a('Registration', ['/user-management/auth/registration'], ['class'=>'external']); ?></li>
-                        </ul>
-                    </li>
-                <?php else: ?>
+                <li><?php echo Html::a('Consultancy Services', ['services'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Training', ['training'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Product', ['product'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Our Client & Partners', ['partners'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Contact', ['contact'], ['class'=>'external']); ?></li>
+                <?php if (!Yii::$app->user->isGuest): ?>
+                    
                     <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
                 <?php endif; ?>
             </ul>

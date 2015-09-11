@@ -161,7 +161,7 @@ $this->title = 'My Yii Application';
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="text-center">
-                                        <i class="fa fa-bank fa-3x fa-pull-left"></i>
+                                        <i class="fa fa-laptop fa-3x fa-pull-left"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
@@ -177,7 +177,7 @@ $this->title = 'My Yii Application';
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="text-center">
-                                        <i class="fa fa-money fa-3x fa-pull-left"></i>
+                                        <i class="fa fa-building-o fa-3x fa-pull-left"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-10">

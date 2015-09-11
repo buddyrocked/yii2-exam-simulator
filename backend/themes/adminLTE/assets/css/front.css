@@ -1375,6 +1375,15 @@ ul.newsticker, ul.newsticker-quotes {
     margin: 0px !important;
 }
 
+.login-content2 {
+    background: url(../images/bg-home.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 120px 0 20px 0;
+    width: 100%;
+    margin: 0px !important;
+}
+
 
 .process {
     background: #fff;
@@ -1592,6 +1601,10 @@ ul.newsticker, ul.newsticker-quotes {
     margin: 10px 0;
 }
 
+.navbar-custom-login.active .navbar-header {
+    margin: -10px 0;
+}
+
 .navbar-nav.nav-login li a {
     color: #134678;
     font-size: 1.2em;
@@ -1620,7 +1633,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 #index-content {
-    min-height: 600px;
+    min-height: 100px;
 }
 
 /* Mockup */
@@ -1663,6 +1676,15 @@ ul.newsticker, ul.newsticker-quotes {
     color: #fff;
     font-size: 1.3em;
     margin: 50px 0 30px 0;
+    padding: 20px;
+    text-align: justify;
+}
+
+.index-intro2 {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 1.3em;
+    margin: 0px 0 0px 0;
     padding: 20px;
     text-align: justify;
 }
@@ -1768,4 +1790,18 @@ ul.newsticker, ul.newsticker-quotes {
     font-size: 1.8em;
     display: inline-block;
     margin-right: 10px;
+}
+
+.img-left {
+    height: 70px !important;
+    width: auto !important;
+    float: left;
+    margin: 0 10px 0px 0;
+}
+
+.img-right {
+    height: 70px !important;
+    width: auto !important;
+    float: right;
+    margin: 0 0px 0px 10px;
 }
