@@ -88,11 +88,11 @@ class SiteController extends Controller
 
     public function actionPartners()
     {
-        return $this->render('Partners');
+        return $this->render('partners');
     }    
 
-    
-    
+
+
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
