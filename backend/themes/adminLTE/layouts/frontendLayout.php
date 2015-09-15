@@ -4,6 +4,7 @@ use webvimark\modules\UserManagement\UserManagementModule;
 use webvimark\modules\UserManagement\components\GhostHtml;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use kartik\widgets\Growl;
 dmstr\web\AdminLteAsset::register($this);
 backend\themes\adminLTE\components\FrontendAsset::register($this);
 
@@ -26,6 +27,25 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
 <body>
 
 <?php $this->beginBody() ?>
+<?php foreach (Yii::$app->session->getAllFlashes() as $message): ?>
+<?php
+    echo Growl::widget([
+        'type' => (!empty($message['type'])) ? $message['type'] : 'danger',
+        'title' => (!empty($message['title'])) ? Html::encode($message['title']) : 'Title Not Set!',
+        'icon' => (!empty($message['icon'])) ? $message['icon'] : 'fa fa-info',
+        'body' => (!empty($message['message'])) ? Html::encode($message['message']) : 'Message Not Set!',
+        'showSeparator' => true,
+        'delay' => 1,
+        'pluginOptions' => [
+            'delay' => (!empty($message['duration'])) ? $message['duration'] : 3000,
+            'placement' => [
+                'from' => (!empty($message['positonY'])) ? $message['positonY'] : 'top',
+                'align' => (!empty($message['positonX'])) ? $message['positonX'] : 'right',
+            ]
+        ]
+    ]);
+?>
+<?php endforeach; ?>
 <div class="navbar navbar-fixed-top navbar-custom-login" role="navigation">
     <div class="navbar-top"></div>
     <div class="container">
@@ -44,15 +64,22 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
         </div>
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
-                <li class="active"><?php echo Html::a('Homes', ['index'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Consultancy Services', ['services'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Training', ['training'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Product', ['product'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Our Client & Partners', ['partners'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Contact', ['contact'], ['class'=>'external']); ?></li>
+                <li class="active"><?php echo Html::a('Homes', ['/site/index'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Consultancy Services', ['/site/services'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Training', ['/site/training'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Product', ['/site/product'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Our Client & Partners', ['/site/partners'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Contact', ['/site/contact'], ['class'=>'external']); ?></li>
                 <?php if (!Yii::$app->user->isGuest): ?>
                     
-                    <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><?php echo Html::a('Manage Content', ['/cms/index'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li class=""><?php echo Html::a('Logout', ['/site/logout'], ['class'=>'external', 'data-method'=>'post']); ?></li>
+                        </ul>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div><!-- /.nav-collapse -->

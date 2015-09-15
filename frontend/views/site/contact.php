@@ -7,7 +7,7 @@ use yii\captcha\Captcha;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\ContactForm */
 
-$this->title = 'PT Rialachas | Contact';
+$this->title = 'PT Rialachas | Contact Us';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact first-content">
@@ -45,41 +45,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="title-section text-centers">
                     <span>Our Office</span>
                 </div>
-                <div>
-                    
-                    <div>
-                        <div class="text-bold text-upper"><i class="fa fa-building"></i> Jakarta Office:</div>
-                        <div>&nbsp;</div>
-                        <div>Menara Palma 12th Floor</div>
-                        <div>Jalan HR Rasuna Said Blok X2 Kav 6 </div>
-                        <div>Jakarta, Indonesia 12950</div>
-                        <div>P: +62.21.2939.1106, +62.21.7088.2248</div>
-                        <div>F: +62.21.29.39.12.22</div>
-                        <div>E: <a href="mailto:contact@rialachas.com">contact@rialachas.com</a></div>
-                    </div>
-                </div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-                <div>
-                    <div>
-                        <div class="text-bold text-upper"><i class="fa fa-building"></i> Bintaro Office:</div>
-                        <div>&nbsp;</div>
-                        <div>Jalan Cut Mutia 1 FG-2 No. 42A Bintaro Sektor 7</div>
-                        <div>Tangerang Selatan, Indonesia</div>
-                        <div>P: +62.21.7451.276, +62.21.7088.2248</div>
-                        <div>F: +62.21.29.39.12.22</div>
-                    </div>
-                </div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-                <div>
-                    <div>
-                        <div class="text-bold text-upper"><i class="fa fa-male"></i> Contact Person:</div>
-                        <div>&nbsp;</div>
-                        <div><a href="mailto:resdy@rialachas.com">Resdy Benyamin (Director)</a></div>
-                        <div>P: +62.812.885.6563 (mobile)</div>
-                    </div>
-                </div>
+                <?php if($address != null): ?>
+                    <?= Html::decode($address->content); ?>
+                <?php endif; ?>
             </div>
             <div class="col-md-12">
                 <div class="process">

@@ -2,6 +2,9 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 $this->title = 'Rialachas | Our Developed Products';
 ?>
 
@@ -52,38 +55,27 @@ $this->title = 'Rialachas | Our Developed Products';
 <div class="services" id="features">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <div class="process-item">
-                    <div class="process-desc text-upper text-bold">
-                        R-LIMS
-                    </div>
-                    <div class="process-content">
-                        <?= Html::img('@web/uploads/rlms.png', ['class'=>'img-right']); ?>
-                        Rialachas has developed a software product called R-LIMS (Rialachas Laboratory Information Management System) which helps the management of research activities within the Laboratory for the lab analysts and the management.
-
-                        R-LIMS assist our clients (including private, public, and university laboratories) in ensuring the compliance with the regulations and business process consistency.
-
-                        R-LIMS is capable to assist the handling and documenting the process of laboratory analysis sample testing. Thus, the implementation of R-LIMS increases client's credibility from the  perspective of customers and regulators
-
-                        To see how it works, please review the product demo.
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="process-item">
-                    <div class="process-desc text-upper text-bold">
-                        R-CES
-                    </div>
-                    <div class="process-content">
-                        <?= Html::img('@web/uploads/rces.png', ['class'=>'img-right']); ?>
-                        R-CES (Rialachas Certification Exam Simulator) is a software suite developed by Rialachas to assist and prepare the certification exam candidates with practice simulator of the real exam. R-CES supports the simulation of the most popular certification scheme, such as ITIL, CISSP, CISA, CISM, CRISC, and CGEIT certification exams.
-
-                        R-CES is an adaptive and interactive software application that will produce questions, responds to the users' answers, analyze the user behavior, and provide the exam simulation results that will help the users to evaluate and increase their performance before taking the real certification exam. It helps our clients in preparing their dedicated individuals for certification.
-
-                        To see how it works, please review the product demo.
-                    </div>
-                </div>
-            </div>
+            <?php \yii\widgets\Pjax::begin(['id'=>'pjax-news', 'timeout' => false,'enablePushState' => false,'linkSelector' => 'a.download']); ?>                   
+            <?php
+                $dataProvider = new ActiveDataProvider([
+                    'query' => $products,
+                    'pagination' => [
+                        'pageSize' => 6,
+                    ],
+                ]);
+                
+                echo ListView::widget([
+                    'id'=>'record-gridview',
+                    'dataProvider' => $dataProvider,
+                    'itemView' => '_product',
+                    'itemOptions'=>['tag'=>'div', 'class'=>'grid-itemx'],
+                    'options'=>['class'=>'gridx', 'tag'=>'div'],
+                    'layout' => '{items}<div class="grid-item" style="display:block; width:100% !important;">{pager}</div>'
+                ]);
+        
+                
+            ?>
+            <?php \yii\widgets\Pjax::end(); ?>
             
         </div>
     </div>

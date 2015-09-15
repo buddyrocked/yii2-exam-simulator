@@ -2,6 +2,10 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
+
 $this->title = 'PT Rialachas | Our Training Program';
 ?>
 
@@ -57,21 +61,26 @@ $this->title = 'PT Rialachas | Our Training Program';
     </div>
     <div class="container">
         <div class="row">
+            <?php
+            if($trainings != null): 
+                foreach ($trainings as $training):
+            ?>
             <div class="col-md-4">
                 <div class="process-item">
                     <div class="process-desc text-upper text-bold">
-                        CISA Preparation Course
+                        <?= Html::encode($training->title); ?>
                     </div>
                     <div class="process-content">
-                        <?= Html::img('@web/uploads/cissa.jpg', ['class'=>'img-left']); ?>
-                        Certified Information Systems Auditor (CISA) is an audit professional certification sponsored by the Information Systems Audit and Control Association (ISACA). This certification demonstrates exceptional skill and judgment in the IS audit, control and security profession. It gives a better understanding of information security audit process and better awareness on how to protect information systems.
-
-                        Rialachas offers an intensive 5-day Certification classroom training with 
-                        experienced and expert trainers in your city.
+                        <?= Html::img('@web/uploads/cms/'.$training->image, ['class'=>'img-left']); ?>
+                        <?= Html::decode($training->content); ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <?php 
+                endforeach;
+            endif; 
+            ?>
+            <!--<div class="col-md-4">
                 <div class="process-item">
                     <div class="process-desc text-upper text-bold">
                         CISSP Preparation Course
@@ -196,9 +205,41 @@ Topics
 <div class="paragraph"><span style="font-size: small;">In Rialachas, we maintain dynamic, empowering, energetic and knowledgeable trainers that undergo rigorous screening processes before earning a place on our distinguished roster. We make a tight selection from among highly talented individuals who are carefully matched by expertise, complementary skill sets and delivery style to our client training requirements.</span></div>'); ?>
                     </div>
                 </div>
-            </div>
+            </div>-->
             
         </div>
     </div>
     <div>&nbsp;</div>
+    <div class="title-section text-center">
+        <span>Latest Events</span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php \yii\widgets\Pjax::begin(['id'=>'pjax-news', 'timeout' => false,'enablePushState' => false,'linkSelector' => 'a.download']); ?>                   
+            <?php
+                $dataProvider = new ActiveDataProvider([
+                    'query' => $events,
+                    'pagination' => [
+                        'pageSize' => 1,
+                    ],
+                ]);
+                
+                echo ListView::widget([
+                    'id'=>'record-gridview',
+                    'dataProvider' => $dataProvider,
+                    'itemView' => '_event',
+                    'itemOptions'=>['tag'=>'div', 'class'=>'grid-itemx'],
+                    'options'=>['class'=>'gridx', 'tag'=>'div'],
+                    'layout' => '{items}<div class="grid-item" style="display:block; width:100% !important;">{pager}</div>'
+                ]);
+        
+                
+            ?>
+            <?php \yii\widgets\Pjax::end(); ?>
+            
+            <div class="col-md-12">
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
 </div>

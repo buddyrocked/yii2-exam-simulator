@@ -2,7 +2,8 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-$this->title = 'My Yii Application';
+use yii\helpers\Url;
+$this->title = '| Consulting | Implementation | Audit | Training | - Rialachas ...means governance';
 ?>
 
 <div class="login-content first-content parallax" id="index-content">
@@ -16,7 +17,7 @@ $this->title = 'My Yii Application';
                     </div>
                     <div>&nbsp;</div>
                     <div>
-                    <a class="btn btn-green btn-lg"> Our Services <i class="fa fa-chevron-right"></i></a>
+                    <a href="<?= Url::to(['site/services']); ?>" class="btn btn-green btn-lg"> Our Services <i class="fa fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -29,76 +30,30 @@ $this->title = 'My Yii Application';
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <?php
+            if($latest_issues != null): 
+                foreach ($latest_issues as $issue):
+            ?>
+
+            <div class="col-md-3 colapse">
                 <div class="process-item">
                     <div class="process-desc text-center text-upper">
-                        Business Continuity Management
+                        <?= Html::encode($issue->title); ?>
                     </div>
                     <div class="process-img">
-                        <?= Html::img('@web/uploads/business_continuity_management.jpg', []); ?>
+                        <?= Html::img('@web/uploads/cms/'.$issue->image, []); ?>
+                        <div class="process-img-hover"></div>
                     </div>
                     <div class="process-content">
-                        Information and systems must be available at all times. Stakeholders currently expect information and systems to be accessible whenever they need. The availability of IT services becomes a high priority and strategic issue because there is growing evidence of stakeholders frustration when information and systems are inaccessible. More that 70% of IT managers think that availability must be considered beyond IT infrastructure issue. 
-
-                        In Rialachas, we can help your organization to develop the management process that identifies potential impacts that threaten an organisation and provides a framework for building resilience and the capability for an effective response which safeguards the interests of key stakeholders, reputation, brand and value creating activities.
-
-                        We can help you to develop Business continuity planning (BCP), a formalized set of documents that identifies an organization exposure to threats - both internal and external, and synthesizes assets to provide effective prevention and recovery for the organization, while maintaining competitive advantage and value system integrity.
+                        <?= Html::decode($issue->content); ?>    
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="process-item">
-                    <div class="process-desc text-center text-upper">
-                        Risk Assessment
-                    </div>
-                    <div class="process-img">
-                        <?= Html::img('@web/uploads/Credit-Portfolio-Risk-Management.jpg', []); ?>
-                    </div>
-                    <div class="process-content">
-                        Risk is a natural part of the business landscape. If risks are managed effectively, losses could be avoided and benefits obtained. Almost every business decision requires senior level menagement to balance risks. Effectively managing the business risks is essential to organizations' success.
-
-                        As a step in a risk management, risk assessment is the determination of quantitative or qualitative value of risk related to a concrete and recognized threats. 
-
-                        In Rialachas, we could help your organization to build management tools which provides a systematic approach for determining the relative value and sensitivity of information systems assets, assessing vulnerabilities, assessing loss expectancy or perceived risk exposure levels, assessing existing protection features and additional protection alternatives or acceptance of risks and documenting management decisions.    
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="process-item">
-                    <div class="process-desc text-center text-upper">
-                        The Governance of Enterprise IT
-                    </div>
-                    <div class="process-img">
-                        <?= Html::img('@web/uploads/server-farm-2.jpg', []); ?>
-                    </div>
-                    <div class="process-content">
-                        It is clear that business value from IT investments cannot be realized by IT, but will always be created on the business side. This realization that the involvement of business is crucial initiated a shift in the definition toward enterprise governance of IT. 
-
-                        Governance of enterprise IT is an integral part of corporate governance and addresses the definition and implementation of processes, structures and relational mechanisms in the organizations that enable both business and IT people to execute their responsibilities in support of business-IT alignment and the creation of business value from IT-enabled investments. COBIT and ISO 38500 has helped clarify governance of enterprise IT by describing it as the management system used by directors. 
-
-                        In order to be competitive, your organization needs flexible and responsive enterprise IT. In Rialachas we could help you to realize effective governance of enterprise IT. We utilize our assets in form of intellectual capital and experiences in IT consultancy services along with industry leading practices to assist your organization in establishing the governance of enterprise IT.
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="process-item">
-                    <div class="process-desc text-center text-upper">
-                        Bring Your Own Device
-                    </div>
-                    <div class="process-img">
-                        <?= Html::img('@web/uploads/browser.jpg', []); ?>
-                    </div>
-                    <div class="process-content">
-                        A new trend that potentially make many companies set up business policy that allows employees to bring personally owned computing devices to work premises and use them to access company resources such as files, emails, databases and applications, has emerged. 
-
-                        Bring your own device (BYOD) is such trend that makes important invasion in the business world. The fact is that 90% of employees have already used their own devices at work. In many cases, businesses simply are not able to avoid the trend. 
-
-                        Our firm can help you setting up policies related to BYOD approach that 
-                        enables your users to be permitted to possess certain access rights to 
-                        enterprise applications and information on personally owned devices aligned by compliance with user acceptance of enterprise security and management policies.
-                    </div>
-                </div>
-            </div>
+            <?php 
+                endforeach;
+            endif; 
+            ?>
+            
         </div>
     </div>
     <!--
@@ -156,47 +111,32 @@ $this->title = 'My Yii Application';
                     <span>Our Services</span>
                 </div>
                 <div class="row">
+                    <?php
+                    if($services != null): 
+                        foreach ($services as $service):
+                    ?>
                     <div class="col-md-12">
                         <div class="services-item">
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="text-center">
-                                        <i class="fa fa-laptop fa-3x fa-pull-left"></i>
+                                        <i class="fa fa-laptop fa-4x fa-pull-left text-green"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="services-item-title">
-                                        Vulnerability Assessment and Penetration Testing
+                                        <?= Html::encode($service->title); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="services-item">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="text-center">
-                                        <i class="fa fa-building-o fa-3x fa-pull-left"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-item-title">
-                                        IT Strategy and Enterprise Architecture 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="services-item">
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <a class="btn btn-green btn-lg btn-block"> Our Services </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
+                    <?php 
+                        endforeach;
+                    endif; 
+                    ?>
+                    <div>&nbsp;</div>
+                    <a href="<?= Url::to(['site/services']); ?>" class="btn btn-green btn-lg btn-block"> Our Services <i class="fa fa-chevron-right"></i></a>
                 </div>
             </div>
             <div class="col-md-8">   

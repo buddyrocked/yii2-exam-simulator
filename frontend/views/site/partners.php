@@ -2,6 +2,9 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 $this->title = 'PT Rialachas | Our Partners & Clients';
 ?>
 
@@ -22,8 +25,29 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
         <span>Our Partners & Clients</span>
     </div>
     <div class="container">
-        <div class="row">            
-            <div class="col-md-12">
+        <div class="row"> 
+            <?php \yii\widgets\Pjax::begin(['id'=>'pjax-news', 'timeout' => false,'enablePushState' => false,'linkSelector' => 'a.download']); ?>                   
+            <?php
+                $dataProvider = new ActiveDataProvider([
+                    'query' => $clients,
+                    'pagination' => [
+                        'pageSize' => 10,
+                    ],
+                ]);
+                
+                echo ListView::widget([
+                    'id'=>'record-gridview',
+                    'dataProvider' => $dataProvider,
+                    'itemView' => '_partners',
+                    'itemOptions'=>['tag'=>'div', 'class'=>'grid-itemx'],
+                    'options'=>['class'=>'gridx', 'tag'=>'div'],
+                    'layout' => '{items}<div class="grid-item" style="display:block; width:100% !important;">{pager}</div>'
+                ]);
+        
+                
+            ?>
+            <?php \yii\widgets\Pjax::end(); ?>           
+            <!--<div class="col-md-12">
                 <div class="process-item line">
                     <div class="row">
                         <div class="col-md-2">
@@ -59,7 +83,7 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                             </div>
                             <div class="process-content">
                                 <?= Html::img('@web/uploads/garuda1.jpg', ['class'=>'img-left']); ?>
-                               In order to increase its IT staffs capability and skill in IT service management, GMF Aeroasia, affiliate of Garuda Indonesia for maintenance, required them to be certified in IT Infrastructure Library (ITIL) Foundation for ITSM. The objective of the training is to provide the participants fundamental knowledge and concept on IT service management based on ITIL framework. We, partnering with examination center, conducted preparation training  to prepare the participants to successfully pass the exam on the last day of the training.
+                               In order to increase its IT staffs capability and skill in IT partner management, GMF Aeroasia, affiliate of Garuda Indonesia for maintenance, required them to be certified in IT Infrastructure Library (ITIL) Foundation for ITSM. The objective of the training is to provide the participants fundamental knowledge and concept on IT partner management based on ITIL framework. We, partnering with examination center, conducted preparation training  to prepare the participants to successfully pass the exam on the last day of the training.
                             </div>
                         </div>
                     </div>
@@ -82,7 +106,7 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                                 <?= Html::img('@web/uploads/nipon1.jpg', ['class'=>'img-left']); ?>
                                 We provide training on ISO/IEC 27001:2005 for PT Nippon Shokubai Indonesia. The in-house training package consists of two programs: Introduction to ISO 27001 and ISO 27001 Internal Audit. The Standard formally specifies a management system that is intended to bring information security under explicit management control. Being a formal specification means that it mandates specific requirements.
 
-                                Organizations that claim to have adopted ISO/IEC 27001 can therefore be formally audited and certified compliant with the standard. Management of Nippon Shokubai Indonesia plans to adopt Information Security Management Service and apply it in the organization.
+                                Organizations that claim to have adopted ISO/IEC 27001 can therefore be formally audited and certified compliant with the standard. Management of Nippon Shokubai Indonesia plans to adopt Information Security Management partner and apply it in the organization.
                             </div>
                         </div>
                     </div>
@@ -148,7 +172,7 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                             </div>
                             <div class="process-content">
                                 <?= Html::img('@web/uploads/jaksa1.jpg', ['class'=>'img-left']); ?>
-                                Rialachas assisted Kejaksaan RI in managing and administrating the development of its ERP. Rialachas introduced  software quality assurance framework in Kejaksaan and also assisted the implementation  of the software development activities in Kejaksaan. We also provide project management and administration services that ensure the success of the software development initiatives in Kejaksaan.
+                                Rialachas assisted Kejaksaan RI in managing and administrating the development of its ERP. Rialachas introduced  software quality assurance framework in Kejaksaan and also assisted the implementation  of the software development activities in Kejaksaan. We also provide project management and administration partners that ensure the success of the software development initiatives in Kejaksaan.
                             </div>
                         </div>
                     </div>
@@ -252,7 +276,7 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                             </div>
                             <div class="process-content">
                                 <?= Html::img('@web/uploads/bayu1.png', ['class'=>'img-left']); ?>
-                                Rialachas design a program for capacity building in accordance to IT Governance such as Balanced Scorecard, Enterprise Architecture, IT Service Management, and IT Risk Management.
+                                Rialachas design a program for capacity building in accordance to IT Governance such as Balanced Scorecard, Enterprise Architecture, IT partner Management, and IT Risk Management.
                             </div>
                         </div>
                     </div>
@@ -366,12 +390,12 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                             </div>
                             <div class="process-content">
                                 <?= Html::img('@web/uploads/telkom1.jpg', ['class'=>'img-left']); ?>
-                                Rialachas with Telkom Professional Certification Center (TPCC) and Telkom Corporate University conducted ITIL Intermediate training and examination for Service Strategy and Service Transition module.
+                                Rialachas with Telkom Professional Certification Center (TPCC) and Telkom Corporate University conducted ITIL Intermediate training and examination for partner Strategy and partner Transition module.
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="col-md-12"> 
             &nbsp;
             </div>
@@ -380,18 +404,22 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                     <span>Our Partners</span>
                 </div>
             </div>
+            <?php
+                if($partners != null): 
+                    foreach ($partners as $partner):
+            ?>
             <div class="col-md-6">
                 <div class="process-item line">
                     <div class="row">
                         <div class="col-md-4">
                             <div>&nbsp;</div>
                             <div class="process-img">
-                                <?= Html::img('@web/uploads/pecbjpg.jpg', []); ?>
+                                <?= Html::img('@web/uploads/cms/'.(isset($partner->image)?$partner->image:''), []); ?>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="text-upper text-bold">
-                               Professional Evaluation and Certification Board (PECB)
+                               <?= Html::encode($partner->title); ?>
                             </div>
                             <div class="process-content">
                             </div>
@@ -399,26 +427,10 @@ $this->title = 'PT Rialachas | Our Partners & Clients';
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="process-item line">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div>&nbsp;</div>
-                            <div class="process-img">
-                                <?= Html::img('@web/uploads/meraki.jpg', []); ?>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="text-upper text-bold">
-                                Information Systems Audit and Control Association (ISACA)
-Indonesia Chapter
-                            </div>
-                            <div class="process-content">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                    endforeach;
+                endif;
+            ?>
         </div>
     </div>
 </div>

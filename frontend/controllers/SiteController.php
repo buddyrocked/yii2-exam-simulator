@@ -7,6 +7,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Cms;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -68,27 +69,39 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $latest_issues = Cms::find()->where(['type'=>1])->all();
+        $services = Cms::find()->where(['type'=>3])->all();
+        return $this->render('index', [
+            'latest_issues'=>$latest_issues,
+            'services'=>$services
+        ]);
     }
 
     public function actionServices()
     {
-        return $this->render('services');
+        $services = Cms::find()->where(['type'=>3])->all();
+        return $this->render('services', ['services'=>$services]);
     }
 
     public function actionProduct()
     {
-        return $this->render('product');
+        $products = Cms::find()->where(['type'=>5])->orderBy('updated DESC');
+        return $this->render('product', ['products'=>$products]);
     }
 
     public function actionTraining()
-    {
-        return $this->render('training');
+    {   
+        $trainings = Cms::find()->where(['type'=>2])->all();
+        $events = Cms::find()->where(['type'=>4])->orderBy('updated DESC');
+                
+        return $this->render('training', ['trainings'=>$trainings, 'events'=>$events]);
     }
 
     public function actionPartners()
     {
-        return $this->render('partners');
+        $clients = Cms::find()->where(['type'=>6])->orderBy('updated DESC');
+        $partners = Cms::find()->where(['type'=>7])->all();
+        return $this->render('partners', ['clients'=>$clients, 'partners'=>$partners]);
     }    
 
 
@@ -119,17 +132,37 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
+        $address = Cms::find()->where(['title'=>'address'])->one();
+        $hire = Cms::find()->where(['title'=>'hire'])->one();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'info',
+                    'duration' => 500000,
+                    'icon' => 'fa fa-volume-up',
+                    'message' => 'Thank you for contacting us. We will respond to you as soon as possible..',
+                    'title' => 'Information',
+                    'positonY' => 'bottom',
+                    'positonX' => 'right'
+                ]);
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'info',
+                    'duration' => 500000,
+                    'icon' => 'fa fa-volume-up',
+                    'message' => 'There was an error sending email.',
+                    'title' => 'Information',
+                    'positonY' => 'bottom',
+                    'positonX' => 'right'
+                ]);
             }
 
             return $this->refresh();
         } else {
             return $this->render('contact', [
                 'model' => $model,
+                'address' => $address,
+                'hire' => $hire
             ]);
         }
     }

@@ -40,6 +40,24 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'suffix' => '.html',
+            'rules'=> [
+                'home'=>'site/index',
+                'services'=>'site/services',
+                'partners'=>'site/partners',
+                'products'=>'site/product',
+                'trainings'=>'site/training',
+                'contact'=>'site/contact',
+                'login'=>'site/login'
+
+            ]
+        ],
+    ],
+    'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+            'uploadDir' => '@frontend/web/uploads/editor',
+            'uploadUrl' => '@web/uploads/editor',
+            'imageAllowExtensions'=>['jpg','png','gif']
         ],
     ],
     'params' => $params,

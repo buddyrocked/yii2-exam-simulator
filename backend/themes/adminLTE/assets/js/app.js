@@ -363,5 +363,7 @@ function initialize() {
 }
 
 $(document).ready(function(){
-	initialize();
+	if($('#map-rialachas').length > 0){
+		initialize();
+	}
 });
