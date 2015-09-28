@@ -36,6 +36,7 @@ use Yii;
 class RegistrationFormProfile extends RegistrationForm
 {
     public $first_name;
+    public $surname;
     public $user_id;
 
     /**
@@ -46,8 +47,8 @@ class RegistrationFormProfile extends RegistrationForm
         $rules = [
             ['captcha', 'captcha', 'captchaAction'=>'/user-management/auth/captcha'],
 
-            [['username', 'password', 'repeat_password', 'captcha', 'first_name'], 'required'],
-            [['username', 'password', 'repeat_password', 'first_name'], 'trim'],
+            [['username', 'password', 'repeat_password', 'captcha', 'first_name', 'surname'], 'required'],
+            [['username', 'password', 'repeat_password', 'first_name', 'surname'], 'trim'],
 
             ['username', 'unique',
                 'targetClass'     => 'webvimark\modules\UserManagement\models\User',
@@ -86,7 +87,7 @@ class RegistrationFormProfile extends RegistrationForm
             'user_id' => 'User ID',
             'first_name' => 'First Name',
             'middle_name' => 'Middle Name',
-            'surname' => 'Surname',
+            'surname' => 'Last Name',
             'display_surname_preference' => 'Display Surname Preference',
             'suffix' => 'Suffix',
             'gender_id' => 'Gender ID',
@@ -121,6 +122,7 @@ class RegistrationFormProfile extends RegistrationForm
 
         $model->user_id = $user->id;
         $model->first_name = $this->first_name;
+        $model->surname = $this->surname;
 
         $model->save(false);
     }

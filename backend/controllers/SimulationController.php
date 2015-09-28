@@ -11,6 +11,7 @@ use backend\models\SimulationQuestionAnswer;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * SimulationController implements the CRUD actions for Simulation model.
@@ -122,6 +123,22 @@ class SimulationController extends Controller
         }
     }
 
+     /**
+     * Finds the Simulation model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Simulation the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findMine($id, $status = 0)
+    {
+        if (($model = Simulation::find()->where(['id'=>$id])->andWhere(['user_id'=>Yii::$app->user->id])->andWhere(['status'=>$status])->one()) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
     /**
      * Finds the Subject model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -177,18 +194,48 @@ class SimulationController extends Controller
 
     public function actionQuestion($id, $question){
         $this->layout = 'main-question';
+        $mine = $this->findMine($id, 0);
         $modelQuestion = SimulationQuestion::findOne($question);
-        $modelsAnswer = new SimulationQuestionAnswer;
+        if($modelQuestion->status == 0):
+            $modelsAnswer = new SimulationQuestionAnswer;
+        else:
+            $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
+        endif;
+
         if ($modelsAnswer->load(Yii::$app->request->post())) {
 
+            $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
+            
+            if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
+                if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
+                    $modelQuestion->correct = 1;
+                else:
+                    $modelQuestion->correct = 0;
+                endif;
+            else:
+                if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
+                    $modelQuestion->correct = 1;
+                else:
+                    $modelQuestion->correct = 0;
+                endif;
+            endif;
+
             $modelsAnswer->simulation_question_id = $modelQuestion->id;
-            $modelsAnswer->status = 1;
+            if(Yii::$app->request->post('mark') != null):
+                $modelQuestion->status = 2;
+            else:
+                $modelQuestion->status = 1;
+            endif;
+
+            $modelsAnswer->status = 0;
+
             if($modelsAnswer->save()):
-                $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->orderBy('id ASC')->one();
+                $modelQuestion->save();
+                $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
                 if($modelNext != null):
                     return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
                 else:
-                    return $this->redirect(['finish', 'id' => $id]);
+                    return $this->redirect(['review', 'id' => $id]);
                 endif;
             else:
                 return $this->render('question', [
@@ -205,8 +252,17 @@ class SimulationController extends Controller
     }
 
     public function actionFinish($id){
-        $model = $this->findModel($id);
+        $model = $this->findMine($id, 1);
         return $this->render('finish', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionReview($id){
+        
+        $this->layout = 'main-question';
+        $model = $this->findMine($id, 0);
+        return $this->render('review', [
             'model' => $model,
         ]);
     }
@@ -229,7 +285,7 @@ class SimulationController extends Controller
             'positonX' => 'right'
         ]);
 
-        return $this->redirect(['/site/dashboard']);
+        return $this->redirect(['finish', 'id'=>$id]);
     }
 
     public function getScore($id){

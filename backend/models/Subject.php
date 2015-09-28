@@ -118,4 +118,16 @@ class Subject extends \yii\db\ActiveRecord
 
         return $questions;
     }
+
+    public function convertToHoursMins($time, $format = '%d:%d:00') {
+        settype($time, 'integer');
+        if ($time < 1) {
+            return;
+        }
+        $hours = floor($time / 60);
+        $minutes = ($time % 60);
+        return sprintf($format, $hours, $minutes);
+    }
+
+    
 }

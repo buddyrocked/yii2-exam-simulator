@@ -9,6 +9,11 @@ $(document).ready(function(){
             e.preventDefault();
         });
 
+        $('#clear-answer').click(function(e){
+        	$('input[type="radio"]').attr('checked', false);
+        	e.preventDefault();
+        });
+
         $('.btn-msg').click(function(e){
         	$.msg({ autoUnblock : false, clickUnblock : false });
         	e.preventDefault();

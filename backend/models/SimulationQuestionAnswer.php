@@ -32,7 +32,7 @@ class SimulationQuestionAnswer extends \yii\db\ActiveRecord
     {
         return [
             [['simulation_question_id', 'question_option_id', 'status'], 'required'],
-            [['simulation_question_id', 'question_option_id', 'status'], 'integer']
+            [['simulation_question_id', 'status'], 'integer']
         ];
     }
 

@@ -256,6 +256,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<!--
 <div class="pricing">
     <div class="container">
         <div class="row">            
@@ -307,4 +308,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>    
     </div>
 </div>
-
+-->
