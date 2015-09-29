@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1eaf1d1f206bfb653d50d156e76f1171",
+    "hash": "341546345e999569f611e247caf04310",
+    "content-hash": "533da97c3a37f26d672200103ee1e9b4",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -254,7 +255,7 @@
                 "shasum": ""
             },
             "require": {
-                "bower-asset/get-style-property": "dev-1.x,|1.x"
+                "bower-asset/get-style-property": "dev-1.x|1.x"
             },
             "require-dev": {
                 "bower-asset/qunit": "~1.10"
@@ -460,7 +461,7 @@
             },
             "require-dev": {
                 "bower-asset/doc-ready": "*",
-                "bower-asset/qunit": "dev-1.x,|1.x"
+                "bower-asset/qunit": "dev-1.x|1.x"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -483,7 +484,7 @@
                 "shasum": ""
             },
             "require-dev": {
-                "bower-asset/qunit": "dev-1.x,|1.x"
+                "bower-asset/qunit": "dev-1.x|1.x"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -1053,16 +1054,16 @@
         },
         {
             "name": "kartik-v/bootstrap-checkbox-x",
-            "version": "v1.5.3",
+            "version": "v1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-checkbox-x.git",
-                "reference": "97c64891764e580cb25b6983dbc068758dc4a962"
+                "reference": "af83ff5293a79551cbb2fc38473318e6c5d25854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-checkbox-x/zipball/97c64891764e580cb25b6983dbc068758dc4a962",
-                "reference": "97c64891764e580cb25b6983dbc068758dc4a962",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-checkbox-x/zipball/af83ff5293a79551cbb2fc38473318e6c5d25854",
+                "reference": "af83ff5293a79551cbb2fc38473318e6c5d25854",
                 "shasum": ""
             },
             "type": "library",
@@ -1093,7 +1094,7 @@
                 "state",
                 "three"
             ],
-            "time": "2015-06-18 14:47:14"
+            "time": "2015-09-22 02:28:53"
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
@@ -1145,16 +1146,16 @@
         },
         {
             "name": "kartik-v/bootstrap-star-rating",
-            "version": "v3.5.3",
+            "version": "v3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-star-rating.git",
-                "reference": "bd9c52db6ac71cb270620c1aee601d142ab2cc00"
+                "reference": "987777ee21a599bebbc545c743063fcee9833842"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/bd9c52db6ac71cb270620c1aee601d142ab2cc00",
-                "reference": "bd9c52db6ac71cb270620c1aee601d142ab2cc00",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/987777ee21a599bebbc545c743063fcee9833842",
+                "reference": "987777ee21a599bebbc545c743063fcee9833842",
                 "shasum": ""
             },
             "type": "library",
@@ -1182,7 +1183,7 @@
                 "jquery",
                 "star"
             ],
-            "time": "2015-06-18 14:42:46"
+            "time": "2015-09-21 09:06:33"
         },
         {
             "name": "kartik-v/dependent-dropdown",
@@ -1271,16 +1272,16 @@
         },
         {
             "name": "kartik-v/yii2-checkbox-x",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-checkbox-x.git",
-                "reference": "c7c6e64ad4dcdd73840e124efa85eddbc983f991"
+                "reference": "4d0b7e6a7e0ac7b99fe270fae9773095976a551b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-checkbox-x/zipball/c7c6e64ad4dcdd73840e124efa85eddbc983f991",
-                "reference": "c7c6e64ad4dcdd73840e124efa85eddbc983f991",
+                "url": "https://api.github.com/repos/kartik-v/yii2-checkbox-x/zipball/4d0b7e6a7e0ac7b99fe270fae9773095976a551b",
+                "reference": "4d0b7e6a7e0ac7b99fe270fae9773095976a551b",
                 "shasum": ""
             },
             "require": {
@@ -1315,7 +1316,7 @@
                 "state",
                 "three"
             ],
-            "time": "2015-06-18 18:51:29"
+            "time": "2015-09-20 13:59:59"
         },
         {
             "name": "kartik-v/yii2-detail-view",
@@ -1323,12 +1324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-detail-view.git",
-                "reference": "6ae616b4c78c34150f6dafcd31989d98bbfea6c7"
+                "reference": "68160aec8610ad3a01899e98bd2b985a70a92436"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/6ae616b4c78c34150f6dafcd31989d98bbfea6c7",
-                "reference": "6ae616b4c78c34150f6dafcd31989d98bbfea6c7",
+                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/68160aec8610ad3a01899e98bd2b985a70a92436",
+                "reference": "68160aec8610ad3a01899e98bd2b985a70a92436",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1364,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-09-12 19:53:33"
+            "time": "2015-09-25 11:38:48"
         },
         {
             "name": "kartik-v/yii2-grid",
@@ -2785,16 +2786,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.7.4",
+            "version": "v2.7.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "ffb5f3b8a75f8d1b9801e74dc6789a0751a670ad"
+                "url": "https://github.com/symfony/css-selector.git",
+                "reference": "abe19cc0429a06be0c133056d1f9859854860970"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/ffb5f3b8a75f8d1b9801e74dc6789a0751a670ad",
-                "reference": "ffb5f3b8a75f8d1b9801e74dc6789a0751a670ad",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/abe19cc0429a06be0c133056d1f9859854860970",
+                "reference": "abe19cc0429a06be0c133056d1f9859854860970",
                 "shasum": ""
             },
             "require": {
@@ -2834,20 +2835,20 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:13:45"
+            "time": "2015-09-22 13:49:29"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.7.4",
+            "version": "v2.7.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "2a161e4ee2b2f33d4153be58df4f6f2a5506936e"
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "2e185ca136399f902b948694987e62c80099c052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/2a161e4ee2b2f33d4153be58df4f6f2a5506936e",
-                "reference": "2a161e4ee2b2f33d4153be58df4f6f2a5506936e",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/2e185ca136399f902b948694987e62c80099c052",
+                "reference": "2e185ca136399f902b948694987e62c80099c052",
                 "shasum": ""
             },
             "require": {
@@ -2887,7 +2888,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-26 10:48:03"
+            "time": "2015-09-20 21:13:58"
         },
         {
             "name": "tugmaks/yii2-rss-reader",
@@ -3083,12 +3084,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/grid-page-size.git",
-                "reference": "472835da443e02752e01db7f56da7af96a90c107"
+                "reference": "5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/grid-page-size/zipball/472835da443e02752e01db7f56da7af96a90c107",
-                "reference": "472835da443e02752e01db7f56da7af96a90c107",
+                "url": "https://api.github.com/repos/webvimark/grid-page-size/zipball/5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6",
+                "reference": "5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6",
                 "shasum": ""
             },
             "type": "library",
@@ -3099,7 +3100,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Grid page size extension for yii 2 gridview",
-            "time": "2014-11-29 12:30:28"
+            "time": "2015-09-15 22:09:07"
         },
         {
             "name": "webvimark/helpers",
@@ -3316,21 +3317,21 @@
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0"
+                "reference": "1464f93834b1d5edb1f5625f7ffd6c3723fa4923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
-                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
+                "reference": "1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
-                "yiisoft/yii2": ">=2.0.4"
+                "yiisoft/yii2": ">=2.0.6"
             },
             "type": "yii2-extension",
             "extra": {
@@ -3362,7 +3363,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-10 22:08:17"
+            "time": "2015-09-23 17:48:24"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -3826,7 +3827,8 @@
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-detail-view": 20,
         "yiisoft/yii2-imagine": 20,
-        "sammaye/yii2-audittrail": 20
+        "sammaye/yii2-audittrail": 20,
+        "kartik-v/yii2-widget-fileinput": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

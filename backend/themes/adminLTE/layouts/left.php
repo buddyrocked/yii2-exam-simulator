@@ -62,6 +62,7 @@ use backend\components\EasyThumbnailImage;
                                     ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/province/index']],
                                     ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/country/index']],
                                     ['label' => 'Gender', 'icon'=>'gender', 'url'=>['/gender/index']],
+                                    ['label' => 'Content', 'icon'=>'object-group', 'url'=>['/content/index']],
                                 ],
                             ],
                             [

@@ -7,13 +7,23 @@ use yii\helpers\Html;
 
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="login-content first-content parallax" id="index-content">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-8">
                 <div class="index-intro">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <?php
+                    if($intro->is_html == true)
+                    {
+                        echo (isset($intro->content)?Html::decode($intro->content):'');
+                    }
+                    else
+                    {
+                        echo (isset($intro->content)?strip_tags($intro->content):'');
+                    }
+                    ?>
                 </div>
                 <div>
                 <a class="btn btn-danger btn-lg">Take a Test <i class="fa fa-chevron-right"></i></a>
@@ -34,10 +44,28 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-tablet"></i>
                     </div>
                     <div class="process-desc">
-                        Register your account
+                        <?php
+                        if($process1->is_html == true)
+                        {
+                            echo (isset($process1->title)?Html::decode($process1->title):'');
+                        }
+                        else
+                        {
+                            echo (isset($process1->title)?strip_tags($process1->title):'');   
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if($process1->is_html == true)
+                        {
+                            echo (isset($process1->content)?Html::decode($process1->content):'');
+                        }
+                        else
+                        {
+                            echo (isset($process1->content)?strip_tags($process1->content):'');
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -47,10 +75,28 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-map"></i>
                     </div>
                     <div class="process-desc">
-                        Take a Test
+                        <?php
+                        if($process2->is_html == true)
+                        {
+                            echo (isset($process2->title)?Html::decode($process2->title):'');
+                        }
+                        else
+                        {
+                            echo (isset($process2->title)?strip_tags($process2->title):'');
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if($process2->is_html == true)
+                        {
+                            echo (isset($process2->content)?Html::decode($process2->content):'');
+                        }
+                        else
+                        {
+                            echo (isset($process2->content)?strip_tags($process2->content):'');
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -60,10 +106,28 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-trophy"></i>
                     </div>
                     <div class="process-desc">
-                        Get a Score
+                        <?php
+                        if($process3->is_html == true)
+                        {
+                            echo (isset($process3->title)?Html::decode($process3->title):'');
+                        }
+                        else
+                        {
+                            echo (isset($process3->title)?strip_tags($process3->title):'');
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if($process3->is_html == true)
+                        {
+                            echo (isset($process3->content)?Html::decode($process3->content):'');
+                        }
+                        else
+                        {
+                            echo (isset($process3->content)?strip_tags($process3->content):'');
+                        }
+                        ?>
                     </div>
                 </div>
             </div>   
@@ -99,10 +163,28 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-10">
                                     <div class="services-item-title">
-                                        Biggest Questions Bank
+                                        <?php
+                                        if($features1->is_html == true)
+                                        {
+                                            echo (isset($features1->title)?Html::decode($features1->title):'');
+                                        }
+                                        else
+                                        {
+                                            echo (isset($features1->title)?strip_tags($features1->title):'');
+                                        }
+                                        ?>
                                     </div>
                                     <div class="services-item-desc">
-                                        Over 100 Million Thousand Questions in our library.
+                                        <?php
+                                        if($features1->is_html == true)
+                                        {
+                                            echo (isset($features1->content)?Html::decode($features1->content):'');
+                                        }
+                                        else
+                                        {
+                                            echo (isset($features1->content)?strip_tags($features1->content):'');
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -118,10 +200,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-10">
                                     <div class="services-item-title">
-                                        Our Tests is Totally Free 
+                                        <?php
+                                        if($features2->is_html == true)
+                                        {
+                                            echo (isset($features2->title)?Html::decode($features2->title):'');
+                                        }
+                                        else
+                                        {
+                                            echo (isset($features2->title)?Html::decode($features2->title):'');
+                                        }
+                                        ?>
                                     </div>
                                     <div class="services-item-desc">
-                                        Over 100 Million Thousand Questions in our library.
+                                        <?php echo (isset($features2->content)?Html::decode($features2->content):''); ?>
                                     </div>
                                 </div>
                             </div>
@@ -137,10 +228,28 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-10">
                                     <div class="services-item-title">
-                                        25 Million People Tested 
+                                        <?php
+                                        if($features3->is_html == true)
+                                        {
+                                            echo (isset($features3->title)?Html::decode($features3->title):'');
+                                        }
+                                        else
+                                        {
+                                            echo (isset($features3->title)?strip_tags($features3->title):'');
+                                        }
+                                        ?>
                                     </div>
                                     <div class="services-item-desc">
-                                        Over 100 Million Thousand Questions in our library.
+                                        <?php
+                                        if($features3->is_html == true)
+                                        {
+                                            echo (isset($features3->content)?Html::decode($features3->content):'');
+                                        }
+                                        else
+                                        {
+                                            echo (isset($features3->content)?strip_tags($features3->content):'');   
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +276,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages1->is_html == true)
+                                {
+                                    echo (isset($Advantages1->content)?Html::decode($Advantages1->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages1->content)?strip_tags($Advantages1->content):'');
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -183,7 +301,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages2->is_html == true)
+                                {
+                                    echo (isset($Advantages2->content)?Html::decode($Advantages2->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages2->content)?strip_tags($Advantages2->content):'');
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -199,7 +326,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages3->is_html == true)
+                                {
+                                    echo (isset($Advantages3->content)?Html::decode($Advantages3->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages3->content)?strip_tags($Advantages3->content):'');
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -215,7 +351,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages4->is_html==true)
+                                {
+                                    echo (isset($Advantages4->content)?Html::decode($Advantages4->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages4->content)?strip_tags($Advantages4->content):'');
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -231,7 +376,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages5->is_html == true)
+                                {
+                                    echo (isset($Advantages5->content)?Html::decode($Advantages5->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages5->content)?strip_tags($Advantages5->content):'');   
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -247,7 +401,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-10">
                             <div class="services-item-desc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                <?php
+                                if($Advantages6->is_html == true)
+                                {
+                                    echo (isset($Advantages6->content)?Html::decode($Advantages6->content):'');
+                                }
+                                else
+                                {
+                                    echo (isset($Advantages6->content)?strip_tags($Advantages6->content):'');
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

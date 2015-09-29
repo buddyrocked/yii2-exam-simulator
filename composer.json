@@ -39,6 +39,7 @@
         "himiklab/yii2-easy-thumbnail-image-helper" : "*",
         "yiisoft/yii2-imagine": "^2.0@dev",
         "sammaye/yii2-audittrail": "dev-master",
+        "kartik-v/yii2-widget-fileinput": "@dev",
         "kartik-v/yii2-checkbox-x": "*"
     },
     "require-dev": {
