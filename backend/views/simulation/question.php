@@ -11,13 +11,20 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="login-content first-content" id="index-content">
     <?php $form = ActiveForm::begin([
-                                    'id' => 'dynamic-form',
+                                    'id' => 'form-question',
                                     'options'=>[
                                         'class'=>'form-ajax-question',
                                     ]
                             ]); ?>
 	<div class="row">    
-        <div class="col-md-8"> 
+        <div class="col-md-8">
+            <div class="list-task-progressx">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-value="<?= Html::encode($model->simulation->getPercent()); ?>" style="width: 0%;">
+                        <span class=""><?= $model->simulation->getPercent(); ?>%</span>
+                    </div>
+                </div>
+            </div>
             <div class="container-menu">
                 <div class="upper-menu">
                     <div class="upper-menu-title">
@@ -44,11 +51,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <hr />
                             <div class="">
-
                                 <?php
+
                                     if($model->question->getQuestionRightOptions()->count() == 1):
                                         echo $form->field($modelsAnswer, 'question_option_id')->radioList(ArrayHelper::map($model->question->questionOptions, 'id', 'option'));
                                     else:
+                                        $modelsAnswer->question_option_id = ArrayHelper::getColumn($model->getSimulationQuestionAnswers()->select(['question_option_id'])->asArray()->all(), 'question_option_id');
                                         echo $form->field($modelsAnswer, 'question_option_id')->checkboxList(ArrayHelper::map($model->question->questionOptions, 'id', 'option'));
                                     endif;
                                 ?>
@@ -79,10 +87,42 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="well">
-                                <h1 class="text-center bebas text-bold"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>
-                            </div>
-                            <?= Html::submitButton($modelsAnswer->isNewRecord ? '<i class="fa fa-check"></i> Submit Answer' : '<i class="fa fa-save"></i> Update Answer', ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
+                            <?php 
+                                if($model->question->subject->timer_mode == 1): 
+                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
+                                    $time = $model->convertSecondstoTimes($diff);
+                            ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>
+                                </div>
+                            <?php 
+                                elseif($model->question->subject->timer_mode == 2): 
+                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
+                                    $time = $model->convertSecondstoTimes($diff);
+                            ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>
+                                </div>
+                            <?php 
+                                elseif($model->question->subject->timer_mode == 3): 
+                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
+                                    $time = $model->convertSecondstoTimes($diff);
+
+                                    $diff2 = ($model->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
+                                    $time2 = $model->convertSecondstoTimes($diff2);
+                            ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>         
+                                </div>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question2" data-timer="<?= $time2; ?>"><?= gmdate('H:i:s', $diff2); ?></h1>         
+                                </div>
+                            <?php else: ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold">00:00:00</h1>
+                                </div>
+                            <?php endif; ?>
+                            <?= Html::submitButton($modelsAnswer->isNewRecord ? '<i class="fa fa-check"></i> Submit Answer' : '<i class="fa fa-save"></i> Update Answer', ['class' => 'btn-lg btn-block btn btn-info', 'data' => [
                                         'method' => 'post',
                                     ]
                             ]) ?>

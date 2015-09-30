@@ -184,6 +184,10 @@ class SimulationController extends Controller
                 ]);
 
                 $firstQuestion = $model->getSimulationQuestions()->orderBy('id ASC')->one();
+                if(Yii::$app->session->get('simulation_'.$model->id) === NULL):
+                    Yii::$app->session->set('simulation_'.$model->id, date('H:i:s'));
+                endif;
+
                 return $this->redirect(['/simulation/question/', 'id'=>$model->id, 'question'=>$firstQuestion->id]);
 
             }catch(Exception $e){
@@ -193,6 +197,7 @@ class SimulationController extends Controller
     }
 
     public function actionQuestion($id, $question){
+
         $this->layout = 'main-question';
         $mine = $this->findMine($id, 0);
         $modelQuestion = SimulationQuestion::findOne($question);
@@ -202,47 +207,170 @@ class SimulationController extends Controller
             $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
         endif;
 
+        if(Yii::$app->session->get($id.'_'.$question) === NULL):
+            Yii::$app->session->set($id.'_'.$question, date('H:i:s'));
+        endif;
+
+        if(Yii::$app->session->get('simulation_'.$id) === NULL):
+            Yii::$app->session->set('simulation_'.$id, date('H:i:s'));
+        endif;
+
         if ($modelsAnswer->load(Yii::$app->request->post())) {
+            $transaction = Yii::$app->db->beginTransaction();  
+            try{
+                    $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
+                    
+                    if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
+                        if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
+                            $modelQuestion->correct = 1;
+                        else:
+                            $modelQuestion->correct = 0;
+                        endif;
 
-            $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
+                        $modelsAnswer->simulation_question_id = $modelQuestion->id;
+                        if(Yii::$app->request->post('mark') != null):
+                            $modelQuestion->status = 2;
+                        else:
+                            $modelQuestion->status = 1;
+                        endif;
+
+                        $modelsAnswer->status = 0;
+
+                        if($modelsAnswer->save()):
+
+                            if($modelQuestion->save()):
+                                $transaction->commit();
+                            else:
+                                $transaction->rollBack();
+                            endif;
+
+                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
+                            Yii::$app->session->remove($id.'_'.$question);
+                           
+                            if($modelQuestion->simulation->subject->timer_mode == 3):
+                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+                                if($time <= 0):
+                                    Yii::$app->getSession()->setFlash('success', [
+                                        'type' => 'danger',
+                                        'duration' => 500000,
+                                        'icon' => 'fa fa-volume-up',
+                                        'message' => 'Time is up.',
+                                        'title' => 'Information',
+                                        'positonY' => 'bottom',
+                                        'positonX' => 'right'
+                                    ]);
+                                    return $this->actionPostfinish($id);
+                                    //return $this->redirect(['review', 'id' => $id]);
+                                endif;
+                            endif;
+
+                            if($modelNext != null):
+                                return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
+                            else:
+                                return $this->redirect(['review', 'id' => $id]);
+                            endif;
+
+                        else:
+                            $transaction->rollBack();
+
+                            if($modelQuestion->simulation->subject->timer_mode == 3):
+                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+                                if($time <= 0):
+                                    return $this->actionPostfinish($id);
+                                    //return $this->redirect(['review', 'id' => $id]);
+                                endif;
+                            endif;
+
+                            return $this->render('question', [
+                                'model' => $modelQuestion,
+                                'modelsAnswer' => $modelsAnswer
+                            ]);
+                        endif;
+
+                    else:
+                        if(is_array($modelsAnswer->question_option_id)):
+                            if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
+                                $modelQuestion->correct = 1;
+                            else:
+                                $modelQuestion->correct = 0;
+                            endif;
+                        else:
+                            $modelQuestion->correct = 0;
+                        endif;
+                        $answers = Yii::$app->request->post('SimulationQuestionAnswer');
+                        if(!empty($answers['question_option_id'])):
+                            SimulationQuestionAnswer::deleteAll(['simulation_question_id'=>$modelQuestion->id]);
+                            foreach ($answers['question_option_id'] as $answer):
+                                $ans = new SimulationQuestionAnswer;
+                                $ans->simulation_question_id = $modelQuestion->id;
+                                $ans->status = 0;
+                                $ans->question_option_id = $answer;
+
+                                if(!$ans->save()):
+                                    $transaction->rollBack();
+                                    break;
+                                endif;
+                            endforeach;
+                        endif;
+
+                        if(Yii::$app->request->post('mark') != null):
+                            $modelQuestion->status = 2;
+                        else:
+                            $modelQuestion->status = 1;
+                        endif;
+
+                        if($modelQuestion->save()):
+                            $transaction->commit();
+                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
+                            Yii::$app->session->remove($id.'_'.$question);
+                            
+                            if($modelQuestion->simulation->timer_mode == 3):
+                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+                                if($time <= 0):
+                                    Yii::$app->getSession()->setFlash('success', [
+                                        'type' => 'info',
+                                        'duration' => 500000,
+                                        'icon' => 'fa fa-volume-up',
+                                        'message' => 'Time is up.',
+                                        'title' => 'Information',
+                                        'positonY' => 'bottom',
+                                        'positonX' => 'right'
+                                    ]);
+                                    return $this->actionPostfinish($id);
+                                    //return $this->redirect(['review', 'id' => $id]);
+                                endif;
+                            endif;
+
+                            if($modelNext != null):
+
+                                return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
+                            else:
+                                return $this->redirect(['review', 'id' => $id]);
+                            endif;
+                        else:
+                            $transaction->rollBack();
+
+                            if($modelQuestion->simulation->timer_mode == 3):
+                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+                                if($time <= 0):
+                                    return $this->actionPostfinish($id);
+                                    //return $this->redirect(['review', 'id' => $id]);
+                                endif;
+                            endif;
+
+                            return $this->render('question', [
+                                'model' => $modelQuestion,
+                                'modelsAnswer' => $modelsAnswer
+                            ]);
+                        endif;
+
+                    endif;
+
+                }catch(Exception $e){
+                    $transaction->rollBack();
+                }
+
             
-            if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
-                if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
-                    $modelQuestion->correct = 1;
-                else:
-                    $modelQuestion->correct = 0;
-                endif;
-            else:
-                if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
-                    $modelQuestion->correct = 1;
-                else:
-                    $modelQuestion->correct = 0;
-                endif;
-            endif;
-
-            $modelsAnswer->simulation_question_id = $modelQuestion->id;
-            if(Yii::$app->request->post('mark') != null):
-                $modelQuestion->status = 2;
-            else:
-                $modelQuestion->status = 1;
-            endif;
-
-            $modelsAnswer->status = 0;
-
-            if($modelsAnswer->save()):
-                $modelQuestion->save();
-                $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
-                if($modelNext != null):
-                    return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
-                else:
-                    return $this->redirect(['review', 'id' => $id]);
-                endif;
-            else:
-                return $this->render('question', [
-                    'model' => $modelQuestion,
-                    'modelsAnswer' => $modelsAnswer
-                ]);
-            endif;
         } else {
             return $this->render('question', [
                 'model' => $modelQuestion,

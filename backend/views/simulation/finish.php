@@ -48,12 +48,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-4">
         	<div class="container-menu">
+                <div class="upper-menu">
+                    <div class="upper-menu-title">
+                        &nbsp;Timer
+                    </div>
+                </div>
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <label>Time : </label>
                             <div class="well">
-                                <h1 class="text-center bebas text-bold">00:13:00</h1>
+                                <h1 class="text-center bebas text-bold">00:00:00</h1>
                             </div>
                             <?= Html::a('<i class="fa fa-check"></i> Go to Dashboard', ['/site/dashboard'], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
                                         //'confirm' => 'Are you sure you want to close this exam?',

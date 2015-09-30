@@ -66,6 +66,7 @@ class SimulationQuestion extends \yii\db\ActiveRecord
         return $this->hasOne(Simulation::className(), ['id' => 'simulation_id']);
     }
 
+    
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -82,5 +83,13 @@ class SimulationQuestion extends \yii\db\ActiveRecord
         ];
 
         return $lists[$this->status];
+    }
+
+    public function convertSecondstoTimes($seconds){
+        $h = floor($seconds / 3600);
+        $m = floor($seconds % 3600 / 60);
+        $s = $seconds % 60;
+
+        return sprintf('%dh%02dm%02ds', $h, $m, $s);
     }
 }

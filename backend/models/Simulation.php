@@ -128,6 +128,11 @@ class Simulation extends \yii\db\ActiveRecord
         //}])->select('simulation_question.id, simulation_question.question_id');
     }
 
+    public function getPercent(){
+        return ($this->getSimulationQuestions()->where(['<>', 'status', 0])->count() / $this->getSimulationQuestions()->count()) * 100;
+    }
+
+
 
 
 }
