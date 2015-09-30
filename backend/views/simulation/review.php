@@ -77,9 +77,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="well">
-                                <h1 class="text-center bebas text-bold">00:00:00</h1>
-                            </div>
+                            <?php
+                                if($model->timer_mode == 3 || $model->timer_mode == 1  ): 
+                                    
+                                    $diff2 = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->id)));
+                                    $time2 = $model->convertSecondstoTimes($diff2);
+                            ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time2; ?>"></h1>         
+                                </div>
+                            <?php else: ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold">00:00:00</h1>
+                                </div>
+                            <?php endif; ?>
                             <?= Html::a('<i class="fa fa-check"></i> Close Exam', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
                                         'confirm' => 'Are you sure you want to close this exam?',
                                         'method' => 'post',

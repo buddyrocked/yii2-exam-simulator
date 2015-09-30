@@ -129,10 +129,22 @@ class Simulation extends \yii\db\ActiveRecord
     }
 
     public function getPercent(){
-        return ($this->getSimulationQuestions()->where(['<>', 'status', 0])->count() / $this->getSimulationQuestions()->count()) * 100;
+        return floor(($this->getSimulationQuestions()->where(['<>', 'status', 0])->count() / $this->getSimulationQuestions()->count()) * 100);
     }
 
+    public function convertSecondstoTimes($seconds){
+        if($seconds > 0):
+            $h = floor($seconds / 3600);
+            $m = floor($seconds % 3600 / 60);
+            $s = $seconds % 60;
+        else:
+            $h = 0;
+            $m = 0;
+            $s = 0;
+        endif;
 
+        return sprintf('%dh%02dm%02ds', $h, $m, $s);
+    }
 
 
 }

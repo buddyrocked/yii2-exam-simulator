@@ -164,7 +164,7 @@ class SimulationController extends Controller
                 $model->user_id = Yii::$app->user->identity->id;
                 $model->subject_id = $id;
                 $model->duration = $subject->time;
-                $model->timer_mode = 0;
+                $model->timer_mode = $subject->timer_mode;
                 $model->start = date('H:i:s');
                 $model->status = 0;
                 $model->save();
@@ -207,15 +207,49 @@ class SimulationController extends Controller
             $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
         endif;
 
+        //set time start
         if(Yii::$app->session->get($id.'_'.$question) === NULL):
             Yii::$app->session->set($id.'_'.$question, date('H:i:s'));
         endif;
 
+        //set time start
         if(Yii::$app->session->get('simulation_'.$id) === NULL):
             Yii::$app->session->set('simulation_'.$id, date('H:i:s'));
         endif;
 
+        //checking time is over
+        if($modelQuestion->simulation->timer_mode == 3 || $modelQuestion->simulation->timer_mode == 1):
+            $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+            if($time <= 0):
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'danger',
+                    'duration' => 500000,
+                    'icon' => 'fa fa-volume-up',
+                    'message' => 'Time is up.',
+                    'title' => 'Information',
+                    'positonY' => 'bottom',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['review', 'id'=>$id]);
+            endif;
+        elseif($modelQuestion->simulation->timer_mode == 2):
+            $time = ($modelQuestion->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($id.'_'.$question)));
+            if($time <= 0):
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'danger',
+                    'duration' => 500000,
+                    'icon' => 'fa fa-volume-up',
+                    'message' => 'Time is up.',
+                    'title' => 'Information',
+                    'positonY' => 'bottom',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['review', 'id'=>$id]);
+            endif;
+        endif;
+
         if ($modelsAnswer->load(Yii::$app->request->post())) {
+            $modelsAnswer->question_option_id = Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'];
             $transaction = Yii::$app->db->beginTransaction();  
             try{
                     $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
@@ -246,23 +280,6 @@ class SimulationController extends Controller
 
                             $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
                             Yii::$app->session->remove($id.'_'.$question);
-                           
-                            if($modelQuestion->simulation->subject->timer_mode == 3):
-                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
-                                if($time <= 0):
-                                    Yii::$app->getSession()->setFlash('success', [
-                                        'type' => 'danger',
-                                        'duration' => 500000,
-                                        'icon' => 'fa fa-volume-up',
-                                        'message' => 'Time is up.',
-                                        'title' => 'Information',
-                                        'positonY' => 'bottom',
-                                        'positonX' => 'right'
-                                    ]);
-                                    return $this->actionPostfinish($id);
-                                    //return $this->redirect(['review', 'id' => $id]);
-                                endif;
-                            endif;
 
                             if($modelNext != null):
                                 return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
@@ -273,7 +290,7 @@ class SimulationController extends Controller
                         else:
                             $transaction->rollBack();
 
-                            if($modelQuestion->simulation->subject->timer_mode == 3):
+                            if($modelQuestion->simulation->timer_mode == 3):
                                 $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
                                 if($time <= 0):
                                     return $this->actionPostfinish($id);
@@ -324,23 +341,6 @@ class SimulationController extends Controller
                             $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
                             Yii::$app->session->remove($id.'_'.$question);
                             
-                            if($modelQuestion->simulation->timer_mode == 3):
-                                $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
-                                if($time <= 0):
-                                    Yii::$app->getSession()->setFlash('success', [
-                                        'type' => 'info',
-                                        'duration' => 500000,
-                                        'icon' => 'fa fa-volume-up',
-                                        'message' => 'Time is up.',
-                                        'title' => 'Information',
-                                        'positonY' => 'bottom',
-                                        'positonX' => 'right'
-                                    ]);
-                                    return $this->actionPostfinish($id);
-                                    //return $this->redirect(['review', 'id' => $id]);
-                                endif;
-                            endif;
-
                             if($modelNext != null):
 
                                 return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);

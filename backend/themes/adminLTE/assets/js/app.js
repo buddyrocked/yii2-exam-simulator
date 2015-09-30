@@ -16,9 +16,12 @@ $(document).ready(function(){
 			callback: function(){
 				$('#form-question').submit();
 			},
-			repeat: true
+			repeat: false
 		});
 
+        if($('#timer-question').attr('data-timer') == '0h00m00s'){
+        	$('#timer-question').timer('pause');
+        }
 		
 
         $('#clear-answer').click(function(e){

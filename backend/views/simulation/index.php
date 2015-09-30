@@ -34,39 +34,36 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
-        'columns' => [
+                                'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
+                                    'user_id',
+                                    'subject_id',
+                                    'duration',
+                                    // 'start',
+                                    // 'finish',
+                                    // 'status',
+                                    // 'score',
+                                    // 'created',
+                                    // 'updated',
 
-                                            'id',
-            'user_id',
-            'subject_id',
-            'duration',
-            'timer_mode:datetime',
-            // 'start',
-            // 'finish',
-            // 'status',
-            // 'score',
-            // 'created',
-            // 'updated',
-
-                                [
-                                    'class' => 'yii\grid\ActionColumn',
-                                    'template' => '<div class="btn-group">{view} {update} {delete}</div>',
-                                    'buttons' => [
-                                                    'view' => function ($url, $model, $key) {
-                                                        return Html::a('<i class="fa fa-search"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
-                                                    },
-                                                    'update' => function ($url, $model, $key) {
-                                                        return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
-                                                    },
-                                                    'delete' => function ($url, $model, $key) {
-                                                        return Html::a('<i class="fa fa-trash"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
-                                                    },
-                                    ]
+                                    [
+                                        'class' => 'yii\grid\ActionColumn',
+                                        'template' => '<div class="btn-group">{view}</div>',
+                                        'buttons' => [
+                                                        'view' => function ($url, $model, $key) {
+                                                            return Html::a('<i class="fa fa-search"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
+                                                        },
+                                                        'update' => function ($url, $model, $key) {
+                                                            return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
+                                                        },
+                                                        'delete' => function ($url, $model, $key) {
+                                                            return Html::a('<i class="fa fa-trash"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);
+                                                        },
+                                        ]
+                                    ],
                                 ],
-                            ],
-                        ]); ?>
-                                           <?php \yii\widgets\Pjax::end(); ?>
+                            ]); ?>
+                            <?php \yii\widgets\Pjax::end(); ?>
                         </div>
                     </div>
                 </div>

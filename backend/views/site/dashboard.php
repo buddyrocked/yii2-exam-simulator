@@ -138,6 +138,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?= GridView::widget([
                                 'dataProvider' => new ActiveDataProvider([
                                                 'query' => $simulations,
+                                                'pagination' => false
                                 ]),
                                 'showHeader'=>false,
                                 'columns' => [
