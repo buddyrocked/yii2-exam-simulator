@@ -51,6 +51,17 @@ use backend\components\EasyThumbnailImage;
                                 'icon' => 'bar-chart'
                             ],
                             [
+                                'label' => 'Exam Simulation',
+                                'icon' => 'trophy',
+                                'options'=> ['class'=>'treeview'],
+                                'url'=>['/simulation/list'],
+                                'items' => [
+                                    ['label' => 'Take Exam', 'icon'=>'flag', 'url'=>['/simulation/take']],
+                                    ['label' => 'List Exam', 'icon'=>'map', 'url'=>['/simulation/index']],
+                                    ['label' => 'My Exam', 'icon'=>'twitch', 'url'=>['/simulation/list']],
+                                ],
+                            ],
+                            [
                                 'label' => 'Data Master',
                                 'icon' => 'briefcase',
                                 'options'=> ['class'=>'treeview'],
