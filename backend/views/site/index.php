@@ -15,13 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-4 col-md-offset-8">
                 <div class="index-intro">
                     <?php
-                    if($intro->is_html == true)
+                    if(isset($intro->content))
                     {
-                        echo (isset($intro->content)?Html::decode($intro->content):'');
-                    }
-                    else
-                    {
-                        echo (isset($intro->content)?strip_tags($intro->content):'');
+                        echo ($intro->is_html == true)?Html::decode($intro->content):strip_tags($intro->content);
                     }
                     ?>
                 </div>
@@ -45,25 +41,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="process-desc">
                         <?php
-                        if($process1->is_html == true)
+                        if(isset($process1->title))
                         {
-                            echo (isset($process1->title)?Html::decode($process1->title):'');
-                        }
-                        else
-                        {
-                            echo (isset($process1->title)?strip_tags($process1->title):'');   
+                            echo ($process1->is_html == true)?Html::decode($process1->title):strip_tags($process1->title);
                         }
                         ?>
                     </div>
                     <div>
                         <?php
-                        if($process1->is_html == true)
+                        if(isset($process1->content))
                         {
-                            echo (isset($process1->content)?Html::decode($process1->content):'');
-                        }
-                        else
-                        {
-                            echo (isset($process1->content)?strip_tags($process1->content):'');
+                            echo ($process1->is_html == true)?Html::decode($process1->content):strip_tags($process1->content);
                         }
                         ?>
                     </div>
@@ -76,25 +64,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="process-desc">
                         <?php
-                        if($process2->is_html == true)
+                        if(isset($process2->title))
                         {
-                            echo (isset($process2->title)?Html::decode($process2->title):'');
-                        }
-                        else
-                        {
-                            echo (isset($process2->title)?strip_tags($process2->title):'');
+                            echo ($process2->is_html == true)?Html::decode($process2->title):strip_tags($process2->title);
                         }
                         ?>
                     </div>
                     <div>
                         <?php
-                        if($process2->is_html == true)
+                        if(isset($process2->content))
                         {
-                            echo (isset($process2->content)?Html::decode($process2->content):'');
-                        }
-                        else
-                        {
-                            echo (isset($process2->content)?strip_tags($process2->content):'');
+                            echo ($process2->is_html == true)?Html::decode($process2->content):strip_tags($process2->content);
                         }
                         ?>
                     </div>
@@ -107,25 +87,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="process-desc">
                         <?php
-                        if($process3->is_html == true)
+                        if(isset($process3->title))
                         {
-                            echo (isset($process3->title)?Html::decode($process3->title):'');
-                        }
-                        else
-                        {
-                            echo (isset($process3->title)?strip_tags($process3->title):'');
+                            echo ($process3->is_html == true)?Html::decode($process3->title):strip_tags($process3->title);
                         }
                         ?>
                     </div>
                     <div>
                         <?php
-                        if($process3->is_html == true)
+                        if(isset($process3->content))
                         {
-                            echo (isset($process3->content)?Html::decode($process3->content):'');
-                        }
-                        else
-                        {
-                            echo (isset($process3->content)?strip_tags($process3->content):'');
+                            echo ($process3->is_html == true)?Html::decode($process3->content):strip_tags($process3->content);
                         }
                         ?>
                     </div>
@@ -164,25 +136,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-md-10">
                                     <div class="services-item-title">
                                         <?php
-                                        if($features1->is_html == true)
+                                        if(isset($features1->title))
                                         {
-                                            echo (isset($features1->title)?Html::decode($features1->title):'');
-                                        }
-                                        else
-                                        {
-                                            echo (isset($features1->title)?strip_tags($features1->title):'');
+                                            echo ($features1->is_html == true)?Html::decode($features1->title):strip_tags($features1->title);
                                         }
                                         ?>
                                     </div>
                                     <div class="services-item-desc">
                                         <?php
-                                        if($features1->is_html == true)
+                                        if(isset($features1->content))
                                         {
-                                            echo (isset($features1->content)?Html::decode($features1->content):'');
-                                        }
-                                        else
-                                        {
-                                            echo (isset($features1->content)?strip_tags($features1->content):'');
+                                            echo ($features1->is_html == true)?Html::decode($features1->content):strip_tags($features1->content);
                                         }
                                         ?>
                                     </div>
@@ -201,18 +165,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-md-10">
                                     <div class="services-item-title">
                                         <?php
-                                        if($features2->is_html == true)
+                                        if(isset($features2->title))
                                         {
-                                            echo (isset($features2->title)?Html::decode($features2->title):'');
-                                        }
-                                        else
-                                        {
-                                            echo (isset($features2->title)?Html::decode($features2->title):'');
+                                            echo ($features2->is_html == true)?Html::decode($features2->title):strip_tags($features2->title);
                                         }
                                         ?>
                                     </div>
                                     <div class="services-item-desc">
-                                        <?php echo (isset($features2->content)?Html::decode($features2->content):''); ?>
+                                        <?php
+                                        if(isset($features2->content))
+                                        {
+                                            echo ($features2->is_html == true)?Html::decode($features2->content):strip_tags($features2->content);
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -229,25 +194,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-md-10">
                                     <div class="services-item-title">
                                         <?php
-                                        if($features3->is_html == true)
+                                        if(isset($features3->title))
                                         {
-                                            echo (isset($features3->title)?Html::decode($features3->title):'');
-                                        }
-                                        else
-                                        {
-                                            echo (isset($features3->title)?strip_tags($features3->title):'');
+                                            echo ($features3->is_html == true)?Html::decode($features3->title):strip_tags($features3->title);
                                         }
                                         ?>
                                     </div>
                                     <div class="services-item-desc">
                                         <?php
-                                        if($features3->is_html == true)
+                                        if(isset($features3->content))
                                         {
-                                            echo (isset($features3->content)?Html::decode($features3->content):'');
-                                        }
-                                        else
-                                        {
-                                            echo (isset($features3->content)?strip_tags($features3->content):'');   
+                                            echo ($features3->is_html == true)?Html::decode($features3->content):strip_tags($features3->content);
                                         }
                                         ?>
                                     </div>
@@ -277,13 +234,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages1->is_html == true)
+                                if(isset($Advantages1->content))
                                 {
-                                    echo (isset($Advantages1->content)?Html::decode($Advantages1->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages1->content)?strip_tags($Advantages1->content):'');
+                                echo ($Advantages1->is_html == true)?Html::decode($Advantages1->content):strip_tags($Advantages1->content);
                                 }
                                 ?>
                             </div>
@@ -302,13 +255,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages2->is_html == true)
+                                if(isset($Advantages2->content))
                                 {
-                                    echo (isset($Advantages2->content)?Html::decode($Advantages2->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages2->content)?strip_tags($Advantages2->content):'');
+                                echo ($Advantages2->is_html == true)?Html::decode($Advantages2->content):strip_tags($Advantages2->content);
                                 }
                                 ?>
                             </div>
@@ -327,13 +276,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages3->is_html == true)
+                                if(isset($Advantages3->content))
                                 {
-                                    echo (isset($Advantages3->content)?Html::decode($Advantages3->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages3->content)?strip_tags($Advantages3->content):'');
+                                echo ($Advantages3->is_html == true)?Html::decode($Advantages3->content):strip_tags($Advantages3->content);
                                 }
                                 ?>
                             </div>
@@ -352,13 +297,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages4->is_html==true)
+                                if(isset($Advantages4->content))
                                 {
-                                    echo (isset($Advantages4->content)?Html::decode($Advantages4->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages4->content)?strip_tags($Advantages4->content):'');
+                                echo ($Advantages4->is_html == true)?Html::decode($Advantages4->content):strip_tags($Advantages4->content);
                                 }
                                 ?>
                             </div>
@@ -377,13 +318,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages5->is_html == true)
+                                if(isset($Advantages5->content))
                                 {
-                                    echo (isset($Advantages5->content)?Html::decode($Advantages5->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages5->content)?strip_tags($Advantages5->content):'');   
+                                echo ($Advantages5->is_html == true)?Html::decode($Advantages5->content):strip_tags($Advantages5->content);
                                 }
                                 ?>
                             </div>
@@ -402,13 +339,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-10">
                             <div class="services-item-desc">
                                 <?php
-                                if($Advantages6->is_html == true)
+                                if(isset($Advantages6->content))
                                 {
-                                    echo (isset($Advantages6->content)?Html::decode($Advantages6->content):'');
-                                }
-                                else
-                                {
-                                    echo (isset($Advantages6->content)?strip_tags($Advantages6->content):'');
+                                echo ($Advantages6->is_html == true)?Html::decode($Advantages6->content):strip_tags($Advantages6->content);
                                 }
                                 ?>
                             </div>

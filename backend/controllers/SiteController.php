@@ -45,7 +45,7 @@ class SiteController extends Controller
                          'positonY' => 'bottom',
                          'positonX' => 'right'
                      ]);
-        $intro = Content::find()->where(['title' => 'intro-home'])->one();
+        $intro = Content::find()->where(['title' => 'Intro Home'])->one();
         $process1 = Content::find()->where(['title' => 'Register your account'])->one();
         $process2 = Content::find()->where(['title' => 'Take a Test'])->one();
         $process3 = Content::find()->where(['title' => 'Get a Score'])->one();
