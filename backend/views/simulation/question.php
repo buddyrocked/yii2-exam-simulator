@@ -88,31 +88,31 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                             <?php 
-                                if($model->question->subject->timer_mode == 1): 
+                                if($model->simulation->timer_mode == 1): 
+                                    $diff = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
+                                    $time = $model->convertSecondstoTimes($diff);
+                            ?>
+                                <div class="well">
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>
+                                </div>
+                            <?php 
+                                elseif($model->simulation->timer_mode == 2): 
                                     $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
                                     $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>
                                 </div>
                             <?php 
-                                elseif($model->question->subject->timer_mode == 2): 
-                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
-                                    $time = $model->convertSecondstoTimes($diff);
-                            ?>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>
-                                </div>
-                            <?php 
-                                elseif($model->question->subject->timer_mode == 3): 
+                                elseif($model->simulation->timer_mode == 3): 
                                     $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
                                     $time = $model->convertSecondstoTimes($diff);
 
-                                    $diff2 = ($model->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
+                                    $diff2 = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
                                     $time2 = $model->convertSecondstoTimes($diff2);
                             ?>
                                 <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"><?= $model->simulation->subject->convertToHoursMins($model->simulation->subject->time, '%02d:%02d:00'); ?></h1>         
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>         
                                 </div>
                                 <div class="well">
                                     <h1 class="text-center bebas text-bold" id="timer-question2" data-timer="<?= $time2; ?>"><?= gmdate('H:i:s', $diff2); ?></h1>         

@@ -86,9 +86,15 @@ class SimulationQuestion extends \yii\db\ActiveRecord
     }
 
     public function convertSecondstoTimes($seconds){
-        $h = floor($seconds / 3600);
-        $m = floor($seconds % 3600 / 60);
-        $s = $seconds % 60;
+        if($seconds > 0):
+            $h = floor($seconds / 3600);
+            $m = floor($seconds % 3600 / 60);
+            $s = $seconds % 60;
+        else:
+            $h = 0;
+            $m = 0;
+            $s = 0;
+        endif;
 
         return sprintf('%dh%02dm%02ds', $h, $m, $s);
     }
