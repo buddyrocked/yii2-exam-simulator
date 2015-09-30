@@ -533,6 +533,22 @@ td.visible-lg, th.visible-lg {
     transition: none !important;
 }
 
+.list-task-progressx .progress {
+    height: 3px;
+    border-radius: 3px;
+}
+
+
+.list-task-progressx .progress .progress-bar span {
+    border-radius: 3px;
+    position: absolute;
+    top: -40px;
+    background: #f25454;
+    padding: 5px 10px;
+}
+
+
+
 .treeview .treeview-menu li a {
     font-size: 12px !important;
     padding: 10px 20px;

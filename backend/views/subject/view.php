@@ -73,6 +73,45 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     ],
                                                 ]) ?>
                                             </div>
+                                            <div class="col-md-12">
+                                                <hr />
+                                                <div class="form-group form-action">
+                                                    <label>Setting Timer Mode</label>
+                                                </div>
+                                                <hr />
+                                                <div class="form-group form-action">
+                                                    <div class="text-right">
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> No Timer', ['setting', 'id' => $model->id, 'setting' => 0], [
+                                                        'class' => 'btn btn-danger outline',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Exam', ['setting', 'id' => $model->id, 'setting' => 1], [
+                                                        'class' => 'btn btn-danger outline',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Question', ['setting', 'id' => $model->id, 'setting' => 2], [
+                                                        'class' => 'btn btn-danger outline',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Exam & Question', ['setting', 'id' => $model->id, 'setting' => 3], [
+                                                        'class' => 'btn btn-danger outline',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="domain">
@@ -204,6 +243,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 ]
                                                             ])?>
                                                         </div>
+                                                        <div class="col-sm-12">
+                                                            <?= $form->field($modelQuestion, 'explaination')->widget(\yii\redactor\widgets\Redactor::className(), [
+                                                                'clientOptions' => [
+                                                                    'plugins' => ['clips', 'fontcolor','imagemanager', 'fontfamily', 'fontsize', 'table', 'filemanager', 'fullscreen']
+                                                                ]
+                                                            ])?>
+                                                        </div>
                                                         <div class="col-md-12">
                                                             <h3>domains</h3>
                                                             <hr />
@@ -211,13 +257,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         <div class="col-md-12">
                                                             <div class="">
                                                                 <?php DynamicFormWidget::begin([
-                                                                    'widgetContainer' => 'dynamicform_wrapper2', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
-                                                                    'widgetBody' => '.container-items2', // required: css class selector
-                                                                    'widgetItem' => '.item2', // required: css class
-                                                                    'limit' => 1, // the maximum times, an element can be cloned (default 999)
+                                                                    'widgetContainer' => 'dynamicform_wrapper3', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
+                                                                    'widgetBody' => '.container-items3', // required: css class selector
+                                                                    'widgetItem' => '.item3', // required: css class
+                                                                    'limit' => 2, // the maximum times, an element can be cloned (default 999)
                                                                     'min' => 1, // 0 or 1 (default 1)
-                                                                    'insertButton' => '.add-item2', // css class
-                                                                    'deleteButton' => '.remove-item2', // css class
+                                                                    'insertButton' => '.add-item3', // css class
+                                                                    'deleteButton' => '.remove-item3', // css class
                                                                     'model' => $modelsDomain[0],
                                                                     'formId' => 'dynamic-form',
                                                                     'formFields' => [
@@ -225,9 +271,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     ],
                                                                 ]); ?>
 
-                                                                <div class="row container-items2"><!-- widgetContainer -->
+                                                                <div class="row container-items3"><!-- widgetContainer -->
                                                                 <?php foreach ($modelsDomain as $x => $modelDomain): ?>
-                                                                    <div class="col-md-3 item2"><!-- widgetBody -->                                                                        
+                                                                    <div class="col-md-3 item3"><!-- widgetBody -->                                                                        
                                                                         <?php
                                                                             // necessary for update action.
                                                                             if (! $modelDomain->isNewRecord) {
@@ -247,8 +293,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                             </div>
                                                                             <div class="col-md-2">
                                                                                 <div>&nbsp;</div>
-                                                                                <button type="button" class="add-item2 btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
-                                                                                <button type="button" class="remove-item2 btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>
+                                                                                <button type="button" class="add-item3 btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+                                                                                <button type="button" class="remove-item3 btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -296,11 +342,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 </div>
                                                                                 <div class="col-sm-2">
                                                                                     <label>&nbsp;</label>
-                                                                                    <?= $form->field($modelOption, '['.$i.']is_correct')->checkbox(); ?>
+                                                                                    <?= $form->field($modelOption, '['.$i.']is_correct')->checkbox(['class'=>'checkbox-answer']); ?>
                                                                                 </div>
 
                                                                                 <div class="col-sm-5">
-                                                                                    <?= $form->field($modelOption, '['.$i.']answer')->textInput(['maxlength' => true]) ?>
+                                                                                    <?= $form->field($modelOption, '['.$i.']answer')->textArea(['maxlength' => true]) ?>
                                                                                 </div>
                                                                                 <div class="col-md-1">                                
                                                                                     <br /><br />

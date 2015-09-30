@@ -38,6 +38,7 @@ class CustomAsset extends AssetBundle
         'js/jquery.nav.js',
         'js/jquery.center.min.js',
         'js/jquery.msg.min.js',
+        'js/timer.jquery.min.js',
         'js/app.js'
     ];
     

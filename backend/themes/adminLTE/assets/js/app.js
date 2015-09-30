@@ -9,6 +9,18 @@ $(document).ready(function(){
             e.preventDefault();
         });
 
+        $('#timer-question').timer({
+		    countdown: true,
+		    duration: $('#timer-question').attr('data-timer'),    // This will start the countdown from 3 mins 40 seconds
+			format: '%H:%M:%S',
+			callback: function(){
+				$('#form-question').submit();
+			},
+			repeat: true
+		});
+
+		
+
         $('#clear-answer').click(function(e){
         	$('input[type="radio"]').attr('checked', false);
         	e.preventDefault();
@@ -29,6 +41,9 @@ $(document).ready(function(){
             var form = $(this);
             if(form.find('.has-error').length) {
             	return false;
+            }else if($('.checkbox-answer:checked').length == 0){
+            	alert('Please set right options first');
+            	return false;
             }else{
         		//$.msg({ autoUnblock : false, clickUnblock : false });
             }
@@ -40,6 +55,12 @@ $(document).ready(function(){
                 success: function(data) {
                         console.log(data);
                         alert(data.message);
+                        $('.checkbox-answer').prop('checked', false);
+                        $('.form-control').val('');
+                        $('.form-control').select2('val', '');
+                        $('#question-question').redactor('code.set', '');
+                        $('#question-explaination').redactor('code.set', '');
+                        $('#question-level').select2('val', '');
                         //$.msg('unblock',0,1);
                         $.pjax.defaults.timeout = false;
                         //$.pjax.reload({container:'#pjax-form-question', async:false});
