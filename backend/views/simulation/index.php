@@ -11,12 +11,12 @@ use yii\grid\GridView;
 $this->title = 'Simulations';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="simulation-index">
+<div class="project-index">
     <div class="row">    
         <div class="col-md-12">
             <div class="container-menu">
                 <div class="upper-menu">
-                    <div class="title-icon"><i class="fa fa-list-alt"></i></div>
+                    <div class="title-icon"><i class="fa fa-male"></i></div>
                     <div class="upper-menu-title">
                     <?= Html::encode($this->title) ?>
                     </div>
@@ -24,22 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                        
-
-                            <?php //\yii\widgets\Pjax::begin(); ?>
+                           <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+                            <?php \yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
                                 'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
-                                    [
-                                        'attribute'=>'user_id',
-                                        'format'=>'raw',
-                                        'value'=>function($data){
-                                            return isset($data->profile->fullname)?$data->profile->fullname:'';
-                                        }
-                                    ],
+                                    
                                     [
                                         'attribute'=>'subject_id',
                                         'format'=>'raw',
@@ -85,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ],
                                 ],
                             ]); ?>
-                            <?php //\yii\widgets\Pjax::end(); ?>
+                            <?php \yii\widgets\Pjax::end(); ?>
                         </div>
                     </div>
                 </div>

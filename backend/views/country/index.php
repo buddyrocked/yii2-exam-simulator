@@ -27,20 +27,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="text-right">
                             <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-info']) ?>
                         </div>
-                                   <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
                 
 
-                                       <?php \yii\widgets\Pjax::begin(); ?>
+                    <?php \yii\widgets\Pjax::begin(); ?>
                     <?= GridView::widget([
                         'dataProvider' => $dataProvider,
                         'filterModel' => $searchModel,
-        'columns' => [
+                        'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
 
-                                    'id',
-            'name',
+                                    //'id',
+                                    'name',
 
-                        [
+                            [
                             'class' => 'yii\grid\ActionColumn',
                             'template' => '<div class="btn-group">{view} {update} {delete}</div>',
                             'buttons' => [

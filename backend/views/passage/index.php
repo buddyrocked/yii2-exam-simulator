@@ -3,6 +3,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\widgets\Select2;
+use yii\helpers\ArrayHelper;
+use backend\models\Passage;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\PassageSearch */
@@ -27,16 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="text-right">
                             <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
-                                                   <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                        
+                            <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
-                                                       <?php \yii\widgets\Pjax::begin(); ?>
+                            <?php \yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
                                     'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
-                                    'id',
+                                    //'id',
                                     'name',
                                     'desc:ntext',
                                     //'created',

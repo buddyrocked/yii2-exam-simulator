@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use wbraganca\dynamicform\DynamicFormWidget;
+use kartik\widgets\Select2;
+use yii\helpers\ArrayHelper;
+use backend\models\Subject;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Subject */

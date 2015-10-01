@@ -27,10 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="text-right">
                             <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
-                                                   <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                            <?php echo $this->render('_search', ['model' => $searchModel]); ?>
                         
 
-                                                       <?php \yii\widgets\Pjax::begin(); ?>
+                            <?php \yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,

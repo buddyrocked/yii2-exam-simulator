@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\models\Subject;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SubjectSearch */
@@ -27,17 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="text-right">
                             <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
-                                                   <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                        
-
-                            <?php //\yii\widgets\Pjax::begin(); ?>
+                            <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+                            <?php \yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
                                 'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
-                                    //'id',
-                                    'id_subject',
+                                    'id',
                                     'name',
                                     //'desc:ntext',
                                     'question_number',
@@ -62,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ],
                                 ],
                             ]); ?>
-                            <?php //\yii\widgets\Pjax::end(); ?>
+                            <?php \yii\widgets\Pjax::end(); ?>
                         </div>
                     </div>
                 </div>

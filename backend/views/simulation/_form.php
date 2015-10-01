@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use backend\models\Subject;
+use kartik\widgets\Select2;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Simulation */
@@ -12,9 +15,20 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
-
-    <?= $form->field($model, 'subject_id')->textInput() ?>
+    <?= //$form->field($model, 'user_id')->textInput() ?>
+<div class="row">
+    <div class="col-sm-6">
+            <?= $form->field($model, 'subject_id')->widget(Select2::className(),  [
+                                                                            'data' => ArrayHelper::map(Subject::find()->all(), 'id', 'organizaton_name'),
+                                                                            'options'=>[
+                                                                                'placeholder'=>'Choose Subject',
+                                                                                
+                                                                            ],
+                                                                            'pluginOptions'=>[
+                                                                               'allowClear'=>true 
+                                                                            ]
+                                                                        ]) ?>
+    </div>
 
     <?= $form->field($model, 'duration')->textInput() ?>
 
@@ -38,5 +52,5 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+</div>
 </div>
