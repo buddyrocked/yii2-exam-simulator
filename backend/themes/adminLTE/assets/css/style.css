@@ -1708,3 +1708,39 @@ ul.newsticker, ul.newsticker-quotes {
 .text-danger {
     color:#f25454 !important;
 }
+
+@media (min-width: 768px)
+    .sidebar-mini.sidebar-collapse .main-sidebar {
+        width: 60px!important;
+        z-index: 850;
+    }
+
+    .sidebar-mini.sidebar-collapse .main-sidebar {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        width: 60px!important;
+        z-index: 850;
+    }
+
+    .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>a>span:not(.pull-right), .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>.treeview-menu {
+        display: block!important;
+        position: absolute;
+        width: 180px;
+        left: 60px !important;
+    }
+
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {
+        margin-left: 60px!important;
+        z-index: 840;
+    }
+
+    .sidebar-mini.sidebar-collapse .main-header .logo {
+        width: 60px;
+    }
+
+    .sidebar-mini.sidebar-collapse .main-header .navbar {
+        margin-left: 60px;
+    }
+}

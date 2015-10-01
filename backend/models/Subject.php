@@ -129,5 +129,14 @@ class Subject extends \yii\db\ActiveRecord
         return sprintf($format, $hours, $minutes);
     }
 
-    
+    public function getLabelTimer(){
+        $lists = [
+            '0'=>'No Timer',
+            '1'=>'Timer per Exam',
+            '2'=>'Timer per Question',
+            '3'=>'Timer per Exam & Question'
+        ];
+
+        return $lists[$this->timer_mode];
+    }
 }
