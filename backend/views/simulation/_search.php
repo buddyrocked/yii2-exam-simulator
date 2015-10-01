@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
         </div>
     <div class="col-md-5">
             <?= $form->field($model, 'timer_mode')->widget(Select2::className(),  [
-                        'data' => ArrayHelper::map(Subject::find()->all(), 'id', 'timer_mode'),
+                        'data' => ['0'=>'No Timer', '1'=>'Timer Per Exam', '2'=>'Timer Per Question', '3'=>'Timer Per Exam & Question'],
                         'options'=>['placeholder'=>'Choose Timer Mode'],
                         'pluginOptions'=>[
                            'allowClear'=>true 
