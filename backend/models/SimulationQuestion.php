@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use yii\Helpers\ArrayHelper;
 
 /**
  * This is the model class for table "simulation_question".
@@ -75,6 +76,12 @@ class SimulationQuestion extends \yii\db\ActiveRecord
         return $this->hasMany(SimulationQuestionAnswer::className(), ['simulation_question_id' => 'id']);
     }
 
+    public function textSimulationQuestionAnswers()
+    {
+        $lists = $this->getSimulationQuestionAnswers()->joinWith('questionOption')->asArray()->all();
+        return implode(', ', ArrayHelper::getColumn($lists, 'questionOption.option'));
+    }
+
     public function getLabelStatus(){
         $lists = [
             '0'=>'<span class="text-danger"><i class="fa fa-times fa-2x"></i></span>',
@@ -83,6 +90,16 @@ class SimulationQuestion extends \yii\db\ActiveRecord
         ];
 
         return $lists[$this->status];
+    }
+
+    public function getLabelCorrect(){
+        $lists = [
+            '0'=>'<span class="text-danger"><i class="fa fa-times fa-2x"></i></span>',
+            '1'=>'<span class="text-success"><i class="fa fa-check fa-2x"></i></span>',
+            ''=>'<span class="text-gray"><i class="fa fa-minus fa-2x"></i></span>'
+        ];
+
+        return $lists[$this->correct];
     }
 
     public function convertSecondstoTimes($seconds){

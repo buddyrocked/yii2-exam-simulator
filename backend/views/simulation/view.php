@@ -112,11 +112,33 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 return strip_tags($data->question->question);
                                                             }
                                                         ],
-                                                        [
+                                                        /*[
                                                             'attribute'=>'status',
                                                             'format'=>'raw',
                                                             'value'=>function($data){
                                                                 return $data->getLabelStatus();
+                                                            }
+                                                        ],*/
+                                                        [
+                                                            'attribute'=>'simulation_question_answers',
+                                                            'header'=>'Your Answer',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return $data->textSimulationQuestionAnswers();
+                                                            }
+                                                        ],
+                                                        [
+                                                            'attribute'=>'is_correct',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return $data->getLabelCorrect();
+                                                            }
+                                                        ],
+                                                        [
+                                                            'header'=>'Right Answer',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return ($data->simulation->explain_mode == 1)?$data->question->getTextQuestionRightOptions():'';
                                                             }
                                                         ],
                                                     ],

@@ -4,6 +4,8 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
+use yii\grid\GridView;
+use yii\data\ActiveDataProvider;
 
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
@@ -40,6 +42,55 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->count(); ?></h4></div>
                                 </div>
                                 <hr />
+                                <div>
+                                            <?php \yii\widgets\Pjax::begin(); ?>
+                                                <?= GridView::widget([
+                                                'dataProvider' => new ActiveDataProvider([
+                                                                'query' => $model->getSimulationQuestions(),
+                                                ]),
+                                                'columns' => [
+                                                        ['class' => 'yii\grid\SerialColumn'],
+                                                        [
+                                                            'attribute'=>'question_id',
+                                                            'format'=>'text',
+                                                            'value'=>function($data){
+                                                                return strip_tags($data->question->question);
+                                                            }
+                                                        ],
+                                                        /*[
+                                                            'attribute'=>'status',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return $data->getLabelStatus();
+                                                            }
+                                                        ],*/
+                                                        [
+                                                            'attribute'=>'simulation_question_answers',
+                                                            'header'=>'Your Answer',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return $data->textSimulationQuestionAnswers();
+                                                            }
+                                                        ],
+                                                        [
+                                                            'attribute'=>'is_correct',
+                                                            'header'=>'Correct',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return $data->getLabelCorrect();
+                                                            }
+                                                        ],
+                                                        [
+                                                            'header'=>'Right Answer',
+                                                            'format'=>'raw',
+                                                            'value'=>function($data){
+                                                                return ($data->simulation->explain_mode == 1)?$data->question->getTextQuestionRightOptions():'';
+                                                            }
+                                                        ],
+                                                    ],
+                                                ]); ?>
+                                            <?php \yii\widgets\Pjax::end(); ?>
+                                        </div>
                             </div>
                         </div>
                     </div>

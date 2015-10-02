@@ -5,6 +5,7 @@ namespace backend\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
+use yii\Helpers\ArrayHelper;
 
 
 /**
@@ -123,6 +124,11 @@ class Question extends \yii\db\ActiveRecord
     {
         return $this->hasMany(QuestionOption::className(), ['question_id' => 'id'])->where(['is_correct'=>true]);
         
+    }
+
+    public function getTextQuestionRightOptions(){
+        $lists = $this->getQuestionRightOptions()->asArray()->all();
+         return implode(', ', ArrayHelper::getColumn($lists, 'option'));
     }
 
     public function getLastNumber(){
