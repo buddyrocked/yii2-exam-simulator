@@ -9,6 +9,7 @@ use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * ProfileController implements the CRUD actions for Profile model.
  */
@@ -99,12 +100,53 @@ class ProfileController extends Controller
      * @return Profile the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+    
     protected function findModel($id)
     {
         if (($model = Profile::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionViewdetail()
+    {   
+        return $this->render('viewdetail', [
+            'model' => $this->findModelDetail(),
+        ]);
+    }
+
+    protected function findModelDetail()
+    {
+        if (($model = Profile::find()->where (['user_id' => Yii::$app->user->identity->id])->one()))
+        {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionUpdatedetail()
+    {
+        $model = $this->findModelDetail();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'info',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data has been updated.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+            return $this->redirect(['viewdetail']);
+        }
+        else {
+            return $this->render('updatedetail', [
+                'model' => $model,
+            ]);
         }
     }
 }

@@ -139,4 +139,9 @@ class Subject extends \yii\db\ActiveRecord
 
         return $lists[$this->timer_mode];
     }
+
+    public function getSimulations()
+    {
+        return $this->hasMany(Simulation::className(), ['subject_id' => 'id']);
+    }
 }

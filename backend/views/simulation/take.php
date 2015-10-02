@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?php //\yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => new ActiveDataProvider([
-                                                'query' => $subjects,
+                                'query' => $subjects,
                                 ]),
                                 'showHeader'=>false,
                                 'columns' => [
@@ -47,6 +47,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'value'=>function($data){
                                                         $client = (isset($data->desc))?substr($data->desc, 0, 80):'-';
                                                         return '<h4 class="text-upper"><strong>'.Html::a($data->name, ['/simulation/preview', 'id'=>$data->id], []).'</strong></h4>'.$client;
+                                                    }
+                                                ],
+                                                [
+                                                    'attribute'=>'time',
+                                                    'format'=>'raw',
+                                                    'value'=>function($data){
+                                                        return '<h4 class="text-center text-danger"><strong>'.$data->getSimulations()->count().'</strong></h4>
+                                                                <div class="text-center">Taken</div>';
                                                     }
                                                 ],
                                                 [

@@ -422,6 +422,17 @@ class SimulationController extends Controller
         //$answer = 
     }
 
+    public function actionList()
+    {
+        $searchModel = new SimulationSearch();
+        $dataProvider = $searchModel->searchList(Yii::$app->request->queryParams);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     public function actionTake()
     {
         $this->layout = 'main';

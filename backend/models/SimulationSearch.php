@@ -72,4 +72,38 @@ class SimulationSearch extends Simulation
 
         return $dataProvider;
     }
+    
+    public function searchList($params)
+    {
+        $query = Simulation::find()
+        ->where(['user_id' => Yii::$app->user->identity->id]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'user_id' => $this->user_id,
+            'subject_id' => $this->subject_id,
+            'duration' => $this->duration,
+            'timer_mode' => $this->timer_mode,
+            'start' => $this->start,
+            'finish' => $this->finish,
+            'status' => $this->status,
+            'score' => $this->score,
+            'created' => $this->created,
+            'updated' => $this->updated,
+        ]);
+
+        return $dataProvider;
+    }
 }

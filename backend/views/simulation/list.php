@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         'attribute'=>'user_id',
                                         'format'=>'raw',
                                         'value'=>function($data){
-                                            return isset($data->profile->fullname)?$data->profile->fullname:'';
+                                            return isset($data->profile->first_name)?$data->profile->first_name:'';
                                         }
                                     ],
                                     [

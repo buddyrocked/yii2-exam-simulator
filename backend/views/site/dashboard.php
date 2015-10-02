@@ -117,7 +117,11 @@ $this->params['breadcrumbs'][] = $this->title;
 		                        <!-- Menu Footer-->
 		                        <div class="user-footer">
 		                            <div class="pull-left">
-		                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+		                                <?= Html::a(
+                                            'Profile',
+                                            ['/profile/viewdetail'],
+                                            ['class' => 'btn btn-default btn-flat']
+                                        ) ?>
 		                            </div>
 		                            <div class="pull-right">
 		                                <?= Html::a(
