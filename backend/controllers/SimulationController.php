@@ -240,12 +240,19 @@ class SimulationController extends Controller
                     'type' => 'danger',
                     'duration' => 500000,
                     'icon' => 'fa fa-volume-up',
-                    'message' => 'Time is up.',
+                    'message' => 'Time per question is up.',
                     'title' => 'Information',
                     'positonY' => 'bottom',
                     'positonX' => 'right'
                 ]);
-                return $this->redirect(['review', 'id'=>$id]);
+                $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
+                
+                if($modelNext != null):
+                    return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
+                else:
+                    return $this->redirect(['review', 'id' => $id]);
+                endif;
+
             endif;
         endif;
 
@@ -280,7 +287,7 @@ class SimulationController extends Controller
                             endif;
 
                             $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
-                            Yii::$app->session->remove($id.'_'.$question);
+                           
 
                             if($modelNext != null):
                                 return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
@@ -340,7 +347,6 @@ class SimulationController extends Controller
                         if($modelQuestion->save()):
                             $transaction->commit();
                             $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
-                            Yii::$app->session->remove($id.'_'.$question);
                             
                             if($modelNext != null):
 
