@@ -32,8 +32,14 @@ if (Yii::$app->controller->action->id === 'login') {
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+        <script type="text/javascript">
+            window.history.forward();
+            function noBack() { 
+              window.history.forward(); 
+            }
+        </script>
     </head>
-    <body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?> sidebar-mini">
+    <body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?> sidebar-mini"  onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <?php $this->beginBody() ?>
         <?php foreach (Yii::$app->session->getAllFlashes() as $message): ?>
         <?php

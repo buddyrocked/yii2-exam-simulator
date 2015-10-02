@@ -165,6 +165,7 @@ class SimulationController extends Controller
                 $model->subject_id = $id;
                 $model->duration = $subject->time;
                 $model->timer_mode = $subject->timer_mode;
+                $model->explain_mode = $subject->explain_mode;
                 $model->start = date('H:i:s');
                 $model->status = 0;
                 $model->save();
@@ -338,7 +339,7 @@ class SimulationController extends Controller
 
                         if($modelQuestion->save()):
                             $transaction->commit();
-                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
+                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
                             Yii::$app->session->remove($id.'_'.$question);
                             
                             if($modelNext != null):
@@ -377,6 +378,16 @@ class SimulationController extends Controller
                 'modelsAnswer' => $modelsAnswer
             ]);
         }
+    }
+
+    public function actionBack($id, $question){
+        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['simulation_id'=>$id])->orderBy('id DESC')->one();
+        
+        if($modelPrev != null):
+            return $this->redirect(['question', 'id' => $id, 'question'=>$modelPrev->id]);
+        else:
+            return $this->redirect(['question', 'id' => $id, 'question'=>$question]);
+        endif;
     }
 
     public function actionFinish($id){

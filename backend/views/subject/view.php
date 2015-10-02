@@ -81,29 +81,43 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <hr />
                                                 <div class="form-group form-action">
                                                     <div class="text-right">
+                                                    <?= Html::a('<i class="fa fa-eye"></i> Hide Explaination', ['explain', 'id' => $model->id, 'setting' => 0], [
+                                                        'class' => ($model->explain_mode == 0)?'btn btn-danger disabled':'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-eye-slash"></i> Show Explaination', ['explain', 'id' => $model->id, 'setting' => 1], [
+                                                        'class' => ($model->explain_mode == 1)?'btn btn-danger disabled':'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
                                                     <?= Html::a('<i class="fa fa-clock-o"></i> No Timer', ['setting', 'id' => $model->id, 'setting' => 0], [
-                                                        'class' => 'btn btn-danger outline',
+                                                        'class' => ($model->timer_mode == 0)?'btn btn-danger disabled':'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer / Exam', ['setting', 'id' => $model->id, 'setting' => 1], [
+                                                        'class' => ($model->timer_mode == 1)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure you want apply this setting?',
                                                             'method' => 'post',
                                                         ],
                                                     ]) ?>
-                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Exam', ['setting', 'id' => $model->id, 'setting' => 1], [
-                                                        'class' => 'btn btn-danger outline',
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer / Question', ['setting', 'id' => $model->id, 'setting' => 2], [
+                                                        'class' => ($model->timer_mode == 2)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure you want apply this setting?',
                                                             'method' => 'post',
                                                         ],
                                                     ]) ?>
-                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Question', ['setting', 'id' => $model->id, 'setting' => 2], [
-                                                        'class' => 'btn btn-danger outline',
-                                                        'data' => [
-                                                            'confirm' => 'Are you sure you want apply this setting?',
-                                                            'method' => 'post',
-                                                        ],
-                                                    ]) ?>
-                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer per Exam & Question', ['setting', 'id' => $model->id, 'setting' => 3], [
-                                                        'class' => 'btn btn-danger outline',
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer / Exam & Question', ['setting', 'id' => $model->id, 'setting' => 3], [
+                                                        'class' => ($model->timer_mode == 3)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure you want apply this setting?',
                                                             'method' => 'post',

@@ -122,10 +122,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <h1 class="text-center bebas text-bold">00:00:00</h1>
                                 </div>
                             <?php endif; ?>
-                            <?= Html::submitButton($modelsAnswer->isNewRecord ? '<i class="fa fa-check"></i> Submit Answer' : '<i class="fa fa-save"></i> Update Answer', ['class' => 'btn-lg btn-block btn btn-info', 'data' => [
-                                        'method' => 'post',
-                                    ]
-                            ]) ?>
+                            <div class="btn-group">
+                                <?= Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info']); ?>
+                                <?= Html::submitButton($modelsAnswer->isNewRecord ? 'Next <i class="fa fa-chevron-right"></i>' : 'Update  <i class="fa fa-chevron-right"></i>', ['class' => 'btn-lg btn btn-info', 'data' => [
+                                            'method' => 'post',
+                                        ]
+                                ]) ?>
+                            </div>
                             <hr />
                             <a href="#" class="btn btn-danger btn-lg btn-block" id="clear-answer"><i class="fa fa-times"></i> Reset Answer</a>
                         </div>
