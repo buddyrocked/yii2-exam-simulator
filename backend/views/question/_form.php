@@ -19,8 +19,8 @@ use kartik\widgets\SwitchInput;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="question-form">
-
+<div class="col-md-12">
+    <div class="question-form">
     <?php $form = ActiveForm::begin([
                                     'id' => 'dynamic-form',
                                     'options'=>[
@@ -30,7 +30,7 @@ use kartik\widgets\SwitchInput;
     <div class="row">
         <div class="col-sm-6">
             <?php \yii\widgets\Pjax::begin(['id'=>'pjax-passage']); ?>
-            <?= $form->field($model, 'passage_id')->widget(Select2::className(),  [
+            <?= $form->field($modelQuestion, 'passage_id')->widget(Select2::className(),  [
                                                                 'data' => ArrayHelper::map(Passage::find()->all(), 'id', 'name'),
                                                                 'options'=>['placeholder'=>'Choose Passage'],
                                                                 'pluginOptions'=>[
@@ -64,7 +64,7 @@ use kartik\widgets\SwitchInput;
             <?php \yii\widgets\Pjax::end(); ?>
         </div>
         <div class="col-sm-2">
-             <?= $form->field($model, 'level')->widget(Select2::className(),  [
+             <?= $form->field($modelQuestion, 'level')->widget(Select2::className(),  [
                                                                 'data' => ['1'=>'1', '2'=>'2', '3'=>'3', '4'=>'4', '5'=>'5'],
                                                                 'options'=>['placeholder'=>'Choose Level'],
                                                                 'pluginOptions'=>[
@@ -73,13 +73,20 @@ use kartik\widgets\SwitchInput;
                                                             ]) ?>
         </div>                                                        
         <div class="col-sm-2">
-            <?= $form->field($model, 'time')->textInput() ?>
+            <?= $form->field($modelQuestion, 'time')->textInput() ?>
         </div>
         <div class="col-sm-2">
-            <?= $form->field($model, 'is_random')->widget(SwitchInput::classname(), []); ?>
+            <?= $form->field($modelQuestion, 'is_random')->widget(SwitchInput::classname(), []); ?>
         </div>
         <div class="col-sm-12">
-            <?= $form->field($model, 'question')->widget(\yii\redactor\widgets\Redactor::className(), [
+            <?= $form->field($modelQuestion, 'question')->widget(\yii\redactor\widgets\Redactor::className(), [
+                'clientOptions' => [
+                    'plugins' => ['clips', 'fontcolor','imagemanager', 'fontfamily', 'fontsize', 'table', 'filemanager', 'fullscreen']
+                ]
+            ])?>
+        </div>
+        <div class="col-sm-12">
+            <?= $form->field($modelQuestion, 'explaination')->widget(\yii\redactor\widgets\Redactor::className(), [
                 'clientOptions' => [
                     'plugins' => ['clips', 'fontcolor','imagemanager', 'fontfamily', 'fontsize', 'table', 'filemanager', 'fullscreen']
                 ]
@@ -92,13 +99,13 @@ use kartik\widgets\SwitchInput;
         <div class="col-md-12">
             <div class="">
                 <?php DynamicFormWidget::begin([
-                    'widgetContainer' => 'dynamicform_wrapper2', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
-                    'widgetBody' => '.container-items2', // required: css class selector
-                    'widgetItem' => '.item2', // required: css class
-                    'limit' => 1, // the maximum times, an element can be cloned (default 999)
+                    'widgetContainer' => 'dynamicform_wrapper3', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
+                    'widgetBody' => '.container-items3', // required: css class selector
+                    'widgetItem' => '.item3', // required: css class
+                    'limit' => 2, // the maximum times, an element can be cloned (default 999)
                     'min' => 1, // 0 or 1 (default 1)
-                    'insertButton' => '.add-item2', // css class
-                    'deleteButton' => '.remove-item2', // css class
+                    'insertButton' => '.add-item3', // css class
+                    'deleteButton' => '.remove-item3', // css class
                     'model' => $modelsDomain[0],
                     'formId' => 'dynamic-form',
                     'formFields' => [
@@ -106,9 +113,9 @@ use kartik\widgets\SwitchInput;
                     ],
                 ]); ?>
 
-                <div class="row container-items2"><!-- widgetContainer -->
+                <div class="row container-items3"><!-- widgetContainer -->
                 <?php foreach ($modelsDomain as $x => $modelDomain): ?>
-                    <div class="col-md-3 item2"><!-- widgetBody -->                                                                        
+                    <div class="col-md-3 item3"><!-- widgetBody -->                                                                        
                         <?php
                             // necessary for update action.
                             if (! $modelDomain->isNewRecord) {
@@ -118,7 +125,7 @@ use kartik\widgets\SwitchInput;
                         <div class="row">
                             <div class="col-md-10">
                                 <?= $form->field($modelDomain, '['.$x.']domain_id')->widget(Select2::className(),  [
-                                                                'data' => ArrayHelper::map(Domain::find()->where(['subject_id'=>$model->subject->id])->all(), 'id', 'name'),
+                                                                'data' => ArrayHelper::map(Domain::find()->where(['subject_id'=>$modelQuestion->subject_id])->all(), 'id', 'name'),
                                                                 'options'=>['placeholder'=>'Choose Domain'],
                                                                 'pluginOptions'=>[
                                                                    'allowClear'=>true 
@@ -128,8 +135,8 @@ use kartik\widgets\SwitchInput;
                             </div>
                             <div class="col-md-2">
                                 <div>&nbsp;</div>
-                                <button type="button" class="add-item2 btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
-                                <button type="button" class="remove-item2 btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>
+                                <button type="button" class="add-item3 btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+                                <button type="button" class="remove-item3 btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -149,7 +156,7 @@ use kartik\widgets\SwitchInput;
                     'widgetBody' => '.container-items', // required: css class selector
                     'widgetItem' => '.item', // required: css class
                     'limit' => 10, // the maximum times, an element can be cloned (default 999)
-                    'min' => 1, // 0 or 1 (default 1)
+                    'min' => 4, // 0 or 1 (default 1)
                     'insertButton' => '.add-item', // css class
                     'deleteButton' => '.remove-item', // css class
                     'model' => $modelsOption[0],
@@ -177,11 +184,11 @@ use kartik\widgets\SwitchInput;
                                 </div>
                                 <div class="col-sm-2">
                                     <label>&nbsp;</label>
-                                    <?= $form->field($modelOption, '['.$i.']is_correct')->checkbox(); ?>
+                                    <?= $form->field($modelOption, '['.$i.']is_correct')->checkbox(['class'=>'checkbox-answer']); ?>
                                 </div>
 
                                 <div class="col-sm-5">
-                                    <?= $form->field($modelOption, '['.$i.']answer')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($modelOption, '['.$i.']answer')->textArea(['maxlength' => true]) ?>
                                 </div>
                                 <div class="col-md-1">                                
                                     <br /><br />
@@ -197,10 +204,11 @@ use kartik\widgets\SwitchInput;
         </div>
         <div class="col-sm-12">
             <div class="form-group form-action well">
-                <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>
+                <?= Html::submitButton($modelQuestion->isNewRecord ? '<i class="fa fa-save"></i> Create' : '<i class="fa fa-save"></i> Update', ['class' => $modelQuestion->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>
             </div>
         </div>
     </div>
 
     <?php ActiveForm::end(); ?>
+    </div>
 </div>
