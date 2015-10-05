@@ -48,9 +48,10 @@ use yii\helpers\Html;
                     <div>&nbsp;</div>
 
             		<div class="row registration-block">
-            			<div class="col-sm-6">
+            			<div class="col-sm-10">
+                            <?php echo "if not already have an account "; ?>
             				<?= GhostHtml::a(
-            					UserManagementModule::t('front', "Registration"),
+            					UserManagementModule::t('front', " Sign Up"),
             					['/user-management/auth/registration']
             				) ?>
             			</div>
