@@ -3,16 +3,16 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m150917_070501_add_column_correct_to_table_simulation_question extends Migration
+class m151005_032757_add_column_description_to_table_domain extends Migration
 {
     public function up()
     {
-        'desc'=>Schema::TYPE_TEXT.' NULL',
+        $this->addColumn('domain', 'desc', 'TEXT NULL');
     }
 
     public function down()
     {
-        echo "m150917_070501_add_column_correct_to_table_simulation_question cannot be reverted.\n";
+        echo "m151005_032757_add_column_description_to_table_domain cannot be reverted.\n";
 
         return false;
     }

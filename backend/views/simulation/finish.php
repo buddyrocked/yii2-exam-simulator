@@ -50,14 +50,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 ]),
                                                 'columns' => [
                                                         ['class' => 'yii\grid\SerialColumn'],
-                                                        [
+                                                        /*[
                                                             'attribute'=>'question_id',
                                                             'format'=>'text',
                                                             'value'=>function($data){
                                                                 return strip_tags($data->question->question);
                                                             }
                                                         ],
-                                                        /*[
+                                                        [
                                                             'attribute'=>'status',
                                                             'format'=>'raw',
                                                             'value'=>function($data){

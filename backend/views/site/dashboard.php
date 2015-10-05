@@ -108,10 +108,10 @@ $this->params['breadcrumbs'][] = $this->title;
 		                                    ['alt' => 'user image', 'class'=>'img-square', 'data-src'=>'holder.js/200x200/auto/?text=img']
 		                                );
 		                            ?>
-		                            <h3 class="text-bold text-bebas text-danger text-upper">
-		                                <?= Html::encode(Yii::$app->user->username); ?> <?= Html::encode(isset(Yii::$app->profile->detail()->first_name)?Yii::$app->profile->detail()->first_name:''); ?>
+		                            <h4 class="text-bebas text-danger">
+		                                <?= Html::encode(Yii::$app->user->username); ?><br /><?= Html::encode(isset(Yii::$app->profile->detail()->first_name)?Yii::$app->profile->detail()->first_name:''); ?>
 		                                <small></small>
-		                            </h3>
+		                            </h4>
 		                        </div>
                         		<div>&nbsp;</div>
 		                        <!-- Menu Footer-->

@@ -52,6 +52,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <?php foreach ($model->domains as $domain): ?>
                                 <label><?= $domain->name; ?> (<?= $domain->percentage; ?>%) </label> /
+                            <?php endforeach; ?><br />
+                            <?php foreach ($model->domains as $domain): ?>
+                                <label><?= $domain->name; ?> (<?= $domain->desc; ?>) </label> /
                             <?php endforeach; ?>
                         </div>
                     </div>
