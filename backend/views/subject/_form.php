@@ -68,11 +68,14 @@ use backend\models\Subject;
                                 }
                             ?>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <?= $form->field($modelDomain, '['.$i.']name')->textInput(['maxlength' => true]) ?>
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-2">
                                     <?= $form->field($modelDomain, '['.$i.']percentage')->input('number', ['min'=>'0', 'max'=>'100']); ?>
+                                </div>
+                                <div class="col-sm-5">
+                                    <?= $form->field($modelDomain, '['.$i.']desc')->textInput(['maxlength' => true]) ?>
                                 </div>
                                 <div class="col-md-1">                                
                                     <br /><br />
