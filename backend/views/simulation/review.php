@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             <?php endif; ?>
                             <?= Html::a('<i class="fa fa-check"></i> Finish The Test', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
-                                        'confirm' => 'Are you sure you want to close this exam?',
+                                        'confirm' => 'Are you sure you want to finish this exam?',
                                         'method' => 'post',
                                     ]
                             ]) ?>
