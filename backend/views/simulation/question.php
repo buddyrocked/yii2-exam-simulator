@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'options'=>['id'=>'mark'],
                                     'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
                                 ]);
-                                echo '<label class="cbx-label" for="mark">Mark as unsure answer.</label>';
+                                echo '<label class="cbx-label" for="mark">Mark this question.</label>';
                             ?>
                             </div>
                         </div>
