@@ -51,9 +51,9 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><?php echo Html::a('Login', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
-                            
-                            <?php //echo Html::a('Registration', ['/user-management/auth/registration'], ['class'=>'external']); ?>
+                            <li><?php echo Html::a('Sign In', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li><?php echo Html::a('Sign Up', ['/user-management/auth/registration'], ['class'=>'external']); ?></li>
                         </ul>
                     </li>
                 <?php else: ?>

@@ -53,6 +53,14 @@ body {
     text-transform: uppercase;
 }
 
+.radio label{
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
 
 /* Forms part */
 .form-horizontal .form-group {

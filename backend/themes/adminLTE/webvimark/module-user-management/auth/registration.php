@@ -61,7 +61,11 @@ $this->params['breadcrumbs'][] = $this->title;
 											'<span class="glyphicon glyphicon-ok"></span> ' . UserManagementModule::t('front', 'Register'),
 											['class' => 'btn btn-danger']
 										) ?>
-										<?= Html::a('<i class="fa fa-lock"></i> Login', ['/user-management/auth/login'], ['class'=>'btn btn-danger']); ?>
+										<?php echo  "  if already have an account  "; ?>
+										<?= Html::a(
+			            					UserManagementModule::t('front', "  Sign In"),
+			            					['/user-management/auth/login']
+			            				) ?>
 									</div>
 								</div>
 							</div>

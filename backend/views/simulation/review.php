@@ -35,13 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ]),
                                     'columns' => [
                                             ['class' => 'yii\grid\SerialColumn'],
-                                            [
+                                            /*[
                                                 'attribute'=>'question_id',
                                                 'format'=>'text',
                                                 'value'=>function($data){
                                                     return strip_tags($data->question->question);
                                                 }
-                                            ],
+                                            ],*/
                                             [
                                                 'attribute'=>'status',
                                                 'format'=>'raw',
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <h1 class="text-center bebas text-bold">00:00:00</h1>
                                 </div>
                             <?php endif; ?>
-                            <?= Html::a('<i class="fa fa-check"></i> Finish The Test', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
+                            <?= Html::a('<i class="fa fa-check"></i> Finish Exam', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
                                         'confirm' => 'Are you sure you want to finish this exam?',
                                         'method' => 'post',
                                     ]
