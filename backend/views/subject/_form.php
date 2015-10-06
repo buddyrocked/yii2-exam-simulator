@@ -18,8 +18,17 @@ use backend\models\Subject;
                                     'id' => 'dynamic-form',
                                     ]); ?>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-6">
+        <?= $form->field($model, 'status')->widget(Select2::className(),  [
+            'data' => ['0'=>'Live', '1'=>'Dummy'],
+            'options'=>['placeholder'=>'Choose Status'],
+            'pluginOptions'=>[
+            'allowClear'=>true 
+        ]
+        ]) ?>
         </div>
         <div class="col-md-12">
             <?= $form->field($model, 'desc')->widget(\yii\redactor\widgets\Redactor::className(), [
@@ -71,6 +80,7 @@ use backend\models\Subject;
                                 <div class="col-sm-4">
                                     <?= $form->field($modelDomain, '['.$i.']name')->textInput(['maxlength' => true]) ?>
                                 </div>
+                                
                                 <div class="col-sm-2">
                                     <?= $form->field($modelDomain, '['.$i.']percentage')->input('number', ['min'=>'0', 'max'=>'100']); ?>
                                 </div>
