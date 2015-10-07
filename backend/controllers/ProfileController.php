@@ -8,6 +8,7 @@ use backend\models\ProfileSearch;
 use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 
 /**
@@ -52,7 +53,16 @@ class ProfileController extends Controller
     {
         $model = new Profile();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->photo = UploadedFile::getInstance($model, 'photo');
+            if($model->photo){
+                $path = Yii::getAlias('@backend') . '/web/uploads/profile/';
+                $name = rand(1000,9999) . time();
+                $model->photo->saveAs($path . $name . '.' . $model->photo->extension);
+                $model->photo = $name . '.' . $model->photo->extension;
+            }
+            $model->save();
+            Yii::$app->session->setFlash('message', 'simpan berhasil berhasil katakan berhasil.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -71,7 +81,16 @@ class ProfileController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->photo = UploadedFile::getInstance($model, 'photo');
+            if($model->photo){
+                $path = Yii::getAlias('@backend') . '/web/uploads/profile/';
+                $name = rand(1000,9999) . time();
+                $model->photo->saveAs($path . $name . '.' . $model->photo->extension);
+                $model->photo = $name . '.' . $model->photo->extension;
+            }
+            $model->save();
+            Yii::$app->session->setFlash('message', 'simpan berhasil berhasil katakan berhasil.');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -131,19 +150,18 @@ class ProfileController extends Controller
     {
         $model = $this->findModelDetail();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('success', [
-                                'type' => 'info',
-                                'duration' => 500000,
-                                'icon' => 'fa fa-volume-up',
-                                'message' => 'Data has been updated.',
-                                'title' => 'Information',
-                                'positonY' => 'bottom',
-                                'positonX' => 'right'
-                            ]);
-            return $this->redirect(['viewdetail']);
-        }
-        else {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->photo = UploadedFile::getInstance($model, 'photo');
+            if($model->photo){
+                $path = Yii::getAlias('@backend') . '/web/uploads/profile/';
+                $name = rand(1000,9999) . time();
+                $model->photo->saveAs($path . $name . '.' . $model->photo->extension);
+                $model->photo = $name . '.' . $model->photo->extension;
+            }
+            $model->save();
+            Yii::$app->session->setFlash('message', 'simpan berhasil berhasil katakan berhasil.');
+            return $this->redirect(['viewdetail', 'id' => $model->id]);
+        } else {
             return $this->render('updatedetail', [
                 'model' => $model,
             ]);

@@ -121,7 +121,16 @@ use kartik\widgets\DatePicker;
                         <div class="col-md-6">
                             <?= $form->field($model, 'postal_code')->textInput(['maxlength' => true]) ?>
                         </div>
+                        
                     </div>
+                    
+                </div>
+                <div class="col-md-6">
+                        <?= $form->field($model, 'photo')->widget(FileInput::classname(), [
+                                'options' => ['accept' => 'image/*'],
+                        ]); ?>
+                        <span>6x4cm & jpg/jpeg</span>
+                        
                 </div>
             </div>
         </div>

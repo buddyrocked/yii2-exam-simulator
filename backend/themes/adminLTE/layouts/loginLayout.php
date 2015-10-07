@@ -65,7 +65,7 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                 <div class="col-md-1">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/employee/photo/'.Yii::$app->profile->detail()->photo:"/img/user2-160x160.jpg"; ?>
+                        <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/profile/'.Yii::$app->profile->detail()->photo:"/img/user2-160x160.jpg"; ?>
                         <?php //Html::img($photo, ['class'=>'user-image', 'alt'=>'user Image']); ?>
                         <?php
                             echo EasyThumbnailImage::thumbnailImg(
