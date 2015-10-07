@@ -115,4 +115,12 @@ class SimulationQuestion extends \yii\db\ActiveRecord
 
         return sprintf('%dh%02dm%02ds', $h, $m, $s);
     }
+
+    public function getQuestionDomain(){
+        return $this->hasOne(QuestionDomain::className(), ['question_id' => 'question_id']);
+    }
+
+    public function getSimulationDomain(){
+        return $this->hasOne(SimulationDomain::className(), ['id' => 'simulation_domain_id']);
+    }
 }
