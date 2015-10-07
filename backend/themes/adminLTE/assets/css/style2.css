@@ -1375,6 +1375,14 @@ ul.newsticker, ul.newsticker-quotes {
     margin: 0px !important;
 }
 
+.simulation-take {
+    background: url(..//bg-login2.jpg) no-repeat center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 150px 0 80px 0;
+    width: 100%;
+    margin: 0px !important;
+}
 
 .process {
     background: #fff;

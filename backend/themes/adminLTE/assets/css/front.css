@@ -1367,7 +1367,7 @@ ul.newsticker, ul.newsticker-quotes {
 
 
 .login-content {
-    background: url(../images/bg-home.jpg) no-repeat center center;
+    background: url(..//bg-home.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 150px 0 80px 0;
@@ -1376,7 +1376,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .login-content2 {
-    background: url(../images/bg-home.jpg) no-repeat center center;
+    background: url(..//bg-home.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 120px 0 20px 0;

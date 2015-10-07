@@ -452,7 +452,7 @@ class SimulationController extends Controller
 
     public function actionTake()
     {
-        $this->layout = 'main';
+        $this->layout = 'loginLayout';
         Yii::$app->getSession()->setFlash('success', [
                          'type' => 'success',
                          'duration' => 5000000,

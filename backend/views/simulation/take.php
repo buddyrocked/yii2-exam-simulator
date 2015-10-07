@@ -12,7 +12,8 @@ use backend\components\EasyThumbnailImage;
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="login-content first-content" id="index-content">
+<div class="simulation-take first-content" id="index-content">
+<div class="container">
 	<div class="row">    
         <div class="col-md-12">            
             <div class="well">
@@ -98,5 +99,6 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+</div>
 </div>
 

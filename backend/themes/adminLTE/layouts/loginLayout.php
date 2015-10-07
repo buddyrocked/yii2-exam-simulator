@@ -4,6 +4,8 @@ use webvimark\modules\UserManagement\UserManagementModule;
 use webvimark\modules\UserManagement\components\GhostHtml;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use backend\components\EasyThumbnailImage;
+
 dmstr\web\AdminLteAsset::register($this);
 backend\themes\adminLTE\components\LoginAsset::register($this);
 
@@ -47,6 +49,7 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                 <li><?php echo Html::a('Features', '#features'); ?></li>
                 <li><?php echo Html::a('About', '#about'); ?></li>
                 <li><?php echo Html::a('Contact', '#contact'); ?></li>
+                <li><?php echo Html::a('Take Exam', ['/simulation/take'], ['class'=>'external']); ?></li>
                 <?php if (Yii::$app->user->isGuest): ?>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
@@ -57,7 +60,61 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                         </ul>
                     </li>
                 <?php else: ?>
-                    <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
+                    
+                <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
+                <div class="col-md-1">
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/employee/photo/'.Yii::$app->profile->detail()->photo:"/img/user2-160x160.jpg"; ?>
+                        <?php //Html::img($photo, ['class'=>'user-image', 'alt'=>'user Image']); ?>
+                        <?php
+                            echo EasyThumbnailImage::thumbnailImg(
+                                $photo,
+                                49,
+                                49,
+                                EasyThumbnailImage::THUMBNAIL_OUTBOUND,
+                                ['alt' => 'user image', 'class'=>'user-imagex img-square', 'data-src'=>'holder.js/49x49/auto/?text=img']
+                            );
+                        ?>
+                    </a>
+                </li>
+                
+                <ul class="dropdown-menu">
+                        <!-- User image -->
+                    <li class="user-header">
+                            <?php //Html::img($photo, ['class'=>'img-circle', 'alt'=>'user Image']); ?>
+                            <?php
+                                echo EasyThumbnailImage::thumbnailImg(
+                                    $photo,
+                                    100,
+                                    100,
+                                    EasyThumbnailImage::THUMBNAIL_OUTBOUND,
+                                    ['alt' => 'user image', 'class'=>'img-square', 'data-src'=>'holder.js/100x100/auto/?text=img']
+                                );
+                            ?>
+                            <p>
+                                <?= Html::encode(Yii::$app->user->username); ?> <?= Html::encode(isset(Yii::$app->profile->detail()->first_name)?Yii::$app->profile->detail()->first_name:''); ?>
+                                <small></small>
+                            </p>
+                    </li>
+                <li class="user-footer">
+                            <div class="pull-left">
+                                <?= Html::a(
+                                    'Profile',
+                                    ['profile/viewdetail'],
+                                    ['class' => 'btn btn-default btn-flat']
+                                ) ?>
+                            </div>
+                            <div class="pull-right">
+                                <?= Html::a(
+                                    'Sign out',
+                                    ['/user-management/auth/logout'],
+                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                ) ?>
+                            </div>
+                </li>
+                </ul>
+                </div>
                 <?php endif; ?>
             </ul>
         </div><!-- /.nav-collapse -->
