@@ -5,6 +5,7 @@ namespace backend\models;
 use webvimark\modules\UserManagement\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 
 /**
@@ -28,6 +29,18 @@ use yii\behaviors\TimestampBehavior;
  */
 class Simulation extends \yii\db\ActiveRecord
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created',
+                'updatedAtAttribute' => 'updated',
+                'value' => new Expression('NOW()'),
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -93,20 +106,39 @@ class Simulation extends \yii\db\ActiveRecord
         return $this->hasMany(SimulationQuestion::className(), ['simulation_id' => 'id']);
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSimulationDomains()
+    {
+        return $this->hasMany(SimulationDomain::className(), ['simulation_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSimulationDomainStrengths()
+    {
+        return $this->hasMany(SimulationDomainStrength::className(), ['simulation_id' => 'id']);
+    }
+
     public function getQuestionForSimulations(){
         $questions = $this->subject->getQuestionForSimulations();
         $qs = [];
         if($questions != null):
             foreach ($questions as $question) {
-                $qs[] = [$question['id'], $this->id, 0];
+                $simulation_domain = $this->getSimulationDomains()->where(['domain_id'=>$question['domain_id']])->one();
+
+                $qs[] = [$question['id'], $this->id, $question['question_domain_id'], $simulation_domain->id, 0];
             }
         endif;
+        shuffle($qs);
 
         return $qs;
     }
     
     public function insertQuestionSimulations(){
-        return Yii::$app->db->createCommand()->batchInsert(SimulationQuestion::tableName(), ['question_id', 'simulation_id', 'status'],  $this->getQuestionForSimulations())->execute();
+        return Yii::$app->db->createCommand()->batchInsert(SimulationQuestion::tableName(), ['question_id', 'simulation_id', 'question_domain_id', 'simulation_domain_id', 'status'],  $this->getQuestionForSimulations())->execute();
     }
 
     public function getProfile(){
@@ -148,5 +180,32 @@ class Simulation extends \yii\db\ActiveRecord
         return sprintf('%dh%02dm%02ds', $h, $m, $s);
     }
 
+    public function getSettingStrength(){
+        return StrengthSetting::find()->select([new Expression($this->id.' AS simulation_id'), 'name', 'min', 'max'])->asArray()->all();
+    }
+
+    public function insertDomainStrength(){
+        return Yii::$app->db->createCommand()->batchInsert(SimulationDomainStrength::tableName(), ['simulation_id', 'name', 'min', 'max'],  $this->getSettingStrength())->execute();
+    }
+
+    public function insertSimulationDomain(){
+        return Yii::$app->db->createCommand()->batchInsert(SimulationDomain::tableName(), ['simulation_id', 'domain_id'],  $this->getDomains()->select([new Expression($this->id.' AS simulation_id'), 'id'])->asArray()->all())->execute();
+    }
+
+    public function getDomains(){
+        return $this->subject->getDomains();
+    }
+
+    public function getQuestionPerDomains($domain){
+        return $this->getSimulationQuestions()->innerJoinWith([
+                'questionDomain' => function($query)use($domain){
+                    $query->andWhere(['domain_id'=>$domain]);
+                }
+        ]);
+    }
+
+    public function getRightQuestionPerDomains($domain){
+        return $this->getQuestionPerDomains($domain)->where(['correct'=>1]);
+    }
 
 }

@@ -8,7 +8,7 @@ use backend\models\SimulationSearch;
 use backend\models\SimulationQuestion;
 use backend\models\Subject;
 use backend\models\SimulationQuestionAnswer;
-use yii\web\Controller;
+use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
@@ -18,17 +18,6 @@ use yii\helpers\ArrayHelper;
  */
 class SimulationController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all Simulation models.
@@ -170,7 +159,11 @@ class SimulationController extends Controller
                 $model->status = 0;
                 $model->save();
 
+                $model->insertSimulationDomain();
+
                 $model->insertQuestionSimulations();
+
+                $model->insertDomainStrength();
 
                 $transaction->commit();
 

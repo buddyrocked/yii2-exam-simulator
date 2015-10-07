@@ -103,7 +103,7 @@ class Subject extends \yii\db\ActiveRecord
 
     public function getQuestionByDomain($domain){
         $limit = ($domain->percentage / $this->question_number) * 100;
-        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id'])->where(['question_domain.domain_id'=>$domain->id])->limit($limit)->orderBy('RAND()');
+        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id', 'question_domain.id AS question_domain_id', 'question_domain.domain_id'])->where(['question_domain.domain_id'=>$domain->id])->limit($limit)->orderBy('RAND()');
     }
 
     public function getQuestionForSimulations(){

@@ -6,22 +6,27 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
-
 /**
- * This is the model class for table "domain".
+ * This is the model class for table "strength_setting".
  *
  * @property integer $id
  * @property integer $subject_id
  * @property string $name
- * @property integer $percentage
+ * @property integer $min
+ * @property integer $max
  * @property string $created
  * @property string $updated
- *
- * @property Subject $subject
- * @property QuestionDomain[] $questionDomains
  */
-class Domain extends \yii\db\ActiveRecord
+class StrengthSetting extends \yii\db\ActiveRecord
 {
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'strength_setting';
+    }
+
     public function behaviors()
     {
         return [
@@ -33,14 +38,6 @@ class Domain extends \yii\db\ActiveRecord
             ],
         ];
     }
-    
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'domain';
-    }
 
     /**
      * @inheritdoc
@@ -48,8 +45,8 @@ class Domain extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'percentage'], 'required'],
-            [['subject_id', 'percentage'], 'integer'],
+            [['subject_id', 'min', 'max'], 'integer'],
+            [['name', 'min', 'max'], 'required'],
             [['created', 'updated'], 'safe'],
             [['name'], 'string', 'max' => 255]
         ];
@@ -64,27 +61,10 @@ class Domain extends \yii\db\ActiveRecord
             'id' => 'ID',
             'subject_id' => 'Subject ID',
             'name' => 'Name',
-            'percentage' => 'Percentage',
+            'min' => 'Min',
+            'max' => 'Max',
             'created' => 'Created',
             'updated' => 'Updated',
         ];
     }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSubject()
-    {
-        return $this->hasOne(Subject::className(), ['id' => 'subject_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getQuestionDomains()
-    {
-        return $this->hasMany(QuestionDomain::className(), ['domain_id' => 'id']);
-    }
-
-    
 }
