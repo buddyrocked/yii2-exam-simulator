@@ -76,6 +76,13 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                                 ['alt' => 'user image', 'class'=>'user-imagex img-square', 'data-src'=>'holder.js/49x49/auto/?text=img']
                             );
                         ?>
+                        <ul class="dropdown-menu">
+                            <li><?php echo Html::a('Profile', ['/profile/viewdetail'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li><?php echo Html::a('My Exam', ['/simulation/list'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li><?php echo Html::a('Sign Out', ['/user-management/auth/logout'], ['class'=>'external']); ?></li>
+                        </ul>
                     </a>
                 </li>
                 

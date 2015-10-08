@@ -10,7 +10,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Profiles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['viewdetail', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Updatedetail';
 ?>
-<div class="profile-update">
+<div class="update-detail first-content" id="index-content">
+<div class="container">
 	<div class="row">    
         <div class="col-md-12">
             <div class="container-menu">
@@ -35,4 +36,5 @@ $this->params['breadcrumbs'][] = 'Updatedetail';
 			</div>
 		</div>
 	</div>
+</div>
 </div>

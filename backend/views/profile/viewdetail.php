@@ -10,7 +10,8 @@ use yii\widgets\DetailView;
 $this->params['breadcrumbs'][] = ['label' => 'Profiles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="profile-view">
+<div class="profile-view first-content" id="index-content">
+<div class="container">
     <div class="row">    
         <div class="col-md-12">
             <div class="container-menu">
@@ -63,4 +64,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+</div>
 </div>

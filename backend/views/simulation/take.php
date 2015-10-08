@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'attribute'=>'time',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<h4 class="text-center text-danger"><strong>'.$data->time.'</strong></h4>
+                                                        return '<h4 class="text-center text-danger"><strong>'.$data->timer_mode.'</strong></h4>
                                                                 <div class="text-center">Minutes</div>';
                                                     }
                                                 ],

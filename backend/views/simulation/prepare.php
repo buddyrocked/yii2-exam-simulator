@@ -12,7 +12,8 @@ use backend\components\EasyThumbnailImage;
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="login-content first-content" id="index-content">
+<div class="prepare first-content" id="index-content">
+<div class="container">
 	<div class="row">    
         <div class="col-md-8"> 
             <div class="container-menu">
@@ -36,8 +37,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-2">
                                     <div class="wellx text-center">
-                                        <h2 class="text-bold bebas"><?= $model->time; ?></h2>
-                                        <div>Minutes</div>
+                                        <h2 class="text-bold bebas"><?= $model->timer_mode; ?></h2>
+                                        <?php
+                                            if($model->timer_mode == 0)
+                                            {
+                                                echo "No Timer";
+                                            }
+                                            else
+                                            {
+                                                echo "Minutes";
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <label>Timer : </label>
                             <div class="well">
-                                <h1 class="text-center bebas text-bold"><?= $model->convertToHoursMins($model->time, '%02d:%02d:00'); ?></h1>
+                                <h1 class="text-center bebas text-bold"><?= $model->convertToHoursMins($model->timer_mode, '%02d:%02d:00'); ?></h1>
                             </div>
                             <?php
                                 if(sizeof($model->getQuestionForSimulations()) >= $model->question_number):
@@ -103,5 +113,6 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+</div>
 </div>
 

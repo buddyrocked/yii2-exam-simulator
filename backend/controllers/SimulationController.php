@@ -41,6 +41,7 @@ class SimulationController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = 'loginLayout';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -137,6 +138,7 @@ class SimulationController extends Controller
      */
     public function actionPreview($id)
     {
+        $this->layout = 'loginLayout';
         $model = Subject::findOne($id);
         
         return $this->render('prepare', [
@@ -434,6 +436,7 @@ class SimulationController extends Controller
 
     public function actionList()
     {
+        $this->layout = 'loginLayout';
         $searchModel = new SimulationSearch();
         $dataProvider = $searchModel->searchList(Yii::$app->request->queryParams);
 

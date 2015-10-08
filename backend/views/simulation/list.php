@@ -1,17 +1,24 @@
 
 <?php
 
+use webvimark\modules\UserManagement\components\GhostHtml;
+use webvimark\modules\UserManagement\UserManagementModule;
+use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
+use yii\data\ActiveDataProvider;
+use backend\components\EasyThumbnailImage;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SimulationSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Simulations';
+$this->title = 'My Exam';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="simulation-index">
+<div class="simulation-list first-content" id="index-content">
+<div class="container">
     <div class="row">    
         <div class="col-md-12">
             <div class="container-menu">
@@ -92,4 +99,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -14,7 +14,8 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Dashboard', 'url' => ['/site/dashboard']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="simulation-view">
+<div class="simulation-viewdetail first-content" id="index-content">
+<div class="container">
     <div class="row">    
         <div class="col-md-12">
             <div class="container-menu">
@@ -181,4 +182,5 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+</div>
 </div>

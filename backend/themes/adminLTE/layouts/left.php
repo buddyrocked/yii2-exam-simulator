@@ -68,11 +68,12 @@ use backend\components\EasyThumbnailImage;
                                 'url'=>['/subject/index'],
                                 'items' => [
                                     ['label' => 'Subject & Question', 'icon'=>'map', 'url'=>['/subject/index']],
+                                    ['label' => 'Strength Setting', 'icon'=>'line-chart', 'url'=>['/strengthsetting/index']],
                                     ['label' => 'Passage', 'icon'=>'twitch', 'url'=>['/passage/index']],
                                     ['label' => 'Profile', 'icon'=>'male', 'url'=>['/profile/index']],
                                     ['label' => 'Master Province', 'icon'=>'map', 'url'=>['/province/index']],
                                     ['label' => 'Country', 'icon'=>'trophy', 'url'=>['/country/index']],
-                                    ['label' => 'Gender', 'icon'=>'gender', 'url'=>['/gender/index']],
+                                    ['label' => 'Gender', 'icon'=>'venus-mars', 'url'=>['/gender/index']],
                                     ['label' => 'Content', 'icon'=>'object-group', 'url'=>['/content/index']],
                                 ],
                             ],

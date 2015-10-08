@@ -130,7 +130,8 @@ class ProfileController extends Controller
     }
 
     public function actionViewdetail()
-    {   
+    {
+        $this->layout = 'loginLayout';
         return $this->render('viewdetail', [
             'model' => $this->findModelDetail(),
         ]);
@@ -148,6 +149,7 @@ class ProfileController extends Controller
 
     public function actionUpdatedetail()
     {
+        $this->layout = 'loginLayout';
         $model = $this->findModelDetail();
 
         if ($model->load(Yii::$app->request->post())) {
