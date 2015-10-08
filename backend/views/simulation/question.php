@@ -54,10 +54,37 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php
 
                                     if($model->question->getQuestionRightOptions()->count() == 1):
-                                        echo $form->field($modelsAnswer, 'question_option_id')->radioList(ArrayHelper::map($model->question->questionOptions, 'id', 'option'));
+                                        echo $form->field($modelsAnswer, 'question_option_id')->radioList(
+                                                                                                            ArrayHelper::map($model->question->questionOptions, 'id', 'option'),
+                                                                                                            [
+                                                                                                                    'item'=>function($index, $label, $name, $checked, $value)use($model){
+                                                                                                                        $rights = ArrayHelper::getColumn($model->question->getQuestionRightOptions()->select(['id'])->asArray()->all(), 'id');
+                                                                                                                        $right = (($model->simulation->is_dummy) && (in_array($value, $rights)))?'':'radio';
+                                                                                                                        return '<div class="'.$right.'">'.Html::radio($name, $checked, [
+                                                                                                                           'value' => $value,
+                                                                                                                           'label' => $label,
+                                                                                                                           'class' => ''
+                                                                                                                        ]).'</div>';
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                        );
                                     else:
                                         $modelsAnswer->question_option_id = ArrayHelper::getColumn($model->getSimulationQuestionAnswers()->select(['question_option_id'])->asArray()->all(), 'question_option_id');
-                                        echo $form->field($modelsAnswer, 'question_option_id')->checkboxList(ArrayHelper::map($model->question->questionOptions, 'id', 'option'));
+                                        echo $form->field($modelsAnswer, 'question_option_id')->checkboxList(
+                                                                                                                ArrayHelper::map($model->question->questionOptions, 'id', 'option'),
+                                                                                                                [
+                                                                                                                    'item'=>function($index, $label, $name, $checked, $value)use($model){
+                                                                                                                        $rights = ArrayHelper::getColumn($model->question->getQuestionRightOptions()->select(['id'])->asArray()->all(), 'id');
+                                                                                                                        $right = (($model->simulation->is_dummy) && (in_array($value, $rights)))?'':'checkbox';
+                                                                                                                        return '<div class="'.$right.'">'.Html::checkbox($name, $checked, [
+                                                                                                                           'value' => $value,
+                                                                                                                           'label' => $label,
+                                                                                                                           'class' => ''
+                                                                                                                        ]).'</div>';
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            );
+                                       
                                     endif;
                                 ?>
                             </div>
@@ -71,6 +98,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ]);
                                 echo '<label class="cbx-label" for="mark">Mark this question.</label>';
                             ?>
+                            </div>
+                            <hr />
+                            <div class="text-bold">
+                                    <?= $model->simulationDomain->domain->name; ?>
+                                
                             </div>
                         </div>
                     </div>

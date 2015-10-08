@@ -553,7 +553,7 @@ label {
 
 .container-menu {
     background: #fff;
-    border: 0px solid #f0f0f0;
+    border: 1px solid #f0f0f0;
     display: block;
     margin-bottom: 20px;
 }
@@ -1742,4 +1742,9 @@ ul.newsticker, ul.newsticker-quotes {
 
 .pricing {
     padding-bottom: 50px;
+}
+
+.first-content {
+    background-color: #fff;
+    padding: 150px 0 0 0;
 }

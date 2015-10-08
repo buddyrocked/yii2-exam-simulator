@@ -137,6 +137,7 @@ class SimulationController extends Controller
      */
     public function actionPreview($id)
     {
+        $this->layout = 'loginLayout';
         $model = Subject::findOne($id);
         
         return $this->render('prepare', [
@@ -157,6 +158,8 @@ class SimulationController extends Controller
                 $model->explain_mode = $subject->explain_mode;
                 $model->start = date('H:i:s');
                 $model->status = 0;
+                $model->is_dummy = $subject->status;
+                $model->minimum_score = $subject->minimum_score;
                 $model->save();
 
                 $model->insertSimulationDomain();

@@ -164,6 +164,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     return ($data->simulation->explain_mode == 1)?$data->question->getTextQuestionRightOptions():'';
                                                                 }
                                                             ],*/
+                                                            [
+                                                                'class' => 'yii\grid\ActionColumn',
+                                                                'template' => '<div class="btn-group">{view}</div>',
+                                                                'buttons' => [
+                                                                                'view' => function ($url, $model, $key) {
+                                                                                    return Html::a('<i class="fa fa-search"></i>', ['/simulation/viewquestion', 'id'=>$model->id], ['class'=>'btn btn-xs btn-danger outline btn-modal']);
+                                                                                },
+                                                                ]
+                                                            ],
                                                         ],
                                                     ]); ?>
                                                 <?php \yii\widgets\Pjax::end(); ?>

@@ -1752,3 +1752,8 @@ ul.newsticker, ul.newsticker-quotes {
         margin-left: 60px;
     }
 }
+
+.cbx-label {
+    text-transform: lowercase !important;
+    text-decoration: none !important;
+}

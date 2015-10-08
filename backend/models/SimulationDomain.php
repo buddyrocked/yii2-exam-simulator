@@ -72,7 +72,7 @@ class SimulationDomain extends \yii\db\ActiveRecord
     }   
 
     public function countPercent(){
-        return floor(($this->getSimulationQuestions()->where(['correct'=>1])->count() / $this->getSimulationQuestions()->count()) * 100);
+        return ($this->getSimulationQuestions()->where(['correct'=>1])->count() > 0)?floor(($this->getSimulationQuestions()->where(['correct'=>1])->count() / $this->getSimulationQuestions()->count()) * 100):0;
     } 
 
     public function getStrength(){
