@@ -35,6 +35,7 @@ class LoginAsset extends AssetBundle
         'js/jquery.scrollTo.js',
         'js/jquery.parallax.js',
         'js/jquery.nav.js',
+        'js/timer.jquery.min.js',
         'js/app.js'
     ];
     

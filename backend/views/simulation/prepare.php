@@ -37,17 +37,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-2">
                                     <div class="wellx text-center">
-                                        <h2 class="text-bold bebas"><?= $model->timer_mode; ?></h2>
-                                        <?php
-                                            if($model->timer_mode == 0)
-                                            {
-                                                echo "No Timer";
-                                            }
-                                            else
-                                            {
-                                                echo "Minutes";
-                                            }
-                                        ?>
+                                        
+                                        <?php if($model->timer_mode == 0): ?>
+                                            <h2 class="text-bold bebas">NO</h2>
+                                            No Timer
+                                         <?php else: ?>
+                                            <h2 class="text-bold bebas"><?= $model->time; ?></h2>
+                                            Minutes
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>

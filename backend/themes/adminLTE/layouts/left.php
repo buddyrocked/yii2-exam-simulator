@@ -14,7 +14,7 @@ use backend\components\EasyThumbnailImage;
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/employee/photo/'.Yii::$app->profile->detail()->photo: $directoryAsset."/img/user2-160x160.jpg"; ?>
+                <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/profile/'.Yii::$app->profile->detail()->photo: $directoryAsset."/img/user2-160x160.jpg"; ?>
                 <?php
                     echo EasyThumbnailImage::thumbnailImg(
                         $photo,
