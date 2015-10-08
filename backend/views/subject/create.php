@@ -24,8 +24,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">                                   
                             <div class="text-right">
-                            <?= Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn-danger outline']) ?>
+                                <?= Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn-danger outline']) ?>
                             </div>
+                            <div>&nbsp;</div>
     					    <?= $this->render('_form', [
     					        'model' => $model,
                                 'modelsDomain' => $modelsDomain

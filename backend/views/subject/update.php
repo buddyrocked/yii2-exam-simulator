@@ -26,6 +26,7 @@ $this->params['breadcrumbs'][] = 'Update';
                             <div class="text-right">
                             <?= Html::a('<i class="fa fa-chevron-left"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-danger outline']) ?>
                             </div>
+                            <div>&nbsp;</div>
 						    <?= $this->render('_form', [
 						        'model' => $model,
 						    ]) ?>

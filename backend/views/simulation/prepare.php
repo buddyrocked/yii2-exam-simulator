@@ -12,6 +12,7 @@ use backend\components\EasyThumbnailImage;
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="prepare first-content" id="index-content">
 <div class="container">
 	<div class="row">    
@@ -59,6 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <?php foreach ($model->domains as $domain): ?>
                                 <label><?= $domain->name; ?> (<?= $domain->percentage; ?>%)</label>
+                                <div><?= ($domain->percentage/100) * $model->question_number; ?> Questions</div>
                                 <div><?= $domain->desc; ?></div> <div>&nbsp;</div>
                             <?php endforeach; ?><br />
                                                    
@@ -69,13 +71,18 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-4">
         	<div class="container-menu">
+                <div class="upper-menu">
+                    <div class="upper-menu-title">
+                        &nbsp;Action
+                    </div>
+                </div>
                 <div class="middle-menu bg-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <label>Timer : </label>
-                            <div class="well">
-                                <h1 class="text-center bebas text-bold"><?= $model->convertToHoursMins($model->timer_mode, '%02d:%02d:00'); ?></h1>
-                            </div>
+
+                            <!--<div class="well">
+                                <h1 class="text-center bebas text-bold"><?= $model->convertToHoursMins($model->time, '%02d:%02d:00'); ?></h1>
+                            </div>-->
                             <?php
                                 if(sizeof($model->getQuestionForSimulations()) >= $model->question_number):
                                     echo Html::a('<i class="fa fa-check"></i> Start your exam', ['start', 'id' => $model->id], [

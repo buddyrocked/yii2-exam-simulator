@@ -55,8 +55,8 @@ class Simulation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status'], 'required'],
-            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status'], 'integer'],
+            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status', 'minimum_score'], 'required'],
+            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status', 'minimum_score'], 'integer'],
             [['start', 'finish', 'created', 'updated'], 'safe'],
             [['score'], 'number']
         ];
@@ -77,6 +77,7 @@ class Simulation extends \yii\db\ActiveRecord
             'finish' => 'Finish',
             'status' => 'Status',
             'score' => 'Score',
+            'minimum_score' => 'Min Score',
             'created' => 'Created',
             'updated' => 'Updated',
         ];

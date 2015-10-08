@@ -51,9 +51,9 @@ class Subject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'question_number', 'time'], 'required'],
+            [['name', 'question_number', 'time', 'minimum_score', 'timer_mode', 'explain_mode', 'status'], 'required'],
             [['desc'], 'string'],
-            [['question_number', 'time'], 'integer'],
+            [['question_number', 'time', 'minimum_score'], 'integer'],
             [['created', 'updated'], 'safe'],
             [['id_subject', 'name'], 'string', 'max' => 255]
         ];
@@ -71,6 +71,7 @@ class Subject extends \yii\db\ActiveRecord
             'desc' => 'Desc',
             'question_number' => 'Question Number',
             'time' => 'Time',
+            'minimum_score' => 'Min Score',
             'created' => 'Created',
             'updated' => 'Updated',
         ];
@@ -138,6 +139,26 @@ class Subject extends \yii\db\ActiveRecord
         ];
 
         return $lists[$this->timer_mode];
+    }
+
+    public function getLabelStatus(){
+        $lists = [
+            ''=>'Live',
+            '0'=>'Live',
+            '1'=>'Dummy',
+        ];
+
+        return $lists[$this->status];
+    }
+
+    public function getLabelExplainMode(){
+        $lists = [
+            ''=>'Hide Explanation',
+            '1'=>'Show Explanation',
+            '2'=>'Hide Explanation',
+        ];
+
+        return $lists[$this->explain_mode];
     }
 
     public function getSimulations()

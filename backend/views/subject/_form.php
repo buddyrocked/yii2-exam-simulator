@@ -21,14 +21,32 @@ use backend\models\Subject;
         <div class="col-md-6">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-md-6">
-        <?= $form->field($model, 'status')->widget(Select2::className(),  [
-            'data' => ['0'=>'Live', '1'=>'Dummy'],
-            'options'=>['placeholder'=>'Choose Status'],
-            'pluginOptions'=>[
-            'allowClear'=>true 
-        ]
-        ]) ?>
+        <div class="col-md-2">
+            <?= $form->field($model, 'status')->widget(Select2::className(),  [
+                'data' => ['0'=>'Live', '1'=>'Dummy'],
+                'options'=>['placeholder'=>'Choose Status'],
+                'pluginOptions'=>[
+                'allowClear'=>true 
+            ]
+            ]) ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'explain_mode')->widget(Select2::className(),  [
+                'data' => ['0'=>'Hide', '1'=>'Show'],
+                'options'=>['placeholder'=>'Choose Explain Mode'],
+                'pluginOptions'=>[
+                'allowClear'=>true 
+            ]
+            ]) ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'timer_mode')->widget(Select2::className(),  [
+                'data' => ['0'=>'No Timer', '1'=>'Timer per Exam', '2'=>'Timer per Question', '3'=>'Timer per Exam & Question'],
+                'options'=>['placeholder'=>'Choose Timer Mode'],
+                'pluginOptions'=>[
+                'allowClear'=>true 
+            ]
+            ]) ?>
         </div>
         <div class="col-md-12">
             <?= $form->field($model, 'desc')->widget(\yii\redactor\widgets\Redactor::className(), [
@@ -37,10 +55,13 @@ use backend\models\Subject;
                 ]
             ])?>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <?= $form->field($model, 'question_number')->input('number', ['min'=>'0', 'max'=>'5000']); ?>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <?= $form->field($model, 'minimum_score')->input('number', ['min'=>'0', 'max'=>'100']); ?>
+        </div>
+        <div class="col-md-4">
             <?= $form->field($model, 'time')->input('number', ['min'=>'0', 'max'=>'7200']); ?>
         </div>
         <?php if($model->isNewRecord): ?>

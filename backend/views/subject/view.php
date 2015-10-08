@@ -67,7 +67,26 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         'name',
                                                         'desc:html',
                                                         'question_number',
-                                                        'time',
+                                                        [
+                                                           'attribute'=>'timer_mode',
+                                                           'value'=>$model->getLabelTimer(),
+                                                        ],
+                                                        [
+                                                           'attribute'=>'time',
+                                                           'value'=>$model->time.' Minutes',
+                                                        ],
+                                                        [
+                                                           'attribute'=>'explain_mode',
+                                                           'value'=>$model->getLabelExplainMode(),
+                                                        ],
+                                                        [
+                                                           'attribute'=>'status',
+                                                           'value'=>$model->getLabelStatus(),
+                                                        ],
+                                                        [
+                                                           'attribute'=>'minimum_score',
+                                                           'value'=>$model->minimum_score.'%',
+                                                        ],
                                                         'created',
                                                         'updated',
                                                     ],
