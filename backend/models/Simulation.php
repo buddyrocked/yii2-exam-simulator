@@ -127,19 +127,21 @@ class Simulation extends \yii\db\ActiveRecord
         $questions = $this->subject->getQuestionForSimulations();
         $qs = [];
         if($questions != null):
+            $no = 1;
+            shuffle($questions);
             foreach ($questions as $question) {
                 $simulation_domain = $this->getSimulationDomains()->where(['domain_id'=>$question['domain_id']])->one();
 
-                $qs[] = [$question['id'], $this->id, $question['question_domain_id'], $simulation_domain->id, 0];
+                $qs[] = [$no++, $question['id'], $this->id, $question['question_domain_id'], $simulation_domain->id, 0];
             }
         endif;
-        shuffle($qs);
+        
 
         return $qs;
     }
     
     public function insertQuestionSimulations(){
-        return Yii::$app->db->createCommand()->batchInsert(SimulationQuestion::tableName(), ['question_id', 'simulation_id', 'question_domain_id', 'simulation_domain_id', 'status'],  $this->getQuestionForSimulations())->execute();
+        return Yii::$app->db->createCommand()->batchInsert(SimulationQuestion::tableName(), ['number', 'question_id', 'simulation_id', 'question_domain_id', 'simulation_domain_id', 'status'],  $this->getQuestionForSimulations())->execute();
     }
 
     public function getProfile(){
@@ -158,9 +160,7 @@ class Simulation extends \yii\db\ActiveRecord
     }
 
     public function getScore(){
-        //return $this->getSimulationQuestions()->with(['simulationQuestionAnswers','question'=>function($query){
-        //    $query->with('questionOptions')->where(['correct'=>1]);
-        //}])->select('simulation_question.id, simulation_question.question_id');
+        return floor(($this->getSimulationQuestions()->where(['correct'=>1])->count() / $this->getSimulationQuestions()->count()) * 100);
     }
 
     public function getPercent(){
@@ -207,6 +207,10 @@ class Simulation extends \yii\db\ActiveRecord
 
     public function getRightQuestionPerDomains($domain){
         return $this->getQuestionPerDomains($domain)->where(['correct'=>1]);
+    }
+
+    public function getScoreStatus(){
+        return ($this->getScore() >= $this->minimum_score)?'<h3 class="text-success"><i class="fa fa-check"></i> PAST</h3>':'<h3 class="text-danger"><i class="fa fa-times"></i> FAILED</h3>';
     }
 
 }

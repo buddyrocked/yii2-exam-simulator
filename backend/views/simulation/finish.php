@@ -41,21 +41,34 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <h3 class="bebas">Summary</h3>
                                             <hr />
                                             <div class="row">
-                                                <div class="col-xs-6"><h5>Correct Answer</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>1])->count(); ?></h4></div>
+                                                <div class="col-xs-6"><h4 class="bebas">Correct Answer</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>1])->count(); ?></h4></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-xs-6"><h5>Incorrect Answer</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
+                                                <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-xs-6"><h5>Blank Answer</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>NULL])->andWhere(['status'=>0])->count(); ?></h4></div>
+                                                <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>0])->count(); ?></h4></div>
                                             </div>
                                             <hr />
                                             <div class="row">
-                                                <div class="col-xs-6"><h5>Total Questions</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->count(); ?></h4></div>
+                                                <div class="col-xs-6"><h4 class="bebas">Total Questions</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->count(); ?></h4></div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-xs-6"><h4 class="bebas">Minimum Score</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->minimum_score; ?>%</h4></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6"><h4 class="bebas">Your Score</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getScore(); ?>%</h4></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6"><div>&nbsp;</div><h4 class="bebas">Status</h4></div>
+                                                <div class="col-xs-6"><?= $model->getScoreStatus(); ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +130,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div role="tabpanel" class="tab-pane" id="question">
                                         <div>
                                             <hr />
-                                            <h3 class="bebas">Review Exam</h3>
+                                            <h3 class="bebas">Review Exam <?= $model->explain_mode; ?></h3>
                                             <hr />
                                             <div>
                                                 <?php \yii\widgets\Pjax::begin(); ?>
@@ -150,6 +163,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 }
                                                             ],*/
                                                             [
+                                                                'attribute'=>'status',
+                                                                'header'=>'Blank',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return $data->getLabelStatus2();
+                                                                }
+                                                            ],
+                                                            [
                                                                 'attribute'=>'is_correct',
                                                                 'header'=>'Correct',
                                                                 'format'=>'raw',
@@ -166,7 +187,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             ],*/
                                                             [
                                                                 'class' => 'yii\grid\ActionColumn',
-                                                                'template' => '<div class="btn-group">{view}</div>',
+                                                                'template' => ($model->explain_mode == 1)?'<div class="btn-group">{view}</div>':'',
                                                                 'buttons' => [
                                                                                 'view' => function ($url, $model, $key) {
                                                                                     return Html::a('<i class="fa fa-search"></i>', ['/simulation/viewquestion', 'id'=>$model->id], ['class'=>'btn btn-xs btn-danger outline btn-modal']);
@@ -180,6 +201,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div class="well">
+                                <?= Html::a('<i class="fa fa-list-alt"></i> Go To My Exam', ['/simulation/list'], ['class' => 'btn-lg btn btn-info']); ?>
                             </div>
                         </div>
                     </div>
