@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ]
                             ]); ?>
 	<div class="row">    
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="list-task-progressx">
                 <div class="progress">
                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-value="<?= Html::encode($model->simulation->getPercent()); ?>" style="width: 0%;">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="container-menu">
                 <div class="upper-menu">
                     <div class="upper-menu-title">
-                        &nbsp;Question No. <?= $model->number; ?>
+                        &nbsp;Question
                     </div>
                 </div>
                 <div class="middle-menu bg-white">
@@ -59,10 +59,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                                             [
                                                                                                                     'item'=>function($index, $label, $name, $checked, $value)use($model){
                                                                                                                         $rights = ArrayHelper::getColumn($model->question->getQuestionRightOptions()->select(['id'])->asArray()->all(), 'id');
-                                                                                                                        $right = (($model->simulation->is_dummy) && (in_array($value, $rights)))?'':'radio';
+                                                                                                                        $right = (in_array($value, $rights))?'':'radio';
+                                                                                                                        $myAnswer = $model->getMyAnswers()->one();
+                                                                                                                        $icon = ($myAnswer['question_option_id'] == $value)?'<i class="fa fa-arrow-left"></i> Your answer':'';
                                                                                                                         return '<div class="'.$right.'">'.Html::radio($name, $checked, [
                                                                                                                            'value' => $value,
-                                                                                                                           'label' => $label,
+                                                                                                                           'label' => $label.' '.$icon,
                                                                                                                            'class' => ''
                                                                                                                         ]).'</div>';
                                                                                                                     }
@@ -89,17 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ?>
                             </div>
                             <hr />
-                            <div>
-                            <?php
-                                echo CheckboxX::widget([
-                                    'name'=>'mark',
-                                    'options'=>['id'=>'mark'],
-                                    'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
-                                ]);
-                                echo '<label class="cbx-label" for="mark">Mark this question.</label>';
-                            ?>
-                            </div>
-                            <hr />
+                            
                             <div class="text-bold">
                                     <?= $model->simulationDomain->domain->name; ?>
                                 
@@ -109,80 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-        	<div class="container-menu">
-                <div class="upper-menu">
-                    <div class="upper-menu-title">
-                        &nbsp;Timer
-                    </div>
-                </div>
-                <div class="middle-menu bg-white">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php 
-                                if($model->simulation->timer_mode == 1): 
-                                    $diff = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
-                                    $time = $model->convertSecondstoTimes($diff);
-                            ?>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>
-                                </div>
-                            <?php 
-                                elseif($model->simulation->timer_mode == 2): 
-                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
-                                    $time = $model->convertSecondstoTimes($diff);
-                            ?>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>
-                                </div>
-                            <?php 
-                                elseif($model->simulation->timer_mode == 3): 
-                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
-                                    $time = $model->convertSecondstoTimes($diff);
-
-                                    $diff2 = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
-                                    $time2 = $model->convertSecondstoTimes($diff2);
-                            ?>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>         
-                                </div>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question2" data-timer="<?= $time2; ?>"><?= gmdate('H:i:s', $diff2); ?></h1>         
-                                </div>
-                            <?php else: ?>
-                                <div class="well">
-                                    <h1 class="text-center bebas text-bold">No Timer</h1>
-                                </div>
-                            <?php endif; ?>
-                            <hr />
-                            <div class="">
-                                <div class="">
-                                    <?php
-                                        if(($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1) && $modelPrev != null):
-                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info']); 
-                                        else:
-                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info disabled']); 
-                                        endif;
-                                    ?>
-                                    
-                                    <?= Html::submitButton(($modelNext != null)? 'Next <i class="fa fa-chevron-right"></i>' : 'Finish  <i class="fa fa-chevron-right"></i>', ['class' => 'btn-lg btn btn-info pull-right', 'data' => [
-                                                'method' => 'post',
-                                            ]
-                                    ]) ?>
-                                </div>
-                            </div>
-
-                            <hr />
-                            <a href="#" class="btn btn-danger btn-block btn-lg" id="clear-answer"><i class="fa fa-times"></i> Reset Answer</a>
-                            <?php if($model->simulation->timer_mode == 0): ?>
-                                <hr />
-                                <?= Html::a('<i class="fa fa-eye"></i> Review', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-info btn-block btn-lg']); ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <?php ActiveForm::end(); ?>
 </div>

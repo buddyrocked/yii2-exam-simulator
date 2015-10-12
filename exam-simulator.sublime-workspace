@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"model",
+				"modelQuestion"
+			],
+			[
+				"ques",
+				"question"
+			],
+			[
+				"mode",
+				"model"
+			],
+			[
 				"tex",
 				"text-decoration"
 			],
@@ -48,10 +60,6 @@
 				"function"
 			],
 			[
-				"mode",
-				"modelPrev"
-			],
-			[
 				"simua",
 				"simulation_id"
 			],
@@ -66,10 +74,6 @@
 			[
 				"tim",
 				"timer-question"
-			],
-			[
-				"ques",
-				"question_option_id"
 			],
 			[
 				"quest",
@@ -150,10 +154,6 @@
 			[
 				"findM",
 				"findMine"
-			],
-			[
-				"model",
-				"modelsAnswer"
 			],
 			[
 				"the",
@@ -520,131 +520,50 @@
 	"buffers":
 	[
 		{
-			"file": "backend/models/StrengthSetting.php",
-			"settings":
-			{
-				"buffer_size": 1499,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nuse yii\\helpers\\Html;\nuse yii\\widgets\\ActiveForm;\n\n/* @var $this yii\\web\\View */\n/* @var $model backend\\models\\StrengthSetting */\n/* @var $form yii\\widgets\\ActiveForm */\n?>\n\n<div class=\"strength-setting-form\">\n\n    <?php $form = ActiveForm::begin(); ?>\n\n    <?php //$form->field($model, 'subject_id')->textInput() ?>\n\n    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>\n\n    <?= $form->field($model, 'min')->textInput() ?>\n\n    <?= $form->field($model, 'max')->textInput() ?>\n\n    <div class=\"form-group form-action well\">\n    	<?= Html::a('<i class=\"fa fa-remove\"></i> Cancel', ['index'], ['class' => 'btn btn-danger outline']) ?>\n        <?= Html::submitButton($model->isNewRecord ? '<i class=\"fa fa-save\"></i> Create' : '<i class=\"fa fa-save\"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-danger outline' : 'btn btn-danger outline']) ?>\n    </div>\n\n    <?php ActiveForm::end(); ?>\n\n</div>\n",
-			"file": "backend/views/strengthsetting/_form.php",
-			"file_size": 962,
-			"file_write_time": 130884856715955298,
-			"settings":
-			{
-				"buffer_size": 932,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "\n<?php\n\nuse yii\\helpers\\Html;\nuse yii\\grid\\GridView;\n\n/* @var $this yii\\web\\View */\n/* @var $searchModel backend\\models\\StrengthSettingSearch */\n/* @var $dataProvider yii\\data\\ActiveDataProvider */\n\n$this->title = 'Strength Settings';\n$this->params['breadcrumbs'][] = $this->title;\n?>\n<div class=\"strength-setting-index\">\n    <div class=\"row\">    \n        <div class=\"col-md-12\">\n            <div class=\"container-menu\">\n                <div class=\"upper-menu\">\n                    <div class=\"title-icon\"><i class=\"fa fa-list-alt\"></i></div>\n                    <div class=\"upper-menu-title\">\n                    <?= Html::encode($this->title) ?>\n                    </div>\n                </div>\n                <div class=\"middle-menu bg-white\">\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                        <div class=\"text-right\">\n                            <?= Html::a('<i class=\"fa fa-plus\"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>\n                        </div>\n                        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>\n                        <?php \\yii\\widgets\\Pjax::begin(); ?>\n                        <?= GridView::widget([\n                            'dataProvider' => $dataProvider,\n                            'filterModel' => $searchModel,\n                            'columns' => [\n                                ['class' => 'yii\\grid\\SerialColumn'],\n                                //'id',\n                                //'subject_id',\n                                'name',\n                                'min',\n                                'max',\n                                //'created',\n                                //'updated',\n                                [\n                                    'class' => 'yii\\grid\\ActionColumn',\n                                    'template' => '<div class=\"btn-group\">{view} {update} {delete}</div>',\n                                    'buttons' => [\n                                                    'view' => function ($url, $model, $key) {\n                                                        return Html::a('<i class=\"fa fa-search\"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);\n                                                    },\n                                                    'update' => function ($url, $model, $key) {\n                                                        return Html::a('<i class=\"fa fa-pencil\"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);\n                                                    },\n                                                    'delete' => function ($url, $model, $key) {\n                                                        return Html::a('<i class=\"fa fa-trash\"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);\n                                                    },\n                                    ]\n                                ],\n                            ],\n                        ]); ?>\n                        <?php \\yii\\widgets\\Pjax::end(); ?>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n",
-			"file": "backend/views/strengthsetting/index.php",
-			"file_size": 3447,
-			"file_write_time": 130884894138739079,
-			"settings":
-			{
-				"buffer_size": 3379,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nuse yii\\helpers\\Html;\nuse yii\\widgets\\DetailView;\n\n/* @var $this yii\\web\\View */\n/* @var $model backend\\models\\StrengthSetting */\n\n$this->title = $model->name;\n$this->params['breadcrumbs'][] = ['label' => 'Strength Settings', 'url' => ['index']];\n$this->params['breadcrumbs'][] = $this->title;\n?>\n<div class=\"strength-setting-view\">\n    <div class=\"row\">    \n        <div class=\"col-md-12\">\n            <div class=\"container-menu\">\n                <div class=\"upper-menu\">\n                    <div class=\"title-icon\"><i class=\"fa fa-list-alt\"></i></div>\n                    <div class=\"upper-menu-title\">\n                        <?= Html::encode($this->title) ?>\n                    </div>\n                </div>\n                <div class=\"middle-menu bg-white\">\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                            <div class=\"form-group form-action\">\n                                <div class=\"text-right\">\n                                <?= Html::a('<i class=\"fa fa-chevron-left\"></i> <span>back to list</span>', ['index'], ['class' => 'btn btn btn-danger outline']) ?>\n                                <?= Html::a('<i class=\"fa fa-pencil\"></i> Update', ['update', 'id' => $model->id], ['class' => 'btn btn-danger outline']) ?>\n                                <?= Html::a('<i class=\"fa fa-trash\"></i> Delete', ['delete', 'id' => $model->id], [\n                                    'class' => 'btn btn-danger outline',\n                                    'data' => [\n                                        'confirm' => 'Are you sure you want to delete this item?',\n                                        'method' => 'post',\n                                    ],\n                                ]) ?>\n                                </div>\n                            </div>\n\n                            <?= DetailView::widget([\n                                'model' => $model,\n                                'attributes' => [\n                                    'id',\n                                    'subject_id',\n                                    'name',\n                                    'min',\n                                    'max',\n                                    'created',\n                                    'updated',\n                                ],\n                            ]) ?>\n                        </div>\n                    </div>\n                </div> \n            </div>\n        </div>\n    </div>\n</div>\n",
-			"file": "backend/views/strengthsetting/view.php",
-			"file_size": 2580,
-			"file_write_time": 130884894708270092,
-			"settings":
-			{
-				"buffer_size": 2522,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "backend/controllers/SimulationController.php",
 			"settings":
 			{
-				"buffer_size": 17763,
+				"buffer_size": 19066,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/controllers/SubjectController.php",
+			"file": "backend/themes/adminLTE/layouts/main-question.php",
 			"settings":
 			{
-				"buffer_size": 9284,
+				"buffer_size": 3638,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/controllers/PassageController.php",
+			"file": "backend/themes/adminLTE/layouts/main.php",
 			"settings":
 			{
-				"buffer_size": 3793,
+				"buffer_size": 3612,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/controllers/StrengthsettingController.php",
+			"file": "backend/views/simulation/viewquestion.php",
 			"settings":
 			{
-				"buffer_size": 3004,
+				"buffer_size": 7979,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/controllers/BaseController.php",
+			"file": "backend/models/SimulationQuestion.php",
 			"settings":
 			{
-				"buffer_size": 587,
+				"buffer_size": 3492,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/models/Simulation.php",
+			"file": "backend/views/simulation/view.php",
 			"settings":
 			{
-				"buffer_size": 6212,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/conservir-clone/common/config/main-local.php",
-			"settings":
-			{
-				"buffer_size": 641,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/components/LeaveWidget.php",
-			"settings":
-			{
-				"buffer_size": 878,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/yii-advanced/common/config/main-local.php",
-			"settings":
-			{
-				"buffer_size": 1287,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "backend/models/Domain.php",
-			"settings":
-			{
-				"buffer_size": 1889,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/models/SimulationDomainStrength.php",
-			"settings":
-			{
-				"buffer_size": 1557,
+				"buffer_size": 16703,
 				"line_ending": "Windows"
 			}
 		},
@@ -652,23 +571,7 @@
 			"file": "backend/views/simulation/finish.php",
 			"settings":
 			{
-				"buffer_size": 13757,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/bkom_new/protected/config/main.php",
-			"settings":
-			{
-				"buffer_size": 6797,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/simulation/review.php",
-			"settings":
-			{
-				"buffer_size": 5387,
+				"buffer_size": 15893,
 				"line_ending": "Windows"
 			}
 		},
@@ -676,39 +579,15 @@
 			"file": "backend/views/simulation/prepare.php",
 			"settings":
 			{
-				"buffer_size": 5457,
+				"buffer_size": 5828,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/views/simulation/question.php",
+			"file": "backend/views/simulation/index.php",
 			"settings":
 			{
-				"buffer_size": 8310,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/themes/adminLTE/assets/css/style2.css",
-			"settings":
-			{
-				"buffer_size": 36325,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/themes/adminLTE/assets/css/style.css",
-			"settings":
-			{
-				"buffer_size": 36929,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/subject/view.php",
-			"settings":
-			{
-				"buffer_size": 43100,
+				"buffer_size": 4396,
 				"line_ending": "Windows"
 			}
 		},
@@ -716,73 +595,7 @@
 			"file": "backend/models/SimulationDomain.php",
 			"settings":
 			{
-				"buffer_size": 1874,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 38 files for \"raw\"\n\nD:\\xampp\\htdocs\\exam-simulator\\backend\\models\\Simulation.php:\n  163  \n  164      public function getSettingStrength(){\n  165:         return StrengthSetting::find()->select([DB::raw($this->id .' AS simulation_id'), 'name', 'min', 'max'])->asArray()->all();\n  166      }\n  167  \n\n1 match in 1 file\n\n\nSearching 38 files for \"rightQuestion\"\n\nD:\\xampp\\htdocs\\exam-simulator\\backend\\models\\Domain.php:\n   87      }\n   88  \n   89:     public function getRightQuestionPerDomain($simulation_id){\n   90          return $this->getQuestionDomains()->where([''])\n   91      }\n\n1 match in 1 file\n\n\nSearching 31 files for \"question_domain_id\"\n\nD:\\xampp\\htdocs\\exam-simulator\\console\\migrations\\m151005_085126_add_column_question_domain_id_to_table_simulation_question.php:\n    4  use yii\\db\\Migration;\n    5  \n    6: class m151005_085126_add_column_question_domain_id_to_table_simulation_question extends Migration\n    7  {\n    8      public function up()\n    .\n   13      public function down()\n   14      {\n   15:         echo \"m151005_085126_add_column_question_domain_id_to_table_simulation_question cannot be reverted.\\n\";\n   16  \n   17          return false;\n\n2 matches in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 1202,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "console/migrations/m151005_085126_add_column_question_domain_id_to_table_simulation_question.php",
-			"settings":
-			{
-				"buffer_size": 620,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "console/migrations/m150907_023757_create_table_simulation_question.php",
-			"settings":
-			{
-				"buffer_size": 1258,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "console/migrations/m151006_071358_create_table_simulation_domain.php",
-			"settings":
-			{
-				"buffer_size": 1200,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "console/migrations/m151006_094543_add_foreign_key_simulation_question_simulation_domain.php",
-			"settings":
-			{
-				"buffer_size": 800,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "console/migrations/m150902_045035_create_table_question_domain.php",
-			"settings":
-			{
-				"buffer_size": 1162,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "console/migrations/m150928_030844_create_table_content.php",
-			"settings":
-			{
-				"buffer_size": 951,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "console/migrations/m150929_102413_add_column_explaination_to_table_question.php",
-			"settings":
-			{
-				"buffer_size": 566,
+				"buffer_size": 1946,
 				"line_ending": "Windows"
 			}
 		},
@@ -795,26 +608,106 @@
 			}
 		},
 		{
-			"file": "backend/models/QuestionDomain.php",
+			"file": "console/migrations/m151008_032600_add_column_is_dummy_to_table_simulation.php",
 			"settings":
 			{
-				"buffer_size": 1208,
-				"line_ending": "Unix"
+				"buffer_size": 567,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/view.php",
+			"settings":
+			{
+				"buffer_size": 44520,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "backend/models/Subject.php",
 			"settings":
 			{
-				"buffer_size": 3743,
+				"buffer_size": 4285,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/models/SimulationQuestion.php",
+			"file": "backend/models/Simulation.php",
 			"settings":
 			{
-				"buffer_size": 3311,
+				"buffer_size": 6162,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/_form.php",
+			"settings":
+			{
+				"buffer_size": 6120,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/create.php",
+			"settings":
+			{
+				"buffer_size": 1386,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/update.php",
+			"settings":
+			{
+				"buffer_size": 1374,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "console/migrations/m151008_023510_add_column_percentage_to_table_subject_and_simulation.php",
+			"settings":
+			{
+				"buffer_size": 674,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "console/migrations/m151005_085126_add_column_question_domain_id_to_table_simulation_question.php",
+			"settings":
+			{
+				"buffer_size": 620,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/themes/adminLTE/layouts/frontendLayout.php",
+			"settings":
+			{
+				"buffer_size": 5765,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/themes/adminLTE/layouts/loginLayout.php",
+			"settings":
+			{
+				"buffer_size": 8204,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/site/index.php",
+			"settings":
+			{
+				"buffer_size": 18437,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/themes/adminLTE/assets/css/style2.css",
+			"settings":
+			{
+				"buffer_size": 37434,
 				"line_ending": "Windows"
 			}
 		}
@@ -857,26 +750,62 @@
 	[
 		"/D/xampp/htdocs/exam-simulator",
 		"/D/xampp/htdocs/exam-simulator/backend",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers",
+		"/D/xampp/htdocs/exam-simulator/backend/models",
 		"/D/xampp/htdocs/exam-simulator/backend/themes",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts",
 		"/D/xampp/htdocs/exam-simulator/backend/views",
+		"/D/xampp/htdocs/exam-simulator/backend/views/question",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject",
 		"/D/xampp/htdocs/exam-simulator/console",
 		"/D/xampp/htdocs/exam-simulator/console/migrations"
 	],
 	"file_history":
 	[
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/DomainController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Question.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151005_015109_create_table_domain_strength.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151001_080519_add_column_explain_mode_to_table_subject_n_simulation.php",
+		"/D/xampp/htdocs/bkom_new/.gitignore",
+		"/D/xampp/htdocs/exam-simulator/backend/models/StrengthSetting.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/_form.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/view.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SubjectController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/PassageController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/StrengthsettingController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/BaseController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
+		"/D/xampp/htdocs/conservir-clone/common/config/main-local.php",
+		"/D/xampp/htdocs/exam-simulator/backend/components/LeaveWidget.php",
+		"/D/xampp/htdocs/yii-advanced/common/config/main-local.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Domain.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationDomainStrength.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/finish.php",
+		"/D/xampp/htdocs/bkom_new/protected/config/main.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/review.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/prepare.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style.css",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationDomain.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151005_085126_add_column_question_domain_id_to_table_simulation_question.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150907_023757_create_table_simulation_question.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151006_071358_create_table_simulation_domain.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151006_094543_add_foreign_key_simulation_question_simulation_domain.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150902_045035_create_table_question_domain.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150928_030844_create_table_content.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150929_102413_add_column_explaination_to_table_question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionDomain.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Subject.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestion.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/DomainController.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151005_015109_create_table_domain_strength.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151001_080519_add_column_explain_mode_to_table_subject_n_simulation.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SimulationController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/view.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/finish.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/PrefixController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/ProfileController.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m151005_015003_create_table_strength_setting.php",
@@ -886,13 +815,8 @@
 		"/D/xampp/htdocs/exam-simulator/backend/views/question/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/subject/update.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/subject/_form.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestion.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestionAnswer.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150929_102413_add_column_explaination_to_table_question.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-question.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/prepare.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js/app.js",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/Profile.php",
@@ -900,9 +824,7 @@
 		"/D/xampp/htdocs/yii-advanced/backend/views/task/add.php",
 		"/D/xampp/htdocs/exam-simulator/vendor/webvimark/module-user-management/components/AuthHelper.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/components/CustomAsset.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Subject.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m150929_034250_alter_column_null_question_option_id_table_simulation_question_answer.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/review.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/list.php",
 		"/D/xampp/htdocs/echelon-clone/app/controllers/fronts/PaypalController.php",
 		"/D/xampp/htdocs/echelon-clone/app/libraries/MyPaypal.php",
@@ -920,8 +842,6 @@
 		"/D/xampp/htdocs/bkom/index.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m150917_070501_add_column_correct_to_table_simulation_question.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionOption.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style.css",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
 		"/D/xampp/htdocs/exam-simulator/backend/config/main-local.php",
 		"/D/xampp/htdocs/index.php",
 		"/D/xampp/htdocs/paypal-example/return.php",
@@ -973,29 +893,7 @@
 		"/D/xampp/htdocs/vita/config/db.php",
 		"/D/xampp/htdocs/vita/migrations/m130524_201442_init.php",
 		"/D/xampp/htdocs/vita/config/web.php",
-		"/D/xampp/htdocs/vita/controllers/SiteController.php",
-		"/D/xampp/htdocs/vita/themes/adminLTE/layouts/frontendLayout.php",
-		"/D/xampp/htdocs/vita/themes/adminLTE/components/FrontendAsset.php",
-		"/D/xampp/htdocs/vita/themes/adminLTE/assets/css/front.css",
-		"/D/xampp/htdocs/exam-simulator/frontend/views/site/index.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/config/main-local.php",
-		"/D/xampp/htdocs/vita/web/.htaccess",
-		"/D/xampp/htdocs/exam-simulator/frontend/web/.htaccess",
-		"/D/xampp/htdocs/vita/migrations/m150916_025112_insert_first_user.php",
-		"/D/xampp/htdocs/yii-advanced/vendor/webvimark/module-user-management/migrations/m140809_072112_insert_superadmin_to_user.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/config/main.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/config/params-local.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/config/params.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/loginLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/layouts/main.php",
-		"/D/xampp/htdocs/exam-simulator/backend/config/params.php",
-		"/D/xampp/htdocs/exam-simulator/common/models/LoginForm.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m130524_201442_init.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/views/site/login.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/views/cms/index.php",
-		"/D/xampp/htdocs/vita/themes/adminLTE/layouts/main.php",
-		"/D/xampp/htdocs/exam-simulator/backend/config/params-local.php",
-		"/D/xampp/htdocs/exam-simulator/backend/config/main.php"
+		"/D/xampp/htdocs/vita/controllers/SiteController.php"
 	],
 	"find":
 	{
@@ -1042,6 +940,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getMyAnswers",
+			"nquest",
+			"bebas text-right",
+			"h5",
+			"nfinish",
+			"label",
+			"percentage",
 			"first-content",
 			"strengt",
 			"getQuestionForSimulations",
@@ -1162,14 +1067,7 @@
 			"mockup-width--third",
 			"generateAuth",
 			"auth_key",
-			"modelsOptions",
-			"modelQuestion",
-			"hide",
-			"passwordHashStrategy",
-			"passwo",
-			"user",
-			"navbar-top",
-			"navbar"
+			"modelsOptions"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1177,6 +1075,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"bebas",
+			"h4 class=\"bebas\"",
+			"h4",
 			"->explain_mode",
 			"item3",
 			"$this->paypalConfig",
@@ -1301,10 +1202,7 @@
 			"Config::get('theme')",
 			"$album",
 			"albums",
-			"Lihat Gambar",
-			"Nama Gambar",
-			"Judul Blog",
-			"width=\"33%\""
+			"Lihat Gambar"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1315,24 +1213,24 @@
 	"groups":
 	[
 		{
-			"selected": 21,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "backend/models/StrengthSetting.php",
+					"file": "backend/controllers/SimulationController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1499,
+						"buffer_size": 19066,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								102,
-								102
+								16260,
+								16260
 							]
 						],
 						"settings":
@@ -1341,28 +1239,328 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 20.0,
+						"translation.y": 6506.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "backend/views/strengthsetting/_form.php",
+					"file": "backend/themes/adminLTE/layouts/main-question.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 932,
+						"buffer_size": 3638,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								549,
-								549
+								2711,
+								3542
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 863.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "backend/themes/adminLTE/layouts/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2618,
+								3515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1150.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "backend/views/simulation/viewquestion.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7600,
+								7600
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1354.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "backend/models/SimulationQuestion.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2037,
+								2055
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 218.0,
+						"translation.y": 1048.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "backend/views/simulation/view.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4714,
+								4714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 441.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "backend/views/simulation/finish.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								15893
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 613.0,
+						"translation.y": 2649.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "backend/views/simulation/prepare.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5828,
+								5828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1518.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "backend/views/simulation/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2790,
+								4129
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 798.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "backend/models/SimulationDomain.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1937,
+								1937
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 963.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "backend/models/Question.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2949,
+								2972
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1796.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "console/migrations/m151008_032600_add_column_is_dummy_to_table_simulation.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								238,
+								238
 							]
 						],
 						"settings":
@@ -1375,24 +1573,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "backend/views/strengthsetting/index.php",
+					"buffer": 12,
+					"file": "backend/views/subject/view.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3379,
+						"buffer_size": 44520,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								737,
-								737
+								4821,
+								4821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 88.0,
+						"translation.y": 1014.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "backend/models/Subject.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1179,
+								1179
 							]
 						],
 						"settings":
@@ -1402,27 +1630,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 414.0,
+						"translation.y": 498.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "backend/views/strengthsetting/view.php",
+					"buffer": 14,
+					"file": "backend/models/Simulation.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2522,
+						"buffer_size": 6162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1480,
-								1480
+								4330,
+								4330
 							]
 						],
 						"settings":
@@ -1432,595 +1660,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 47.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "backend/controllers/SimulationController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17763,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4075,
-								4075
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 2051.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "backend/controllers/SubjectController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1504,
-								1506
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "backend/controllers/PassageController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3793,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								163,
-								110
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "backend/controllers/StrengthsettingController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3004,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								393,
-								393
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "backend/controllers/BaseController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 587,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "backend/models/Simulation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3207,
-								3207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1723.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/D/xampp/htdocs/conservir-clone/common/config/main-local.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 641,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								491,
-								491
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "backend/components/LeaveWidget.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 878,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								865,
-								865
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/D/xampp/htdocs/yii-advanced/common/config/main-local.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								149,
-								158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 12.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "backend/models/Domain.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1886,
-								1886
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1202.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "backend/models/SimulationDomainStrength.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1557,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								886,
-								886
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "backend/views/simulation/finish.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13757,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12252,
-								12252
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2415.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "/D/xampp/htdocs/bkom_new/protected/config/main.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6797,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5241,
-								5241
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 69.0,
-						"translation.y": 2288.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "backend/views/simulation/review.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5387,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 377.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "backend/views/simulation/prepare.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5457,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2588,
-								2588
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 134.0,
-						"translation.y": 502.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "backend/views/simulation/question.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8310,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3920,
-								3920
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 861.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "backend/themes/adminLTE/assets/css/style2.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 36325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14021,
-								14021
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 29449.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "backend/themes/adminLTE/assets/css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 36929,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								36926,
-								36926
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 29416.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "backend/views/subject/view.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43100,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2206,
-								3175
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 590.0,
+						"translation.y": 2423.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "backend/models/SimulationDomain.php",
+					"buffer": 15,
+					"file": "backend/views/subject/_form.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1874,
+						"buffer_size": 6120,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1803,
-								1803
+								1623,
+								1623
 							]
 						],
 						"settings":
@@ -2029,73 +1689,105 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 519.0,
-						"translation.y": 1163.0,
+						"translation.x": 12.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 16,
+					"file": "backend/views/subject/create.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1202,
+						"buffer_size": 1386,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										208,
-										211
-									],
-									[
-										478,
-										491
-									],
-									[
-										865,
-										883
-									],
-									[
-										1072,
-										1090
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								874,
-								874
+								1090,
+								1136
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 3,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 432.0,
+						"translation.y": 68.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 17,
+					"file": "backend/views/subject/update.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1214,
+								1214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "console/migrations/m151008_023510_add_column_percentage_to_table_subject_and_simulation.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
 					"file": "console/migrations/m151005_085126_add_column_question_domain_id_to_table_simulation_question.php",
 					"semi_transient": false,
 					"settings":
@@ -2117,140 +1809,20 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 2.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "console/migrations/m150907_023757_create_table_simulation_question.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1258,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								218,
-								218
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "console/migrations/m151006_071358_create_table_simulation_domain.php",
+					"buffer": 20,
+					"file": "backend/themes/adminLTE/layouts/frontendLayout.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1200,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								578,
-								578
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 52.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "console/migrations/m151006_094543_add_foreign_key_simulation_question_simulation_domain.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 800,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								457,
-								457
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "console/migrations/m150902_045035_create_table_question_domain.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1162,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								577,
-								838
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 373.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "console/migrations/m150928_030844_create_table_content.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 951,
+						"buffer_size": 5765,
 						"regions":
 						{
 						},
@@ -2268,57 +1840,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "console/migrations/m150929_102413_add_column_explaination_to_table_question.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 566,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								171,
-								229
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 859.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
-					"file": "backend/models/Question.php",
+					"buffer": 21,
+					"file": "backend/themes/adminLTE/layouts/loginLayout.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3607,
+						"buffer_size": 8204,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								7826,
+								7826
 							]
 						],
 						"settings":
@@ -2328,27 +1870,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2039.0,
+						"translation.y": 2315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
-					"file": "backend/models/QuestionDomain.php",
+					"buffer": 22,
+					"file": "backend/views/site/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1208,
+						"buffer_size": 18437,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								328,
+								328
 							]
 						],
 						"settings":
@@ -2361,67 +1903,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
-					"file": "backend/models/Subject.php",
+					"buffer": 23,
+					"file": "backend/themes/adminLTE/assets/css/style2.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3743,
+						"buffer_size": 37434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2709,
-								2709
+								36295,
+								36295
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 1666.0,
+						"translation.x": -0.0,
+						"translation.y": 29404.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "backend/models/SimulationQuestion.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3311,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3304,
-								3304
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 60.0,
-						"translation.y": 1936.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
+					"stack_index": 22,
 					"type": "text"
 				}
 			]
@@ -2466,7 +1978,7 @@
 	"project": "exam-simulator.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2536,7 +2048,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 473.0,
+	"side_bar_width": 449.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -88,7 +88,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             <?php else: ?>
                                 <div class="well">
-                                    <h1 class="text-center bebas text-bold">00:00:00</h1>
+                                    <h1 class="text-center bebas text-bold">No Timer</h1>
                                 </div>
                             <?php endif; ?>
                             <?= Html::a('<i class="fa fa-check"></i> Finish Exam', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [

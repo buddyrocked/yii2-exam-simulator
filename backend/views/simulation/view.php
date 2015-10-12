@@ -1,186 +1,238 @@
 <?php
-
-use yii\widgets\DetailView;
+/* @var $this yii\web\View */
+use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
 
-/* @var $this yii\web\View */
-/* @var $model backend\models\Simulation */
-
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Dashboard', 'url' => ['/site/dashboard']];
+$this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="simulation-viewdetail first-content" id="index-content">
 <div class="container">
     <div class="row">    
-        <div class="col-md-12">
+        <div class="col-md-12"> 
             <div class="container-menu">
                 <div class="upper-menu">
                     <div class="upper-menu-title">
-                        &nbsp; Detail Simulasi
+                        Finish
                     </div>
                 </div>
                 <div class="middle-menu bg-white">
-                    <div role="tabpanel">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-briefcase"></i> Information</a></li>
-                            <li role="presentation"><a href="#domain" aria-controls="domain" role="tab" data-toggle="tab"><i class="fa fa-database"></i> Review</a></li>
-                            <li role="presentation"><a href="#question" aria-controls="question" role="tab" data-toggle="tab"><i class="fa fa-dropbox"></i> Result</a></li>
-                            
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        
-                                        <div class="well bg-white">
-                                            <div class="row">
-                                                <div class="col-md-1">
-                                                    <span class="fa-stack fa-3x text-danger">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <h1 class="bebas text-bold"><?= Html::encode($model->subject->name); ?></h1>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <h3 class="text-center text-danger bebas">
-                                                        <strong><?= Html::encode($model->subject->time); ?></strong>
-                                                    </h3>
-                                                    <div class="text-center">Minutes</div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <h3 class="text-center text-danger bebas">
-                                                        <strong><?= Html::encode($model->subject->question_number); ?></strong>
-                                                    </h3>
-                                                    <div class="text-center">Questions</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?= DetailView::widget([
-                                            'model' => $model,
-                                            'attributes' => [
-                                                [
-                                                   'attribute'=>'user_id',
-                                                   'value'=>($model->profile != null)?$model->profile->getFullName():'',
-                                                ],
-                                                [
-                                                   'attribute'=>'subject_id',
-                                                   'value'=>$model->subject->name,
-                                                ],
-                                                [
-                                                   'attribute'=>'duration',
-                                                   'value'=>$model->duration.' Minutes',
-                                                ],
-                                                [
-                                                   'attribute'=>'Timer Mode',
-                                                   'value'=>$model->getLabelTimer(),
-                                                ],
-                                                'start',
-                                                'finish',
-                                                'status',
-                                                'score',
-                                            ],
-                                        ]) ?>
-                                    </div>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <h1 class="bebas">Congratulation Guys..!!!</h1>
+                                <div>Exam Simulation already finish.</div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="domain">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="well">
-                                            <h1 class="bebas">Exam Review</h1>
+                            <div role="tabpanel">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab"><i class="fa fa-briefcase"></i> Summary</a></li>
+                                    <li role="presentation"><a href="#domain" aria-controls="domain" role="tab" data-toggle="tab"><i class="fa fa-database"></i> Domain</a></li>
+                                    <li role="presentation"><a href="#question" aria-controls="question" role="tab" data-toggle="tab"><i class="fa fa-dropbox"></i> Question</a></li>
+                                    
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="summary">
+                                        <div class="container">
+                                                <h3 class="bebas">Summary</h3>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Correct Answer</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>1])->count(); ?></h4></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>NULL])->andWhere(['status'=>0])->count(); ?></h4></div>
+                                                   
+                                                </div>
+                                                <div class="row">
+                                                     <div class="col-xs-12">
+                                                        <hr />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Total Questions</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->count(); ?></h4></div>
+                                                    
+                                                </div>
+                                                <div class="row">
+                                                     <div class="col-xs-12">
+                                                        <hr />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Minimum Score</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->minimum_score; ?>%</h4></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6"><h4 class="bebas">Your Score</h4 class="bebas"></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getScore(); ?>%</h4></div>
+                                                </div>
                                         </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="domain">
                                         <div>
-                                            <?php \yii\widgets\Pjax::begin(); ?>
+                                            <hr />
+                                            <h3 class="bebas">Domain</h3>
+                                            <hr />
+                                            <div>
+                                                <?php \yii\widgets\Pjax::begin(); ?>
                                                 <?= GridView::widget([
-                                                'dataProvider' => new ActiveDataProvider([
-                                                                'query' => $model->getSimulationQuestions(),
-                                                ]),
-                                                'columns' => [
-                                                        ['class' => 'yii\grid\SerialColumn'],
-                                                        [
-                                                            'attribute'=>'question_id',
-                                                            'format'=>'text',
-                                                            'value'=>function($data){
-                                                                return strip_tags($data->question->question);
-                                                            }
+                                                        'dataProvider' => new ActiveDataProvider([
+                                                                        'query' => $model->getSimulationDomains(),
+                                                        ]),
+                                                        'columns' => [
+                                                                ['class' => 'yii\grid\SerialColumn'],
+                                                                [
+                                                                    'attribute'=>'name',
+                                                                    'format'=>'raw',
+                                                                    'value'=>function($data){
+                                                                        return $data->domain->name;
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    'header'=>'Question per Domain',
+                                                                    'format'=>'raw',
+                                                                    'value'=>function($data) use($model){
+                                                                        return $data->getSimulationQuestions()->count();
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    'header'=>'Right Answer',
+                                                                    'format'=>'raw',
+                                                                    'value'=>function($data) use($model){
+                                                                        return $data->getSimulationQuestions()->where(['correct'=>1])->count();
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    'header'=>'Percentage',
+                                                                    'format'=>'raw',
+                                                                    'value'=>function($data) use($model){
+                                                                        return $data->countPercent().'%';
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    'header'=>'Strength',
+                                                                    'format'=>'raw',
+                                                                    'value'=>function($data) use($model){
+                                                                        return $data->getStrength()->one()->name;
+                                                                    }
+                                                                ],
+                                                        ]
+                                                    ]);
+                                                ?>
+                                                <?php \yii\widgets\Pjax::end(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="question">
+                                        <div>
+                                            <hr />
+                                            <h3 class="bebas">Review Exam</h3>
+                                            <hr />
+                                            <div>
+                                                <?php \yii\widgets\Pjax::begin(); ?>
+                                                    <?= GridView::widget([
+                                                    'dataProvider' => new ActiveDataProvider([
+                                                                    'query' => $model->getSimulationQuestions(),
+                                                    ]),
+                                                    'columns' => [
+                                                            ['class' => 'yii\grid\SerialColumn'],
+                                                            /*[
+                                                                'attribute'=>'question_id',
+                                                                'format'=>'text',
+                                                                'value'=>function($data){
+                                                                    return strip_tags($data->question->question);
+                                                                }
+                                                            ],*/
+                                                            /*[
+                                                                'attribute'=>'status',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return $data->getLabelStatus();
+                                                                }
+                                                            ],*/
+                                                            /*[
+                                                                'attribute'=>'simulation_question_answers',
+                                                                'header'=>'Your Answer',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return $data->textSimulationQuestionAnswers();
+                                                                }
+                                                            ],*/
+                                                            [
+                                                                'attribute'=>'is_correct',
+                                                                'header'=>'Correct',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return $data->getLabelCorrect();
+                                                                }
+                                                            ],
+                                                            /*[
+                                                                'header'=>'Right Answer',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return ($data->simulation->explain_mode == 1)?$data->question->getTextQuestionRightOptions():'';
+                                                                }
+                                                            ],*/
+                                                            [
+                                                                'class' => 'yii\grid\ActionColumn',
+                                                                'template' => ($model->explain_mode == 1)?'<div class="btn-group">{view}</div>':'',
+                                                                'buttons' => [
+                                                                                'view' => function ($url, $model, $key) {
+                                                                                    return Html::a('<i class="fa fa-search"></i>', ['/simulation/viewquestion', 'id'=>$model->id], ['class'=>'btn btn-xs btn-danger outline btn-modal']);
+                                                                                },
+                                                                ]
+                                                            ],
                                                         ],
-                                                        /*[
-                                                            'attribute'=>'status',
-                                                            'format'=>'raw',
-                                                            'value'=>function($data){
-                                                                return $data->getLabelStatus();
-                                                            }
-                                                        ],*/
-                                                        [
-                                                            'attribute'=>'simulation_question_answers',
-                                                            'header'=>'Your Answer',
-                                                            'format'=>'raw',
-                                                            'value'=>function($data){
-                                                                return $data->textSimulationQuestionAnswers();
-                                                            }
-                                                        ],
-                                                        [
-                                                            'attribute'=>'is_correct',
-                                                            'format'=>'raw',
-                                                            'value'=>function($data){
-                                                                return $data->getLabelCorrect();
-                                                            }
-                                                        ],
-                                                        [
-                                                            'header'=>'Right Answer',
-                                                            'format'=>'raw',
-                                                            'value'=>function($data){
-                                                                return ($data->simulation->explain_mode == 1)?$data->question->getTextQuestionRightOptions():'';
-                                                            }
-                                                        ],
-                                                    ],
-                                                ]); ?>
-                                            <?php \yii\widgets\Pjax::end(); ?>
+                                                    ]); ?>
+                                                <?php \yii\widgets\Pjax::end(); ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="question">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="well">
-                                            <h1 class="bebas">Exam Summary</h1>
-                                            <div>Your exam simulation summary</div>
-                                        </div>
-                                        <div>
-                                            <h3 class="bebas">Summary</h3>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-xs-6"><h5>Total Questions</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->count(); ?></h4></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-6"><h5>Total Correct Answer</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>1])->count(); ?></h4></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-6"><h5>Total Incorrect Answer</h5></div>
-                                                <div class="col-xs-6"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->count(); ?></h4></div>
-                                            </div>
-                                            <hr />
-                                        </div>
-                                    </div>
-                                </div>
+                            <div>&nbsp;</div>
+                            <div class="well">
+                                <?= Html::a('<i class="fa fa-list-alt"></i> Go To My Exam', ['/simulation/list'], ['class' => 'btn-lg btn btn-info']); ?>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
+        <!--<div class="col-md-4">
+            <div class="container-menu">
+                <div class="upper-menu">
+                    <div class="upper-menu-title">
+                        &nbsp;Timer
+                    </div>
+                </div>
+                <div class="middle-menu bg-white">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <h1 class="text-center bebas text-bold">00:00:00</h1>
+                            </div>
+                            <?= Html::a('<i class="fa fa-check"></i> Go to Dashboard', ['/site/dashboard'], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [
+                                        
+                                    ]
+                            ]) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
     </div>
 </div>
 </div>
+

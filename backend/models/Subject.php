@@ -154,6 +154,7 @@ class Subject extends \yii\db\ActiveRecord
     public function getLabelExplainMode(){
         $lists = [
             ''=>'Hide Explanation',
+            '0'=>'Hide Explanation',
             '1'=>'Show Explanation',
             '2'=>'Hide Explanation',
         ];

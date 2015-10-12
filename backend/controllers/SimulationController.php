@@ -199,9 +199,25 @@ class SimulationController extends Controller
         $this->layout = 'main-question';
         $mine = $this->findMine($id, 0);
         $modelQuestion = SimulationQuestion::findOne($question);
+
+        $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+        
         if($modelQuestion->status == 0):
             $modelsAnswer = new SimulationQuestionAnswer;
         else:
+            if($modelQuestion->simulation->timer_mode != 0):
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'danger',
+                    'duration' => 500000,
+                    'icon' => 'fa fa-volume-up',
+                    'message' => 'You not allow to review your question.',
+                    'title' => 'Warning',
+                    'positonY' => 'bottom',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['review', 'id' => $id]);
+            endif;
             $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
         endif;
 
@@ -242,7 +258,6 @@ class SimulationController extends Controller
                     'positonY' => 'bottom',
                     'positonX' => 'right'
                 ]);
-                $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
                 
                 if($modelNext != null):
                     return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
@@ -258,7 +273,7 @@ class SimulationController extends Controller
             $transaction = Yii::$app->db->beginTransaction();  
             try{
                     $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
-                    
+                    //not multiple answer
                     if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
                         if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
                             $modelQuestion->correct = 1;
@@ -267,10 +282,14 @@ class SimulationController extends Controller
                         endif;
 
                         $modelsAnswer->simulation_question_id = $modelQuestion->id;
+                        if( $modelsAnswer->question_option_id != null):
+                            $modelQuestion->status = 1;
+                        else:
+                            $modelQuestion->status = 0;
+                        endif;
+
                         if(Yii::$app->request->post('mark') != null):
                             $modelQuestion->status = 2;
-                        else:
-                            $modelQuestion->status = 1;
                         endif;
 
                         $modelsAnswer->status = 0;
@@ -283,9 +302,7 @@ class SimulationController extends Controller
                                 $transaction->rollBack();
                             endif;
 
-                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->orderBy('id ASC')->one();
-                           
-
+                            
                             if($modelNext != null):
                                 return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
                             else:
@@ -305,7 +322,9 @@ class SimulationController extends Controller
 
                             return $this->render('question', [
                                 'model' => $modelQuestion,
-                                'modelsAnswer' => $modelsAnswer
+                                'modelsAnswer' => $modelsAnswer,
+                                'modelNext' => $modelNext,
+                                'modelPrev' => $modelPrev
                             ]);
                         endif;
 
@@ -335,15 +354,18 @@ class SimulationController extends Controller
                             endforeach;
                         endif;
 
+                        if($modelsAnswer->question_option_id != null):
+                            $modelQuestion->status = 1;
+                        else:
+                            $modelQuestion->status = 0;
+                        endif;
+
                         if(Yii::$app->request->post('mark') != null):
                             $modelQuestion->status = 2;
-                        else:
-                            $modelQuestion->status = 1;
                         endif;
 
                         if($modelQuestion->save()):
-                            $transaction->commit();
-                            $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+                            $transaction->commit();                            
                             
                             if($modelNext != null):
 
@@ -364,7 +386,9 @@ class SimulationController extends Controller
 
                             return $this->render('question', [
                                 'model' => $modelQuestion,
-                                'modelsAnswer' => $modelsAnswer
+                                'modelsAnswer' => $modelsAnswer,
+                                'modelNext' => $modelNext,
+                                'modelPrev' => $modelPrev
                             ]);
                         endif;
 
@@ -378,9 +402,26 @@ class SimulationController extends Controller
         } else {
             return $this->render('question', [
                 'model' => $modelQuestion,
-                'modelsAnswer' => $modelsAnswer
+                'modelsAnswer' => $modelsAnswer,
+                'modelNext' => $modelNext,
+                'modelPrev' => $modelPrev
             ]);
         }
+    }
+
+    public function actionViewquestion($id){
+        
+        $modelQuestion = SimulationQuestion::findOne($id);
+        if($modelQuestion->status == 0):
+            $modelsAnswer = new SimulationQuestionAnswer;
+        else:
+            $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$id])->one();
+        endif;
+
+        return $this->renderAjax('viewquestion', [
+            'model' => $modelQuestion,
+            'modelsAnswer' => $modelsAnswer
+        ]);
     }
 
     public function actionBack($id, $question){
@@ -394,6 +435,7 @@ class SimulationController extends Controller
     }
 
     public function actionFinish($id){
+        $this->layout = 'main-question';
         $model = $this->findMine($id, 1);
         return $this->render('finish', [
             'model' => $model,
