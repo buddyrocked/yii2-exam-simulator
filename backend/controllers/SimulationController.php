@@ -18,6 +18,7 @@ use yii\helpers\ArrayHelper;
  */
 class SimulationController extends Controller
 {
+     public $freeAccessActions = ['take'];
 
     /**
      * Lists all Simulation models.
