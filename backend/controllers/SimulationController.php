@@ -274,6 +274,7 @@ class SimulationController extends Controller
             try{
                     $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
                     //not multiple answer
+                    $modelQuestion->is_read = true;
                     if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
                         if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
                             $modelQuestion->correct = 1;

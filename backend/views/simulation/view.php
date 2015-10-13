@@ -49,11 +49,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4 class="bebas"></div>
                                                     <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4 class="bebas"></div>
-                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>NULL])->andWhere(['status'=>0])->count(); ?></h4></div>
-                                                   
-                                                </div>
+                                                
+                                            <div class="row">
+                                                <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>0])->count(); ?></h4></div>
+                                            </div>
                                                 <div class="row">
                                                      <div class="col-xs-12">
                                                         <hr />
@@ -77,6 +77,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     <div class="col-xs-6"><h4 class="bebas">Your Score</h4 class="bebas"></div>
                                                     <div class="col-xs-1"><h4 class="bebas"><?= $model->getScore(); ?>%</h4></div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-6"><div>&nbsp;</div><h4 class="bebas">Status</h4></div>
+                                                    <div class="col-xs-6"><?= $model->getScoreStatus(); ?></div>
+                                                </div>
+                                            
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="domain">
@@ -169,6 +175,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     return $data->textSimulationQuestionAnswers();
                                                                 }
                                                             ],*/
+                                                            [
+                                                                'attribute'=>'status',
+                                                                'header'=>'Blank',
+                                                                'format'=>'raw',
+                                                                'value'=>function($data){
+                                                                    return $data->getLabelStatus2();
+                                                                }
+                                                            ],
                                                             [
                                                                 'attribute'=>'is_correct',
                                                                 'header'=>'Correct',

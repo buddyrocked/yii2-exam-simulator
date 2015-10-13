@@ -20,8 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-8">
             <div class="list-task-progressx">
                 <div class="progress">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-value="<?= Html::encode($model->simulation->getPercent()); ?>" style="width: 0%;">
-                        <span class=""><?= $model->simulation->getPercent(); ?>%</span>
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-value="<?= Html::encode($model->simulation->getPercentProgress()); ?>" style="width: 0%;">
+                        <span class=""><?= $model->simulation->getPercentProgress(); ?>%</span>
                     </div>
                 </div>
             </div>

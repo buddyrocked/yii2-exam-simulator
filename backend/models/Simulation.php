@@ -167,6 +167,10 @@ class Simulation extends \yii\db\ActiveRecord
         return floor(($this->getSimulationQuestions()->where(['<>', 'status', 0])->count() / $this->getSimulationQuestions()->count()) * 100);
     }
 
+    public function getPercentProgress(){
+        return floor(($this->getSimulationQuestions()->where(['<>', 'is_read', 0])->count() / $this->getSimulationQuestions()->count()) * 100);
+    }
+
     public function convertSecondstoTimes($seconds){
         if($seconds > 0):
             $h = floor($seconds / 3600);

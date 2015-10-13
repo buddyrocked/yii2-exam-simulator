@@ -2,6 +2,7 @@
 use app\assets\AppAsset;
 use webvimark\modules\UserManagement\UserManagementModule;
 use webvimark\modules\UserManagement\components\GhostHtml;
+use webvimark\modules\UserManagement\models\User;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use backend\components\EasyThumbnailImage;
@@ -61,7 +62,7 @@ $this->title = UserManagementModule::t('front', 'Authorization');
                     </li>
                 <?php else: ?>
                     
-                <li class=""><?php echo Html::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
+                <li class=""><?php echo GhostHtml::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
                 <div class="col-md-1">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

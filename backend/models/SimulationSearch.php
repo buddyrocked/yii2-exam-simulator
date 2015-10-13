@@ -102,7 +102,7 @@ class SimulationSearch extends Simulation
             'score' => $this->score,
             'created' => $this->created,
             'updated' => $this->updated,
-        ]);
+        ])->orderBy('id DESC');
 
         return $dataProvider;
     }
