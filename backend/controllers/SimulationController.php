@@ -202,7 +202,7 @@ class SimulationController extends Controller
         $modelQuestion = SimulationQuestion::findOne($question);
 
         $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'is_read', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
-        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['<>', 'is_read', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['=', 'is_read', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
         
         if($modelQuestion->status == 0):
             $modelsAnswer = new SimulationQuestionAnswer;

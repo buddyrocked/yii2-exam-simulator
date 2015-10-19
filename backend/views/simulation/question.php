@@ -158,7 +158,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="">
                                 <div class="">
                                     <?php
-                                        if(($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1) && $modelPrev != null):
+                                        if($model->simulation->timer_mode == 0 && $modelPrev != null):
                                             echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info']); 
                                         else:
                                             echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info disabled']); 
