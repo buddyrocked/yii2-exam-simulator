@@ -93,18 +93,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ],
                                     ]);
                                 else:
-                                    /*echo Html::a('<i class="fa fa-times"></i> Cannot take this exam', '#', [
+                                    echo Html::a('<i class="fa fa-times"></i> Cannot take this exam', '#', [
                                         'class' => 'btn btn-danger btn-block btn-lg',
                                         'data' => [
                                             'confirm' => 'We are sorry, The questtions is not enough for exam simulation.',
                                             
-                                        ],
-                                    ]);*/
-                                     echo Html::a('<i class="fa fa-check"></i> Start your exam', ['start', 'id' => $model->id], [
-                                        'class' => 'btn btn-danger btn-block btn-lg',
-                                        'data' => [
-                                            'confirm' => 'Are you sure you want to start exam simulation?',
-                                            'method' => 'post',
                                         ],
                                     ]);
                                 endif;
