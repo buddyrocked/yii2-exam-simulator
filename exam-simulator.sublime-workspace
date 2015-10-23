@@ -4,24 +4,64 @@
 		"selected_items":
 		[
 			[
+				"em",
+				"employee_id"
+			],
+			[
+				"dail",
+				"dailyReport"
+			],
+			[
 				"empl",
-				"employees"
+				"employee_id"
+			],
+			[
+				"over",
+				"overtime"
+			],
+			[
+				"da",
+				"dailyreport"
+			],
+			[
+				"ov",
+				"overtime"
+			],
+			[
+				"emp",
+				"employee"
+			],
+			[
+				"overtime",
+				"Overtimes"
+			],
+			[
+				"tasks",
+				"tasks_id"
+			],
+			[
+				"model",
+				"modelovertimes"
+			],
+			[
+				"su",
+				"supervisor"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"mode",
+				"modelpettycashes"
 			],
 			[
 				"clas",
 				"classname"
 			],
 			[
-				"model",
-				"modelQuestion"
-			],
-			[
 				"ques",
 				"question"
-			],
-			[
-				"mode",
-				"model"
 			],
 			[
 				"tex",
@@ -474,51 +514,189 @@
 			[
 				"nav",
 				"navSection"
-			],
-			[
-				"c",
-				"center"
-			],
-			[
-				"FR",
-				"FrontEndController"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"a",
-				"anim"
-			],
-			[
-				"ani",
-				"animate"
-			],
-			[
-				"gr",
-				"graph"
-			],
-			[
-				"f0",
-				"f0f0f0"
-			],
-			[
-				"par",
-				"parent"
-			],
-			[
-				"val",
-				"value"
-			],
-			[
-				"tota",
-				"total"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
+			"settings":
+			{
+				"buffer_size": 3869,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
+			"settings":
+			{
+				"buffer_size": 22347,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
+			"settings":
+			{
+				"buffer_size": 758,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/components/LeaveWidget.php",
+			"settings":
+			{
+				"buffer_size": 881,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/InterviewcandidateController.php",
+			"settings":
+			{
+				"buffer_size": 10272,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/components/views/overtime.php",
+			"settings":
+			{
+				"buffer_size": 2462,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/_add.php",
+			"settings":
+			{
+				"buffer_size": 4071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
+			"settings":
+			{
+				"buffer_size": 4942,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/index.php",
+			"settings":
+			{
+				"buffer_size": 7160,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/amendment.php",
+			"settings":
+			{
+				"buffer_size": 8023,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+			"settings":
+			{
+				"buffer_size": 6706,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/view.php",
+			"settings":
+			{
+				"buffer_size": 2268,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_search.php",
+			"settings":
+			{
+				"buffer_size": 1918,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/models/DailyReportSearch.php",
+			"settings":
+			{
+				"buffer_size": 5983,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/models/DailyReport.php",
+			"settings":
+			{
+				"buffer_size": 4976,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/all.php",
+			"settings":
+			{
+				"buffer_size": 6447,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/_search.php",
+			"settings":
+			{
+				"buffer_size": 1812,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/update.php",
+			"settings":
+			{
+				"buffer_size": 1388,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/add.php",
+			"settings":
+			{
+				"buffer_size": 1405,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
+			"settings":
+			{
+				"buffer_size": 1464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/TaskController.php",
+			"settings":
+			{
+				"buffer_size": 11720,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 653 files for \"dropdown\"\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\article\\index.php:\n   75                                          'class' => 'yii\\grid\\ActionColumn',\n   76                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   77:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   78                                                              <span class=\"caret\"></span>\n   79:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   80                                                          </button>\n   81:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   82                                                              <li>{view}</li>\n   83                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\businesscard\\index.php:\n   68                                      'class' => 'yii\\grid\\ActionColumn',\n   69                                      'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   70:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   71                                                              <span class=\"caret\"></span>\n   72:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   73                                                          </button>\n   74:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   75                                                              <li>{view}</li>\n   76                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\candidate\\index.php:\n   93                                                          'class' => 'yii\\grid\\ActionColumn',\n   94                                                          'template' => '<div class=\"btn-group pull-right\">                                                                     \n   95:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   96                                                                                  <span class=\"caret\"></span>\n   97:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n   98                                                                              </button>\n   99:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n  100                                                                                  <li>{view}</li>\n  101                                                                                  <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\client\\index.php:\n   64                                                          'class' => 'yii\\grid\\ActionColumn',\n   65                                                          'template' => '<div class=\"btn-group pull-right\">                                                                     \n   66:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   67                                                                                  <span class=\"caret\"></span>\n   68:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n   69                                                                              </button>\n   70:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n   71                                                                                  <li>{view}</li>\n   72                                                                                  <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\client\\view.php:\n  128                                                      'class' => 'yii\\grid\\ActionColumn',\n  129                                                      'template' => '<div class=\"btn-group pull-right\">                                                                     \n  130:                                                                                         <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  131                                                                                              <span class=\"caret\"></span>\n  132:                                                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n  133                                                                                          </button>\n  134:                                                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n  135                                                                                              <!--<li>{view}</li>-->\n  136                                                                                              <li>{update}</li>\n  ...\n  188                                              'class' => 'yii\\grid\\ActionColumn',\n  189                                              'template' => '<div class=\"btn-group pull-right\">                                                                     \n  190:                                                                 <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  191                                                                      <span class=\"caret\"></span>\n  192:                                                                     <span class=\"sr-only\">Toggle Dropdown</span>\n  193                                                                  </button>\n  194:                                                                 <ul class=\"dropdown-menu\" role=\"menu\">\n  195                                                                      <!--<li>{view}</li>-->\n  196                                                                      <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\companydocument\\_add.php:\n   32                          </div>\n   33                          <div class=\"col-sm-3\">\n   34:                             <?= $form->field($model, 'type[]')->dropDownList(\n   35                                                                                      ArrayHelper::map(Document::find()->where(['tipe'=>1])->all(), 'id', 'name'),\n   36                                                                                      ['prompt'=>'Select...']\n   ..\n   93              </div>\n   94              <div class=\"col-sm-3\">\n   95:                 <?= $form->field($model, 'type[]')->dropDownList(\n   96                                                                          ArrayHelper::map(Document::find()->where(['tipe'=>1])->all(), 'id', 'name'),\n   97                                                                          ['prompt'=>'Select...']\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\companydocument\\_form.php:\n   28          </div>\n   29          <div class=\"col-sm-3\">\n   30:             <?= $form->field($model, 'type')->dropDownList(\n   31                                                                      ArrayHelper::map(Document::find()->where(['tipe'=>1])->all(), 'id', 'name'),\n   32                                                                      ['prompt'=>'Select...']\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\companydocument\\index.php:\n   88                                                  'class' => 'yii\\grid\\ActionColumn',\n   89                                                  'template' => '<div class=\"btn-group pull-right\">                                                                     \n   90:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   91                                                                                  <span class=\"caret\"></span>\n   92:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n   93                                                                              </button>\n   94:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n   95                                                                                  <li>{download}</li>\n   96                                                                                  <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\content\\index.php:\n   66                                      'class' => 'yii\\grid\\ActionColumn',\n   67                                      'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   68:                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   69                                                          <span class=\"caret\"></span>\n   70:                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n   71                                                      </button>\n   72:                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n   73                                                          <li>{view}</li>\n   74                                                          <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\dailyreport\\view.php:\n    9  \n   10  $tmpl = ($model->status == 0)?'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   11:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   12                                      <span class=\"caret\"></span>\n   13:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   14                                  </button>\n   15:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   16                                      <li>{view}</li>\n   17                                      <li>{update}</li>\n   ..\n   19                                  </ul>\n   20                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   21:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   22                                      <span class=\"caret\"></span>\n   23:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   24                                  </button>\n   25:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   26                                      <li>{view}</li>\n   27                                  </ul>\n   ..\n   29  \n   30  $tmpl2 = ($model->status == 0)?'<div class=\"btn-group pull-right\">                                                                     \n   31:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   32                                      <span class=\"caret\"></span>\n   33:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   34                                  </button>\n   35:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   36                                      <li>{update}</li>\n   37                                      <li>{delete}</li>\n   38                                  </ul>\n   39                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   40:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   41                                      <span class=\"caret\"></span>\n   42:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   43                                  </button>\n   44:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   45                                      <li>{view}</li>\n   46                                  </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\dailyreport\\viewamend.php:\n    9  \n   10  $tmpl = ($model->status == 0)?'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   11:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   12                                      <span class=\"caret\"></span>\n   13:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   14                                  </button>\n   15:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   16                                      <li>{viewamend}</li>\n   17                                      <li>{updateamend}</li>\n   ..\n   19                                  </ul>\n   20                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   21:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   22                                      <span class=\"caret\"></span>\n   23:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   24                                  </button>\n   25:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   26                                      <li>{view}</li>\n   27                                  </ul>\n   ..\n   29  \n   30  $tmpl2 = ($model->status == 0)?'<div class=\"btn-group pull-right\">                                                                     \n   31:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   32                                      <span class=\"caret\"></span>\n   33:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   34                                  </button>\n   35:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   36                                      <li>{update}</li>\n   37                                      <li>{delete}</li>\n   38                                  </ul>\n   39                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   40:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   41                                      <span class=\"caret\"></span>\n   42:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   43                                  </button>\n   44:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   45                                      <li>{view}</li>\n   46                                  </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\dailyreport\\viewamendment.php:\n    9  \n   10  $tmpl = ($model->status == 0)?'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   11:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   12                                      <span class=\"caret\"></span>\n   13:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   14                                  </button>\n   15:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   16                                      <li>{viewamend}</li>\n   17                                      <li>{updateamend}</li>\n   ..\n   19                                  </ul>\n   20                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   21:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   22                                      <span class=\"caret\"></span>\n   23:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   24                                  </button>\n   25:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   26                                      <li>{view}</li>\n   27                                  </ul>\n   ..\n   29  \n   30  $tmpl2 = ($model->status == 0)?'<div class=\"btn-group pull-right\">                                                                     \n   31:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   32                                      <span class=\"caret\"></span>\n   33:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   34                                  </button>\n   35:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   36                                      <li>{update}</li>\n   37                                      <li>{delete}</li>\n   38                                  </ul>\n   39                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   40:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   41                                      <span class=\"caret\"></span>\n   42:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   43                                  </button>\n   44:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   45                                      <li>{view}</li>\n   46                                  </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\dailyreport\\viewlist.php:\n    9  \n   10  $tmpl = ($model->status == 0)?'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   11:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   12                                      <span class=\"caret\"></span>\n   13:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   14                                  </button>\n   15:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   16                                      <li>{view}</li>\n   17                                      <li>{update}</li>\n   ..\n   19                                  </ul>\n   20                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   21:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   22                                      <span class=\"caret\"></span>\n   23:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   24                                  </button>\n   25:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   26                                      <li>{view}</li>\n   27                                  </ul>\n   ..\n   29  \n   30  $tmpl2 = ($model->status == 0)?'<div class=\"btn-group pull-right\">                                                                     \n   31:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   32                                      <span class=\"caret\"></span>\n   33:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   34                                  </button>\n   35:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   36                                      <li>{update}</li>\n   37                                      <li>{delete}</li>\n   38                                  </ul>\n   39                              </div>':'<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   40:                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   41                                      <span class=\"caret\"></span>\n   42:                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   43                                  </button>\n   44:                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   45                                      <li>{view}</li>\n   46                                  </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\elibrary\\claim.php:\n   72                                      'class' => 'yii\\grid\\ActionColumn',\n   73                                      'template' => ' <div class=\"btn-group pull-right\">                                                                     \n   74:                                                         <button type=\"button\" class=\"btn btn-xs dropdown-toggle btn-info\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   75                                                              <span class=\"caret\"></span>\n   76:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   77                                                          </button>\n   78:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   79                                                              <li>{view}</li>\n   80                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\elibrary\\index.php:\n   69                                      'class' => 'yii\\grid\\ActionColumn',\n   70                                      'template' => ' <div class=\"btn-group pull-right\">                                                                     \n   71:                                                         <button type=\"button\" class=\"btn btn-xs dropdown-toggle btn-info\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   72                                                              <span class=\"caret\"></span>\n   73:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   74                                                          </button>\n   75:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   76                                                              <li>{view}</li>\n   77                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\employee\\_form.php:\n  339              </div>\n  340              <div class=\"col-md-6\">\n  341:                 <?= $form->field($modelUser->loadDefaultValues(), 'status')->dropDownList(User::getStatusList()) ?>\n  342              </div>\n  343              <div class=\"col-md-6\">\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\employee\\_formDependent.php:\n  248              </div>\n  249              <div class=\"col-md-6\">\n  250:                 <?= $form->field($modelUser->loadDefaultValues(), 'status')->dropDownList(User::getStatusList()) ?>\n  251              </div>\n  252              <div class=\"col-md-6\">\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\employee\\index.php:\n   80                                                      'class' => 'yii\\grid\\ActionColumn',\n   81                                                      'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   82:                                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   83                                                                              <span class=\"caret\"></span>\n   84:                                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   85                                                                          </button>\n   86:                                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   87                                                                              <li>{view}</li>\n   88                                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\employee\\show.php:\n  148                                                  'class' => 'yii\\grid\\ActionColumn',\n  149                                                  'template' => '<div class=\"btn-group pull-right\">                                                                     \n  150:                                                                                     <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  151                                                                                          <span class=\"caret\"></span>\n  152:                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  153                                                                                      </button>\n  154:                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  155                                                                                          <li>{download}</li>\n  156                                                                                          <li>{delete}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\expense\\index.php:\n  105                                              'class' => 'yii\\grid\\ActionColumn',\n  106                                              'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n  107:                                                             <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  108                                                                  <span class=\"caret\"></span>\n  109:                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n  110                                                              </button>\n  111:                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n  112                                                                  <li>{view}</li>\n  113                                                                  <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\incomingfund\\index.php:\n  106                                                      'class' => 'yii\\grid\\ActionColumn',\n  107                                                      'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n  108:                                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  109                                                                          <span class=\"caret\"></span>\n  110:                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  111                                                                      </button>\n  112:                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  113                                                                          <li>{view}</li>\n  114                                                                          <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\interviewcandidate\\index.php:\n   84                                                      'class' => 'yii\\grid\\ActionColumn',\n   85                                                      'template' => '<div class=\"btn-group pull-right\">                                                                     \n   86:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   87                                                                                  <span class=\"caret\"></span>\n   88:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n   89                                                                              </button>\n   90:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n   91                                                                                  <li>{result}</li>\n   92                                                                                  <!--<li>{view}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\leaverequest\\all.php:\n  103                                          'class' => 'yii\\grid\\ActionColumn',\n  104                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n  105:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  106                                                              <span class=\"caret\"></span>\n  107:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n  108                                                          </button>\n  109:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n  110                                                              <li>{view}</li>\n  111                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\leaverequest\\index.php:\n   55                                          'class' => 'yii\\grid\\ActionColumn',\n   56                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   57:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   58                                                              <span class=\"caret\"></span>\n   59:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   60                                                          </button>\n   61:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   62                                                              <li>{view}</li>\n   63                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\leaverequest\\list.php:\n   65                                          'class' => 'yii\\grid\\ActionColumn',\n   66                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   67:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   68                                                              <span class=\"caret\"></span>\n   69:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   70                                                          </button>\n   71:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   72                                                              <li>{approve}</li>\n   73                                                          </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\news\\index.php:\n   72                                          'class' => 'yii\\grid\\ActionColumn',\n   73                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   74:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   75                                                              <span class=\"caret\"></span>\n   76:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   77                                                          </button>\n   78:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   79                                                              <li>{view}</li>\n   80                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\pettycash\\index.php:\n  108                                      'class' => 'yii\\grid\\ActionColumn',\n  109                                      'template' => '<div class=\"btn-group pull-right\">                                                                     \n  110:                                                         <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  111                                                              <span class=\"caret\"></span>\n  112:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n  113                                                          </button>\n  114:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n  115                                                              <li>{view}</li>\n  116                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\pipeline\\index.php:\n   96                                                                      'class' => 'yii\\grid\\ActionColumn',\n   97                                                                      'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   98:                                                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   99                                                                                          <span class=\"caret\"></span>\n  100:                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  101                                                                                      </button>\n  102:                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  103                                                                                          <li>{view}</li>\n  104                                                                                          <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\pipeline\\view.php:\n  210                                          'class' => 'yii\\grid\\ActionColumn',\n  211                                          'template' => '<div class=\"btn-group pull-right\">                                                                     \n  212:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  213                                                                                  <span class=\"caret\"></span>\n  214:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n  215                                                                              </button>\n  216:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n  217                                                                                  <li>{download}</li>\n  218                                                                                  <li>{delete}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\pipelinerecord\\_add2.php:\n   34                      <div class=\"row\">\n   35                          <div class=\"col-sm-6\">\n   36:                             <?= $form->field($modelRecord, 'type[]')->dropDownList(\n   37                                                                                      ArrayHelper::map(ProjectRecordType::find()->all(), 'id', 'name'),\n   38                                                                                      ['prompt'=>'Select...']\n   ..\n   72          <div class=\"row\">\n   73              <div class=\"col-sm-6\">\n   74:                 <?= $form->field($modelRecord, 'type[]')->dropDownList(\n   75                                                                          ArrayHelper::map(ProjectRecordType::find()->all(), 'id', 'name'),\n   76                                                                          ['prompt'=>'Select...']\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\project\\index.php:\n  117                                          'class' => 'yii\\grid\\ActionColumn',\n  118                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n  119:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  120                                                              <span class=\"caret\"></span>\n  121:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n  122                                                          </button>\n  123:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n  124                                                              <li>{view}</li>\n  125                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\project\\listother.php:\n   50                                          'class' => 'yii\\grid\\ActionColumn',\n   51                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   52:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   53                                                              <span class=\"caret\"></span>\n   54:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   55                                                          </button>\n   56:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   57                                                              <li>{view}</li>\n   58                                                          </ul>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\project\\other.php:\n   55                                          'class' => 'yii\\grid\\ActionColumn',\n   56                                          'template' => '<br /><div class=\"btn-group pull-right\">                                                                     \n   57:                                                         <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   58                                                              <span class=\"caret\"></span>\n   59:                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n   60                                                          </button>\n   61:                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n   62                                                              <li>{view}</li>\n   63                                                              <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\project\\view.php:\n  161                                                                  'class' => 'yii\\grid\\ActionColumn',\n  162                                                                  'template' => '<div class=\"btn-group pull-right\">                                                                     \n  163:                                                                                                     <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  164                                                                                                          <span class=\"caret\"></span>\n  165:                                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  166                                                                                                      </button>\n  167:                                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  168                                                                                                          <!--<li>{view}</li>-->\n  169                                                                                                          <!--<li>{update}</li>-->\n  ...\n  226                                                                  'class' => 'yii\\grid\\ActionColumn',\n  227                                                                  'template' => '<div class=\"btn-group pull-right\">                                                                     \n  228:                                                                                                     <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  229                                                                                                          <span class=\"caret\"></span>\n  230:                                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  231                                                                                                      </button>\n  232:                                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  233                                                                                                          <li>{download}</li>\n  234                                                                                                          <li>{delete}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\projectrecord\\_add2.php:\n   34                      <div class=\"row\">\n   35                          <div class=\"col-sm-6\">\n   36:                             <?= $form->field($modelRecord, 'type[]')->dropDownList(\n   37                                                                                      ArrayHelper::map(ProjectRecordType::find()->all(), 'id', 'name'),\n   38                                                                                      ['prompt'=>'Select...']\n   ..\n   72          <div class=\"row\">\n   73              <div class=\"col-sm-6\">\n   74:                 <?= $form->field($modelRecord, 'type[]')->dropDownList(\n   75                                                                          ArrayHelper::map(ProjectRecordType::find()->all(), 'id', 'name'),\n   76                                                                          ['prompt'=>'Select...']\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\supplier\\index.php:\n   61                                                          'class' => 'yii\\grid\\ActionColumn',\n   62                                                          'template' => '<div class=\"btn-group pull-right\">                                                                     \n   63:                                                                             <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   64                                                                                  <span class=\"caret\"></span>\n   65:                                                                                 <span class=\"sr-only\">Toggle Dropdown</span>\n   66                                                                              </button>\n   67:                                                                             <ul class=\"dropdown-menu\" role=\"menu\">\n   68                                                                                  <li>{view}</li>\n   69                                                                                  <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\supplier\\view.php:\n  121                                                      'class' => 'yii\\grid\\ActionColumn',\n  122                                                      'template' => '<div class=\"btn-group pull-right\">                                                                     \n  123:                                                                                         <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  124                                                                                              <span class=\"caret\"></span>\n  125:                                                                                             <span class=\"sr-only\">Toggle Dropdown</span>\n  126                                                                                          </button>\n  127:                                                                                         <ul class=\"dropdown-menu\" role=\"menu\">\n  128                                                                                              <!--<li>{view}</li>-->\n  129                                                                                              <li>{update}</li>\n  ...\n  178                                              'class' => 'yii\\grid\\ActionColumn',\n  179                                              'template' => '<div class=\"btn-group pull-right\">                                                                     \n  180:                                                                 <button type=\"button\" class=\"btn btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  181                                                                      <span class=\"caret\"></span>\n  182:                                                                     <span class=\"sr-only\">Toggle Dropdown</span>\n  183                                                                  </button>\n  184:                                                                 <ul class=\"dropdown-menu\" role=\"menu\">\n  185                                                                      <!--<li>{view}</li>-->\n  186                                                                      <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\task\\history.php:\n   68                                              'class' => 'yii\\grid\\ActionColumn',\n   69                                              'template' => '<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   70:                                                                 <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   71                                                                      <span class=\"caret\"></span>\n   72:                                                                     <span class=\"sr-only\">Toggle Dropdown</span>\n   73                                                                  </button>\n   74:                                                                 <ul class=\"dropdown-menu\" role=\"menu\">\n   75                                                                      <li>{view}</li>\n   76                                                                      <li>{update}</li>\n\nD:\\xampp\\htdocs\\r-csrp\\backend\\views\\task\\index.php:\n   80                                                                  'class' => 'yii\\grid\\ActionColumn',\n   81                                                                  'template' => '<br /><br /><div class=\"btn-group pull-right\">                                                                     \n   82:                                                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n   83                                                                                          <span class=\"caret\"></span>\n   84:                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n   85                                                                                      </button>\n   86:                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n   87                                                                                          <li>{view}</li>\n   88                                                                                          <li>{update}</li>\n   ..\n  139                                                                  'class' => 'yii\\grid\\ActionColumn',\n  140                                                                  'template' => '<br /><br /><div class=\"btn-group pull-right\">                                                                     \n  141:                                                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  142                                                                                          <span class=\"caret\"></span>\n  143:                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  144                                                                                      </button>\n  145:                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  146                                                                                          <li>{view}</li>\n  147                                                                                          <li>{update}</li>\n  ...\n  198                                                                  'class' => 'yii\\grid\\ActionColumn',\n  199                                                                  'template' => '<br /><br /><div class=\"btn-group pull-right\">                                                                     \n  200:                                                                                     <button type=\"button\" class=\"btn btn-info btn-xs dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n  201                                                                                          <span class=\"caret\"></span>\n  202:                                                                                         <span class=\"sr-only\">Toggle Dropdown</span>\n  203                                                                                      </button>\n  204:                                                                                     <ul class=\"dropdown-menu\" role=\"menu\">\n  205                                                                                          <li>{view}</li>\n  206                                                                                          <li>{update}</li>\n\n209 matches across 39 files\n",
+			"settings":
+			{
+				"buffer_size": 54624,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
 		{
 			"file": "/D/xampp/htdocs/r-csrp/backend/views/employee/_form.php",
 			"settings":
@@ -528,130 +706,18 @@
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/EmployeeController.php",
+			"file": "/D/xampp/htdocs/r-csrp/backend/views/companydocument/_form.php",
 			"settings":
 			{
-				"buffer_size": 14351,
+				"buffer_size": 2933,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/index.php",
+			"file": "/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
 			"settings":
 			{
-				"buffer_size": 10286,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/create.php",
-			"settings":
-			{
-				"buffer_size": 1250,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/_form.php",
-			"settings":
-			{
-				"buffer_size": 9201,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/project/create2.php",
-			"settings":
-			{
-				"buffer_size": 1407,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/project/_form.php",
-			"settings":
-			{
-				"buffer_size": 9372,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/project/_create2.php",
-			"settings":
-			{
-				"buffer_size": 29887,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/project/create.php",
-			"settings":
-			{
-				"buffer_size": 1263,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/models/Employee.php",
-			"settings":
-			{
-				"buffer_size": 10483,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/_form.php",
-			"settings":
-			{
-				"buffer_size": 3248,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/_search.php",
-			"settings":
-			{
-				"buffer_size": 1384,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/create.php",
-			"settings":
-			{
-				"buffer_size": 1260,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/index.php",
-			"settings":
-			{
-				"buffer_size": 3353,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/employee/index.php",
-			"settings":
-			{
-				"buffer_size": 8287,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/update.php",
-			"settings":
-			{
-				"buffer_size": 1330,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/view.php",
-			"settings":
-			{
-				"buffer_size": 2715,
+				"buffer_size": 1586,
 				"line_ending": "Windows"
 			}
 		}
@@ -694,31 +760,84 @@
 	[
 		"/D/xampp/htdocs/r-csrp",
 		"/D/xampp/htdocs/r-csrp/backend",
+		"/D/xampp/htdocs/r-csrp/backend/components",
+		"/D/xampp/htdocs/r-csrp/backend/components/views",
 		"/D/xampp/htdocs/r-csrp/backend/controllers",
 		"/D/xampp/htdocs/r-csrp/backend/models",
 		"/D/xampp/htdocs/r-csrp/backend/views",
-		"/D/xampp/htdocs/r-csrp/backend/views/employee",
-		"/D/xampp/htdocs/r-csrp/backend/views/pipeline",
+		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport",
+		"/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime",
 		"/D/xampp/htdocs/r-csrp/backend/views/project",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport",
-		"/D/xampp/htdocs/r-csrp/console",
-		"/D/xampp/htdocs/r-csrp/console/models"
+		"/D/xampp/htdocs/r-csrp/console"
 	],
 	"file_history":
 	[
-		"/D/xampp/htdocs/r-csrp/backend/views/employee/show.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+		"/D/xampp/htdocs/r-csrp/console/migrations/m151019_082808_add_column_is_overtime_to_table_taks.php",
+		"/D/xampp/htdocs/r-csrp/console/migrations/m151022_084226_add_column_employee_id_date_to_table_overtimes.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/DailyReport.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/updateOvertime.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/_overtime.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/viewOvertime.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/add.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/_add.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Expense.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/ExpenseController.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Task.php",
 		"/D/xampp/htdocs/r-csrp/backend/controllers/EmployeeController.php",
+		"/D/xampp/htdocs/r-csrp/backend/components/MessageWidget.php",
+		"/D/xampp/htdocs/r-csrp/backend/components/views/messages.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/InterviewcandidateController.php",
+		"/D/xampp/htdocs/r-csrp/backend/components/views/overtime.php",
+		"/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
+		"/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts/header.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Content.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/TaskController.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Employee.php",
+		"/D/xampp/htdocs/r-csrp/backend/config/main-local.php",
+		"/D/xampp/htdocs/r-csrp/common/config/main-local.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/OvertimeSearch.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/PettyCash.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/task/add.php",
+		"/D/xampp/htdocs/r-csrp/console/migrations/m150609_070403_create_table_tasks.php",
+		"/D/xampp/htdocs/r-csrp/console/migrations/m151021_021410_create_table_overtimes.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/task/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/employee/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/expense/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/expense/create.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/incomingfund/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/amendment.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/IncomingfundController.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/index.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/index.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/update.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/WeeklyassesmentreportController.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/WeeklyAssesmentReportSearch.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/_search.php",
 		"/D/xampp/htdocs/r-csrp/backend/models/WeeklyAssesmentReport.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/DailyReport.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/view.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/project/create2.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/project/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/project/_create2.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/project/create.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/_form.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/_search.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/create.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/index.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/employee/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/update.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/view.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/create.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/index.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/employee/show.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/index.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/update.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151016_083519_add_column_status_to_table_employee.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/WeeklyassesmentreportController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SimulationController.php",
-		"/D/xampp/htdocs/r-csrp/common/config/main-local.php",
 		"/D/xampp/htdocs/r-csrp/backend/controllers/ElibraryController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-question.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main.php",
@@ -781,59 +900,7 @@
 		"/D/xampp/htdocs/exam-simulator/backend/views/question/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestionAnswer.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js/app.js",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Profile.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/take.php",
-		"/D/xampp/htdocs/yii-advanced/backend/views/task/add.php",
-		"/D/xampp/htdocs/exam-simulator/vendor/webvimark/module-user-management/components/AuthHelper.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/components/CustomAsset.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150929_034250_alter_column_null_question_option_id_table_simulation_question_answer.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/list.php",
-		"/D/xampp/htdocs/echelon-clone/app/controllers/fronts/PaypalController.php",
-		"/D/xampp/htdocs/echelon-clone/app/libraries/MyPaypal.php",
-		"/D/xampp/htdocs/echelon-clone/app/database/migrations/2015_09_12_025805_create_table_payment.php",
-		"/D/xampp/htdocs/echelon-clone/app/database/migrations/2015_09_13_061416_add_column_status_to_payment.php",
-		"/D/xampp/htdocs/echelon-clone/app/database/migrations/2015_09_18_013938_add_column_type_to_table_payment.php",
-		"/D/xampp/htdocs/echelon-clone/app/database/migrations/2015_09_18_130046_add_column_profile_id_to_table_payment.php",
-		"/D/xampp/htdocs/echelon-clone/app/database/migrations/2015_09_12_113413_create_table_payment_detail.php",
-		"/D/xampp/htdocs/echelon-clone/app/config/local/database.php",
-		"/D/xampp/htdocs/echelon-clone/app/routes.php",
-		"/D/xampp/htdocs/echelon-clone/app/libraries/Paypal.php",
-		"/D/xampp/htdocs/bkom/protected/controllers/SiteController.php",
-		"/D/xampp/htdocs/bkom/protected/views/site/new_index.php",
-		"/D/xampp/htdocs/yii-advanced/backend/views/task/_list.php",
-		"/D/xampp/htdocs/bkom/index.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150917_070501_add_column_correct_to_table_simulation_question.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionOption.php",
-		"/D/xampp/htdocs/exam-simulator/backend/config/main-local.php",
-		"/D/xampp/htdocs/index.php",
-		"/D/xampp/htdocs/paypal-example/return.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150922_094104_add_column_timer_mode_to_table_subject.php",
-		"/D/xampp/htdocs/demoyii/budi.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Country.php",
-		"/D/xampp/htdocs/exam-simulator/frontend/controllers/SiteController.php",
-		"/D/xampp/htdocs/vita/models/User.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150628_040946_create_tabel_country.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m150829_060930_create_table_profiles.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/registration.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/RegistrationFormProfile.php",
-		"/D/xampp/htdocs/exam-simulator/common/config/main-local.php",
-		"/D/xampp/apache/conf/extra/httpd-vhosts.conf",
-		"/D/xampp/htdocs/paypal-example/example-subscription-checkout.php",
-		"/D/xampp/htdocs/paypal-example/functions.php",
-		"/D/xampp/htdocs/paypal-example/lib/paypal-digital-goods/paypal-configuration.class.php",
-		"/D/xampp/htdocs/paypal-example/lib/paypal-digital-goods/paypal-subscription.class.php",
-		"/D/xampp/htdocs/paypal-example/lib/paypal-digital-goods/paypal-digital-goods.class.php",
-		"/D/xampp/htdocs/paypal-example/example-subscription.php",
-		"/D/xampp/htdocs/paypal-example/checkout.php",
-		"/D/xampp/htdocs/paypal/index.php",
-		"/D/xampp/htdocs/paypal/example-subscription.php",
-		"/D/xampp/htdocs/paypal/functions.php",
-		"/D/xampp/htdocs/echelon-clone/app/config/paypal.php",
-		"/D/xampp/htdocs/yii-advanced/backend/views/project/view.php",
-		"/D/xampp/htdocs/echelon-clone/app/controllers/fronts/PaymentController.php",
-		"/D/xampp/htdocs/echelon/app/libraries/PayumPaypal.php",
-		"/D/xampp/htdocs/echelon/app/start/global.php",
-		"/D/xampp/htdocs/echelon-clone/app/views/fronts/status.blade.php"
+		"/D/xampp/htdocs/exam-simulator/backend/models/Profile.php"
 	],
 	"find":
 	{
@@ -844,6 +911,9 @@
 		"height": 117.0,
 		"where_history":
 		[
+			"D:\\xampp\\htdocs\\r-csrp\\backend\\views",
+			"D:\\xampp\\htdocs\\r-csrp\\backend\\models",
+			"D:\\xampp\\htdocs\\r-csrp\\backend\\controllers",
 			"D:\\xampp\\htdocs\\r-csrp\\backend\\views\\weeklyassesmentreport",
 			"D:\\xampp\\htdocs\\exam-simulator\\console\\migrations",
 			"D:\\xampp\\htdocs\\exam-simulator\\backend\\models",
@@ -881,6 +951,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"search",
+			"_sea",
+			"hour",
+			"dropdown",
+			"status",
+			"add",
+			"scenario",
+			"modelCandidate",
+			"labelstatus",
+			"$msg",
+			"candidates",
+			"add",
+			"sendMail",
+			"getSetting",
+			"supervisor",
+			"post",
+			"status",
+			" '",
+			"status",
+			">\n",
 			"status",
 			"client",
 			"team",
@@ -988,27 +1078,7 @@
 			"{{%auth_item_child}}",
 			"{{%auth_item}}",
 			"auth",
-			"defaultRoute",
-			"getUser",
-			"107.659922",
-			"6.936786",
-			"Our Consultancy Services",
-			"h2",
-			"text-ce",
-			"brand",
-			".active",
-			"vulna",
-			"buildi",
-			"title-section",
-			"title-section s",
-			"process-desc",
-			"footer",
-			"bg",
-			"f25454",
-			"recurring",
-			"recurringPaymentClass",
-			"curl",
-			"payum"
+			"defaultRoute"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1016,6 +1086,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"modelOvertime",
+			"$overtime",
+			"overtimes",
 			"bebas",
 			"h4 class=\"bebas\"",
 			"h4",
@@ -1140,10 +1213,7 @@
 			"Setting",
 			"$settings",
 			"btn-default",
-			"Config::get('theme')",
-			"$album",
-			"albums",
-			"Lihat Gambar"
+			"Config::get('theme')"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1154,24 +1224,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/employee/_form.php",
+					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23479,
+						"buffer_size": 3869,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9932,
-								9932
+								2727,
+								2727
 							]
 						],
 						"settings":
@@ -1181,349 +1251,78 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2754.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/EmployeeController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12334,
-								12334
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4641.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10286,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								691,
-								691
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 663.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/create.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1250,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/pipeline/_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9201,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5216,
-								5222
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2499.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/project/create2.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								706,
-								706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 102.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/project/_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9372,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/project/_create2.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 29887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22128,
-								22128
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 312.0,
-						"translation.y": 6026.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/project/create.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1263,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/D/xampp/htdocs/r-csrp/backend/models/Employee.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10483,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1772,
-								1772
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4233.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "backend/views/content/_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								133,
-								102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 561.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "backend/views/content/_search.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1384,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 306.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "backend/views/content/create.php",
+					"buffer": 1,
+					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1260,
+						"buffer_size": 22347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22344,
+								22344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10113.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/xampp/htdocs/r-csrp/backend/components/LeaveWidget.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 881,
 						"regions":
 						{
 						},
@@ -1537,31 +1336,30 @@
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": -0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "backend/views/content/index.php",
+					"buffer": 4,
+					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/InterviewcandidateController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3353,
+						"buffer_size": 10272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1658,
-								1665
+								2415,
+								2415
 							]
 						],
 						"settings":
@@ -1571,27 +1369,145 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 467.0,
+						"translation.y": 3272.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/employee/index.php",
+					"buffer": 5,
+					"file": "/D/xampp/htdocs/r-csrp/backend/components/views/overtime.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8287,
+						"buffer_size": 2462,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 123.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/_add.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1556,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 306.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3673,
+								3673
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/amendment.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5813,
+								6290
 							]
 						],
 						"settings":
@@ -1604,16 +1520,256 @@
 						"translation.y": 1530.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6263,
+								6263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 249.0,
+						"translation.y": 1479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/view.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2003,
+								2011
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_search.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1611,
+								1611
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/D/xampp/htdocs/r-csrp/backend/models/DailyReportSearch.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5906,
+								5906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 3468.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/D/xampp/htdocs/r-csrp/backend/models/DailyReport.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1215,
+								1327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2448.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 15,
-					"file": "backend/views/content/update.php",
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/all.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1330,
+						"buffer_size": 6447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								968,
+								968
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/dailyreport/_search.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1812,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								475,
+								1632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/update.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/add.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1405,
 						"regions":
 						{
 						},
@@ -1631,27 +1787,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
-					"file": "backend/views/content/view.php",
+					"buffer": 19,
+					"file": "/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2715,
+						"buffer_size": 1464,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2480,
-								2487
+								1461,
+								1461
 							]
 						],
 						"settings":
@@ -1661,10 +1817,1008 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 705.0,
+						"translation.y": 765.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/TaskController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4043,
+								4043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 54624,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										459,
+										467
+									],
+									[
+										489,
+										497
+									],
+									[
+										713,
+										721
+									],
+									[
+										876,
+										884
+									],
+									[
+										1493,
+										1501
+									],
+									[
+										1523,
+										1531
+									],
+									[
+										1747,
+										1755
+									],
+									[
+										1910,
+										1918
+									],
+									[
+										2569,
+										2577
+									],
+									[
+										2599,
+										2607
+									],
+									[
+										2863,
+										2871
+									],
+									[
+										3066,
+										3074
+									],
+									[
+										3762,
+										3770
+									],
+									[
+										3792,
+										3800
+									],
+									[
+										4056,
+										4064
+									],
+									[
+										4259,
+										4267
+									],
+									[
+										4958,
+										4966
+									],
+									[
+										4988,
+										4996
+									],
+									[
+										5276,
+										5284
+									],
+									[
+										5503,
+										5511
+									],
+									[
+										6144,
+										6152
+									],
+									[
+										6174,
+										6182
+									],
+									[
+										6414,
+										6422
+									],
+									[
+										6593,
+										6601
+									],
+									[
+										7039,
+										7047
+									],
+									[
+										7469,
+										7477
+									],
+									[
+										7920,
+										7928
+									],
+									[
+										8638,
+										8646
+									],
+									[
+										8668,
+										8676
+									],
+									[
+										8932,
+										8940
+									],
+									[
+										9135,
+										9143
+									],
+									[
+										9787,
+										9795
+									],
+									[
+										9817,
+										9825
+									],
+									[
+										10033,
+										10041
+									],
+									[
+										10188,
+										10196
+									],
+									[
+										10686,
+										10694
+									],
+									[
+										10716,
+										10724
+									],
+									[
+										10892,
+										10900
+									],
+									[
+										11007,
+										11015
+									],
+									[
+										11454,
+										11462
+									],
+									[
+										11484,
+										11492
+									],
+									[
+										11660,
+										11668
+									],
+									[
+										11775,
+										11783
+									],
+									[
+										12152,
+										12160
+									],
+									[
+										12182,
+										12190
+									],
+									[
+										12358,
+										12366
+									],
+									[
+										12473,
+										12481
+									],
+									[
+										12916,
+										12924
+									],
+									[
+										12946,
+										12954
+									],
+									[
+										13122,
+										13130
+									],
+									[
+										13237,
+										13245
+									],
+									[
+										13684,
+										13692
+									],
+									[
+										13714,
+										13722
+									],
+									[
+										13890,
+										13898
+									],
+									[
+										14005,
+										14013
+									],
+									[
+										14462,
+										14470
+									],
+									[
+										14492,
+										14500
+									],
+									[
+										14668,
+										14676
+									],
+									[
+										14783,
+										14791
+									],
+									[
+										15160,
+										15168
+									],
+									[
+										15190,
+										15198
+									],
+									[
+										15366,
+										15374
+									],
+									[
+										15481,
+										15489
+									],
+									[
+										15924,
+										15932
+									],
+									[
+										15954,
+										15962
+									],
+									[
+										16130,
+										16138
+									],
+									[
+										16245,
+										16253
+									],
+									[
+										16696,
+										16704
+									],
+									[
+										16726,
+										16734
+									],
+									[
+										16902,
+										16910
+									],
+									[
+										17017,
+										17025
+									],
+									[
+										17474,
+										17482
+									],
+									[
+										17504,
+										17512
+									],
+									[
+										17680,
+										17688
+									],
+									[
+										17795,
+										17803
+									],
+									[
+										18172,
+										18180
+									],
+									[
+										18202,
+										18210
+									],
+									[
+										18378,
+										18386
+									],
+									[
+										18493,
+										18501
+									],
+									[
+										18936,
+										18944
+									],
+									[
+										18966,
+										18974
+									],
+									[
+										19142,
+										19150
+									],
+									[
+										19257,
+										19265
+									],
+									[
+										19703,
+										19711
+									],
+									[
+										19733,
+										19741
+									],
+									[
+										19909,
+										19917
+									],
+									[
+										20024,
+										20032
+									],
+									[
+										20471,
+										20479
+									],
+									[
+										20501,
+										20509
+									],
+									[
+										20677,
+										20685
+									],
+									[
+										20792,
+										20800
+									],
+									[
+										21169,
+										21177
+									],
+									[
+										21199,
+										21207
+									],
+									[
+										21375,
+										21383
+									],
+									[
+										21490,
+										21498
+									],
+									[
+										21933,
+										21941
+									],
+									[
+										21963,
+										21971
+									],
+									[
+										22139,
+										22147
+									],
+									[
+										22254,
+										22262
+									],
+									[
+										22789,
+										22797
+									],
+									[
+										22828,
+										22836
+									],
+									[
+										23052,
+										23060
+									],
+									[
+										23215,
+										23223
+									],
+									[
+										23814,
+										23822
+									],
+									[
+										23853,
+										23861
+									],
+									[
+										24077,
+										24085
+									],
+									[
+										24240,
+										24248
+									],
+									[
+										24646,
+										24654
+									],
+									[
+										24972,
+										24980
+									],
+									[
+										25544,
+										25552
+									],
+									[
+										25574,
+										25582
+									],
+									[
+										25830,
+										25838
+									],
+									[
+										26025,
+										26033
+									],
+									[
+										26706,
+										26714
+									],
+									[
+										26736,
+										26744
+									],
+									[
+										27016,
+										27024
+									],
+									[
+										27235,
+										27243
+									],
+									[
+										27927,
+										27935
+									],
+									[
+										27957,
+										27965
+									],
+									[
+										28189,
+										28197
+									],
+									[
+										28360,
+										28368
+									],
+									[
+										29029,
+										29037
+									],
+									[
+										29059,
+										29067
+									],
+									[
+										29307,
+										29315
+									],
+									[
+										29494,
+										29502
+									],
+									[
+										30178,
+										30186
+									],
+									[
+										30208,
+										30216
+									],
+									[
+										30472,
+										30480
+									],
+									[
+										30675,
+										30683
+									],
+									[
+										31342,
+										31350
+									],
+									[
+										31372,
+										31380
+									],
+									[
+										31596,
+										31604
+									],
+									[
+										31759,
+										31767
+									],
+									[
+										32384,
+										32392
+									],
+									[
+										32414,
+										32422
+									],
+									[
+										32638,
+										32646
+									],
+									[
+										32801,
+										32809
+									],
+									[
+										33425,
+										33433
+									],
+									[
+										33455,
+										33463
+									],
+									[
+										33679,
+										33687
+									],
+									[
+										33842,
+										33850
+									],
+									[
+										34446,
+										34454
+									],
+									[
+										34476,
+										34484
+									],
+									[
+										34700,
+										34708
+									],
+									[
+										34863,
+										34871
+									],
+									[
+										35462,
+										35470
+									],
+									[
+										35492,
+										35500
+									],
+									[
+										35716,
+										35724
+									],
+									[
+										35879,
+										35887
+									],
+									[
+										36584,
+										36592
+									],
+									[
+										36614,
+										36622
+									],
+									[
+										36894,
+										36902
+									],
+									[
+										37113,
+										37121
+									],
+									[
+										37794,
+										37802
+									],
+									[
+										37824,
+										37832
+									],
+									[
+										38088,
+										38096
+									],
+									[
+										38291,
+										38299
+									],
+									[
+										38771,
+										38779
+									],
+									[
+										39203,
+										39211
+									],
+									[
+										39889,
+										39897
+									],
+									[
+										39919,
+										39927
+									],
+									[
+										40143,
+										40151
+									],
+									[
+										40306,
+										40314
+									],
+									[
+										40930,
+										40938
+									],
+									[
+										40960,
+										40968
+									],
+									[
+										41184,
+										41192
+									],
+									[
+										41347,
+										41355
+									],
+									[
+										41951,
+										41959
+									],
+									[
+										41981,
+										41989
+									],
+									[
+										42205,
+										42213
+									],
+									[
+										42368,
+										42376
+									],
+									[
+										43064,
+										43072
+									],
+									[
+										43094,
+										43102
+									],
+									[
+										43406,
+										43414
+									],
+									[
+										43657,
+										43665
+									],
+									[
+										44405,
+										44413
+									],
+									[
+										44435,
+										44443
+									],
+									[
+										44747,
+										44755
+									],
+									[
+										44998,
+										45006
+									],
+									[
+										45525,
+										45533
+									],
+									[
+										45957,
+										45965
+									],
+									[
+										46681,
+										46689
+									],
+									[
+										46711,
+										46719
+									],
+									[
+										46975,
+										46983
+									],
+									[
+										47178,
+										47186
+									],
+									[
+										47879,
+										47887
+									],
+									[
+										47909,
+										47917
+									],
+									[
+										48197,
+										48205
+									],
+									[
+										48424,
+										48432
+									],
+									[
+										49065,
+										49073
+									],
+									[
+										49095,
+										49103
+									],
+									[
+										49335,
+										49343
+									],
+									[
+										49514,
+										49522
+									],
+									[
+										50178,
+										50186
+									],
+									[
+										50208,
+										50216
+									],
+									[
+										50448,
+										50456
+									],
+									[
+										50627,
+										50635
+									],
+									[
+										51342,
+										51350
+									],
+									[
+										51372,
+										51380
+									],
+									[
+										51652,
+										51660
+									],
+									[
+										51871,
+										51879
+									],
+									[
+										52578,
+										52586
+									],
+									[
+										52608,
+										52616
+									],
+									[
+										52888,
+										52896
+									],
+									[
+										53107,
+										53115
+									],
+									[
+										53814,
+										53822
+									],
+									[
+										53844,
+										53852
+									],
+									[
+										54124,
+										54132
+									],
+									[
+										54343,
+										54351
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								24650,
+								24650
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5916.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/employee/_form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18920,
+								19610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5018.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/D/xampp/htdocs/r-csrp/backend/views/companydocument/_form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								733,
+								733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 96.0,
+						"translation.y": 190.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1779,7 +2933,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 322.0,
+	"side_bar_width": 317.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

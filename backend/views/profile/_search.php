@@ -24,7 +24,7 @@ use backend\models\Profile;
                 'data' => ArrayHelper::map(Profile::find()->all(), 'id', 'first_name'),
                 'options'=>['placeholder'=>'Choose Name'],
                 'pluginOptions'=>[
-                   'allowClear'=>true 
+                   'allowClear'=>true
                 ],
                 'pluginEvents'=>[
                     
