@@ -214,7 +214,7 @@ class Simulation extends \yii\db\ActiveRecord
     }
 
     public function getScoreStatus(){
-        return ($this->getScore() >= $this->minimum_score)?'<h3 class="text-success"><i class="fa fa-check"></i> PAST</h3>':'<h3 class="text-danger"><i class="fa fa-times"></i> FAILED</h3>';
+        return ($this->getScore() >= $this->minimum_score)?'<h3 class="text-success"><i class="fa fa-check"></i> PASSED</h3>':'<h3 class="text-danger"><i class="fa fa-times"></i> FAILED</h3>';
     }
 
 }

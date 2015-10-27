@@ -23,8 +23,8 @@ use backend\models\Subject;
         </div>
         <div class="col-md-2">
             <?= $form->field($model, 'status')->widget(Select2::className(),  [
-                'data' => ['0'=>'Live', '1'=>'Dummy'],
-                'options'=>['placeholder'=>'Choose Status'],
+                'data' => ['0'=>'Live', '1'=>'Demo'],
+                'options'=>['placeholder'=>'Choose Exam Mode'],
                 'pluginOptions'=>[
                 'allowClear'=>true 
             ]

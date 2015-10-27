@@ -70,10 +70,12 @@ class Subject extends \yii\db\ActiveRecord
             'name' => 'Name',
             'desc' => 'Desc',
             'question_number' => 'Question Number',
-            'time' => 'Time',
+            'time' => 'Time(Minutes)',
             'minimum_score' => 'Min Score',
             'created' => 'Created',
             'updated' => 'Updated',
+            'status' => 'Exam Mode',
+            'explain_mode' => 'Explain Mode After',
         ];
     }
 
@@ -144,7 +146,7 @@ class Subject extends \yii\db\ActiveRecord
         $lists = [
             ''=>'Live',
             '0'=>'Live',
-            '1'=>'Dummy',
+            '1'=>'Demo',
         ];
 
         return $lists[$this->status];

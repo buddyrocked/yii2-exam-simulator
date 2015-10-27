@@ -98,6 +98,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ]);
                                 echo '<label class="cbx-label" for="mark">Mark this question.</label>';
                             ?>
+                            <a href="#" class="btn btn-danger pull-right" id="clear-answer"><i class="fa fa-times"></i>Clear</a>
+                            <?php if($model->simulation->timer_mode == 0): ?>
+                            <?php endif; ?>
                             </div>
                             <hr />
                             <div class="text-bold">
@@ -159,25 +162,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="">
                                     <?php
                                         if($model->simulation->timer_mode == 0 && $modelPrev != null):
-                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info']); 
+                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-success']); 
                                         else:
-                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-info disabled']); 
+                                            echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-success disabled']); 
                                         endif;
                                     ?>
                                     
-                                    <?= Html::submitButton(($modelNext != null)? 'Next <i class="fa fa-chevron-right"></i>' : 'Finish  <i class="fa fa-chevron-right"></i>', ['class' => 'btn-lg btn btn-info pull-right', 'data' => [
+                                    <?= Html::submitButton(($modelNext != null)? 'Next <i class="fa fa-chevron-right"></i>' : 'Finish  <i class="fa fa-chevron-right"></i>', ['class' => 'btn-lg btn btn-success pull-right', 'data' => [
                                                 'method' => 'post',
                                             ]
                                     ]) ?>
                                 </div>
                             </div>
-
-                            <hr />
-                            <a href="#" class="btn btn-danger btn-block btn-lg" id="clear-answer"><i class="fa fa-times"></i> Reset Answer</a>
-                            <?php if($model->simulation->timer_mode == 0): ?>
+                            
                                 <hr />
-                                <?= Html::a('<i class="fa fa-eye"></i> Review', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-info btn-block btn-lg']); ?>
-                            <?php endif; ?>
+                                <?= Html::a('<i class="fa fa-eye"></i> Review', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg']); ?>
+                            
                         </div>
                     </div>
                 </div>

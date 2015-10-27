@@ -101,7 +101,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ],
                                     ]);
                                 endif;
-                                echo sizeof($model->getQuestionForSimulations());
                             ?>
 
                         </div>

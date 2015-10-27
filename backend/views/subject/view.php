@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-briefcase"></i> Subject</a></li>
                                     <li role="presentation"><a href="#domain" aria-controls="domain" role="tab" data-toggle="tab"><i class="fa fa-database"></i> Domain</a></li>
-                                    <li role="presentation"><a href="#question" aria-controls="question" role="tab" data-toggle="tab"><i class="fa fa-dropbox"></i> Question</a></li>
+                                    <li role="presentation"><a href="#question" aria-controls="question" role="tab" data-toggle="tab"><i class="fa fa-dropbox"></i> Question Bank</a></li>
                                     
                                 </ul>
                                 <!-- Tab panes -->
