@@ -221,7 +221,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container"  id="about">
         <div class="row">
             <div class="title-section text-center">
-                <span>Our Exam</span>
+                <span>Scrudu Online Exam Simulation Benefits</span>
             </div>
             <div class="col-md-4">
                 <div class="services-item">
