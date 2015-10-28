@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ?>
                 </div>
                 <div>
-                <a class="btn btn-danger btn-lg">Take a Test <i class="fa fa-chevron-right"></i></a>
+                <?php echo Html::a('Take A Test', ['/simulation/take'], ['class'=>'btn btn-danger btn-lg']); ?>
                 </div>
             </div>
         </div>

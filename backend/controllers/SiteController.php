@@ -45,19 +45,19 @@ class SiteController extends Controller
                          'positonY' => 'bottom',
                          'positonX' => 'right'
                      ]);
-        $intro = Content::find()->where(['title' => 'Intro Home'])->one();
-        $process1 = Content::find()->where(['title' => 'Register your account'])->one();
-        $process2 = Content::find()->where(['title' => 'Take a Test'])->one();
-        $process3 = Content::find()->where(['title' => 'Get a Score'])->one();
-        $features1 = Content::find()->where(['title' => 'Biggest Questions Bank'])->one();
-        $features2 = Content::find()->where(['title' => 'Our Tests is Totally Free'])->one();
-        $features3 = Content::find()->where(['title' => '25 Million People Tested'])->one();
-        $Advantages1 = Content::find()->where(['title' => 'Advantages1'])->one();
-        $Advantages2 = Content::find()->where(['title' => 'Advantages2'])->one();
-        $Advantages3 = Content::find()->where(['title' => 'Advantages3'])->one();
-        $Advantages4 = Content::find()->where(['title' => 'Advantages4'])->one();
-        $Advantages5 = Content::find()->where(['title' => 'Advantages5'])->one();
-        $Advantages6 = Content::find()->where(['title' => 'Advantages6'])->one();
+        $intro = Content::find()->where(['id' => '1'])->one();
+        $process1 = Content::find()->where(['id' => '2'])->one();
+        $process2 = Content::find()->where(['id' => '3'])->one();
+        $process3 = Content::find()->where(['id' => '4'])->one();
+        $features1 = Content::find()->where(['id' => '5'])->one();
+        $features2 = Content::find()->where(['id' => '6'])->one();
+        $features3 = Content::find()->where(['id' => '7'])->one();
+        $Advantages1 = Content::find()->where(['id' => '8'])->one();
+        $Advantages2 = Content::find()->where(['id' => '9'])->one();
+        $Advantages3 = Content::find()->where(['id' => '10'])->one();
+        $Advantages4 = Content::find()->where(['id' => '11'])->one();
+        $Advantages5 = Content::find()->where(['id' => '12'])->one();
+        $Advantages6 = Content::find()->where(['id' => '13'])->one();
 
         return $this->render('index', [
             'intro' => $intro,
