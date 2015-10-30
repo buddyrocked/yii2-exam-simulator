@@ -54,25 +54,25 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'attribute'=>'time',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<h4 class="text-center text-danger"><strong>'.$data->getSimulations()->count().'</strong></h4>
-                                                                <div class="text-center">Taken</div>';
+                                                        return '<div class="text-center">Taken</div>
+                                                                <h4 class="text-center text-danger"><strong>'.$data->getSimulations()->count().'</strong></h4>';
                                                     }
                                                 ],
                                                 [
                                                     'attribute'=>'time',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return ($data->timer_mode == 0)?'<h4 class="text-center text-danger"><strong>NO</strong></h4>
-                                                                <div class="text-center">Timer</div>':'<h4 class="text-center text-danger"><strong>'.$data->time.'</strong></h4>
-                                                                <div class="text-center">Minutes</div>';
+                                                        return ($data->timer_mode == 0)?'<h4 class="text-center text-danger"><strong>N/A</strong></h4>'
+                                                                :'<div class="text-center">Exam Duration (Minutes)</div>
+                                                                <h4 class="text-center text-danger"><strong>'.$data->time.'</strong></h4>';
                                                     }
                                                 ],
                                                  [
                                                     'attribute'=>'question_number',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<h4 class="text-center text-danger"><strong>'.$data->question_number.'</strong></h4>
-                                                                <div class="text-center">Questions</div>';
+                                                        return '<div class="text-center">#Questions</div>
+                                                                <h4 class="text-center text-danger"><strong>'.$data->question_number.'</strong></h4>';
                                                     }
                                                 ],
                                                 [
