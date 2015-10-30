@@ -64,7 +64,7 @@ $this->title = UserManagementModule::t('front', 'Authorization');
 <div class="contact">
     <div class="container">
         <div class="row">
-            <div class="title-section text-center">
+            <div class="title-section">
                 <span>Contact Us</span>
             </div>
             <div class="col-md-4">

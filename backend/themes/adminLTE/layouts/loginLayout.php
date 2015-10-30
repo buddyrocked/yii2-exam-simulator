@@ -6,6 +6,7 @@ use webvimark\modules\UserManagement\models\User;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use backend\components\EasyThumbnailImage;
+use backend\models\Content;
 
 dmstr\web\AdminLteAsset::register($this);
 backend\themes\adminLTE\components\LoginAsset::register($this);
@@ -14,6 +15,8 @@ backend\themes\adminLTE\components\LoginAsset::register($this);
 /* @var $content string */
 
 $this->title = UserManagementModule::t('front', 'Authorization');
+$content1 = Content::find()->where(['id' => '14'])->one();
+$content2 = Content::find()->where(['id' => '15'])->one();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -41,12 +44,13 @@ $this->title = UserManagementModule::t('front', 'Authorization');
             </button>
             <a class="navbar-brand" href="#">
                 <div>
-                <img src="" alt="">                </div>
+                    <?= Html::img('@web/uploads/img/logo_scrudu.png'); ?>
+                </div>
             </a>
         </div>
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
-                <li class="active"><?php echo Html::a('Homes', ['/'], ['class'=>'external']); ?></li>
+                <li class="active"><?php echo Html::a('Home', ['/'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Features', '#features'); ?></li>
                 <li><?php echo Html::a('About', '#about'); ?></li>
                 <li><?php echo Html::a('Contact', '#contact'); ?></li>
@@ -134,10 +138,26 @@ $this->title = UserManagementModule::t('front', 'Authorization');
 <div class="contact">
     <div class="container">
         <div class="row">
-            <div class="title-section text-center">
-                <span>Contact Us</span>
+            <div class="col-md-12">
+                 <div class="title-section2">
+                    <span>Contact Us</span>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4">                
+                <?php
+                    if(isset($content1->content))
+                    {
+                        echo ($content1->is_html == true)?Html::decode($content1->content):strip_tags($content1->content);
+                    }
+                ?>
+            </div>
+            <div class="col-md-4">                
+                <?php
+                    if(isset($content2->content))
+                    {
+                        echo ($content2->is_html == true)?Html::decode($content2->content):strip_tags($content2->content);
+                    }
+                ?>
             </div>
         </div>
     </div>

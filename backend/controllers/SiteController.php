@@ -58,6 +58,7 @@ class SiteController extends Controller
         $Advantages4 = Content::find()->where(['id' => '11'])->one();
         $Advantages5 = Content::find()->where(['id' => '12'])->one();
         $Advantages6 = Content::find()->where(['id' => '13'])->one();
+        $contact = Content::find()->where(['id' => '14'])->one();
 
         return $this->render('index', [
             'intro' => $intro,
@@ -73,6 +74,7 @@ class SiteController extends Controller
             'Advantages4' => $Advantages4,
             'Advantages5' => $Advantages5,
             'Advantages6' => $Advantages6,
+            'contact' => $contact,
         ]);
     }
 
@@ -98,11 +100,13 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {

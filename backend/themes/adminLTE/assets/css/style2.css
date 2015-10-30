@@ -1608,6 +1608,18 @@ ul.newsticker, ul.newsticker-quotes {
     text-transform: uppercase;
 }
 
+.title-section2 {
+    margin: 50px 0 50px;
+}
+
+.title-section2 span {
+    border-bottom: 2px solid #f25454;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
 .navbar {
     margin-bottom: 0px;
 }
@@ -1658,6 +1670,8 @@ ul.newsticker, ul.newsticker-quotes {
 .contact {
     background: #f25454;
     min-height: 300px;
+    padding: 0 0 30px 0;
+    color: #fff;
 }
 
 .user-registration {
@@ -1793,4 +1807,8 @@ ul.newsticker, ul.newsticker-quotes {
 .first-content {
     background-color: #fff;
     padding: 150px 0 0 0;
+}
+
+.navbar-brand div img {
+    height: 60px;
 }

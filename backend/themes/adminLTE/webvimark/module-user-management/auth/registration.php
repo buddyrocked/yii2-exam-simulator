@@ -12,6 +12,13 @@ use yii\helpers\Html;
 
 $this->title = UserManagementModule::t('front', 'Registration');
 $this->params['breadcrumbs'][] = $this->title;
+
+
+use backend\models\Content;
+
+$process1 = Content::find()->where(['id' => '2'])->one();
+$process2 = Content::find()->where(['id' => '3'])->one();
+$process3 = Content::find()->where(['id' => '4'])->one();
 ?>
 
 <div class="user-registration parallax first-content">
@@ -78,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	</div>
 </div>
 
-<div class="process">
+<div class="process" id="">
     <div class="title-section text-center">
         <span>Our Simple Process</span>
     </div>
@@ -90,10 +97,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-tablet"></i>
                     </div>
                     <div class="process-desc">
-                        Register your account
+                        <?php
+                        if(isset($process1->title))
+                        {
+                            echo ($process1->is_html == true)?Html::decode($process1->title):strip_tags($process1->title);
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if(isset($process1->content))
+                        {
+                            echo ($process1->is_html == true)?Html::decode($process1->content):strip_tags($process1->content);
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -103,10 +120,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-map"></i>
                     </div>
                     <div class="process-desc">
-                        Take a Test
+                        <?php
+                        if(isset($process2->title))
+                        {
+                            echo ($process2->is_html == true)?Html::decode($process2->title):strip_tags($process2->title);
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if(isset($process2->content))
+                        {
+                            echo ($process2->is_html == true)?Html::decode($process2->content):strip_tags($process2->content);
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -116,10 +143,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-trophy"></i>
                     </div>
                     <div class="process-desc">
-                        Get a Score
+                        <?php
+                        if(isset($process3->title))
+                        {
+                            echo ($process3->is_html == true)?Html::decode($process3->title):strip_tags($process3->title);
+                        }
+                        ?>
                     </div>
                     <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <?php
+                        if(isset($process3->content))
+                        {
+                            echo ($process3->is_html == true)?Html::decode($process3->content):strip_tags($process3->content);
+                        }
+                        ?>
                     </div>
                 </div>
             </div>   
