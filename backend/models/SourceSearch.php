@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Question;
+use backend\models\Source;
 
 /**
- * QuestionSearch represents the model behind the search form about `backend\models\Question`.
+ * SourceSearch represents the model behind the search form about `backend\models\Source`.
  */
-class QuestionSearch extends Question
+class SourceSearch extends Source
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['id', 'subject_id', 'passage_id', 'source_id', 'level', 'time', 'is_random'], 'integer'],
-            [['id_question', 'question', 'created', 'updated'], 'safe'],
+            [['id'], 'integer'],
+            [['name', 'desc', 'created', 'updated'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class QuestionSearch extends Question
      */
     public function search($params)
     {
-        $query = Question::find();
+        $query = Source::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,18 +57,12 @@ class QuestionSearch extends Question
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'subject_id' => $this->subject_id,
-            'passage_id' => $this->passage_id,
-            'source_id' => $this->source_id,
-            'level' => $this->level,
-            'time' => $this->time,
-            'is_random' => $this->is_random,
             'created' => $this->created,
             'updated' => $this->updated,
         ]);
 
-        $query->andFilterWhere(['like', 'id_question', $this->id_question])
-            ->andFilterWhere(['like', 'question', $this->question]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'desc', $this->desc]);
 
         return $dataProvider;
     }

@@ -6,6 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 use yii\Helpers\ArrayHelper;
+use backend\models\Source;
 
 
 /**
@@ -55,7 +56,7 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             [['level', 'is_random', 'question', 'time'], 'required'],
-            [['subject_id', 'passage_id', 'level', 'time', 'is_random'], 'integer'],
+            [['subject_id', 'passage_id', 'source_id', 'level', 'time', 'is_random'], 'integer'],
             [['question'], 'string'],
             [['created', 'updated'], 'safe'],
             [['id_question'], 'string', 'max' => 255]
@@ -71,7 +72,8 @@ class Question extends \yii\db\ActiveRecord
             'id' => 'ID',
             'subject_id' => 'Subject ID',
             'id_question' => 'Id Question',
-            'passage_id' => 'Passage ID',
+            'passage_id' => 'Passage',
+            'source_id' => 'Source',
             'question' => 'Question',
             'level' => 'Level',
             'time' => 'Time',
@@ -138,5 +140,10 @@ class Question extends \yii\db\ActiveRecord
     public function generateNumber($name){
         $lastNumber = $this->getLastNumber();
         return $name.str_pad($lastNumber->count() + 1, 4, '0', STR_PAD_LEFT);
+    }
+
+    public function getSource()
+    {
+        return $this->hasOne(Source::className(), ['id' => 'source_id']);
     }
 }

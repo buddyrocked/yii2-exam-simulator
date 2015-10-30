@@ -260,6 +260,32 @@ $(document).ready(function(){
 
 		            return false;
 			    });
+
+			    $('.form-ajax-modal2').on('beforeSubmit', function(event, jqXHR, settings) {
+	        		
+		            var form = $(this);
+		            if(form.find('.has-error').length) {
+		            	return false;
+		            }else{
+		        		$.msg({ autoUnblock : false, clickUnblock : false, z:5000 });
+		            }
+
+		            $.ajax({
+		                url: form.attr('action'),
+		                type: 'post',
+		                data: form.serialize(),
+		                success: function(data) {
+		                        console.log(data);
+		                        $('#myModal').modal('hide');
+		                        alert(data.message);
+		                        $.msg('unblock',0,1);
+		                        $.pjax.defaults.timeout = false;
+		                        $.pjax.reload({container:'#pjax-source'});
+		                }
+		            });
+
+		            return false;
+			    });
 		    })
 		    .fail(function() {
 		    	alert( "error occured" );
