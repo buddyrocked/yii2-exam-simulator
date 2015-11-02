@@ -130,7 +130,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
     </div>
 </div>
 <footer class="center footer">
-    <p>&copy; Rialachas 2015</p>
+    <p>&copy; Rialachas 2015. All Rights Reserved.</p>
 </footer>
 
 <?php
