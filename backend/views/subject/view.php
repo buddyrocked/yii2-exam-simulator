@@ -204,7 +204,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div role="tabpanel" class="tab-pane" id="question">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                
+                                                Summary
                                                 <div class="text-right">
                                                     <?= Html::a('<i class="fa fa-plus-circle"></i> Add Question', '#', ['class'=>'btn btn-danger outline btn-toggle']); ?>
                                                 </div>

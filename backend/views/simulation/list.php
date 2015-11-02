@@ -41,13 +41,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
                                     [
-                                        'attribute'=>'subject_id',
-                                        'format'=>'raw',
-                                        'value'=>function($data){
-                                            return $data->subject->updated;
-                                        }
-                                    ],
-                                    [
                                         'attribute'=>'user_id',
                                         'format'=>'raw',
                                         'value'=>function($data){

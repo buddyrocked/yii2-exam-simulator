@@ -159,8 +159,10 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                     }
                 ?>
                 <div>
-                    <?= Html::img('@web/uploads/img/facebook.png'); ?>
-                    <?= Html::img('@web/uploads/img/twitter.png'); ?>
+                    <i class="fa fa-facebook-square fa-3x"></i>
+                    <i class="fa fa-twitter-square fa-3x"></i>
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                    <i class="fa fa-google-plus-square fa-3x"></i>
                 </div>
             </div>
             
