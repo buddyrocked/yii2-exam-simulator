@@ -520,132 +520,98 @@
 	"buffers":
 	[
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
+			"file": "backend/controllers/SimulationController.php",
 			"settings":
 			{
-				"buffer_size": 4686,
+				"buffer_size": 19710,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
+			"file": "backend/models/QuestionSearch.php",
 			"settings":
 			{
-				"buffer_size": 4495,
+				"buffer_size": 1903,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/pettycash/index.php",
+			"file": "backend/views/source/add.php",
 			"settings":
 			{
-				"buffer_size": 8062,
+				"buffer_size": 975,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/models/PettyCashSearch.php",
+			"file": "backend/views/source/_add.php",
 			"settings":
 			{
-				"buffer_size": 2818,
+				"buffer_size": 1037,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/PettycashController.php",
+			"file": "backend/themes/adminLTE/assets/js/app.js",
 			"settings":
 			{
-				"buffer_size": 7895,
+				"buffer_size": 12354,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/models/PettyCash.php",
+			"file": "backend/views/subject/view.php",
 			"settings":
 			{
-				"buffer_size": 3135,
+				"buffer_size": 49124,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Searching 16011 files for \"List Ebook\"\n\n0 matches",
+			"file": "backend/controllers/SourceController.php",
 			"settings":
 			{
-				"buffer_size": 49,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts/left.php",
-			"settings":
-			{
-				"buffer_size": 14940,
+				"buffer_size": 3873,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/pettycash/_form.php",
+			"file": "backend/controllers/PassageController.php",
 			"settings":
 			{
-				"buffer_size": 7666,
+				"buffer_size": 3793,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+			"file": "backend/controllers/QuestionController.php",
 			"settings":
 			{
-				"buffer_size": 9769,
+				"buffer_size": 11595,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
+			"file": "backend/models/Question.php",
 			"settings":
 			{
-				"buffer_size": 5136,
+				"buffer_size": 3800,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
+			"file": "backend/views/simulation/question.php",
 			"settings":
 			{
-				"buffer_size": 22347,
+				"buffer_size": 13285,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
+			"file": "backend/views/simulation/viewquestion.php",
 			"settings":
 			{
-				"buffer_size": 898,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
-			"settings":
-			{
-				"buffer_size": 1514,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/mylist.php",
-			"settings":
-			{
-				"buffer_size": 6736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/list.php",
-			"settings":
-			{
-				"buffer_size": 6736,
+				"buffer_size": 7979,
 				"line_ending": "Windows"
 			}
 		}
@@ -686,41 +652,69 @@
 	},
 	"expanded_folders":
 	[
-		"/D/xampp/htdocs/r-csrp",
-		"/D/xampp/htdocs/r-csrp/backend",
-		"/D/xampp/htdocs/r-csrp/backend/components",
-		"/D/xampp/htdocs/r-csrp/backend/components/views",
-		"/D/xampp/htdocs/r-csrp/backend/controllers",
-		"/D/xampp/htdocs/r-csrp/backend/models",
-		"/D/xampp/htdocs/r-csrp/backend/themes",
-		"/D/xampp/htdocs/r-csrp/backend/themes/adminLTE",
-		"/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts",
-		"/D/xampp/htdocs/r-csrp/backend/views",
-		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport",
-		"/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate",
-		"/D/xampp/htdocs/r-csrp/backend/views/overtime",
-		"/D/xampp/htdocs/r-csrp/backend/views/pettycash",
-		"/D/xampp/htdocs/r-csrp/backend/views/project",
-		"/D/xampp/htdocs/r-csrp/console"
+		"/D/xampp/htdocs/exam-simulator",
+		"/D/xampp/htdocs/exam-simulator/backend",
+		"/D/xampp/htdocs/exam-simulator/backend/themes",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js",
+		"/D/xampp/htdocs/exam-simulator/backend/views",
+		"/D/xampp/htdocs/exam-simulator/backend/views/passage",
+		"/D/xampp/htdocs/exam-simulator/backend/views/source",
+		"/D/xampp/htdocs/exam-simulator/console",
+		"/D/xampp/htdocs/exam-simulator/console/migrations"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/exam-simulator/backend/views/source/add.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/source/_add.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151030_091041_add_column_source_id_to_table_question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/take.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/prepare.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150902_042216_create_table_passage.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151030_085533_create_table_source.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/view.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/layouts/loginLayout.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/frontendLayout.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/loginLayout.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/registration.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/front-end.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-question.php",
+		"/D/xampp/htdocs/exam-simulator/frontend/views/site/contact.php",
+		"/D/xampp/htdocs/exam-simulator/frontend/controllers/SiteController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/site/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/site/login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/list.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/mylist.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
+		"/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/_form.php",
+		"/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts/left.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/PettyCash.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/PettycashController.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/PettyCashSearch.php",
+		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/index.php",
+		"/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
+		"/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151026_031439_add_column_comments_to_table_overtimes.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151023_030649_add_column_user_id_to_table_overtimes.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/PettyCash.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/PettyCashSearch.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/update.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
-		"/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
 		"/D/xampp/htdocs/r-csrp/backend/controllers/InterviewcandidateController.php",
 		"/D/xampp/htdocs/r-csrp/backend/components/views/overtime.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/_add.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/index.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/amendment.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/overtime/mylist.php",
-		"/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts/left.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/view.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/_search.php",
 		"/D/xampp/htdocs/r-csrp/backend/models/DailyReportSearch.php",
@@ -728,17 +722,12 @@
 		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/all.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/dailyreport/_search.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/interviewcandidate/add.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
 		"/D/xampp/htdocs/r-csrp/backend/controllers/TaskController.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/create.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/index.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/update.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/pettycash/view.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/employee/_form.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/companydocument/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151019_082808_add_column_is_overtime_to_table_taks.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151022_084226_add_column_employee_id_date_to_table_overtimes.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/updateOvertime.php",
@@ -792,47 +781,19 @@
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151016_083519_add_column_status_to_table_employee.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SimulationController.php",
 		"/D/xampp/htdocs/r-csrp/backend/controllers/ElibraryController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-question.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/viewquestion.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestion.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/view.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/finish.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/prepare.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/index.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationDomain.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/Question.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m151008_032600_add_column_is_dummy_to_table_simulation.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
 		"/D/xampp/htdocs/exam-simulator/backend/models/Subject.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/subject/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/subject/create.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/subject/update.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151008_023510_add_column_percentage_to_table_subject_and_simulation.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151005_085126_add_column_question_domain_id_to_table_simulation_question.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/frontendLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/loginLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/site/index.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
-		"/D/xampp/htdocs/bkom_new/.gitignore",
-		"/D/xampp/htdocs/exam-simulator/backend/models/StrengthSetting.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/_form.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/index.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/strengthsetting/view.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/SubjectController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/PassageController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/StrengthsettingController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/BaseController.php",
-		"/D/xampp/htdocs/conservir-clone/common/config/main-local.php",
-		"/D/xampp/htdocs/exam-simulator/backend/components/LeaveWidget.php",
-		"/D/xampp/htdocs/yii-advanced/common/config/main-local.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Domain.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationDomainStrength.php",
-		"/D/xampp/htdocs/bkom_new/protected/config/main.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/review.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php"
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151008_023510_add_column_percentage_to_table_subject_and_simulation.php"
 	],
 	"find":
 	{
@@ -843,6 +804,14 @@
 		"height": 117.0,
 		"where_history":
 		[
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\models",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\subject",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\simulation",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\subject",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\simulation",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes\\adminLTE\\webvimark",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes\\adminLTE\\layouts",
+			"D:\\xampp\\htdocs\\exam-simulator",
 			"D:\\xampp\\htdocs\\r-csrp",
 			"D:\\xampp\\htdocs\\r-csrp\\backend\\views\\pettycash",
 			"D:\\xampp\\htdocs\\r-csrp",
@@ -886,6 +855,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"passage_id",
+			"pjax-passage",
+			"passage",
+			"Question Bank",
+			"backend",
+			"contact us",
+			"OUR SIMPLE PROCESS",
+			"features",
 			"List Ebook",
 			"dataProviderExcel",
 			"Cashes",
@@ -1005,15 +982,7 @@
 			"getSetting",
 			"sendMail",
 			"mail",
-			"sendEmail",
-			"service",
-			"listview",
-			"issue",
-			"latest_issues",
-			"process-img",
-			"process-item",
-			"outline",
-			"photo"
+			"sendEmail"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1159,24 +1128,24 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/OvertimeController.php",
+					"file": "backend/controllers/SimulationController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4686,
+						"buffer_size": 19710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								490,
+								490
 							]
 						],
 						"settings":
@@ -1186,27 +1155,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 8262.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/D/xampp/htdocs/r-csrp/backend/models/OvertimesSearch.php",
+					"file": "backend/models/QuestionSearch.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4495,
+						"buffer_size": 1903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								535,
-								535
+								1292,
+								1292
 							]
 						],
 						"settings":
@@ -1224,49 +1193,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/pettycash/index.php",
+					"file": "backend/views/source/add.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8062,
+						"buffer_size": 975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3874,
-								3874
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 867.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/xampp/htdocs/r-csrp/backend/models/PettyCashSearch.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2818,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								231
+								279,
+								279
 							]
 						],
 						"settings":
@@ -1283,20 +1222,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/PettycashController.php",
+					"buffer": 3,
+					"file": "backend/views/source/_add.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7895,
+						"buffer_size": 1037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								495,
+								495
 							]
 						],
 						"settings":
@@ -1306,121 +1245,55 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3621.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/D/xampp/htdocs/r-csrp/backend/models/PettyCash.php",
+					"buffer": 4,
+					"file": "backend/themes/adminLTE/assets/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3135,
+						"buffer_size": 12354,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1946,
-								1946
+								2148,
+								2149
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 49,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/D/xampp/htdocs/r-csrp/backend/themes/adminLTE/layouts/left.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14940,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1836.0,
+						"translation.y": 790.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/pettycash/_form.php",
+					"buffer": 5,
+					"file": "backend/views/subject/view.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7666,
+						"buffer_size": 49124,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								17167,
+								17176
 							]
 						],
 						"settings":
@@ -1429,8 +1302,98 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 177.0,
-						"translation.y": 1122.0,
+						"translation.x": 290.0,
+						"translation.y": 3289.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "backend/controllers/SourceController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3742,
+								3742
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1949.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "backend/controllers/PassageController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "backend/controllers/QuestionController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8621,
+								8621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4724.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -1438,19 +1401,19 @@
 				},
 				{
 					"buffer": 9,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/index.php",
+					"file": "backend/models/Question.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9769,
+						"buffer_size": 3800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3191,
-								3191
+								1566,
+								1566
 							]
 						],
 						"settings":
@@ -1460,116 +1423,57 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 577.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "backend/views/simulation/question.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1485,
+								1485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 292.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5136,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1122.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
 					"buffer": 11,
-					"file": "/D/xampp/htdocs/r-csrp/backend/controllers/DailyreportController.php",
+					"file": "backend/views/simulation/viewquestion.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22347,
+						"buffer_size": 7979,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5352,
-								5384
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 378.0,
-						"translation.y": 2796.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/D/xampp/htdocs/r-csrp/backend/components/OvertimeWidget.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 898,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1121,
-								1121
+								1443,
+								1443
 							]
 						],
 						"settings":
@@ -1579,70 +1483,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 663.0,
+						"translation.y": 292.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/mylist.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								173
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "/D/xampp/htdocs/r-csrp/backend/views/overtime/list.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								173
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1757,7 +1601,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 317.0,
+	"side_bar_width": 384.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
