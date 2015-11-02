@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "341546345e999569f611e247caf04310",
-    "content-hash": "533da97c3a37f26d672200103ee1e9b4",
+    "hash": "f1b7a6596e1a4f8b436021de35ea5a41",
+    "content-hash": "397433bbd320600e424c824ecfb0e9f7",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v2.3.0",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "81aa879d3a4489213888e24975b073c7478f0447"
+                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/81aa879d3a4489213888e24975b073c7478f0447",
-                "reference": "81aa879d3a4489213888e24975b073c7478f0447",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
+                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
                 "shasum": ""
             },
             "type": "library",
@@ -45,7 +45,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2015-08-17 01:49:41"
+            "time": "2015-10-23 14:50:49"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -760,16 +760,16 @@
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.2.1",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "769f9a12307753856a509720573f98cb378703e4"
+                "reference": "45cffbfe90d79f3c405b4cc98f7f318ae372bb10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/769f9a12307753856a509720573f98cb378703e4",
-                "reference": "769f9a12307753856a509720573f98cb378703e4",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/45cffbfe90d79f3c405b4cc98f7f318ae372bb10",
+                "reference": "45cffbfe90d79f3c405b4cc98f7f318ae372bb10",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2015-09-10 12:17:21"
+            "time": "2015-10-07 21:31:26"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -951,6 +951,49 @@
                 "yii2"
             ],
             "time": "2014-11-13 14:51:48"
+        },
+        {
+            "name": "hosannahighertech/yii2-audiojs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hosannahighertech/yii2-audiojs.git",
+                "reference": "24d2ed487989bed7dd2dd6fce9f9481d734a74e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hosannahighertech/yii2-audiojs/zipball/24d2ed487989bed7dd2dd6fce9f9481d734a74e3",
+                "reference": "24d2ed487989bed7dd2dd6fce9f9481d734a74e3",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-widget",
+            "autoload": {
+                "psr-4": {
+                    "hosanna\\audiojs\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stefano Mtangoo",
+                    "email": "support@hosannahighertech.co.tz"
+                }
+            ],
+            "description": "Yii2 Audio Player Widget",
+            "keywords": [
+                "audio",
+                "js-player",
+                "player",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-03-22 10:18:32"
         },
         {
             "name": "ikimea/browser",
@@ -1324,12 +1367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-detail-view.git",
-                "reference": "68160aec8610ad3a01899e98bd2b985a70a92436"
+                "reference": "1fdc286434f1041bfa06373135d28ea575b07e81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/68160aec8610ad3a01899e98bd2b985a70a92436",
-                "reference": "68160aec8610ad3a01899e98bd2b985a70a92436",
+                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/1fdc286434f1041bfa06373135d28ea575b07e81",
+                "reference": "1fdc286434f1041bfa06373135d28ea575b07e81",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1407,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-09-25 11:38:48"
+            "time": "2015-10-16 18:25:52"
         },
         {
             "name": "kartik-v/yii2-grid",
@@ -1372,12 +1415,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "913fde8fbe41bf998d53a88d0443e25e1e696194"
+                "reference": "d8898c54e71b6a2f240c4470b7c80d6a70e9126b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/913fde8fbe41bf998d53a88d0443e25e1e696194",
-                "reference": "913fde8fbe41bf998d53a88d0443e25e1e696194",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/d8898c54e71b6a2f240c4470b7c80d6a70e9126b",
+                "reference": "d8898c54e71b6a2f240c4470b7c80d6a70e9126b",
                 "shasum": ""
             },
             "require": {
@@ -1408,20 +1451,20 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-09-12 19:41:22"
+            "time": "2015-10-24 14:02:13"
         },
         {
             "name": "kartik-v/yii2-helpers",
-            "version": "v1.3.2",
+            "version": "v1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-helpers.git",
-                "reference": "cfbb7d20c629cbae980669d8b8294ccd2fa796e6"
+                "reference": "84b9e77aad937d2662934e2664d0190a7c332dd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-helpers/zipball/cfbb7d20c629cbae980669d8b8294ccd2fa796e6",
-                "reference": "cfbb7d20c629cbae980669d8b8294ccd2fa796e6",
+                "url": "https://api.github.com/repos/kartik-v/yii2-helpers/zipball/84b9e77aad937d2662934e2664d0190a7c332dd3",
+                "reference": "84b9e77aad937d2662934e2664d0190a7c332dd3",
                 "shasum": ""
             },
             "require": {
@@ -1454,7 +1497,7 @@
                 "yii",
                 "yii2"
             ],
-            "time": "2015-09-11 16:35:09"
+            "time": "2015-10-22 14:01:06"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -1648,16 +1691,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
-            "version": "v1.4.4",
+            "version": "v1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-activeform.git",
-                "reference": "c62c8b92e8ee38892cc4e2b29851864a7a20ee01"
+                "reference": "076f49747309f30658085eb008276ecd3370b151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/c62c8b92e8ee38892cc4e2b29851864a7a20ee01",
-                "reference": "c62c8b92e8ee38892cc4e2b29851864a7a20ee01",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/076f49747309f30658085eb008276ecd3370b151",
+                "reference": "076f49747309f30658085eb008276ecd3370b151",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1734,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-07-08 11:36:38"
+            "time": "2015-10-22 14:36:24"
         },
         {
             "name": "kartik-v/yii2-widget-affix",
@@ -2693,12 +2736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sammaye/yii2-audittrail.git",
-                "reference": "f1fce4e56000364d6f7abf8fab3178f90d8efbbf"
+                "reference": "2560e911fab14c37673c24690356edf065e7a7be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sammaye/yii2-audittrail/zipball/f1fce4e56000364d6f7abf8fab3178f90d8efbbf",
-                "reference": "f1fce4e56000364d6f7abf8fab3178f90d8efbbf",
+                "url": "https://api.github.com/repos/Sammaye/yii2-audittrail/zipball/2560e911fab14c37673c24690356edf065e7a7be",
+                "reference": "2560e911fab14c37673c24690356edf065e7a7be",
                 "shasum": ""
             },
             "require": {
@@ -2729,7 +2772,7 @@
                 "trail",
                 "yii2"
             ],
-            "time": "2015-06-03 08:07:43"
+            "time": "2015-10-26 19:25:10"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2786,23 +2829,20 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.7.5",
+            "version": "v2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "abe19cc0429a06be0c133056d1f9859854860970"
+                "reference": "e1b865b26be4a56d22a8dee398375044a80c865b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/abe19cc0429a06be0c133056d1f9859854860970",
-                "reference": "abe19cc0429a06be0c133056d1f9859854860970",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/e1b865b26be4a56d22a8dee398375044a80c865b",
+                "reference": "e1b865b26be4a56d22a8dee398375044a80c865b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -2835,28 +2875,27 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-22 13:49:29"
+            "time": "2015-10-11 09:39:48"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.7.5",
+            "version": "v2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "2e185ca136399f902b948694987e62c80099c052"
+                "reference": "5fef7d8b80d8f9992df99d8ee283f420484c9612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/2e185ca136399f902b948694987e62c80099c052",
-                "reference": "2e185ca136399f902b948694987e62c80099c052",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/5fef7d8b80d8f9992df99d8ee283f420484c9612",
+                "reference": "5fef7d8b80d8f9992df99d8ee283f420484c9612",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "symfony/css-selector": "~2.3",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/css-selector": "~2.3"
             },
             "suggest": {
                 "symfony/css-selector": ""
@@ -2888,7 +2927,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-20 21:13:58"
+            "time": "2015-10-11 09:39:48"
         },
         {
             "name": "tugmaks/yii2-rss-reader",
@@ -3036,12 +3075,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/date-range-picker.git",
-                "reference": "7806a57b7da694d8cbe643e7354f2fb53afc7c37"
+                "reference": "4b93d19534ad956c2ae06be0020601ccf8af99fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/date-range-picker/zipball/7806a57b7da694d8cbe643e7354f2fb53afc7c37",
-                "reference": "7806a57b7da694d8cbe643e7354f2fb53afc7c37",
+                "url": "https://api.github.com/repos/webvimark/date-range-picker/zipball/4b93d19534ad956c2ae06be0020601ccf8af99fb",
+                "reference": "4b93d19534ad956c2ae06be0020601ccf8af99fb",
                 "shasum": ""
             },
             "type": "library",
@@ -3052,7 +3091,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "dangrossman daterangepicker yii 2 gridview",
-            "time": "2015-09-01 14:14:43"
+            "time": "2015-10-06 12:14:43"
         },
         {
             "name": "webvimark/grid-bulk-actions",
@@ -3060,12 +3099,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/grid-bulk-actions.git",
-                "reference": "cbad680d89dc4192dac686fd7f7d6298d5debae2"
+                "reference": "b1a28927d9d343922375cdb2b9d073b511fbdd49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/grid-bulk-actions/zipball/cbad680d89dc4192dac686fd7f7d6298d5debae2",
-                "reference": "cbad680d89dc4192dac686fd7f7d6298d5debae2",
+                "url": "https://api.github.com/repos/webvimark/grid-bulk-actions/zipball/b1a28927d9d343922375cdb2b9d073b511fbdd49",
+                "reference": "b1a28927d9d343922375cdb2b9d073b511fbdd49",
                 "shasum": ""
             },
             "type": "library",
@@ -3076,7 +3115,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Bulk actions extension for yii 2 gridview",
-            "time": "2015-08-27 07:12:51"
+            "time": "2015-10-16 07:10:38"
         },
         {
             "name": "webvimark/grid-page-size",
@@ -3084,12 +3123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/grid-page-size.git",
-                "reference": "5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6"
+                "reference": "e0e57a7ecd3858625a97d565b0f9582d83da7e9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/grid-page-size/zipball/5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6",
-                "reference": "5eed8adc0c40ba3c96fb2b855f0b38ddf46478b6",
+                "url": "https://api.github.com/repos/webvimark/grid-page-size/zipball/e0e57a7ecd3858625a97d565b0f9582d83da7e9a",
+                "reference": "e0e57a7ecd3858625a97d565b0f9582d83da7e9a",
                 "shasum": ""
             },
             "type": "library",
@@ -3100,7 +3139,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Grid page size extension for yii 2 gridview",
-            "time": "2015-09-15 22:09:07"
+            "time": "2015-10-26 16:13:58"
         },
         {
             "name": "webvimark/helpers",
@@ -3156,12 +3195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webvimark/user-management.git",
-                "reference": "bced9d76f1b787d5416b71d8a18dfd24c0e4620a"
+                "reference": "209798eb272380da9e6861e0b6d38ab30ccac7c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/user-management/zipball/bced9d76f1b787d5416b71d8a18dfd24c0e4620a",
-                "reference": "bced9d76f1b787d5416b71d8a18dfd24c0e4620a",
+                "url": "https://api.github.com/repos/webvimark/user-management/zipball/209798eb272380da9e6861e0b6d38ab30ccac7c2",
+                "reference": "209798eb272380da9e6861e0b6d38ab30ccac7c2",
                 "shasum": ""
             },
             "require": {
@@ -3181,7 +3220,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "User with improved RBAC",
-            "time": "2015-08-26 19:48:26"
+            "time": "2015-11-01 17:28:26"
         },
         {
             "name": "yiidoc/yii2-redactor",

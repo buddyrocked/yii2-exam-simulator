@@ -40,6 +40,7 @@
         "yiisoft/yii2-imagine": "^2.0@dev",
         "sammaye/yii2-audittrail": "dev-master",
         "kartik-v/yii2-widget-fileinput": "@dev",
+        "hosannahighertech/yii2-audiojs": "*",
         "kartik-v/yii2-checkbox-x": "*"
     },
     "require-dev": {

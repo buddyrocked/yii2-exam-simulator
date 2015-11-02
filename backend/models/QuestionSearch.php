@@ -59,6 +59,7 @@ class QuestionSearch extends Question
             'id' => $this->id,
             'subject_id' => $this->subject_id,
             'passage_id' => $this->passage_id,
+            'question' => $this->question,
             'source_id' => $this->source_id,
             'level' => $this->level,
             'time' => $this->time,
@@ -68,7 +69,11 @@ class QuestionSearch extends Question
         ]);
 
         $query->andFilterWhere(['like', 'id_question', $this->id_question])
-            ->andFilterWhere(['like', 'question', $this->question]);
+            ->orFilterWhere(['like', 'question', $this->id_question])
+            ->orFilterWhere(['like', 'subject_id', $this->id_question])
+            ->orFilterWhere(['like', 'passage_id', $this->id_question])
+            ->orFilterWhere(['like', 'level', $this->id_question])
+            ->orFilterWhere(['like', 'source_id', $this->id_question])->orderBy('updated DESC');
 
         return $dataProvider;
     }

@@ -8,22 +8,14 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="question-search">
+<div class="question-search well">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'subject_id') ?>
-
     <?= $form->field($model, 'id_question') ?>
-
-    <?= $form->field($model, 'passage_id') ?>
-
-    <?= $form->field($model, 'question') ?>
 
     <?php // echo $form->field($model, 'level') ?>
 

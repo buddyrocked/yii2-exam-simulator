@@ -125,6 +125,10 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                         echo ($content2->is_html == true)?Html::decode($content2->content):strip_tags($content2->content);
                     }
                 ?>
+                <div>
+                    <?= Html::img('@web/uploads/img/facebook.png'); ?>
+                    <?= Html::img('@web/uploads/img/twitter.png'); ?>
+                </div>
             </div>
         </div>
     </div>
