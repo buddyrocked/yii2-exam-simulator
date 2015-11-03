@@ -34,7 +34,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
 <?php $this->beginBody() ?>
 <div class="navbar navbar-fixed-top navbar-custom-login" role="navigation">
     <div class="navbar-top"></div>
-    <div class="container">
+    <div class="containerx">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>

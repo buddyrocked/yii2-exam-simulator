@@ -96,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'options'=>['id'=>'mark'],
                                     'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
                                 ]);
-                                echo '<label class="cbx-label" for="mark">Mark this question.</label>';
+                                echo '<label class="cbx-label" for="mark" checked>Mark this question.</label>';
                             ?>
                             <a href="#" class="btn btn-danger pull-right" id="clear-answer"><i class="fa fa-times"></i>Clear</a>
                             <?php if($model->simulation->timer_mode == 0): ?>

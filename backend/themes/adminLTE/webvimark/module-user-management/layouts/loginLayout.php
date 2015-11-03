@@ -33,7 +33,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
 <?php $this->beginBody() ?>
 <div class="navbar navbar-fixed-top navbar-custom-login" role="navigation">
     <div class="navbar-top"></div>
-    <div class="container">
+    <div class="containerx">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -126,8 +126,10 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                     }
                 ?>
                 <div>
-                    <?= Html::img('@web/uploads/img/facebook.png'); ?>
-                    <?= Html::img('@web/uploads/img/twitter.png'); ?>
+                    <i class="fa fa-facebook-square fa-3x"></i>
+                    <i class="fa fa-twitter-square fa-3x"></i>
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                    <i class="fa fa-google-plus-square fa-3x"></i>
                 </div>
             </div>
         </div>

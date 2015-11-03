@@ -40,8 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="wellx text-center">
                                         
                                         <?php if($model->timer_mode == 0): ?>
-                                            <h2 class="text-bold bebas">NO</h2>
-                                            No Timer
+                                            <h2 class="text-bold bebas">No</h2>
+                                            Timer
                                          <?php else: ?>
                                             <h2 class="text-bold bebas"><?= $model->time; ?></h2>
                                             Minutes
