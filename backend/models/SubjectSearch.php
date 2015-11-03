@@ -64,8 +64,11 @@ class SubjectSearch extends Subject
         ]);
 
         $query->andFilterWhere(['like', 'id_subject', $this->id_subject])
-            ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'desc', $this->desc]);
+            ->orFilterWhere(['like', 'name', $this->id_subject])
+            ->orFilterWhere(['like', 'time', $this->id_subject])
+            ->orFilterWhere(['like', 'created', $this->id_subject])
+            ->orFilterWhere(['like', 'question_number', $this->id_subject])
+            ->orFilterWhere(['like', 'desc', $this->id_subject]);
 
         return $dataProvider;
     }

@@ -18,7 +18,7 @@ use backend\models\Subject;
         'method' => 'get',
     ]); ?>
     <div class='row'>
-    <div class="col-md-5">
+    <!--<div class="col-md-5">
             <?= $form->field($model, 'name')->widget(Select2::className(),  [
                 'data' => ArrayHelper::map(Subject::find()->all(), 'id', 'name'),
                 'options'=>['placeholder'=>'Choose Subject'],
@@ -29,9 +29,9 @@ use backend\models\Subject;
                     
                 ]
             ]) ?>
-        </div>
-    <div class="col-md-5">
-    <?= $form->field($model, 'desc') ?>
+        </div>-->
+    <div class="col-md-10">
+    <?= $form->field($model, 'id_subject') ?>
     </div>
     <?php // echo $form->field($model, 'time') ?>
 

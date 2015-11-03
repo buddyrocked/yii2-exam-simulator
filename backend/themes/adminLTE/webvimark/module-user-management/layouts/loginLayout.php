@@ -56,12 +56,12 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                 <li><?php echo Html::a('Exam', ['/simulation/take'], ['class'=>'external']); ?></li>
                 <?php if (Yii::$app->user->isGuest): ?>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><?php echo Html::a('Sign In', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
                             <li role="separator" class="divider"></li>
                             <li><?php echo Html::a('Sign Up', ['/user-management/auth/registration'], ['class'=>'external']); ?></li>
-                        </ul>
+                        </ul>-->
                     </li>
                 <?php else: ?>
                     

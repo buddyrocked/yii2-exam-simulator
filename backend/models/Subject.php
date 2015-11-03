@@ -66,7 +66,7 @@ class Subject extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_subject' => 'Id Subject',
+            'id_subject' => 'Search',
             'name' => 'Name',
             'desc' => 'Desc',
             'question_number' => 'Question Number',

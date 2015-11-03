@@ -1404,7 +1404,7 @@ ul.newsticker, ul.newsticker-quotes {
 
 .logo-login {
     width: 100%;
-    margin:70px 0 20px 0;
+    margin:0px 0 20px 0;
 }
 
 .form-login label {
@@ -1701,7 +1701,8 @@ ul.newsticker, ul.newsticker-quotes {
 
 
 .skin-red-light .main-header .logo {
-    background-color: #f25454 !important;
+    background-color: #fff !important;
+   
 }
 
 .user-panel {

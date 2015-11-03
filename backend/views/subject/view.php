@@ -204,7 +204,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div role="tabpanel" class="tab-pane" id="question">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                Summary
+                                                
+
                                                 <div class="text-right">
                                                     <?= Html::a('<i class="fa fa-plus-circle"></i> Add Question', '#', ['class'=>'btn btn-danger outline btn-toggle']); ?>
                                                 </div>
@@ -438,7 +439,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                       
                                                     <?php ActiveForm::end(); ?>
                                                     <?php \yii\widgets\Pjax::end(); ?>
                                                     </div>
@@ -447,7 +448,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <div>&nbsp;</div>
                                                 <div>&nbsp;</div>
                                                 <div><hr /></div>
-                                                
+                                                Total Question : 
+                                                <?php echo $model->getQuestions()->count();?>
                                                 <?php \yii\widgets\Pjax::begin(['id'=>'grid-question']); ?>
                                                 <?= GridView::widget([
                                                     'dataProvider' => new ActiveDataProvider([

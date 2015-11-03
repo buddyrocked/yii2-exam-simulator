@@ -15,7 +15,7 @@ use backend\components\purchaseRequestWidget;
 
 <header class="main-header">
 
-    <?php echo Html::a('<span class="logo-mini"></span><span class="logo-lg"></span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini">'.Html::img('@web/uploads/img/logo_rialchas_kecilx.png', ['class'=>'logo-image', 'alt'=>'user Image']).'</span><span class="logo-lg">'.Html::img('@web/uploads/img/logo_scrudu.png', ['class'=>'logo-login', 'alt'=>'user Image']).'</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
 

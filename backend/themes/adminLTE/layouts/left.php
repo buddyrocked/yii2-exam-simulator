@@ -62,12 +62,12 @@ use backend\components\EasyThumbnailImage;
                                 ],
                             ],
                             [
-                                'label' => 'Data Master',
+                                'label' => 'Master Data',
                                 'icon' => 'briefcase',
                                 'options'=> ['class'=>'treeview'],
                                 'url'=>['/subject/index'],
                                 'items' => [
-                                    ['label' => 'Subject & Question', 'icon'=>'map', 'url'=>['/subject/index']],
+                                    ['label' => 'Question Bank', 'icon'=>'map', 'url'=>['/subject/index']],
                                     ['label' => 'Strength Setting', 'icon'=>'line-chart', 'url'=>['/strengthsetting/index']],
                                     ['label' => 'Passage', 'icon'=>'twitch', 'url'=>['/passage/index']],
                                     ['label' => 'Profile', 'icon'=>'male', 'url'=>['/profile/index']],

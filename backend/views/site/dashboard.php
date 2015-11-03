@@ -99,11 +99,11 @@ $this->params['breadcrumbs'][] = $this->title;
 		                        <div class="user-header text-center">
 		                            <?php //Html::img($photo, ['class'=>'img-circle', 'alt'=>'user Image']); ?>
 		                            <?php
-		                            	$photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/employee/photo/'.Yii::$app->profile->detail()->photo: "@webroot/img/user2-160x160.jpg";
+		                            	$photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/profile/'.Yii::$app->profile->detail()->photo:"/img/user2-160x160.jpg";
 		                                echo EasyThumbnailImage::thumbnailImg(
 		                                    $photo,
-		                                    100,
-		                                    100,
+		                                    200,
+		                                    200,
 		                                    EasyThumbnailImage::THUMBNAIL_OUTBOUND,
 		                                    ['alt' => 'user image', 'class'=>'img-square', 'data-src'=>'holder.js/200x200/auto/?text=img']
 		                                );
