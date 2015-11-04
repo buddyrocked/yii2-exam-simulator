@@ -1355,7 +1355,7 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .main-header .logo {
-    height: 80px !important;
+    height: 85px !important;
 }
 
 .main-sidebar, .left-side {
@@ -1403,8 +1403,9 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .logo-login {
-    width: 100%;
-    margin:0px 0 20px 0;
+    width: 85%;
+    padding-top: 15px;
+    margin:0px 0 10px 0;
 }
 
 .form-login label {
