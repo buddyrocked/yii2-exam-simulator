@@ -10,6 +10,7 @@ use yii\helpers\Url;
 use kartik\widgets\Select2;
 use yii\helpers\ArrayHelper;
 use backend\models\Passage;
+use backend\models\Source;
 use backend\models\Domain;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\widgets\SwitchInput;
@@ -28,7 +29,7 @@ use kartik\widgets\SwitchInput;
                                     ]
                             ]); ?>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?php \yii\widgets\Pjax::begin(['id'=>'pjax-passage']); ?>
             <?= $form->field($modelQuestion, 'passage_id')->widget(Select2::className(),  [
                                                                 'data' => ArrayHelper::map(Passage::find()->all(), 'id', 'name'),
@@ -63,7 +64,43 @@ use kartik\widgets\SwitchInput;
              <div id="response-address"></div>
             <?php \yii\widgets\Pjax::end(); ?>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-4">
+                                                            <?php \yii\widgets\Pjax::begin(['id'=>'pjax-source']); ?>
+                                                            <?= $form->field($modelQuestion, 'source_id')->widget(Select2::className(),  [
+                                                                                                                'data' => ArrayHelper::map(Source::find()->all(), 'id', 'name'),
+                                                                                                                'options'=>['placeholder'=>'Choose Source'],
+                                                                                                                'pluginOptions'=>[
+                                                                                                                   'allowClear'=>true 
+                                                                                                                ],
+                                                                                                                'pluginEvents'=>[
+                                                                                                                    "change"=>"function(){
+                                                                                                                        var id = $('#question-source_id option:selected').val();
+                                                                                                                        $.ajax({
+                                                                                                                            'url':'".Url::to(['source/getone'])."',
+                                                                                                                            'data':{id:id},
+                                                                                                                            'success':function(data){
+                                                                                                                                $('#response-address1').html(data);
+                                                                                                                            }
+                                                                                                                        });
+                                                                                                                    }"
+                                                                                                                ],
+                                                                                                                'addon' => [
+                                                                                                                    'append' => [
+                                                                                                                        'content' => Html::a('<i class="fa fa-plus"></i>', ['/source/add'], [
+                                                                                                                            'class' => 'btn btn-danger btn-modal', 
+                                                                                                                            'title' => 'Create new source', 
+                                                                                                                            'data-toggle' => 'tooltip'
+                                                                                                                        ]),
+                                                                                                                        'asButton' => true
+                                                                                                                    ]
+    ]
+                                                                                                            ]) ?>
+
+                                                             <div id="response-address1"></div>
+                                                            <?php \yii\widgets\Pjax::end(); ?>
+                                                            
+                                                        </div>
+        <div class="col-sm-1">
              <?= $form->field($modelQuestion, 'level')->widget(Select2::className(),  [
                                                                 'data' => ['1'=>'1', '2'=>'2', '3'=>'3', '4'=>'4', '5'=>'5'],
                                                                 'options'=>['placeholder'=>'Choose Level'],
@@ -72,7 +109,7 @@ use kartik\widgets\SwitchInput;
                                                                 ],
                                                             ]) ?>
         </div>                                                        
-        <div class="col-sm-2">
+        <div class="col-sm-1">
             <?= $form->field($modelQuestion, 'time')->textInput() ?>
         </div>
         <div class="col-sm-2">
