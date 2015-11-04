@@ -20,15 +20,18 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo ($intro->is_html == true)?Html::decode($intro->content):strip_tags($intro->content);
                     }
                     ?>
-                </div>
-                <div class="row registration-block">
-                        <div class="col-sm-10">
+                    <div class="row registration-block">
+                    <div class="col-sm-10">
                             <?php echo "If you do not have any account, please kindly "; ?>
                             <?= GhostHtml::a(
                                 UserManagementModule::t('front', " Sign Up"),
                                 ['/user-management/auth/registration']
                             ) ?>
                         </div>
+                </div>
+
+                
+                        
                 </div>
                 <div>&nbsp;</div>
                 <div>
