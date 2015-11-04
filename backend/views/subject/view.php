@@ -204,13 +204,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div role="tabpanel" class="tab-pane" id="question">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                
-
-                                                <div class="text-right">
+                                            <div class="text-right">
                                                     <?= Html::a('<i class="fa fa-plus-circle"></i> Add Question', '#', ['class'=>'btn btn-danger outline btn-toggle']); ?>
                                                 </div>
-                                                <div>&nbsp;</div>
-                                                <div>&nbsp;</div>
                                                 <div class="col-md-12 hiddenx">
                                                     <div class="question-form">
                                                     <?php \yii\widgets\Pjax::begin(['id'=>'pjax-form-question']); ?>
@@ -444,9 +440,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     <?php \yii\widgets\Pjax::end(); ?>
                                                     </div>
                                                 </div>
-                                                <div>&nbsp;</div>
-                                                <div>&nbsp;</div>
-                                                <div>&nbsp;</div>
                                                 <div><hr /></div>
                                                 Total Question : 
                                                 <?php echo $model->getQuestions()->count();?>
