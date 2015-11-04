@@ -23,13 +23,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="row registration-block">
                         <div class="col-sm-10">
-                            <?php echo "if you don't have an account please "; ?>
+                            <?php echo "If you do not have any account, please kindly "; ?>
                             <?= GhostHtml::a(
                                 UserManagementModule::t('front', " Sign Up"),
                                 ['/user-management/auth/registration']
                             ) ?>
                         </div>
                 </div>
+                <div>&nbsp;</div>
                 <div>
                 <?php echo Html::a('Take A Test', ['/simulation/take'], ['class'=>'btn btn-danger btn-lg']); ?>
                 </div>
