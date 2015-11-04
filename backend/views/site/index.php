@@ -34,9 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         
                 </div>
                 <div>&nbsp;</div>
-                <div>
-                <?php echo Html::a('Take A Test', ['/simulation/take'], ['class'=>'btn btn-danger btn-lg']); ?>
-                </div>
+                <!--<div>
+                <?php //echo Html::a('Take A Test', ['/simulation/take'], ['class'=>'btn btn-danger btn-lg']); ?>
+                </div>-->
             </div>
         </div>
     </div>

@@ -44,9 +44,9 @@ $this->title = UserManagementModule::t('front', 'Authorization');
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login">
                 <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Features</a></li>
+                <!--<li><a href="#">Features</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contact</a></li>-->
                 <li><?php echo Html::a('Exam', ['/simulation/take'], ['class'=>'external']); ?></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
