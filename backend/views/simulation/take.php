@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'attribute'=>'name',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        $client = (isset($data->desc))?substr($data->desc, 0, 80):'-';
+                                                        $client = (isset($data->desc))?substr($data->desc, 0, 9999):'-';
                                                         return '<h4 class="text-upper"><strong>'.Html::a($data->name, ['/simulation/preview', 'id'=>$data->id], []).'</strong></h4>'.$client;
                                                     }
                                                 ],
