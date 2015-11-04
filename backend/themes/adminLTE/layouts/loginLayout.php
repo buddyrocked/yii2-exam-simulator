@@ -51,9 +51,9 @@ $content2 = Content::find()->where(['id' => '15'])->one();
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
                 <li class="active"><?php echo Html::a('Home', ['/'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Features', '#features'); ?></li>
-                <li><?php echo Html::a('About', '#about'); ?></li>
-                <li><?php echo Html::a('Contact', '#contact'); ?></li>
+                <li><?php //echo Html::a('Features', '#features'); ?></li>
+                <li><?php //echo Html::a('About', '#about'); ?></li>
+                <li><?php //echo Html::a('Contact', '#contact'); ?></li>
                 <li><?php echo Html::a('Exam', ['/simulation/take'], ['class'=>'external']); ?></li>
                 
                 <?php if (Yii::$app->user->isGuest): ?>
