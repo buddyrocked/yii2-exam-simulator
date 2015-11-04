@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	<div class="row">    
         <div class="col-md-8">            
             <div class="well">
-                <h1 class="bebas">Let's take a exam simulations for free. </h1>
-                <div>Weh have 20 Million exam simulation and 20 thousand Member at all over the world.</div>
+                <h1 class="bebas">You may select one exam to take from our list. </h1>
+                <div>Here is the list of the exams available to take. We are consistently adding more exams to the list for you.</div>
             </div>
             <div class="container-menu">
                 <div class="middle-menux bg-white">

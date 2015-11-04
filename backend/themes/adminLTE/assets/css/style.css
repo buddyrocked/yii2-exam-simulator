@@ -1403,9 +1403,11 @@ ul.newsticker, ul.newsticker-quotes {
 }
 
 .logo-login {
-    width: 86%;
+    width: 180px;
+    height: 95px;
     padding-top: 15px;
-    padding-left: 0px;
+    padding-left: 5px;
+    padding-right: 10px;
     margin:0px 0 10px 0;
 }
 
@@ -1748,11 +1750,11 @@ ul.newsticker, ul.newsticker-quotes {
     }
 
     .sidebar-mini.sidebar-collapse .main-header .logo {
-        width: 60px;
+        width: 180px;
     }
 
     .sidebar-mini.sidebar-collapse .main-header .navbar {
-        margin-left: 60px;
+        margin-left: 20px;
     }
 }
 
