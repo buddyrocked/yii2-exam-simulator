@@ -83,7 +83,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                                 ['alt' => 'user image', 'class'=>'user-imagex img-square', 'data-src'=>'holder.js/49x49/auto/?text=img']
                             );
                         ?>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menux">
                             <li><?php echo Html::a('Profile', ['/profile/viewdetail'], ['class'=>'external']); ?></li>
                             <li role="separator" class="divider"></li>
                             <li><?php echo Html::a('My Exam', ['/simulation/list'], ['class'=>'external']); ?></li>

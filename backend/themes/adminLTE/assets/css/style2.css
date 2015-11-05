@@ -1814,3 +1814,90 @@ ul.newsticker, ul.newsticker-quotes {
     width: 180px;
     padding-left: 13px;
 }
+
+.dropdown-menux {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+  display: none;
+  float: right;
+  min-width: 5px;
+  padding: 5px 0px 10px 0px;
+  margin: 10px 0 0;
+  font-size: 12px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-menux.pull-right {
+  right: 20;
+  left: auto;
+}
+.dropdown-menux .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.dropdown-menux > li > a {
+  display: block;
+  padding: 3px 2px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menux > li > a:hover,
+.dropdown-menux > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.dropdown-menux > .active > a,
+.dropdown-menux > .active > a:hover,
+.dropdown-menux > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #337ab7;
+  outline: 0;
+}
+.dropdown-menux > .disabled > a,
+.dropdown-menux > .disabled > a:hover,
+.dropdown-menux > .disabled > a:focus {
+  color: #777;
+}
+.dropdown-menux > .disabled > a:hover,
+.dropdown-menux > .disabled > a:focus {
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.open > .dropdown-menux {
+  display: block;
+}
+.open > a {
+  outline: 0;
+}
+.dropdown-menux-right {
+  right: 0;
+  left: auto;
+}
