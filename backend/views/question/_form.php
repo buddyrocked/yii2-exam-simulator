@@ -112,7 +112,7 @@ use kartik\widgets\SwitchInput;
         <div class="col-sm-1">
             <?= $form->field($modelQuestion, 'time')->textInput() ?>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-1">
             <?= $form->field($modelQuestion, 'is_random')->widget(SwitchInput::classname(), []); ?>
         </div>
         <div class="col-sm-12">

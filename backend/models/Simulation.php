@@ -69,6 +69,7 @@ class Simulation extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'explaination' => 'Explanations',
             'user_id' => 'User ID',
             'subject_id' => 'Subject ID',
             'duration' => 'Duration',

@@ -73,7 +73,7 @@ use kartik\widgets\DatePicker;
         <div class="col-md-6">
             <?= $form->field($model, 'job')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-md-6">
+        <!--<div class="col-md-6">
             <?= $form->field($model, 'status')->widget(Select2::className(),  [
                                                                             'data' => ['0'=>'Non Active', '1'=>'Active'],
                                                                             'options'=>['placeholder'=>'Choose Status'],
@@ -81,7 +81,7 @@ use kartik\widgets\DatePicker;
                                                                                'allowClear'=>true 
                                                                             ]
                                                                         ]) ?>
-        </div>
+        </div>-->
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
@@ -96,7 +96,7 @@ use kartik\widgets\DatePicker;
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="row">
+                    <div class="rowx">
                         <div class="col-md-6">
                             <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
                         </div>

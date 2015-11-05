@@ -70,6 +70,7 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'explaination' => 'Explanatios',
             'subject_id' => 'Subject ID',
             'id_question' => 'Id Question',
             'passage_id' => 'Passage',

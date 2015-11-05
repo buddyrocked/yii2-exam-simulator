@@ -1812,4 +1812,5 @@ ul.newsticker, ul.newsticker-quotes {
 .navbar-brand div img {
     height: 80px;
     width: 180px;
+    padding-left: 13px;
 }

@@ -101,14 +101,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <hr />
                                                 <div class="form-group form-action">
                                                     <div class="text-right">
-                                                    <?= Html::a('<i class="fa fa-eye"></i> Hide Explaination', ['explain', 'id' => $model->id, 'setting' => 0], [
+                                                    <?= Html::a('<i class="fa fa-eye"></i> Hide Explanations', ['explain', 'id' => $model->id, 'setting' => 0], [
                                                         'class' => ($model->explain_mode == 0)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure want apply this setting?',
                                                             'method' => 'post',
                                                         ],
                                                     ]) ?>
-                                                    <?= Html::a('<i class="fa fa-eye-slash"></i> Show Explaination', ['explain', 'id' => $model->id, 'setting' => 1], [
+                                                    <?= Html::a('<i class="fa fa-eye-slash"></i> Show Explanations', ['explain', 'id' => $model->id, 'setting' => 1], [
                                                         'class' => ($model->explain_mode == 1)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure want apply this setting?',

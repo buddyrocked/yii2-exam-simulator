@@ -54,13 +54,15 @@ class ProfileController extends Controller
         $model = new Profile();
 
         if ($model->load(Yii::$app->request->post())) {
+            $model->status = 1;
             $model->photo = UploadedFile::getInstance($model, 'photo');
             if($model->photo){
                 $path = Yii::getAlias('@backend') . '/web/uploads/profile/';
                 $name = rand(1000,9999) . time();
                 $model->photo->saveAs($path . $name . '.' . $model->photo->extension);
                 $model->photo = $name . '.' . $model->photo->extension;
-            }
+
+            } 
             $model->save();
             Yii::$app->session->setFlash('message', 'simpan berhasil berhasil katakan berhasil.');
             return $this->redirect(['view', 'id' => $model->id]);
@@ -82,6 +84,7 @@ class ProfileController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
+            $model->status = 1;
             $model->photo = UploadedFile::getInstance($model, 'photo');
             if($model->photo){
                 $path = Yii::getAlias('@backend') . '/web/uploads/profile/';

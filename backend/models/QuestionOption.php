@@ -65,7 +65,7 @@ class QuestionOption extends \yii\db\ActiveRecord
             'question_id' => 'Question ID',
             'option' => 'Option',
             'is_correct' => 'Is Correct',
-            'answer' => 'Explaination',
+            'answer' => 'Explanations',
             'created' => 'Created',
             'updated' => 'Updated',
         ];
