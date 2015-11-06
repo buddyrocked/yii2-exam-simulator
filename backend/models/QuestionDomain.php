@@ -43,7 +43,7 @@ class QuestionDomain extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'question_id' => 'Question ID',
-            'domain_id' => 'Domain ID',
+            'domain_id' => 'Domain',
         ];
     }
 
