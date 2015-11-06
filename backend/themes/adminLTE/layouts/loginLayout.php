@@ -7,6 +7,8 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use backend\components\EasyThumbnailImage;
 use backend\models\Content;
+//use yii\bootstrap\Nav;
+//use yii\bootstrap\NavBar;
 
 dmstr\web\AdminLteAsset::register($this);
 backend\themes\adminLTE\components\LoginAsset::register($this);
@@ -48,6 +50,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                 </div>
             </a>
         </div>
+
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
                 <li class="active"><?php echo Html::a('Home', ['/'], ['class'=>'external']); ?></li>
@@ -69,66 +72,68 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                 <?php else: ?>
                     
                 <li class=""><?php echo GhostHtml::a('Dashboard', ['/site/dashboard'], ['class'=>'external']); ?></li>
-                <div class="col-md-1">
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/profile/'.Yii::$app->profile->detail()->photo:"/img/user2-160x160.jpg"; ?>
-                        <?php //Html::img($photo, ['class'=>'user-image', 'alt'=>'user Image']); ?>
-                        <?php
-                            echo EasyThumbnailImage::thumbnailImg(
-                                $photo,
-                                49,
-                                49,
-                                EasyThumbnailImage::THUMBNAIL_OUTBOUND,
-                                ['alt' => 'user image', 'class'=>'user-imagex img-square', 'data-src'=>'holder.js/49x49/auto/?text=img']
-                            );
-                        ?>
-                        <ul class="dropdown-menux">
-                            <li><?php echo Html::a('Profile', ['/profile/viewdetail'], ['class'=>'external']); ?></li>
-                            <li role="separator" class="divider"></li>
-                            <li><?php echo Html::a('My Exam', ['/simulation/list'], ['class'=>'external']); ?></li>
-                            <li role="separator" class="divider"></li>
-                            <li><?php echo Html::a('Sign Out', ['/user-management/auth/logout'], ['class'=>'external']); ?></li>
+                <li>
+                    <span class="navbar-custom-menu">
+                        <ul class="navbar-nav">
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <?php $photo = isset(Yii::$app->profile->detail()->photo)?'@webroot/uploads/profile/'.Yii::$app->profile->detail()->photo: $directoryAsset."/img/user2-160x160.jpg"; ?>
+                                    <?php //Html::img($photo, ['class'=>'user-image', 'alt'=>'user Image']); ?>
+                                    <?php
+                                        echo EasyThumbnailImage::thumbnailImg(
+                                            $photo,
+                                            49,
+                                            49,
+                                            EasyThumbnailImage::THUMBNAIL_OUTBOUND,
+                                            ['alt' => 'user image', 'class'=>'user-imagex img-square', 'data-src'=>'holder.js/49x49/auto/?text=img']
+                                        );
+                                    ?>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <?php //Html::img($photo, ['class'=>'img-circle', 'alt'=>'user Image']); ?>
+                                        <?php
+                                            echo EasyThumbnailImage::thumbnailImg(
+                                                $photo,
+                                                100,
+                                                100,
+                                                EasyThumbnailImage::THUMBNAIL_OUTBOUND,
+                                                ['alt' => 'user image', 'class'=>'img-square', 'data-src'=>'holder.js/100x100/auto/?text=img']
+                                            );
+                                        ?>
+                                        <p>
+                                            <?= Html::encode(Yii::$app->user->username); ?> <?= Html::encode(isset(Yii::$app->profile->detail()->first_name)?Yii::$app->profile->detail()->first_name:''); ?>
+                                            <small></small>
+                                        </p>
+                                    </li>
+                                    
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <?= Html::a(
+                                                'Profile',
+                                                ['profile/viewdetail'],
+                                                ['class' => 'btn btn-default btn-flat']
+                                            ) ?>
+                                        </div>
+                                        <div class="pull-right">
+                                            <?= Html::a(
+                                                'Sign out',
+                                                ['/user-management/auth/logout'],
+                                                ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                            ) ?>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </a>
+                    </span>
                 </li>
-                
-                <ul class="dropdown-menu">
-                        <!-- User image -->
-                    <li class="user-header">
-                            <?php //Html::img($photo, ['class'=>'img-circle', 'alt'=>'user Image']); ?>
-                            <?php
-                                echo EasyThumbnailImage::thumbnailImg(
-                                    $photo,
-                                    100,
-                                    100,
-                                    EasyThumbnailImage::THUMBNAIL_OUTBOUND,
-                                    ['alt' => 'user image', 'class'=>'img-square', 'data-src'=>'holder.js/100x100/auto/?text=img']
-                                );
-                            ?>
-                            <p>
-                                <?= Html::encode(Yii::$app->user->username); ?> <?= Html::encode(isset(Yii::$app->profile->detail()->first_name)?Yii::$app->profile->detail()->first_name:''); ?>
-                                <small></small>
-                            </p>
-                    </li>
-                <li class="user-footer">
-                            <div class="pull-left">
-                                <?= Html::a(
-                                    'Profile',
-                                    ['profile/viewdetail'],
-                                    ['class' => 'btn btn-default btn-flat']
-                                ) ?>
-                            </div>
-                            <div class="pull-right">
-                                <?= Html::a(
-                                    'Sign out',
-                                    ['/user-management/auth/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
-                                ) ?>
-                            </div>
-                </li>
-                </ul>
-                </div>
+            </ul>
+                <!-- User Account: style can be found in dropdown.less -->
+            
+
                 <?php endif; ?>
             </ul>
         </div><!-- /.nav-collapse -->

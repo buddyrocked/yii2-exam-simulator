@@ -37,9 +37,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                             ['class' => 'yii\grid\SerialColumn'],
                                             [
                                                 'attribute'=>'question',
-                                                'format'=>'text',
+                                                'format'=>'raw',
                                                 'value'=>function($data){
-                                                    return strip_tags($data->question->question);
+                                                    $client = (isset($data->question->question))?substr($data->question->question, 0, 50):'-';
+                                                    return strip_tags($data->getLabelStatus()).$client;
                                                 }
                                             ],
                                             [

@@ -70,7 +70,7 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'explaination' => 'Explanatios',
+            'explaination' => 'Explanation',
             'subject_id' => 'Subject ID',
             'id_question' => 'Id Question',
             'passage_id' => 'Passage',
@@ -78,7 +78,7 @@ class Question extends \yii\db\ActiveRecord
             'question' => 'Question',
             'level' => 'Level',
             'time' => 'Time',
-            'is_random' => 'Is Random',
+            'is_random' => 'Random',
             'created' => 'Created',
             'updated' => 'Updated',
         ];
