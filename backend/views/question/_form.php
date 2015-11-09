@@ -129,6 +129,16 @@ use kartik\widgets\SwitchInput;
                 ]
             ])?>
         </div>
+        <div class="col-md-4">
+            <?= $form->field($modelQuestion, 'status')->widget(Select2::className(),  [
+                    'data' => ['0'=>'Inactive', '1'=>'Active'],
+                    'options'=>['placeholder'=>'Choose Status'],
+                    'pluginOptions'=>[
+                       'allowClear'=>true 
+                    ]
+                ])
+            ?>
+        </div>
         <div class="col-md-12">
             <h3>domains</h3>
             <hr />

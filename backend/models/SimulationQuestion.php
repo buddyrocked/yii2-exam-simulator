@@ -139,4 +139,30 @@ class SimulationQuestion extends \yii\db\ActiveRecord
     public function getSimulationDomain(){
         return $this->hasOne(SimulationDomain::className(), ['id' => 'simulation_domain_id']);
     }
+
+    public function getLabelQuestion(){
+        $lists = [
+            '0'=>'<span class="text-success"><i class="fa fa-check fa-2x"></i></span>',
+            '1'=>'<span class="text-success"><i class="fa fa-check fa-2x"></i></span>',
+            '2'=>'<span class="text-success"><i class="fa fa-check fa-2x"></i></span>'
+        ];
+
+        return $lists[$this->status];
+    }
+
+    public function getNewStatus(){
+        $answer = $this->getSimulationQuestionAnswers()->count();
+        $status = '';
+        if($answer > 0):
+            $status .= '<span class="text-success"><i class="fa fa-checkx fa-2x bebas"> A </i></span>';
+        else:
+            $status .= '<span class="text-danger"><i class="fa fa-checkx fa-2x bebas"> B </i></span>';
+        endif;
+
+        if($this->status == 2):
+            $status .= '<span class="text-danger"><i class="fa fa-checkx fa-2x bebas"> M </i></span>';
+        endif;
+
+        return $status;
+    }
 }

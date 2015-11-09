@@ -68,6 +68,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                             return $data->duration.' Minutes';
                                         }
                                     ],
+                                    [
+                                        'attribute'=>'created',
+                                        'format'=>'raw',
+                                        'value'=>function($data){
+                                            return $data->created;
+                                        }
+                                    ],
                                     // 'start',
                                     // 'finish',
                                     // 'status',

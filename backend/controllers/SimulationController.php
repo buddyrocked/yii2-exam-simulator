@@ -275,7 +275,8 @@ class SimulationController extends Controller
             try{
                     $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
                     //not multiple answer
-                    $modelQuestion->is_read = true;
+
+
                     if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
                         if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
                             $modelQuestion->correct = 1;
@@ -296,14 +297,11 @@ class SimulationController extends Controller
 
                         $modelsAnswer->status = 0;
 
-                        if($modelsAnswer->save()):
-
-                            if($modelQuestion->save()):
-                                $transaction->commit();
-                            else:
-                                $transaction->rollBack();
+                        if($modelQuestion->save()):
+                            if($modelsAnswer->question_option_id != null):
+                                $modelsAnswer->save();
                             endif;
-
+                            $transaction->commit();
                             
                             if($modelNext != null):
                                 return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
@@ -367,6 +365,9 @@ class SimulationController extends Controller
                         endif;
 
                         if($modelQuestion->save()):
+                            if($modelsAnswer->question_option_id != null):
+                                $modelsAnswer->save();
+                            endif;
                             $transaction->commit();                            
                             
                             if($modelNext != null):

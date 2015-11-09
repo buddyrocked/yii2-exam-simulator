@@ -23,8 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                             <div class="well">
-                                <h1 class="bebas">Congratulation Guys..!!!</h1>
-                                <div>Exam Simulation already finish.</div>
+                                <h1 class="bebas">You have reached the end of the exam</h1>
+                                <div>Please review the exam result report below.</div>
                             </div>
                             <div role="tabpanel">
                                 <!-- Nav tabs -->
@@ -163,11 +163,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 }
                                                             ],*/
                                                             [
-                                                                'attribute'=>'status',
-                                                                'header'=>'Blank',
+                                                                'attribute'=>'question',
                                                                 'format'=>'raw',
                                                                 'value'=>function($data){
-                                                                    return $data->getLabelStatus2();
+                                                                    $client = (isset($data->question->question))?substr($data->question->question, 0, 150):'-';
+                                                                    return strip_tags($data->getLabelQuestion()).$client.'...';
                                                                 }
                                                             ],
                                                             [

@@ -40,14 +40,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 'format'=>'raw',
                                                 'value'=>function($data){
                                                     $client = (isset($data->question->question))?substr($data->question->question, 0, 50):'-';
-                                                    return strip_tags($data->getLabelStatus()).$client;
+                                                    return strip_tags($data->getLabelQuestion()).$client.'...';
                                                 }
                                             ],
                                             [
                                                 'attribute'=>'status',
                                                 'format'=>'raw',
                                                 'value'=>function($data){
-                                                    return $data->getLabelStatus();
+                                                    return $data->getNewStatus();
                                                 }
                                             ],
                                             [

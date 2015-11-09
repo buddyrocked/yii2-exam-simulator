@@ -44,7 +44,7 @@ $content2 = Content::find()->where(['id' => '15'])->one();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= Yii::$app->homeUrl ?>">
                 <div>
                     <?= Html::img('@web/uploads/img/logo_scrudu.png'); ?>
                 </div>

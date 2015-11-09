@@ -319,6 +319,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 ]
                                                             ])?>
                                                         </div>
+                                                        <div class="col-md-4">
+                                                            <?= $form->field($modelQuestion, 'status')->widget(Select2::className(),  [
+                                                                    'data' => ['0'=>'Inactive', '1'=>'Active'],
+                                                                    'options'=>['placeholder'=>'Choose Status'],
+                                                                    'pluginOptions'=>[
+                                                                       'allowClear'=>true 
+                                                                    ]
+                                                                ])
+                                                            ?>
+                                                        </div>
                                                         <div class="col-md-12">
                                                             <h3>domains</h3>
                                                             <hr />
@@ -349,6 +359,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 echo Html::activeHiddenInput($modelDomain, "[{$x}]id");
                                                                             }
                                                                         ?>
+                                                                        
                                                                         <div class="row">
                                                                             <div class="col-md-10">
                                                                                 <?= $form->field($modelDomain, '['.$x.']domain_id')->widget(Select2::className(),  [
@@ -360,7 +371,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                                             ]);
                                                                                 ?>
                                                                             </div>
+                                                                            
                                                                             <div class="col-md-2">
+                                                                            
                                                                                 <div>&nbsp;</div>
                                                                                 <button type="button" class="add-item3 btn btn-info btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
                                                                                 <button type="button" class="remove-item3 btn btn-danger btn-xs"><i class="glyphicon glyphicon-minus"></i></button>

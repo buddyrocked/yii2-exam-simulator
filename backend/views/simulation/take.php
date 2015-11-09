@@ -47,18 +47,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'format'=>'raw',
                                                     'value'=>function($data){
                                                         $client = (isset($data->desc))?substr($data->desc, 0, 9999):'-';
-                                                        return '<h4 class="text-upper"><strong>'.Html::a($data->name, ['/simulation/preview', 'id'=>$data->id], []).'</strong></h4>'.$client;
+                                                        return '<div class="col-md-10"><h4 class="text-upper"><strong>'.Html::a($data->name, ['/simulation/preview', 'id'=>$data->id], []).'</strong></h4></div'.$client;
                                                     }
                                                 ],
                                                 [
                                                     'attribute'=>'time',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<div class="text-center">Taken</div>
-                                                                <h4 class="text-center text-danger"><strong>'.$data->getSimulations()->count().'</strong></h4>';
+                                                        return 'Taken <class="text-upper"><strong>'.$data->getSimulations()->count().'</strong> times since launced<div>&nbsp;</div>
+                                                                Exam Duration <class"text-upper"><strong>'.$data->time.'</strong> Minutes<div>&nbsp;</div>
+                                                                #Questions:<class"text-upper"><strong>'.$data->question_number.'</strong><div>&nbsp;</div>
+                                                                ';
                                                     }
                                                 ],
-                                                [
+                                                /*[
                                                     'attribute'=>'time',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
@@ -74,12 +76,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         return '<div class="text-center">#Questions</div>
                                                                 <h4 class="text-center text-danger"><strong>'.$data->question_number.'</strong></h4>';
                                                     }
-                                                ],
+                                                ],*/
                                                 [
                                                     'attribute'=>'id',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<br />'.Html::a('<i class="fa fa-chevron-right"></i> ', ['/simulation/preview', 'id'=>$data->id], ['class'=>'btn btn-danger']);
+                                                        return '<br />'.Html::a('<i class="fa">Take Exam</i> ', ['/simulation/preview', 'id'=>$data->id], ['class'=>'btn btn-danger']);
                                                     }
                                                 ],
                                                 /*[

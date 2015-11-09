@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"model",
+				"modelNext"
+			],
+			[
+				"col",
+				"col-md-8"
+			],
+			[
+				"text-",
+				"text-upper"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"like",
+				"like"
+			],
+			[
+				"bor",
+				"border-right"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"pass",
+				"passage_id"
+			],
+			[
 				"status",
 				"status"
 			],
@@ -42,10 +98,6 @@
 			[
 				"tasks",
 				"tasks_id"
-			],
-			[
-				"model",
-				"modelovertimes"
 			],
 			[
 				"su",
@@ -144,10 +196,6 @@
 				"bottom"
 			],
 			[
-				"pad",
-				"padding"
-			],
-			[
 				"com",
 				"commit"
 			],
@@ -228,10 +276,6 @@
 				"text-align"
 			],
 			[
-				"mar",
-				"margin"
-			],
-			[
 				"max",
 				"max-height"
 			],
@@ -242,10 +286,6 @@
 			[
 				"good",
 				"goodrejs"
-			],
-			[
-				"bor",
-				"border-bottom"
 			],
 			[
 				"fon",
@@ -474,144 +514,24 @@
 			[
 				"blog",
 				"blog-item"
-			],
-			[
-				"s",
-				"solid"
-			],
-			[
-				"in",
-				"inline-block"
-			],
-			[
-				"be",
-				"before"
-			],
-			[
-				"m",
-				"margin"
-			],
-			[
-				"Fr",
-				"FrontEndController"
-			],
-			[
-				"inl",
-				"inline-block"
-			],
-			[
-				"bord",
-				"border"
-			],
-			[
-				"form",
-				"form-contact"
-			],
-			[
-				"im",
-				"important"
-			],
-			[
-				"rgb",
-				"rgba()"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "backend/controllers/SimulationController.php",
-			"settings":
-			{
-				"buffer_size": 19710,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/models/QuestionSearch.php",
-			"settings":
-			{
-				"buffer_size": 1903,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/source/add.php",
-			"settings":
-			{
-				"buffer_size": 975,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/source/_add.php",
-			"settings":
-			{
-				"buffer_size": 1037,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/themes/adminLTE/assets/js/app.js",
-			"settings":
-			{
-				"buffer_size": 12354,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "backend/views/subject/view.php",
 			"settings":
 			{
-				"buffer_size": 49124,
+				"buffer_size": 50007,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "backend/controllers/SourceController.php",
+			"file": "backend/views/content/_form.php",
 			"settings":
 			{
-				"buffer_size": 3873,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/controllers/PassageController.php",
-			"settings":
-			{
-				"buffer_size": 3793,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/controllers/QuestionController.php",
-			"settings":
-			{
-				"buffer_size": 11595,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/models/Question.php",
-			"settings":
-			{
-				"buffer_size": 3800,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/simulation/question.php",
-			"settings":
-			{
-				"buffer_size": 13285,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/simulation/viewquestion.php",
-			"settings":
-			{
-				"buffer_size": 7979,
+				"buffer_size": 3248,
 				"line_ending": "Windows"
 			}
 		}
@@ -652,46 +572,79 @@
 	},
 	"expanded_folders":
 	[
-		"/D/xampp/htdocs/exam-simulator",
-		"/D/xampp/htdocs/exam-simulator/backend",
-		"/D/xampp/htdocs/exam-simulator/backend/themes",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js",
-		"/D/xampp/htdocs/exam-simulator/backend/views",
-		"/D/xampp/htdocs/exam-simulator/backend/views/passage",
-		"/D/xampp/htdocs/exam-simulator/backend/views/source",
-		"/D/xampp/htdocs/exam-simulator/console",
-		"/D/xampp/htdocs/exam-simulator/console/migrations"
+		"/D/xampp/htdocs/r-csrp",
+		"/D/xampp/htdocs/r-csrp/backend",
+		"/D/xampp/htdocs/r-csrp/backend/models"
 	],
 	"file_history":
 	[
-		"/D/xampp/htdocs/exam-simulator/backend/views/source/add.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/source/_add.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151030_091041_add_column_source_id_to_table_question.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/layouts/loginLayout.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/take.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/review.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/prepare.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/finish.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestion.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/profile/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/loginLayout.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/header.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151109_075253_add_column_status_to_table_question.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/registration.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/RegistrationFormProfile.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/list.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Simulation.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationSearch.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/SimulationController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionOption.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionDomain.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style.css",
+		"/D/xampp/htdocs/exam-simulator/backend/views/site/dashboard.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/view.php",
+		"/D/xampp/htdocs/exam-simulator/backend/web/assets/e85fa95e/css/bootstrap.css",
+		"/D/xampp/htdocs/exam-simulator/backend/assets/AppAsset.php",
+		"/D/xampp/htdocs/exam-simulator/common/config/main-local.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/site/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/SubjectController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/SubjectSearch.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Subject.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/Profile.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/profile/_form.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/ProfileController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/question/update.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/question/_form.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/front-end.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/frontendLayout.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/_form.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/_search.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/update.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/left.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/QuestionController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/login.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/question/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/question/_search.php",
+		"/D/xampp/htdocs/exam-simulator/backend/models/QuestionSearch.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/index.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/source/add.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/source/_add.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/SourceController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers/PassageController.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/viewquestion.php",
+		"/D/xampp/htdocs/exam-simulator/composer.json",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js/app.js",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m151030_091041_add_column_source_id_to_table_question.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m150902_042216_create_table_passage.php",
 		"/D/xampp/htdocs/exam-simulator/console/migrations/m151030_085533_create_table_source.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/view.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/layouts/loginLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/frontendLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/loginLayout.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/registration.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/css/style2.css",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/login.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/auth/login.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/front-end.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-login.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main-question.php",
 		"/D/xampp/htdocs/exam-simulator/frontend/views/site/contact.php",
 		"/D/xampp/htdocs/exam-simulator/frontend/controllers/SiteController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/site/index.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/site/login.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/list.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/overtime/mylist.php",
 		"/D/xampp/htdocs/r-csrp/backend/models/Overtimes.php",
@@ -752,48 +705,7 @@
 		"/D/xampp/htdocs/r-csrp/console/migrations/m151021_021410_create_table_overtimes.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/task/_form.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/expense/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/expense/create.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/incomingfund/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/IncomingfundController.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/index.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/WeeklyassesmentreportController.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/WeeklyAssesmentReportSearch.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/_search.php",
-		"/D/xampp/htdocs/r-csrp/backend/models/WeeklyAssesmentReport.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/view.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/project/create2.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/project/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/project/_create2.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/project/create.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/_form.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/_search.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/create.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/index.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/employee/index.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/update.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/content/view.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/create.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/pipeline/index.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/employee/show.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/weeklyassesmentreport/update.php",
-		"/D/xampp/htdocs/r-csrp/console/migrations/m151016_083519_add_column_status_to_table_employee.php",
-		"/D/xampp/htdocs/exam-simulator/backend/controllers/SimulationController.php",
-		"/D/xampp/htdocs/r-csrp/backend/controllers/ElibraryController.php",
-		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/main.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/viewquestion.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationQuestion.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/finish.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/index.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/SimulationDomain.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Question.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151008_032600_add_column_is_dummy_to_table_simulation.php",
-		"/D/xampp/htdocs/exam-simulator/backend/models/Subject.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/_form.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/create.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/update.php",
-		"/D/xampp/htdocs/exam-simulator/console/migrations/m151008_023510_add_column_percentage_to_table_subject_and_simulation.php"
+		"/D/xampp/htdocs/r-csrp/backend/views/expense/create.php"
 	],
 	"find":
 	{
@@ -804,6 +716,16 @@
 		"height": 117.0,
 		"where_history":
 		[
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\models",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes\\adminLTE\\assets\\css",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\simulation",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\subject",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\simulation",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes\\adminLTE\\webvimark",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes\\adminLTE\\layouts",
+			"D:\\xampp\\htdocs\\exam-simulator\\backend\\themes",
 			"D:\\xampp\\htdocs\\exam-simulator\\backend\\models",
 			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\subject",
 			"D:\\xampp\\htdocs\\exam-simulator\\backend\\views\\simulation",
@@ -855,6 +777,124 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"question bank",
+			"getLabelQuestion",
+			"getlabel",
+			"data",
+			"modelNext",
+			"username",
+			"finish",
+			"review",
+			"exam",
+			"home",
+			"logo_scrudu",
+			"domain",
+			"getQuestionOptions",
+			"random",
+			"getQuestionRightOptions",
+			"options",
+			"dropdown",
+			"user-header",
+			"nav",
+			"navbar-nav",
+			"navbar-custom-menu",
+			"navbar-nav",
+			"user-header",
+			"dropdown",
+			"profile",
+			"getlabel",
+			"get",
+			"client",
+			"ques",
+			"wues",
+			"desc",
+			"dropdown-menu",
+			"dropdown",
+			"969",
+			"161",
+			"!important",
+			"dropdown",
+			"container",
+			"collapse",
+			"navbar-toggle",
+			"navbar-header",
+			"container",
+			"dropdown",
+			".dropdown",
+			"dropdown",
+			".li",
+			"li",
+			"divider",
+			"separator",
+			"dropdown-menu",
+			"my exam",
+			"logo_scrudu.png",
+			".logo",
+			".navbar",
+			".logo",
+			".main-header",
+			".navbar",
+			".logo-",
+			"dropdown",
+			"dropdown-menu",
+			"dropdown",
+			"separator",
+			"external",
+			"dropdown-menu",
+			"sign out",
+			"options",
+			"expla",
+			"main-header",
+			"navbar-brand",
+			"logo_scrudu.png",
+			"create",
+			"Let's take a exam simulations for free.",
+			"features",
+			".logo",
+			".logo-mini",
+			".logo-image",
+			".logo-lg",
+			".logo-login",
+			">\n",
+			"create",
+			"my exam",
+			"sign up",
+			"MY PROFILE",
+			"sign out",
+			"logo-lg",
+			".logo-lg",
+			"main-header",
+			".logo",
+			"logo_scrudu",
+			"'Home'",
+			"logo_scrudu",
+			"logo_srcudu",
+			"if not already have an account",
+			"if not already have an account Sign Up",
+			"features",
+			"logo_scrudu",
+			"radio",
+			"no",
+			".navbar",
+			".nav-bar",
+			"data",
+			"next",
+			"view",
+			"add question",
+			"mark this",
+			"next",
+			"options",
+			"option",
+			"$subjects",
+			"getSimulations",
+			"id_question",
+			"question",
+			"if(isset($content1->content))",
+			"Contact us",
+			"Rialachas 2015",
+			"logo_scrudu",
+			"logo",
+			"Rialachas 2015",
 			"passage_id",
 			"pjax-passage",
 			"passage",
@@ -864,125 +904,7 @@
 			"OUR SIMPLE PROCESS",
 			"features",
 			"List Ebook",
-			"dataProviderExcel",
-			"Cashes",
-			"Cahses",
-			"->joinWith",
-			"search",
-			"_sea",
-			"hour",
-			"dropdown",
-			"status",
-			"add",
-			"scenario",
-			"modelCandidate",
-			"labelstatus",
-			"$msg",
-			"candidates",
-			"add",
-			"sendMail",
-			"getSetting",
-			"supervisor",
-			"post",
-			"status",
-			" '",
-			"status",
-			">\n",
-			"status",
-			"client",
-			"team",
-			"project",
-			"is_html",
-			"marital",
-			"marital[",
-			"marital",
-			"Status",
-			"getStatus",
-			"FILTER_DATE",
-			"filterType",
-			"create timesheet",
-			"getMyAnswers",
-			"nquest",
-			"bebas text-right",
-			"h5",
-			"nfinish",
-			"label",
-			"percentage",
-			"first-content",
-			"strengt",
-			"getQuestionForSimulations",
-			"getDoma",
-			"simua",
-			"n getQuestionForSimulations",
-			"getQuestionForSimulations",
-			"question_domain_id",
-			"join",
-			"rightQuestion",
-			"getDomains",
-			"expre",
-			"raw",
-			"getQuestionForSimulations",
-			"behav",
-			"ArrayHelper",
-			"question_option_id",
-			"getSimulationQuestionAnswers",
-			"start",
-			"->explain",
-			"good",
-			"sandbo",
-			"subject",
-			"timer_mode",
-			"findMine",
-			"postfinish",
-			"$simulations",
-			"actionReview",
-			"modelsAnswer",
-			"convertSecondstoTimes",
-			"item2",
-			"item\"",
-			"item2",
-			"container-items2",
-			"dynamicform_wrapper",
-			"dynamicform_wrapper2",
-			"DynamicFormWidget",
-			"add-item2",
-			"domain",
-			"explain",
-			"answer",
-			"postfinish",
-			"date(",
-			"-danger",
-			"progress-",
-			"progress",
-			"simulation_question_answer",
-			"right",
-			"question",
-			"sign",
-			"subsc",
-			"PayPal_Subscription",
-			"create_example_subscription",
-			"paypalDescription",
-			"PayPal_Digital_Goods",
-			"$this->config",
-			"$config",
-			"paypal_express_checkout",
-			"cancel(",
-			"PayPal_Digital_Goods_Configuration",
-			"nquestio",
-			"questio",
-			"findMine",
-			"mine",
-			"save",
-			"arrayHe",
-			"modelQuestion",
-			"-->",
-			"__>",
-			"mailer",
-			"validate",
-			"getSetting",
-			"sendMail",
-			"mail",
-			"sendEmail"
+			"dataProviderExcel"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1128,24 +1050,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "backend/controllers/SimulationController.php",
+					"file": "backend/views/subject/view.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19710,
+						"buffer_size": 50007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								490,
-								490
+								29355,
+								29355
 							]
 						],
 						"settings":
@@ -1154,146 +1076,28 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 8262.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "backend/models/QuestionSearch.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1903,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1292,
-								1292
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "backend/views/source/add.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 975,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								279,
-								279
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "backend/views/source/_add.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1037,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "backend/themes/adminLTE/assets/js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12354,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2148,
-								2149
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 790.0,
+						"translation.x": 303.0,
+						"translation.y": 5142.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "backend/views/subject/view.php",
+					"buffer": 1,
+					"file": "backend/views/content/_form.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 49124,
+						"buffer_size": 3248,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17167,
-								17176
+								2129,
+								2827
 							]
 						],
 						"settings":
@@ -1302,191 +1106,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 290.0,
-						"translation.y": 3289.0,
+						"translation.x": 0.0,
+						"translation.y": 500.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "backend/controllers/SourceController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3742,
-								3742
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1949.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "backend/controllers/PassageController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3793,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								163,
-								163
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 816.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "backend/controllers/QuestionController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11595,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8621,
-								8621
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4724.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "backend/models/Question.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3800,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1566,
-								1566
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 819.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "backend/views/simulation/question.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1485,
-								1485
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 292.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "backend/views/simulation/viewquestion.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7979,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1443,
-								1443
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 292.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1601,7 +1225,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 384.0,
+	"side_bar_width": 434.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

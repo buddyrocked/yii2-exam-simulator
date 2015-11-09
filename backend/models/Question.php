@@ -7,6 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 use yii\Helpers\ArrayHelper;
 use backend\models\Source;
+use backend\models\Passage;
 
 
 /**
@@ -58,7 +59,7 @@ class Question extends \yii\db\ActiveRecord
             [['level', 'is_random', 'question', 'time'], 'required'],
             [['subject_id', 'passage_id', 'source_id', 'level', 'time', 'is_random'], 'integer'],
             [['question'], 'string'],
-            [['created', 'updated'], 'safe'],
+            [['created', 'updated', 'status'], 'safe'],
             [['id_question'], 'string', 'max' => 255]
         ];
     }
@@ -81,6 +82,7 @@ class Question extends \yii\db\ActiveRecord
             'is_random' => 'Random',
             'created' => 'Created',
             'updated' => 'Updated',
+            'status' => 'Status',
         ];
     }
 
@@ -146,5 +148,14 @@ class Question extends \yii\db\ActiveRecord
     public function getSource()
     {
         return $this->hasOne(Source::className(), ['id' => 'source_id']);
+    }
+
+    public function getPassageOptions()
+    {
+        if($this->is_random == false):
+            return $this->hasMany(Passage::className(), ['id' => 'passage_id']);
+        else:
+            return $this->hasMany(Passage::className(), ['id' => 'passage_id'])->orderBy('RAND()');
+        endif;
     }
 }

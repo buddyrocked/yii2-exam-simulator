@@ -174,9 +174,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ]) ?>
                                 </div>
                             </div>
-                            
+                                
                                 <hr />
-                                <?= Html::a('<i class="fa fa-eye"></i> Review', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg']); ?>
+                                <?= Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg']); ?>
                             
                         </div>
                     </div>

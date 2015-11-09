@@ -85,6 +85,7 @@ class RegistrationFormProfile extends RegistrationForm
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
+            'username' => 'Email',
             'first_name' => 'First Name',
             'middle_name' => 'Middle Name',
             'surname' => 'Last Name',
