@@ -296,6 +296,7 @@ class SimulationController extends Controller
                         endif;
 
                         $modelsAnswer->status = 0;
+                        $modelQuestion->is_read = 1;
 
                         if($modelQuestion->save()):
                             if($modelsAnswer->question_option_id != null):

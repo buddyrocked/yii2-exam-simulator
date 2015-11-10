@@ -176,7 +176,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                                 
                                 <hr />
-                                <?= Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg']); ?>
+                                <?php
+                                    if($model->simulation->timer_mode == 0 && $modelPrev != null):
+                                        echo Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn btn-success btn-block btn-lg']);
+                                    else:
+                                        echo Html::a('<i class="fa fa-eye"></i> Finish', ['review', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn btn-success btn-block btn-lg']);
+                                    endif;
+                                ?>
+
+                                <?php //Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg']); ?>
                             
                         </div>
                     </div>
