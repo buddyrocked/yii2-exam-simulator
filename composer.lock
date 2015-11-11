@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1b7a6596e1a4f8b436021de35ea5a41",
-    "content-hash": "397433bbd320600e424c824ecfb0e9f7",
+    "hash": "e3e42719440b21c598d254daf0ed70e7",
+    "content-hash": "d98e00677d9e04ec5d0ef19869cc7e4e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -578,17 +578,55 @@
             }
         },
         {
-            "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.4",
+            "name": "bower-asset/video.js",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0"
+                "url": "https://github.com/videojs/video.js.git",
+                "reference": "19ee5100eaed903862203e169b1567f84c093548"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/3f20897307cca046fca5323b318475ae9dac0ca0",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0",
+                "url": "https://api.github.com/repos/videojs/video.js/zipball/19ee5100eaed903862203e169b1567f84c093548",
+                "reference": "19ee5100eaed903862203e169b1567f84c093548",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "src/js/video.js",
+                    "src/css/video-js.scss"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "build"
+                ]
+            },
+            "description": "An HTML5 and Flash video player with a common API and skin for both.",
+            "keywords": [
+                "flash",
+                "html5",
+                "player",
+                "video",
+                "videojs"
+            ]
+        },
+        {
+            "name": "bower-asset/yii2-pjax",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
                 "shasum": ""
             },
             "require": {
@@ -760,16 +798,16 @@
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "45cffbfe90d79f3c405b4cc98f7f318ae372bb10"
+                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/45cffbfe90d79f3c405b4cc98f7f318ae372bb10",
-                "reference": "45cffbfe90d79f3c405b4cc98f7f318ae372bb10",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/c842a15ceef4e903f70ac927ec3246e6d53e1148",
+                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +848,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2015-10-07 21:31:26"
+            "time": "2015-11-06 10:35:36"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -951,49 +989,6 @@
                 "yii2"
             ],
             "time": "2014-11-13 14:51:48"
-        },
-        {
-            "name": "hosannahighertech/yii2-audiojs",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hosannahighertech/yii2-audiojs.git",
-                "reference": "24d2ed487989bed7dd2dd6fce9f9481d734a74e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hosannahighertech/yii2-audiojs/zipball/24d2ed487989bed7dd2dd6fce9f9481d734a74e3",
-                "reference": "24d2ed487989bed7dd2dd6fce9f9481d734a74e3",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-widget",
-            "autoload": {
-                "psr-4": {
-                    "hosanna\\audiojs\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stefano Mtangoo",
-                    "email": "support@hosannahighertech.co.tz"
-                }
-            ],
-            "description": "Yii2 Audio Player Widget",
-            "keywords": [
-                "audio",
-                "js-player",
-                "player",
-                "yii",
-                "yii2"
-            ],
-            "time": "2015-03-22 10:18:32"
         },
         {
             "name": "ikimea/browser",
@@ -1415,12 +1410,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "d8898c54e71b6a2f240c4470b7c80d6a70e9126b"
+                "reference": "cbb3ce2fa20171fd5ae13525621f60ea2caebd20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/d8898c54e71b6a2f240c4470b7c80d6a70e9126b",
-                "reference": "d8898c54e71b6a2f240c4470b7c80d6a70e9126b",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/cbb3ce2fa20171fd5ae13525621f60ea2caebd20",
+                "reference": "cbb3ce2fa20171fd5ae13525621f60ea2caebd20",
                 "shasum": ""
             },
             "require": {
@@ -1451,7 +1446,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-10-24 14:02:13"
+            "time": "2015-11-02 10:51:01"
         },
         {
             "name": "kartik-v/yii2-helpers",
@@ -1935,16 +1930,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datetimepicker.git",
-                "reference": "3e59cc0f074df3b883c045395c6814506e4db7c6"
+                "reference": "2ad71f7a8f4fdd03b999c4f50257f42b2c1b74fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/3e59cc0f074df3b883c045395c6814506e4db7c6",
-                "reference": "3e59cc0f074df3b883c045395c6814506e4db7c6",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datetimepicker/zipball/2ad71f7a8f4fdd03b999c4f50257f42b2c1b74fe",
+                "reference": "2ad71f7a8f4fdd03b999c4f50257f42b2c1b74fe",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1953,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD 3-Clause"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -1980,7 +1975,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-01-25 16:36:55"
+            "time": "2015-11-04 18:46:05"
         },
         {
             "name": "kartik-v/yii2-widget-depdrop",
@@ -2680,16 +2675,16 @@
         },
         {
             "name": "rmrevin/yii2-fontawesome",
-            "version": "2.12.0",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "51d33ec9d1d7edab2166f1d42668c1bc8d28c068"
+                "reference": "6bfb628f5d93170bfe896866faac494c24783c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/51d33ec9d1d7edab2166f1d42668c1bc8d28c068",
-                "reference": "51d33ec9d1d7edab2166f1d42668c1bc8d28c068",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/6bfb628f5d93170bfe896866faac494c24783c2e",
+                "reference": "6bfb628f5d93170bfe896866faac494c24783c2e",
                 "shasum": ""
             },
             "require": {
@@ -2715,9 +2710,9 @@
             ],
             "authors": [
                 {
-                    "name": "Roman Revin",
-                    "email": "xgismox@gmail.com",
-                    "homepage": "http://rmrevin.ru/"
+                    "name": "Revin Roman",
+                    "email": "roman@rmrevin.com",
+                    "homepage": "https://rmrevin.com/"
                 }
             ],
             "description": "Asset Bundle for Yii2 with Font Awesome",
@@ -2728,7 +2723,7 @@
                 "font",
                 "yii"
             ],
-            "time": "2015-08-15 16:50:16"
+            "time": "2015-11-09 15:03:05"
         },
         {
             "name": "sammaye/yii2-audittrail",
@@ -3016,6 +3011,64 @@
                 "yii2-dynamicform"
             ],
             "time": "2015-02-25 15:31:24"
+        },
+        {
+            "name": "wbraganca/yii2-videojs-widget",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wbraganca/yii2-videojs-widget.git",
+                "reference": "e8d0f161af6a5cc47e3c74edee680879d94818a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wbraganca/yii2-videojs-widget/zipball/e8d0f161af6a5cc47e3c74edee680879d94818a8",
+                "reference": "e8d0f161af6a5cc47e3c74edee680879d94818a8",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/video.js": "~5.1.0",
+                "yiisoft/yii2": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                },
+                "asset-ignore-files": {
+                    "bower-asset/video.js": [
+                        "*/**",
+                        "!dist/*"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "wbraganca\\videojs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Wanderson Bragança",
+                    "email": "wanderson.wbc@gmail.com",
+                    "homepage": "http://wbraganca.com"
+                }
+            ],
+            "description": "The yii2-videojs-widget is a Yii 2 wrapper for the [video.js](http://www.videojs.com/). A JavaScript and CSS library that makes it easier to work with and build on HTML5 video. This is also known as an HTML5 Video Player.",
+            "keywords": [
+                "html5 video",
+                "videojs",
+                "yii2",
+                "yii2-extension",
+                "yii2-videojs",
+                "yii2-videojs-widget"
+            ],
+            "time": "2015-11-05 18:39:32"
         },
         {
             "name": "webvimark/bootstrap-switch",

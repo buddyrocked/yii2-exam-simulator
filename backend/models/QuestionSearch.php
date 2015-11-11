@@ -68,12 +68,12 @@ class QuestionSearch extends Question
             'updated' => $this->updated,
         ]);
 
-        $query->andFilterWhere(['like', 'id_question', $this->id_question])
-            ->orFilterWhere(['like', 'question', $this->id_question])
-            ->orFilterWhere(['like', 'subject_id', $this->id_question])
-            ->orFilterWhere(['like', 'passage_id', $this->id_question])
-            ->orFilterWhere(['like', 'level', $this->id_question])
-            ->orFilterWhere(['like', 'source_id', $this->id_question])->orderBy('updated DESC');
+        $query->andFilterWhere(['like', 'id_question', $this->question])
+            ->orFilterWhere(['like', 'question', $this->question])
+            ->orFilterWhere(['like', 'subject_id', $this->question])
+            ->orFilterWhere(['like', 'passage_id', $this->question])
+            ->orFilterWhere(['like', 'level', $this->question])
+            ->orFilterWhere(['like', 'source_id', $this->question])->orderBy('updated DESC');
 
         return $dataProvider;
     }

@@ -14,6 +14,7 @@ use backend\models\Source;
 use backend\models\Domain;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\widgets\SwitchInput;
+use backend\models\Question;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Subject */
@@ -449,10 +450,28 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <div><hr /></div>
                                                 Total Question : 
                                                 <?php echo $model->getQuestions()->count();?>
+
+                                                <?php echo $this->render('_searchquestion', ['model' => new Question, 'id'=>$model->id]); ?>
+
                                                 <?php \yii\widgets\Pjax::begin(['id'=>'grid-question']); ?>
-                                                <?= GridView::widget([
+
+                                                <?php
+                                                $queryQuestions = $model->getQuestions();
+                                                if(isset(Yii::$app->request->queryParams['Question']['question'])):
+                                                    $queryQuestions->orFilterWhere(['like', 'question', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'id_question', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'passage_id', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'level', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'time', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'is_random', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'explaination', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'source_id', Yii::$app->request->queryParams['Question']['question']]);
+                                                    $queryQuestions->orFilterWhere(['like', 'status', Yii::$app->request->queryParams['Question']['question']]);
+                                                endif;
+
+                                                echo GridView::widget([
                                                     'dataProvider' => new ActiveDataProvider([
-                                                        'query' => $model->getQuestions(),
+                                                        'query' => $queryQuestions,
                                                     ]),
                                                     'columns' => [  
                                                         'id_question',
