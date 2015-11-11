@@ -243,7 +243,7 @@ class QuestionController extends Controller
 
             $modelsDomain = Model::createMultiple(QuestionDomain::classname());
             $modelsQuestion = Model::createMultiple(QuestionOption::classname());
-
+            $modelQuestion->type = 1;
 
             Model::loadMultiple($modelsDomain, Yii::$app->request->post());
             Model::loadMultiple($modelsQuestion, Yii::$app->request->post());

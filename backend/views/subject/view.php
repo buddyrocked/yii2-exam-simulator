@@ -15,6 +15,7 @@ use backend\models\Domain;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\widgets\SwitchInput;
 use backend\models\Question;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Subject */
@@ -200,6 +201,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <div class="col-md-12">
                                             <div class="text-right">
                                                     <?= Html::a('<i class="fa fa-plus-circle"></i> Add Question', '#', ['class'=>'btn btn-danger outline btn-toggle']); ?>
+                                                    <?= Html::a('<i class="fa fa-plus-circle"></i> Add Question Video & Audio', ['/subject/questionfile', 'id'=>$model->id], ['class'=>'btn btn-danger outline']); ?>
                                                 </div>
                                                 <div class="col-md-12 hiddenx">
                                                     <div class="question-form">
@@ -209,6 +211,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                     'action'=>Url::to(['/question/add', 'id'=>$model->id]),
                                                                                     'options'=>[
                                                                                         'class'=>'form-ajax',
+                                                                                        'enctype' => 'multipart/form-data',
                                                                                     ]
                                                                             ]); ?>
                                                     <div class="row">
@@ -319,7 +322,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     'options'=>['placeholder'=>'Choose Status'],
                                                                     'pluginOptions'=>[
                                                                        'allowClear'=>true 
-                                                                    ]
+                                                                    ],
                                                                 ])
                                                             ?>
                                                         </div>

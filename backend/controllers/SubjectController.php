@@ -6,6 +6,7 @@ use Yii;
 use backend\models\Subject;
 use backend\models\SubjectSearch;
 use backend\models\Question;
+use backend\models\QuestionSearch;
 use backend\models\QuestionOption;
 use backend\models\QuestionDomain;
 use backend\models\Domain;
@@ -13,6 +14,10 @@ use backend\components\Model;
 use backend\controllers\BaseController as Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\helpers\ArrayHelper;
+use yii\web\UploadedFile;
+
 
 /**
  * SubjectController implements the CRUD actions for Subject model.
@@ -258,6 +263,95 @@ class SubjectController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionQuestionfile($id)
+    {
+        $modelQuestion = new Question();
+        $modelsOption = [new QuestionOption()];
+        $modelsDomain = [new QuestionDomain()];
+
+        if ($modelQuestion->load(Yii::$app->request->post())) {           
+            
+            $modelsDomain = Model::createMultiple(QuestionDomain::classname());
+            $modelsQuestion = Model::createMultiple(QuestionOption::classname());
+
+            $modelQuestion->file = UploadedFile::getInstance($modelQuestion, 'file');
+            if($modelQuestion->file){
+                $path = Yii::getAlias('@backend') . '/web/uploads/video_audio/';
+                $name = rand(1000,9999) . time();
+                $modelQuestion->file->saveAs($path . $name . '.' . $modelQuestion->file->extension);
+                $modelQuestion->file = $name . '.' . $modelQuestion->file->extension;
+            }
+
+            Model::loadMultiple($modelsDomain, Yii::$app->request->post());
+            Model::loadMultiple($modelsQuestion, Yii::$app->request->post());
+
+            // ajax validation
+            //if (Yii::$app->request->isAjax) {
+                /*Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($modelsQuestion),
+                    ActiveForm::validate($model)
+                );*/
+            //}
+
+            // validate all models
+            $valid = $modelQuestion->validate();
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsDomain) && $valid;
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsQuestion) && $valid;
+            //var_dump($valid); exit;
+            if($valid){
+                $transaction = Yii::$app->db->beginTransaction();  
+                try{                          
+                    $modelQuestion->subject_id = $id; 
+                    $subject = Subject::findOne($id);
+                    $modelQuestion->id_question = $modelQuestion->generateNumber($subject->name);
+                    if($flag = $modelQuestion->save(false)):    
+
+                        if($flag){
+                            foreach ($modelsOption as $option) {
+                                $option->question_id = $modelQuestion->id;
+                                if(!($flag = $option->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag){
+                            foreach ($modelsDomain as $modelDomain) {
+                                $modelDomain->question_id = $modelQuestion->id;
+                                if(!($flag = $modelDomain->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag):
+                            $transaction->commit();
+                            return $this->redirect(['questionfile', 'id' => $id]);
+                        endif;
+
+                    endif;                    
+
+                }catch(Exception $e){
+                    $transaction->rollBack();
+                    Yii::$app->response->format = Response::FORMAT_JSON;
+                    return ['status'=>'0', 'message' => 'Data failed to saved.'];
+                }
+            }
+        } else{
+             return $this->render('_formquestion', [
+            'model' => $this->findModel($id),
+            'modelQuestion' => $modelQuestion,
+            'modelsOption' => $modelsOption,
+            'modelsDomain' => $modelsDomain,
+        ]);
         }
     }
 }
