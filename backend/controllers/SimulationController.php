@@ -201,12 +201,15 @@ class SimulationController extends Controller
         $mine = $this->findMine($id, 0);
         $modelQuestion = SimulationQuestion::findOne($question);
 
-        $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
-        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['<>', 'status', 1])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
-        
-        if($modelQuestion->status == 0):
-            $modelsAnswer = new SimulationQuestionAnswer;
-        else:
+        $modelNext = SimulationQuestion::find()->where(['>', 'id', $question])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+        $modelPrev = SimulationQuestion::find()->where(['<', 'id', $question])->andWhere(['simulation_id'=>$id])->orderBy('id ASC')->one();
+      
+        if($modelQuestion->status == 0 || $modelQuestion->status == 2):  
+            $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
+            if($modelsAnswer == null):        
+                $modelsAnswer = new SimulationQuestionAnswer;
+            endif;
+        else:            
             if($modelQuestion->simulation->timer_mode != 0):
                 Yii::$app->getSession()->setFlash('success', [
                     'type' => 'danger',
@@ -221,7 +224,7 @@ class SimulationController extends Controller
             endif;
             $modelsAnswer = SimulationQuestionAnswer::find()->where(['simulation_question_id'=>$question])->one();
         endif;
-
+     
         //set time start
         if(Yii::$app->session->get($id.'_'.$question) === NULL):
             Yii::$app->session->set($id.'_'.$question, date('H:i:s'));
@@ -305,7 +308,12 @@ class SimulationController extends Controller
                             $transaction->commit();
                             
                             if($modelNext != null):
-                                return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
+                                $review = Yii::$app->request->post('review');
+                                if($review == "1"):
+                                    return $this->redirect(['review', 'id' => $id]);
+                                else:
+                                    return $this->redirect(['question', 'id' => $id, 'question'=>$modelNext->id]);
+                                endif;
                             else:
                                 return $this->redirect(['review', 'id' => $id]);
                             endif;

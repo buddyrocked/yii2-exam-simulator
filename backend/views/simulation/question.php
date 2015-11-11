@@ -52,7 +52,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             <hr />
                             <div class="">
                                 <?php
-
                                     if($model->question->getQuestionRightOptions()->count() == 1):
                                         echo $form->field($modelsAnswer, 'question_option_id')->radioList(
                                                                                                             ArrayHelper::map($model->question->questionOptions, 'id', 'option'),
@@ -91,12 +90,24 @@ $this->params['breadcrumbs'][] = $this->title;
                             <hr />
                             <div>
                             <?php
-                                echo CheckboxX::widget([
-                                    'name'=>'mark',
-                                    'options'=>['id'=>'mark'],
-                                    'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
-                                ]);
-                                echo '<label class="cbx-label" for="mark" checked>Mark this question.</label>';
+                                if($model->simulation->timer_mode == 0):
+                                    echo CheckboxX::widget([
+                                        'name'=>'mark',
+                                        'disabled'=>false,
+                                        'value'=>($model->status == 2)?1:0,
+                                        'options'=>['id'=>'mark'],
+                                        'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
+                                    ]);
+                                    echo '<label class="cbx-label" for="mark" checked>Mark this question.</label>';
+                                else:
+                                    echo CheckboxX::widget([
+                                        'name'=>'mark',
+                                        'disabled'=>true,
+                                        'options'=>['id'=>'mark'],
+                                        'pluginOptions'=>['threeState'=>false, 'size'=>'sm']
+                                    ]);
+                                    echo '<label class="cbx-label" for="mark" checked>Mark this question.</label>';
+                                endif;
                             ?>
                             <a href="#" class="btn btn-danger pull-right" id="clear-answer"><i class="fa fa-times"></i>Clear</a>
                             <?php if($model->simulation->timer_mode == 0): ?>
@@ -177,10 +188,18 @@ $this->params['breadcrumbs'][] = $this->title;
                                 
                                 <hr />
                                 <?php
-                                    if($model->simulation->timer_mode == 0 && $modelPrev != null):
-                                        echo Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn btn-success btn-block btn-lg']);
+                                    if($model->simulation->timer_mode == 0):
+                                        echo Html::submitButton('<i class="fa fa-eye"></i> Review Answer Sheet', ['class' => 'btn-lg btn btn-success btn-block', 'name'=> 'review', 'value' => 1, 'data' => [
+                                                    'method' => 'post',
+                                                ]
+                                        ]);
+                                        //echo Html::a('<i class="fa fa-eye"></i> Review Answer Sheet', ['review', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn btn-success btn-block btn-lg']);
                                     else:
-                                        echo Html::a('<i class="fa fa-eye"></i> Finish', ['review', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn btn-success btn-block btn-lg']);
+                                        echo Html::a('<i class="fa fa-eye"></i> Finish', ['postfinish', 'id'=>$model->simulation->id], ['class' => 'btn btn-success btn-block btn-lg', 'data' => [
+                                        'confirm' => 'Are you sure you want to finish this exam?',
+                                        'method' => 'post',
+                                        ]
+                                        ]);
                                     endif;
                                 ?>
 

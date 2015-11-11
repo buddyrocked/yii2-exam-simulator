@@ -136,13 +136,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             'method' => 'post',
                                                         ],
                                                     ]) ?>
-                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Timer / Exam & Question', ['setting', 'id' => $model->id, 'setting' => 3], [
-                                                        'class' => ($model->timer_mode == 3)?'btn btn-danger disabled':'btn btn-danger',
-                                                        'data' => [
-                                                            'confirm' => 'Are you sure you want apply this setting?',
-                                                            'method' => 'post',
-                                                        ],
-                                                    ]) ?>
                                                     </div>
                                                 </div>
                                             </div>

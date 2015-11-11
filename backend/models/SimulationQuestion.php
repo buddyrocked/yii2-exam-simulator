@@ -112,7 +112,7 @@ class SimulationQuestion extends \yii\db\ActiveRecord
         $lists = [
             '0'=>'<span class="text-danger"><i class="fa fa-times fa-2x"></i></span>',
             '1'=>'<span class="text-success"><i class="fa fa-check fa-2x"></i></span>',
-            ''=>'<span class="text-danger"><h2><strong>M</strong></h2></i></span>'
+            ''=>'<span class="text-danger"><h2><strong>B</strong></h2></i></span>'
         ];
 
         return $lists[$this->correct];

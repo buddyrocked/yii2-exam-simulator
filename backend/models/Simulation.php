@@ -153,8 +153,7 @@ class Simulation extends \yii\db\ActiveRecord
         $lists = [
             '0'=>'No Timer',
             '1'=>'Timer per Exam',
-            '2'=>'Timer per Question',
-            '3'=>'Timer per Exam & Question'
+            '2'=>'Timer per Question'
         ];
 
         return $lists[$this->timer_mode];

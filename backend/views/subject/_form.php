@@ -41,7 +41,7 @@ use backend\models\Subject;
         </div>
         <div class="col-md-2">
             <?= $form->field($model, 'timer_mode')->widget(Select2::className(),  [
-                'data' => ['0'=>'No Timer', '1'=>'Timer per Exam', '2'=>'Timer per Question', '3'=>'Timer per Exam & Question'],
+                'data' => ['0'=>'No Timer', '1'=>'Timer per Exam', '2'=>'Timer per Question'],
                 'options'=>['placeholder'=>'Choose Timer Mode'],
                 'pluginOptions'=>[
                 'allowClear'=>true 

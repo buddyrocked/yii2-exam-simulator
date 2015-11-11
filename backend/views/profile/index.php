@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                         <div class="text-right">
-                            <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
+                            <?php //Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
                             <?php echo $this->render('_search', ['model' => $searchModel]); ?>
                             <?php \yii\widgets\Pjax::begin(); ?>

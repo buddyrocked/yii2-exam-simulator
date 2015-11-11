@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>0])->count(); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>null])->andWhere(['status'=>0])->count(); ?></h4></div>
                                             </div>
                                             <hr />
                                             <div class="row">
@@ -167,7 +167,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 'format'=>'raw',
                                                                 'value'=>function($data){
                                                                     $client = (isset($data->question->question))?substr($data->question->question, 0, 150):'-';
-                                                                    return strip_tags($data->getLabelQuestion()).$client.'...';
+                                                                    return strip_tags($client).'...';
                                                                 }
                                                             ],
                                                             [

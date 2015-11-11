@@ -81,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'attribute'=>'id',
                                                     'format'=>'raw',
                                                     'value'=>function($data){
-                                                        return '<br />'.Html::a('<i class="fa">Take Exam</i> ', ['/simulation/preview', 'id'=>$data->id], ['class'=>'btn btn-danger']);
+                                                        return '<br />'.Html::a('<i class="fa"></i>Take Exam ', ['/simulation/preview', 'id'=>$data->id], ['class'=>'btn btn-danger']);
                                                     }
                                                 ],
                                                 /*[

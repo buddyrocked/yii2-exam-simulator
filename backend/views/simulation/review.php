@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 'format'=>'raw',
                                                 'value'=>function($data){
                                                     $client = (isset($data->question->question))?substr($data->question->question, 0, 50):'-';
-                                                    return strip_tags($data->getLabelQuestion()).$client.'...';
+                                                    return strip_tags($client).'...';
                                                 }
                                             ],
                                             [
@@ -55,7 +55,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 'template' => '{question}',
                                                 'buttons' => [
                                                                 'question' => function ($url, $model, $key) {
-                                                                    return Html::a('<i class="fa fa-search"></i>', ['/simulation/question', 'id'=>$model->simulation_id, 'question'=>$model->id], ['class'=>'btn btn-danger btn-xs']);
+                                                                    if($model->simulation->timer_mode == 0):
+                                                                        return Html::a('<i class="fa fa-search"></i>', ['/simulation/question', 'id'=>$model->simulation_id, 'question'=>$model->id], ['class'=>'btn btn-danger btn-xs']);
+                                                                    else:
+                                                                        return Html::a('<i class="fa fa-search"></i>', ['/simulation/question', 'id'=>$model->simulation_id, 'question'=>$model->id], ['class'=>'btn btn-danger btn-xs disabled']);
+                                                                    endif;
                                                                 },
                                                 ]
                                             ],
@@ -79,9 +83,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                             <?php
-                                if($model->timer_mode == 3 || $model->timer_mode == 1  ): 
+                                if($model->timer_mode == 2 || $model->timer_mode == 1  ): 
                                     
-                                    $diff2 = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->id)));
+                                    $diff2 = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation'.$model->id)));
                                     $time2 = $model->convertSecondstoTimes($diff2);
                             ?>
                                 <div class="well">
