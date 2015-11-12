@@ -7,7 +7,7 @@ class m151111_034846_add_column_type_and_file_to_table_question extends Migratio
 {
     public function up()
     {
-        $this->addColumn('question', 'type_file', 'INTEGER NOT NULL default 1');
+        $this->addColumn('question', 'type', 'INTEGER NOT NULL default 1');
         $this->addColumn('question', 'file', 'VARCHAR NULL');
     }
 
