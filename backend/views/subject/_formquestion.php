@@ -369,7 +369,11 @@ use kartik\widgets\FileInput;
                                         return GhostHtml::a('<i class="fa fa-search"></i> view', $url, ['class'=>'btn-modal']);
                                     },
                                     'update' => function ($url, $model, $key) {
-                                        return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'']);
+                                        if($model->type==1):
+                                            return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'']);
+                                        else:
+                                            return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/subject/updatefile', 'id'=>$model->id]), ['class'=>'']);
+                                        endif;
                                     },
                                     'delete' => function ($url, $model, $key) {
                                         return GhostHtml::a('<i class="fa fa-trash"></i> delete', Url::to(['/question/delete', 'id'=>$model->id]), ['class'=>'', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);

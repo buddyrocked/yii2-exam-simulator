@@ -272,21 +272,31 @@ class SubjectController extends Controller
         $modelsOption = [new QuestionOption()];
         $modelsDomain = [new QuestionDomain()];
 
-        if ($modelQuestion->load(Yii::$app->request->post())) {           
+        if ($modelQuestion->load(Yii::$app->request->post())) {    
+            //echo '<pre />';
+            //print_r(Yii::$app->request->post());
+            //exit;       
             
             $modelsDomain = Model::createMultiple(QuestionDomain::classname());
-            $modelsQuestion = Model::createMultiple(QuestionOption::classname());
+            $modelsOption = Model::createMultiple(QuestionOption::classname());
 
             $modelQuestion->file = UploadedFile::getInstance($modelQuestion, 'file');
             if($modelQuestion->file){
                 $path = Yii::getAlias('@backend') . '/web/uploads/video_audio/';
-                $name = rand(1000,9999) . time();
-                $modelQuestion->file->saveAs($path . $name . '.' . $modelQuestion->file->extension);
-                $modelQuestion->file = $name . '.' . $modelQuestion->file->extension;
+
+                if(!is_dir($path)):
+                    mkdir($path, 0777, true);
+                endif;
+
+                if(is_dir($path)):
+                    $name = rand(1000,9999) . time();
+                    $modelQuestion->file->saveAs($path . $name . '.' . $modelQuestion->file->extension);
+                    $modelQuestion->file = $name . '.' . $modelQuestion->file->extension;
+                endif;
             }
 
             Model::loadMultiple($modelsDomain, Yii::$app->request->post());
-            Model::loadMultiple($modelsQuestion, Yii::$app->request->post());
+            Model::loadMultiple($modelsOption, Yii::$app->request->post());
 
             // ajax validation
             //if (Yii::$app->request->isAjax) {
@@ -302,7 +312,7 @@ class SubjectController extends Controller
             //var_dump($valid); exit;
             $valid = Model::validateMultiple($modelsDomain) && $valid;
             //var_dump($valid); exit;
-            $valid = Model::validateMultiple($modelsQuestion) && $valid;
+            $valid = Model::validateMultiple($modelsOption) && $valid;
             //var_dump($valid); exit;
             if($valid){
                 $transaction = Yii::$app->db->beginTransaction();  
@@ -313,8 +323,10 @@ class SubjectController extends Controller
                     if($flag = $modelQuestion->save(false)):    
 
                         if($flag){
+
                             foreach ($modelsOption as $option) {
                                 $option->question_id = $modelQuestion->id;
+                                 
                                 if(!($flag = $option->save(false))){
                                     $transaction->rollBack();
                                     break;
@@ -352,6 +364,129 @@ class SubjectController extends Controller
             'modelsOption' => $modelsOption,
             'modelsDomain' => $modelsDomain,
         ]);
+        }
+    }
+
+    public function actionUpdatefile($id)
+    {
+        $modelQuestion = Question::findOne($id);
+        $modelsOption = (isset($modelQuestion->questionOptions) && $modelQuestion->questionOptions != null)?$modelQuestion->questionOptions:[new QuestionOption];
+        $modelsDomain = (isset($modelQuestion->questionDomains) && $modelQuestion->questionDomains != null)?$modelQuestion->questionDomains:[new QuestionDomain];
+
+        if ($modelQuestion->load(Yii::$app->request->post())) {
+
+            $oldIDdomains = ArrayHelper::map($modelsDomain, 'id', 'id');
+            $modelsDomain = Model::createMultiple(QuestionDomain::classname());
+            $deletedIDdomains = array_diff($oldIDdomains, array_filter(ArrayHelper::map($modelsDomain, 'id', 'id')));
+            
+            $oldIDoptions = ArrayHelper::map($modelsOption, 'id', 'id');
+            $modelsOption = Model::createMultiple(QuestionOption::classname());
+            $deletedIDoptions = array_diff($oldIDoptions, array_filter(ArrayHelper::map($modelsOption, 'id', 'id')));
+
+            $modelQuestion->file = UploadedFile::getInstance($modelQuestion, 'file');
+            if($modelQuestion->file){
+                $path = Yii::getAlias('@backend') . '/web/uploads/video_audio/';
+                $name = rand(1000,9999) . time();
+                $modelQuestion->file->saveAs($path . $name . '.' . $modelQuestion->file->extension);
+                $modelQuestion->file = $name . '.' . $modelQuestion->file->extension;
+            }
+
+            Model::loadMultiple($modelsDomain, Yii::$app->request->post());
+            Model::loadMultiple($modelsOption, Yii::$app->request->post());
+
+            // ajax validation
+            //if (Yii::$app->request->isAjax) {
+                /*Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($modelsQuestion),
+                    ActiveForm::validate($model)
+                );*/
+            //}
+
+            // validate all models
+            $valid = $$modelQuestion->validate();
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsDomain) && $valid;
+            //var_dump($valid); exit;
+            $valid = Model::validateMultiple($modelsOption) && $valid;
+            //var_dump($valid); exit;
+            if($valid){
+                $transaction = Yii::$app->db->beginTransaction();  
+                try{                          
+                    
+                    //$subject = Subject::findOne($id);
+                    //$model->id_question = $model->generateNumber($subject->name);
+                    if($flag = $$modelQuestion->save(false)):    
+                        if (! empty($deletedIDoptions)) {
+                            QuestionOption::deleteAll(['id' => $deletedIDoptions]);
+                        }
+                        if($flag){
+                            foreach ($modelsOption as $modelOption) {
+                                $modelOption->question_id = $$modelQuestion->id;
+                                if(!($flag = $modelOption->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag){
+                            if (! empty($deletedIDdomains)) {
+                                QuestionDomain::deleteAll(['id' => $deletedIDdomains]);
+                            }
+                            foreach ($modelsDomain as $modelDomain) {
+                                $modelDomain->question_id = $$modelQuestion->id;
+                                if(!($flag = $modelDomain->save(false))){
+                                    $transaction->rollBack();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($flag):
+                            $transaction->commit();
+                            Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'info',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data has been saved.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+
+                            return $this->redirect(['/subject/questionfile', 'id'=>$modelQuestion->subject_id]);
+                        endif;
+
+                    endif;                    
+
+                }catch(Exception $e){
+                    $transaction->rollBack();
+                    Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'danger',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data failed to save.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+                    return $this->render('_formquestion', [
+                        'model' => $this->findModel($id),
+                        'modelQuestion' => $modelQuestion,
+                        'modelsOption' => $modelsOption,
+                        'modelsDomain' => $modelsDomain,
+                    ]);
+                }
+            }
+        
+        } else {
+            return $this->render('_formquestion', [
+                'model' => $this->findModel($id),
+                'modelQuestion' => $modelQuestion,
+                'modelsOption' => $modelsOption,
+                'modelsDomain' => $modelsDomain,
+            ]);
         }
     }
 }

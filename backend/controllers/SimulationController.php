@@ -294,7 +294,7 @@ class SimulationController extends Controller
                             $modelQuestion->status = 0;
                         endif;
 
-                        if(Yii::$app->request->post('mark') != null):
+                        if(Yii::$app->request->post('mark') != 0):
                             $modelQuestion->status = 2;
                         endif;
 
@@ -369,7 +369,7 @@ class SimulationController extends Controller
                             $modelQuestion->status = 0;
                         endif;
 
-                        if(Yii::$app->request->post('mark') != null):
+                        if(Yii::$app->request->post('mark') != 0):
                             $modelQuestion->status = 2;
                         endif;
 

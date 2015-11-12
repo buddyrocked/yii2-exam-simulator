@@ -236,14 +236,13 @@ class QuestionController extends Controller
     public function actionAdd($id)
     {
         $model = new Question();
-        $modelsQuestion = [new QuestionOption()];
+        $modelsOption = [new QuestionOption()];
         $modelsDomain = [new QuestionDomain()];
-
+        
         if ($model->load(Yii::$app->request->post())) {           
 
             $modelsDomain = Model::createMultiple(QuestionDomain::classname());
             $modelsQuestion = Model::createMultiple(QuestionOption::classname());
-            $modelQuestion->type = 1;
 
             Model::loadMultiple($modelsDomain, Yii::$app->request->post());
             Model::loadMultiple($modelsQuestion, Yii::$app->request->post());
