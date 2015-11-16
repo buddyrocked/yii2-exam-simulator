@@ -27,26 +27,49 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="text-right">
                             <?= Html::a('<i class="fa fa-plus"></i> <span>Create</span> ', ['create'], ['class' => 'btn btn-danger outline']) ?>
                         </div>
-                                                   <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-                        
+                       <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
-                                                       <?php \yii\widgets\Pjax::begin(); ?>
+
+                           <?php \yii\widgets\Pjax::begin(); ?>
                             <?= GridView::widget([
                                 'dataProvider' => $dataProvider,
                                 'filterModel' => $searchModel,
-        'columns' => [
+                                'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
-
-                                            'id',
-            'subject_id',
-            'id_question',
-            'passage_id',
-            'question:ntext',
-            // 'level',
-            // 'time:datetime',
-            // 'is_random',
-            // 'created',
-            // 'updated',
+                                    [
+                                        'attribute'=>'correctly',
+                                        'format'=>'raw',
+                                        'value'=>function($data){
+                                            return $data->getSimulationQuestionCorrect(1);
+                                        }
+                                    ],
+                                    [
+                                        'attribute'=>'incorrectly',
+                                        'format'=>'raw',
+                                        'value'=>function($data){
+                                            return $data->getSimulationQuestionCorrect(0);
+                                        }
+                                    ],
+                                    [
+                                        'attribute'=>'Blank Answer',
+                                        'format'=>'raw',
+                                        'value'=>function($data){
+                                            return $data->getSimulationQuestionCorrect(NULL);
+                                        }
+                                    ],
+                                    [
+                                        'attribute'=>'Assumsed Diff Level',
+                                        'format'=>'raw',
+                                        'value'=>function($data){
+                                            return $data->assumsed_diff_level;
+                                        }
+                                    ],
+                                    'question:html',
+                                    // 'level',
+                                    // 'time:datetime',
+                                    // 'is_random',
+                                    // 'created',
+                                    // 'updated',
 
                                 [
                                     'class' => 'yii\grid\ActionColumn',

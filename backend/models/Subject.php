@@ -53,7 +53,7 @@ class Subject extends \yii\db\ActiveRecord
         return [
             [['name', 'question_number', 'time', 'minimum_score', 'timer_mode', 'explain_mode', 'status'], 'required'],
             [['desc'], 'string'],
-            [['question_number', 'time', 'minimum_score'], 'integer'],
+            [['question_number', 'time', 'minimum_score', 'random_method'], 'integer'],
             [['created', 'updated'], 'safe'],
             [['id_subject', 'name'], 'string', 'max' => 255]
         ];
@@ -76,6 +76,7 @@ class Subject extends \yii\db\ActiveRecord
             'updated' => 'Updated',
             'status' => 'Exam Mode',
             'explain_mode' => 'Explain Mode After',
+            'random_method' => 'Random Domain',
         ];
     }
 
@@ -109,15 +110,23 @@ class Subject extends \yii\db\ActiveRecord
         return $this->getQuestions()->joinWith('questionDomains')->select(['question.id', 'question_domain.id AS question_domain_id', 'question_domain.domain_id'])->where(['question_domain.domain_id'=>$domain->id])->limit($limit)->orderBy('RAND()');
     }
 
+    public function getQuestionAll(){
+        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id', 'question_domain.id AS question_domain_id', 'question_domain.domain_id'])->orderBy('RAND()');
+    }
+
     public function getQuestionForSimulations(){
         $domains = $this->domains;
 
         $questions = [];
 
-        foreach($domains as $domain):
-            $domainQuestions = $this->getQuestionByDomain($domain)->asArray()->all();
-            $questions = array_merge($questions, $domainQuestions);
-        endforeach;
+        if($this->random_method == 0):
+            $questions = $this->getQuestionAll()->asArray()->all();
+        else:
+            foreach($domains as $domain):
+                $domainQuestions = $this->getQuestionByDomain($domain)->asArray()->all();
+                $questions = array_merge($questions, $domainQuestions);
+            endforeach;
+        endif;
         return $questions;
     }
 
@@ -165,5 +174,14 @@ class Subject extends \yii\db\ActiveRecord
     public function getSimulations()
     {
         return $this->hasMany(Simulation::className(), ['subject_id' => 'id']);
+    }
+
+    public function getLabelDomainRand(){
+        $lists = [
+            '0'=>'Whole Random',
+            '1'=>'Domain Based Allocation'
+        ];
+
+        return $lists[$this->random_method];
     }
 }

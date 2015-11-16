@@ -45,7 +45,49 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <div><label>Statement : </label></div>
                             <div class="well bg-white">
-                                <?= Html::decode($model->question->question); ?>
+                            <?php
+                                if($model->question->type==1){
+                                    echo Html::decode($model->question->question);
+                                }
+                                elseif ($model->question->type==2) {
+                                    echo \wbraganca\videojs\VideoJsWidget::widget([
+                                            'options' => [
+                                                'class' => 'video-js vjs-default-skin vjs-big-play-centered',
+                                                //'poster' => "http://www.videojs.com/img/poster.jpg",
+                                                'controls' => true,
+                                                'preload' => 'auto',
+                                                'width' => '970',
+                                                'height' => '400',
+                                            ],
+                                            'tags' => [
+                                                'source' => [
+                                                    ['src' => Yii::getAlias('@web').'/uploads/video_audio/'.$model->question->file, 'type' => 'video/mp4'],
+                                                ],
+                                                'track' => [
+                                                    ['kind' => 'captions', 'src' =>  Yii::getAlias('@web').'/uploads/video_audio/'.$model->question->file, 'srclang' => 'en', 'label' => 'English']
+                                                ]
+                                            ]
+                                    ]);
+                                }
+                                else{
+                                    echo \wbraganca\videojs\VideoJsWidget::widget([
+                                            'options' => [
+                                                'class' => 'video-js vjs-default-skin vjs-big-play-centered',
+                                                //'poster' => "http://www.videojs.com/img/poster.jpg",
+                                                'controls' => true,
+                                                'preload' => 'auto',
+                                            ],
+                                            'tags' => [
+                                                'source' => [
+                                                    ['src' => Yii::getAlias('@web').'/uploads/video_audio/'.$model->question->file, 'type' => 'audio/mp3'],
+                                                ],
+                                                'track' => [
+                                                    ['kind' => 'captions', 'src' =>  Yii::getAlias('@web').'/uploads/video_audio/'.$model->question->file, 'srclang' => 'en', 'label' => 'English']
+                                                ]
+                                            ]
+                                    ]);
+                                }
+                            ?>
                             </div>
                         </div>
                         <div class="col-md-12">

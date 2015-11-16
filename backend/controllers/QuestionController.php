@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\components\Model;
 use backend\models\Question;
+use backend\models\SimulationQuestion;
 use backend\models\QuestionSearch;
 use backend\models\QuestionOption;
 use backend\models\QuestionDomain;
@@ -29,10 +30,12 @@ class QuestionController extends Controller
     public function actionIndex()
     {
         $searchModel = new QuestionSearch();
+        $modelSimulationQuestion = new SimulationQuestion();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+            'modelSimulationQuestion' => $modelSimulationQuestion,
             'dataProvider' => $dataProvider,
         ]);
     }

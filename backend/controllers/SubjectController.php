@@ -372,9 +372,8 @@ class SubjectController extends Controller
         $modelQuestion = Question::findOne($id);
         $modelsOption = (isset($modelQuestion->questionOptions) && $modelQuestion->questionOptions != null)?$modelQuestion->questionOptions:[new QuestionOption];
         $modelsDomain = (isset($modelQuestion->questionDomains) && $modelQuestion->questionDomains != null)?$modelQuestion->questionDomains:[new QuestionDomain];
-
-        if ($modelQuestion->load(Yii::$app->request->post())) {
-
+        
+        if($modelQuestion->load(Yii::$app->request->post())) {
             $oldIDdomains = ArrayHelper::map($modelsDomain, 'id', 'id');
             $modelsDomain = Model::createMultiple(QuestionDomain::classname());
             $deletedIDdomains = array_diff($oldIDdomains, array_filter(ArrayHelper::map($modelsDomain, 'id', 'id')));
@@ -404,7 +403,7 @@ class SubjectController extends Controller
             //}
 
             // validate all models
-            $valid = $$modelQuestion->validate();
+            $valid = $modelQuestion->validate();
             //var_dump($valid); exit;
             $valid = Model::validateMultiple($modelsDomain) && $valid;
             //var_dump($valid); exit;
@@ -416,13 +415,13 @@ class SubjectController extends Controller
                     
                     //$subject = Subject::findOne($id);
                     //$model->id_question = $model->generateNumber($subject->name);
-                    if($flag = $$modelQuestion->save(false)):    
+                    if($flag = $modelQuestion->save(false)):    
                         if (! empty($deletedIDoptions)) {
                             QuestionOption::deleteAll(['id' => $deletedIDoptions]);
                         }
                         if($flag){
                             foreach ($modelsOption as $modelOption) {
-                                $modelOption->question_id = $$modelQuestion->id;
+                                $modelOption->question_id = $modelQuestion->id;
                                 if(!($flag = $modelOption->save(false))){
                                     $transaction->rollBack();
                                     break;
@@ -435,7 +434,7 @@ class SubjectController extends Controller
                                 QuestionDomain::deleteAll(['id' => $deletedIDdomains]);
                             }
                             foreach ($modelsDomain as $modelDomain) {
-                                $modelDomain->question_id = $$modelQuestion->id;
+                                $modelDomain->question_id = $modelQuestion->id;
                                 if(!($flag = $modelDomain->save(false))){
                                     $transaction->rollBack();
                                     break;
@@ -482,11 +481,40 @@ class SubjectController extends Controller
         
         } else {
             return $this->render('_formquestion', [
-                'model' => $this->findModel($id),
+                'model' => $this->findModel($modelQuestion->subject_id),
                 'modelQuestion' => $modelQuestion,
                 'modelsOption' => $modelsOption,
                 'modelsDomain' => $modelsDomain,
             ]);
+        }
+    }
+
+    public function actionDomain($id, $domain = 0)
+    {
+        $model = $this->findModel($id);
+        $model->random_method = $domain;
+        if ($model->save()) {
+            Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'info',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Data has been updated.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            Yii::$app->getSession()->setFlash('success', [
+                                'type' => 'info',
+                                'duration' => 500000,
+                                'icon' => 'fa fa-volume-up',
+                                'message' => 'Update data failed.',
+                                'title' => 'Information',
+                                'positonY' => 'bottom',
+                                'positonX' => 'right'
+                            ]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
     }
 }

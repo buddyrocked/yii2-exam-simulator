@@ -559,7 +559,7 @@ td.visible-lg, th.visible-lg {
 
 .treeview .treeview-menu li a {
     font-size: 12px !important;
-    padding: 10px 20px;
+    padding: 10px 10px 10px 30px;
 }
 
 .treeview a {

@@ -98,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <div class="col-md-12">
                                                 <hr />
                                                 <div class="form-group form-action">
-                                                    <label>Setting Timer Mode</label>
+                                                    <label>Setting Timer Mode & Random Domain</label>
                                                 </div>
                                                 <hr />
                                                 <div class="form-group form-action">
@@ -133,6 +133,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     ]) ?>
                                                     <?= Html::a('<i class="fa fa-clock-o"></i> Timer / Question', ['setting', 'id' => $model->id, 'setting' => 2], [
                                                         'class' => ($model->timer_mode == 2)?'btn btn-danger disabled':'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Whole Random', ['domain', 'id' => $model->id, 'domain' => 0], [
+                                                        'class' => ($model->random_method == 0)?'btn btn-danger disabled':'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want apply this setting?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?>
+                                                    <?= Html::a('<i class="fa fa-clock-o"></i> Domain Based Allocation', ['domain', 'id' => $model->id, 'domain' => 1], [
+                                                        'class' => ($model->random_method == 1)?'btn btn-danger disabled':'btn btn-danger',
                                                         'data' => [
                                                             'confirm' => 'Are you sure you want apply this setting?',
                                                             'method' => 'post',
@@ -534,7 +548,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 return GhostHtml::a('<i class="fa fa-search"></i> view', $url, ['class'=>'btn-modal']);
                                                                             },
                                                                             'update' => function ($url, $model, $key) {
-                                                                                return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'']);
+                                                                                if($model->type==1):
+                                                                                    return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/question/update', 'id'=>$model->id]), ['class'=>'']);
+                                                                                else:
+                                                                                    return GhostHtml::a('<i class="fa fa-pencil"></i> update', Url::to(['/subject/updatefile', 'id'=>$model->id]), ['class'=>'']);
+                                                                                endif;
                                                                             },
                                                                             'delete' => function ($url, $model, $key) {
                                                                                 return GhostHtml::a('<i class="fa fa-trash"></i> delete', Url::to(['/question/delete', 'id'=>$model->id]), ['class'=>'', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);

@@ -18,7 +18,7 @@ use backend\models\Subject;
                                     'id' => 'dynamic-form',
                                     ]); ?>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-md-2">
@@ -43,6 +43,15 @@ use backend\models\Subject;
             <?= $form->field($model, 'timer_mode')->widget(Select2::className(),  [
                 'data' => ['0'=>'No Timer', '1'=>'Timer per Exam', '2'=>'Timer per Question'],
                 'options'=>['placeholder'=>'Choose Timer Mode'],
+                'pluginOptions'=>[
+                'allowClear'=>true 
+            ]
+            ]) ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'random_method')->widget(Select2::className(),  [
+                'data' => ['0'=>'Whole Random', '1'=>'Domain Based Allocation'],
+                'options'=>['placeholder'=>'Choose Random Domain'],
                 'pluginOptions'=>[
                 'allowClear'=>true 
             ]

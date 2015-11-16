@@ -30,7 +30,7 @@ use kartik\widgets\FileInput;
             <?php \yii\widgets\Pjax::begin(['id'=>'pjax-form-question']); ?>
             <?php $form = ActiveForm::begin([
                                             'id' => 'dynamic-form',
-                                            'action'=>Url::to(['/subject/questionfile', 'id'=>$model->id]),
+                                            //'action'=>Url::to(['/subject/questionfile', 'id'=>$model->id]),
                                             'options'=>[
                                                 'enctype' => 'multipart/form-data'
                                             ]
@@ -123,20 +123,6 @@ use kartik\widgets\FileInput;
                 <div class="col-sm-2">
                     <?= $form->field($modelQuestion, 'is_random')->widget(SwitchInput::classname(), []); ?>
                 </div>
-                <div class="col-sm-4">
-                    <?= $form->field($modelQuestion, 'file')->widget(FileInput::classname(), [
-                            'options' => ['accept' => 'video/*'],
-                    ]); ?>
-                </div>
-                <div class="col-sm-4">
-                     <?= $form->field($modelQuestion, 'type')->widget(Select2::className(),  [
-                                                                        'data' => ['2'=>'Video', '3'=>'Audio'],
-                                                                        'options'=>['placeholder'=>'Choose Type File'],
-                                                                        'pluginOptions'=>[
-                                                                           'allowClear'=>true 
-                                                                        ],
-                                                                    ]) ?>
-                </div>
                 <div class="col-sm-12">
                     <?= $form->field($modelQuestion, 'question')->widget(\yii\redactor\widgets\Redactor::className(), [
                         'clientOptions' => [
@@ -160,6 +146,20 @@ use kartik\widgets\FileInput;
                             ]
                         ])
                     ?>
+                </div>
+                <div class="col-sm-4">
+                    <?= $form->field($modelQuestion, 'file')->widget(FileInput::classname(), [
+                            'options' => ['accept' => 'video/*'],
+                    ]); ?>
+                </div>
+                <div class="col-sm-4">
+                     <?= $form->field($modelQuestion, 'type')->widget(Select2::className(),  [
+                                                                        'data' => ['2'=>'Video', '3'=>'Audio'],
+                                                                        'options'=>['placeholder'=>'Choose Type File'],
+                                                                        'pluginOptions'=>[
+                                                                           'allowClear'=>true 
+                                                                        ],
+                                                                    ]) ?>
                 </div>
                 <div class="col-md-12">
                     <h3>domains</h3>

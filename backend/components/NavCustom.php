@@ -11,7 +11,7 @@ class NavCustom extends GhostMenu {
 
 	public $linkTemplate = '<a href="{url}"><i class="fa fa-{icon}"></i><span>{label}</span><i class="fa fa-angle-left pull-right"></i></a>';
 
-    
+    public $linkChildTemplate = '<a href="{url}"><i class="fa fa-{icon}"></i><span>{label}</span><i class="fa pull-right"></i></a>';
 
 	/**
      * Renders the content of a menu item.
@@ -22,7 +22,12 @@ class NavCustom extends GhostMenu {
     protected function renderItem($item)
     {
         if (isset($item['url'])) {
-            $template = ArrayHelper::getValue($item, 'template', $this->linkTemplate);
+
+            if(isset($item['items'])):
+                $template = ArrayHelper::getValue($item, 'template', $this->linkTemplate);
+            else:
+                $template = ArrayHelper::getValue($item, 'template', $this->linkChildTemplate);
+            endif;
 
             return strtr($template, [
                 '{url}' => Html::encode(Url::to($item['url'])),

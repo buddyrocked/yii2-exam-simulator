@@ -8,6 +8,7 @@ use yii\db\Expression;
 use yii\Helpers\ArrayHelper;
 use backend\models\Source;
 use backend\models\Passage;
+use backend\models\SimulationQuestion;
 
 
 /**
@@ -157,5 +158,15 @@ class Question extends \yii\db\ActiveRecord
         else:
             return $this->hasMany(Passage::className(), ['id' => 'passage_id'])->orderBy('RAND()');
         endif;
+    }
+
+    public function getSimulationQuestion()
+    {
+        return $this->hasOne(SimulationQuestion::className(), ['question_id' => 'id']);
+    }
+
+    public function getSimulationQuestionCorrect($status)
+    {
+        return $this->hasOne(SimulationQuestion::className(), ['question_id' => 'id'])->where(['correct' => $status])->count();
     }
 }
