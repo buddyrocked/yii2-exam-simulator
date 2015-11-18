@@ -139,6 +139,9 @@ use kartik\widgets\SwitchInput;
                 ])
             ?>
         </div>
+        <div class="col-sm-2">
+            <?= $form->field($modelQuestion, 'assumsed_diff_level')->textInput() ?>
+        </div>
         <div class="col-md-12">
             <h3>domains</h3>
             <hr />

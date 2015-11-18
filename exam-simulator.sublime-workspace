@@ -523,15 +523,7 @@
 			"file": "backend/views/subject/view.php",
 			"settings":
 			{
-				"buffer_size": 50007,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "backend/views/content/_form.php",
-			"settings":
-			{
-				"buffer_size": 3248,
+				"buffer_size": 53524,
 				"line_ending": "Windows"
 			}
 		}
@@ -572,12 +564,17 @@
 	},
 	"expanded_folders":
 	[
-		"/D/xampp/htdocs/r-csrp",
-		"/D/xampp/htdocs/r-csrp/backend",
-		"/D/xampp/htdocs/r-csrp/backend/models"
+		"/D/xampp/htdocs/exam-simulator",
+		"/D/xampp/htdocs/exam-simulator/backend",
+		"/D/xampp/htdocs/exam-simulator/backend/views",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150902_043020_create_table_question.php",
+		"/D/xampp/htdocs/exam-simulator/console/migrations/m150907_025358_create_table_simulation_question_answer.php",
+		"/D/xampp/htdocs/exam-simulator/backend/views/content/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/webvimark/module-user-management/layouts/loginLayout.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/take.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/simulation/question.php",
@@ -613,7 +610,6 @@
 		"/D/xampp/htdocs/exam-simulator/backend/views/profile/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/ProfileController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/question/update.php",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject/view.php",
 		"/D/xampp/htdocs/exam-simulator/backend/views/question/_form.php",
 		"/D/xampp/htdocs/exam-simulator/backend/controllers/SiteController.php",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts/front-end.php",
@@ -702,10 +698,7 @@
 		"/D/xampp/htdocs/r-csrp/backend/models/OvertimeSearch.php",
 		"/D/xampp/htdocs/r-csrp/backend/views/task/add.php",
 		"/D/xampp/htdocs/r-csrp/console/migrations/m150609_070403_create_table_tasks.php",
-		"/D/xampp/htdocs/r-csrp/console/migrations/m151021_021410_create_table_overtimes.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/task/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/expense/_form.php",
-		"/D/xampp/htdocs/r-csrp/backend/views/expense/create.php"
+		"/D/xampp/htdocs/r-csrp/console/migrations/m151021_021410_create_table_overtimes.php"
 	],
 	"find":
 	{
@@ -1059,45 +1052,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 50007,
+						"buffer_size": 53524,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29355,
-								29355
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 303.0,
-						"translation.y": 5142.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "backend/views/content/_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2129,
-								2827
+								0,
+								53524
 							]
 						],
 						"settings":
@@ -1107,10 +1070,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 500.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1225,7 +1188,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 434.0,
+	"side_bar_width": 63.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

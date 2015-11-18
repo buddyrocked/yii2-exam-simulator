@@ -58,7 +58,7 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             [['level', 'is_random', 'question', 'time'], 'required'],
-            [['subject_id', 'passage_id', 'source_id', 'level', 'time', 'is_random', 'type'], 'integer'],
+            [['subject_id', 'passage_id', 'source_id', 'level', 'time', 'is_random', 'type', 'assumsed_diff_level'], 'integer'],
             [['question'], 'string'],
             [['created', 'updated', 'status'], 'safe'],
             [['id_question', 'file'], 'string', 'max' => 255]

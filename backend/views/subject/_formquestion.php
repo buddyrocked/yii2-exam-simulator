@@ -147,6 +147,9 @@ use kartik\widgets\FileInput;
                         ])
                     ?>
                 </div>
+                <div class="col-sm-2">
+                    <?= $form->field($modelQuestion, 'assumsed_diff_level')->textInput() ?>
+                </div>
                 <div class="col-sm-4">
                     <?= $form->field($modelQuestion, 'file')->widget(FileInput::classname(), [
                             'options' => ['accept' => 'video/*'],
