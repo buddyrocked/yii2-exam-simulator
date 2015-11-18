@@ -56,7 +56,7 @@ class Simulation extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'subject_id', 'duration', 'timer_mode', 'status', 'minimum_score'], 'required'],
-            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status', 'minimum_score'], 'integer'],
+            [['user_id', 'subject_id', 'duration', 'timer_mode', 'status', 'minimum_score', 'true', 'false', 'blank'], 'integer'],
             [['start', 'finish', 'created', 'updated'], 'safe'],
             [['score'], 'number']
         ];

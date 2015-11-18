@@ -64,14 +64,23 @@ use backend\models\Subject;
                 ]
             ])?>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <?= $form->field($model, 'question_number')->input('number', ['min'=>'0', 'max'=>'5000']); ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <?= $form->field($model, 'minimum_score')->input('number', ['min'=>'0', 'max'=>'100']); ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <?= $form->field($model, 'time')->input('number', ['min'=>'0', 'max'=>'7200']); ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'true')->input('number', ['min'=>'0', 'max'=>'2']); ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'false')->input('number', ['min'=>'0', 'max'=>'2']); ?>
+        </div>
+        <div class="col-md-2">
+            <?= $form->field($model, 'blank')->input('number', ['min'=>'0', 'max'=>'2']); ?>
         </div>
         <?php if($model->isNewRecord): ?>
         <div class="col-md-12">

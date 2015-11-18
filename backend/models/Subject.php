@@ -53,7 +53,7 @@ class Subject extends \yii\db\ActiveRecord
         return [
             [['name', 'question_number', 'time', 'minimum_score', 'timer_mode', 'explain_mode', 'status'], 'required'],
             [['desc'], 'string'],
-            [['question_number', 'time', 'minimum_score', 'random_method'], 'integer'],
+            [['question_number', 'time', 'minimum_score', 'random_method', 'true', 'false', 'blank'], 'integer'],
             [['created', 'updated'], 'safe'],
             [['id_subject', 'name'], 'string', 'max' => 255]
         ];

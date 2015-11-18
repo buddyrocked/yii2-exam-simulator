@@ -158,6 +158,9 @@ class SimulationController extends Controller
                 $model->duration = $subject->time;
                 $model->timer_mode = $subject->timer_mode;
                 $model->explain_mode = $subject->explain_mode;
+                $model->true = $subject->true;
+                $model->false = $subject->false;
+                $model->blank = $subject->blank;
                 $model->start = date('H:i:s');
                 $model->status = 0;
                 $model->is_dummy = $subject->status;

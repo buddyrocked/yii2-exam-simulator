@@ -7,6 +7,7 @@ use backend\models\Subject;
 use backend\models\SubjectSearch;
 use backend\models\Question;
 use backend\models\QuestionSearch;
+use backend\models\Simulation;
 use backend\models\QuestionOption;
 use backend\models\QuestionDomain;
 use backend\models\Domain;
@@ -17,6 +18,7 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
+
 
 
 /**

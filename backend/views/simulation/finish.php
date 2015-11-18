@@ -38,37 +38,69 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="summary">
                                         <div>
+                                            <div class="col-md-6">
                                             <h3 class="bebas">Summary</h3>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <h3 class="bebas">Scoring</h3>
+                                            </div>
                                             <hr />
+                                            <br /><br /><br /><br /><br />
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Correct Answer</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>1])->count(); ?></h4></div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="col-xs-6"><h4 class="bebas">Score</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->where(['correct'=>1])->count()) * $model->true; ?></h4></div>
+                                            </div>
+                                            </div>
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="col-xs-6"><h4 class="bebas">Incorrect Score</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count()) * $model->false; ?></h4></div>
+                                            </div>
+                                            </div>
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>null])->andWhere(['status'=>0])->count(); ?></h4></div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="col-xs-6"><h4 class="bebas">Blank Score</h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->where(['correct'=>null])->andWhere(['status'=>0])->count()) * $model->blank; ?></h4></div>
+                                            </div>
+                                            </div>
                                             <hr />
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Total Questions</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->count(); ?></h4></div>
                                             </div>
+                                            </div>
                                             <hr />
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Minimum Score</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->minimum_score; ?>%</h4></div>
                                             </div>
+                                            </div>
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Your Score</h4></div>
                                                 <div class="col-xs-1"><h4 class="bebas"><?= $model->getScore(); ?>%</h4></div>
                                             </div>
+                                            </div>
                                             <div class="row">
+                                            <div class="col-md-6">
                                                 <div class="col-xs-6"><div>&nbsp;</div><h4 class="bebas">Status</h4></div>
                                                 <div class="col-xs-6"><?= $model->getScoreStatus(); ?></div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
