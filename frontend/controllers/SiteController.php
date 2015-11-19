@@ -13,8 +13,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use yii\Helpers\Html;
-use Yii\Helpers\Url;
+use yii\helpers\Html;
+use Yii\helpers\Url;
 
 /**
  * Site controller
