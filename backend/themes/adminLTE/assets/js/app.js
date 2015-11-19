@@ -9,19 +9,39 @@ $(document).ready(function(){
             e.preventDefault();
         });
 
-        $('#timer-question').timer({
-		    countdown: true,
-		    duration: $('#timer-question').attr('data-timer'),    // This will start the countdown from 3 mins 40 seconds
-			format: '%H:%M:%S',
-			callback: function(){
-				$('#form-question').submit();
-			},
-			repeat: false
-		});
+        if($('#timer').length > 0){
+	        $('#timer-question').timer({
+			    countdown: true,
+			    duration: $('#timer-question').attr('data-timer'),    // This will start the countdown from 3 mins 40 seconds
+				format: '%H:%M:%S',
+				callback: function(){
+					$('#form-question').submit();
+				},
+				repeat: false
+			});
 
-        if($('#timer-question').attr('data-timer') == '0h00m00s'){
-        	$('#timer-question').timer('pause');
-        }
+	        if($('#timer-question').attr('data-timer') == '0h00m00s'){
+	        	$('#timer-question').timer('pause');
+	        }
+	    }
+	    
+	    if($('#event-pop').length > 0){
+	    	var self = $('#event-pop');
+        	var url = self.attr('href');
+        	var title = self.attr('title');
+        	$.ajax({
+		    	type: "GET",
+		    	url: url,
+		    	beforeSend:function(){
+		    		
+		    	}
+		    })
+		    .done(function( data ) {
+		    	$('.modal-body').html(data);
+		    	$('.modal-title').text(title)    	
+        		$('#myModal').modal('show');
+        	});
+	    }
 		
 
         $('#clear-answer').click(function(e){

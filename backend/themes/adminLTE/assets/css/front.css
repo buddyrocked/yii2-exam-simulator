@@ -1876,3 +1876,7 @@ ul.newsticker, ul.newsticker-quotes {
 .process-title {
     min-height: 70px;
 }
+
+.popup-image {
+    width: 100%;
+}

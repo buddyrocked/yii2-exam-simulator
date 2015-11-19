@@ -13,6 +13,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\Helpers\Html;
+use Yii\Helpers\Url;
 
 /**
  * Site controller
@@ -70,11 +72,21 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $latest_issues = Cms::find()->where(['type'=>1])->all();
+        $latest_event = Cms::find()->where(['type'=>4])->orderBy('created DESC')->one();
         $services = Cms::find()->where(['type'=>3])->all();
         return $this->render('index', [
             'latest_issues'=>$latest_issues,
-            'services'=>$services
+            'services'=>$services,
+            'latest_event'=>$latest_event
         ]);
+    }
+
+    public function actionPopup($id){
+        $latest_event = Cms::find()->where(['id'=>$id])->orderBy('created DESC')->one();
+        echo Html::a(
+            Html::img('@web/uploads/cms/'.$latest_event->image, ['class'=>'popup-image']),
+            ['/site/training']
+        );
     }
 
     public function actionServices()
