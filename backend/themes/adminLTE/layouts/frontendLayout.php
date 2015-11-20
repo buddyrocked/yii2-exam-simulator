@@ -71,7 +71,6 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
                 <li><?php echo Html::a('Our Client & Partners', ['/site/partners'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Contact', ['/site/contact'], ['class'=>'external']); ?></li>
                 <?php if (!Yii::$app->user->isGuest): ?>
-                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu">

@@ -520,10 +520,26 @@
 	"buffers":
 	[
 		{
-			"file": "backend/views/subject/view.php",
+			"file": "frontend/controllers/CmsController.php",
 			"settings":
 			{
-				"buffer_size": 53524,
+				"buffer_size": 5835,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "frontend/views/site/index.php",
+			"settings":
+			{
+				"buffer_size": 9543,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/themes/adminLTE/layouts/frontendLayout.php",
+			"settings":
+			{
+				"buffer_size": 6601,
 				"line_ending": "Windows"
 			}
 		}
@@ -566,8 +582,14 @@
 	[
 		"/D/xampp/htdocs/exam-simulator",
 		"/D/xampp/htdocs/exam-simulator/backend",
-		"/D/xampp/htdocs/exam-simulator/backend/views",
-		"/D/xampp/htdocs/exam-simulator/backend/views/subject"
+		"/D/xampp/htdocs/exam-simulator/backend/themes",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE",
+		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts",
+		"/D/xampp/htdocs/exam-simulator/frontend",
+		"/D/xampp/htdocs/exam-simulator/frontend/controllers",
+		"/D/xampp/htdocs/exam-simulator/frontend/views",
+		"/D/xampp/htdocs/exam-simulator/frontend/views/page",
+		"/D/xampp/htdocs/exam-simulator/frontend/views/site"
 	],
 	"file_history":
 	[
@@ -1043,16 +1065,46 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "backend/views/subject/view.php",
+					"file": "frontend/controllers/CmsController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 53524,
+						"buffer_size": 5835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2089,
+								2089
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "frontend/views/site/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9543,
 						"regions":
 						{
 						},
@@ -1060,7 +1112,7 @@
 						[
 							[
 								0,
-								53524
+								0
 							]
 						],
 						"settings":
@@ -1074,6 +1126,36 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "backend/themes/adminLTE/layouts/frontendLayout.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3357,
+								3357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 132.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1188,7 +1270,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 63.0,
+	"side_bar_width": 342.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
