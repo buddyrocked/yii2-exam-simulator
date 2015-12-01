@@ -144,6 +144,19 @@ class SiteController extends Controller
 
     }
 
+    public function actionForm($id){
+        $model = Event::findOne($id);
+        $path = Yii::getAlias('@frontend') .'/web/uploads/event/';
+        
+        if(isset($model->file)):
+            $file = $path . $model->file;
+
+            if (file_exists($file)) {
+               Yii::$app->response->sendFile($file);
+            }
+        endif;
+    }
+
     public function actionPartners()
     {
         $clients = Cms::find()->where(['type'=>6])->orderBy('updated DESC');

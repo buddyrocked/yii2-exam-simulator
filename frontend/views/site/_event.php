@@ -51,7 +51,7 @@ use yii\helpers\Html;
                     <div class="row">
                         <div class="col-md-12">
                             <?= Html::a('<i class="fa fa-check-circle"></i> Daftar Sekarang', ['/site/detail', 'id'=>$model->id, 'name'=>$model->name], ['class'=>'btn btn-green']); ?>
-                            <?= Html::a('<i class="fa fa-cloud-download"></i> Download Form Pendaftaran', ['/site/form', 'id'=>$model->id], ['class'=>'btn btn-green']); ?>
+                            <?= Html::a('<i class="fa fa-cloud-download"></i> Download Form Pendaftaran', ['/site/form', 'id'=>$model->id], ['class'=>'btn btn-green', 'target'=>'_blank']); ?>
                             
                         </div>
                     </div>

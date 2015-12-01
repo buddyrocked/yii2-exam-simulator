@@ -97,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= Html::a('<i class="fa fa-cloud-download"></i> Download Form Pendaftaran', ['/site/form', 'id'=>$model_event->id], ['class'=>'btn btn-green btn-lg']); ?>
+                                        <?= Html::a('<i class="fa fa-cloud-download"></i> Download Form Pendaftaran', ['/site/form', 'id'=>$model_event->id], ['class'=>'btn btn-green btn-lg', 'target'=>'_blank']); ?>
                                         
                                     </div>
                                 </div>
