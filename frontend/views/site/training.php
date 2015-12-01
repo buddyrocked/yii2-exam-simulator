@@ -220,7 +220,7 @@ Topics
                 $dataProvider = new ActiveDataProvider([
                     'query' => $events,
                     'pagination' => [
-                        'pageSize' => 1,
+                        'pageSize' => 5,
                     ],
                 ]);
                 

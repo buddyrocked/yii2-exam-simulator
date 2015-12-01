@@ -8,6 +8,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Cms;
+use frontend\models\Event;
+use frontend\models\EventRegistration;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -72,7 +74,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $latest_issues = Cms::find()->where(['type'=>1])->all();
-        $latest_event = Cms::find()->where(['type'=>4])->orderBy('created DESC')->one();
+        $latest_event = Event::find()->where(['published'=>1])->orderBy('datetime DESC')->one();
         $services = Cms::find()->where(['type'=>3])->all();
         return $this->render('index', [
             'latest_issues'=>$latest_issues,
@@ -81,11 +83,17 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionEvent()
+    {
+        $events = Event::find()->where(['published'=>1])->all();
+        return $this->render('events', ['events'=>$events]);
+    }
+
     public function actionPopup($id){
-        $latest_event = Cms::find()->where(['id'=>$id])->orderBy('created DESC')->one();
+        $latest_event = Event::find()->where(['id'=>$id])->orderBy('created DESC')->one();
         echo Html::a(
-            Html::img('@web/uploads/cms/'.$latest_event->image, ['class'=>'popup-image']),
-            ['/site/training']
+            Html::img('@web/uploads/event/'.$latest_event->image, ['class'=>'popup-image']),
+            ['/site/detail', 'id'=>$latest_event->id, 'name'=>$latest_event->name]
         );
     }
 
@@ -104,9 +112,36 @@ class SiteController extends Controller
     public function actionTraining()
     {   
         $trainings = Cms::find()->where(['type'=>2])->all();
-        $events = Cms::find()->where(['type'=>4])->orderBy('updated DESC');
+        //$events = Cms::find()->where(['type'=>4])->orderBy('updated DESC');
+        $events = Event::find()->where(['published'=>1])->orderBy('datetime DESC');
                 
         return $this->render('training', ['trainings'=>$trainings, 'events'=>$events]);
+    }
+
+    public function actionDetail($id, $name){
+        $model = new EventRegistration();
+        $model_event = Event::findOne($id);
+        $model->status = 0;
+        $model->event_id = $model_event->id;
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->sendMail();
+            Yii::$app->getSession()->setFlash('success', [
+                'type' => 'info',
+                'duration' => 500000,
+                'icon' => 'fa fa-volume-up',
+                'message' => 'Thank you for Event registration. We will respond to you as soon as possible..',
+                'title' => 'Information',
+                'positonY' => 'bottom',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['detail', 'id' => $id, 'name'=>$name]);
+        } else {
+            return $this->render('detail', [
+                'model' => $model,
+                'model_event' => $model_event
+            ]);
+        }
+
     }
 
     public function actionPartners()

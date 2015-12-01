@@ -64,7 +64,7 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
         </div>
         <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-login" id="nav-section">
-                <li class="active"><?php echo Html::a('Homes', ['/site/index'], ['class'=>'external']); ?></li>
+                <li class="active"><?php echo Html::a('Home', ['/site/index'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Consultancy Services', ['/site/services'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Training', ['/site/training'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Product', ['/site/product'], ['class'=>'external']); ?></li>
@@ -75,6 +75,10 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><?php echo Html::a('Manage Content', ['/cms/index'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li><?php echo Html::a('Event', ['/event/index'], ['class'=>'external']); ?></li>
+                            <li role="separator" class="divider"></li>
+                            <li><?php echo Html::a('Registration Event', ['/eventregistration/index'], ['class'=>'external']); ?></li>
                             <li role="separator" class="divider"></li>
                             <li class=""><?php echo Html::a('Logout', ['/site/logout'], ['class'=>'external', 'data-method'=>'post']); ?></li>
                         </ul>
@@ -95,8 +99,8 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
                     <span>Contact Us</span>
                 </div>
                 <div class="touch">
-                    <div><span><i class="fa fa-phone"></i></span> +62.21.2939.1106, +62.21.7088.2248</div>
-                    <div><span><i class="fa fa-fax"></i></span>+62.21.29.39.12.22</div>
+                    <div><span><i class="fa fa-phone"></i></span> +6221 2939 1106, +6221 7088 2248</div>
+                    <div><span><i class="fa fa-fax"></i></span>+6221 2939 1222</div>
                     <div><span><i class="fa fa-envelope"></i></span><a href="mailto:contact@rialachas.com">contact@rialachas.com</a></div>
                 </div>
             </div>
