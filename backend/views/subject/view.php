@@ -179,6 +179,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 }
                                                             ],
                                                             [
+                                                                'attribute'=>'percentage',
+                                                                'format'=>'raw',
+                                                                'header'=>'Transfer Questions',
+                                                                'value'=>function($data){
+                                                                    return Html::a('<i class="fa fa-retweet"></i> Transfer Questions to Other Domain', ['/domain/transferperdomain', 'domain_source_id'=>$data->id], ['class'=>'btn btn-danger btn-modal']);
+                                                                }
+                                                            ],
+                                                            [
                                                                 'class' => 'yii\grid\ActionColumn',
                                                                 'template' => '<div class="btn-group pull-right">                                                                     
                                                                                                     <button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -488,12 +496,44 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     $queryQuestions->orFilterWhere(['like', 'source_id', Yii::$app->request->queryParams['Question']['question']]);
                                                     $queryQuestions->orFilterWhere(['like', 'status', Yii::$app->request->queryParams['Question']['question']]);
                                                 endif;
-
+                                                ?>
+                                                <?php
+                                                    $form = ActiveForm::begin([
+                                                        'action' => ['/domain/transfermultiple', 'subject_id'=>$model->id],
+                                                    ]);
+                                                ?>
+                                                <div class="row">
+                                                    <div class="col-md-9">
+                                                        <?php echo '<label class="control-label">Transfer To Domain</label>';
+                                                            echo Select2::widget([
+                                                                'name' => 'domain_id',
+                                                                'data' => ArrayHelper::map(Domain::find()->all(), 'id', function($model, $defaultValue){
+                                                                    return $model->subject->name.' - '.$model->name;
+                                                                }),
+                                                                'options' => [
+                                                                    'placeholder' => 'Select Domain ...',
+                                                                    'multiple' => false
+                                                                ],
+                                                                'pluginOptions'=>[
+                                                                   'allowClear'=>true 
+                                                                ]
+                                                            ]);
+                                                        ?>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="control-label">&nbsp;</label>
+                                                        <div class="form-group">
+                                                            <?= Html::submitButton('Transfer', ['class' => 'btn btn-primary']) ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
                                                 echo GridView::widget([
                                                     'dataProvider' => new ActiveDataProvider([
                                                         'query' => $queryQuestions,
                                                     ]),
                                                     'columns' => [  
+                                                        ['class' => 'yii\grid\CheckboxColumn'],
                                                         'id_question',
                                                         [
                                                             'attribute'=>'passage_id',
@@ -564,6 +604,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         ],
                                                     ],
                                                     ]); ?>
+                                                    <?php ActiveForm::end(); ?>
                                                 <?php \yii\widgets\Pjax::end(); ?>  
                                             </div>
                                         </div>
