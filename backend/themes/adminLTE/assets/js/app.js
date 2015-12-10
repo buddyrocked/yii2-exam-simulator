@@ -9,7 +9,7 @@ $(document).ready(function(){
             e.preventDefault();
         });
 
-        if($('#timer').length > 0){
+        if($('#timer-question').length > 0){
 	        $('#timer-question').timer({
 			    countdown: true,
 			    duration: $('#timer-question').attr('data-timer'),    // This will start the countdown from 3 mins 40 seconds
@@ -61,6 +61,7 @@ $(document).ready(function(){
         });
 
         $('.form-ajax').on('beforeSubmit', function(event, jqXHR, settings) {
+        	alert('xxxxx');
             var form = $(this);
             if(form.find('.has-error').length) {
             	return false;

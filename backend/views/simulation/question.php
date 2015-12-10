@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="container-menu">
                 <div class="upper-menu">
                     <div class="upper-menu-title">
-                        &nbsp;Question No. <?= $model->number; ?>
+                        &nbsp;Question No. <?= $model->number; ?> / <?= $model->simulation->getSimulationQuestions()->count(); ?>
                     </div>
                 </div>
                 <div class="middle-menu bg-white">
@@ -214,7 +214,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="">
                                 <div class="">
                                     <?php
-                                        if($model->simulation->timer_mode == 0 && $modelPrev != null):
+                                        if(($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1) && $modelPrev != null):
                                             echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-success']); 
                                         else:
                                             echo Html::a('<i class="fa fa-chevron-left"></i> Back', ['back', 'id'=>$model->simulation->id, 'question'=>$model->id], ['class' => 'btn-lg btn btn-success disabled']); 
@@ -230,7 +230,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 
                                 <hr />
                                 <?php
-                                    if($model->simulation->timer_mode == 0):
+                                    if($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1):
                                         echo Html::submitButton('<i class="fa fa-eye"></i> Review Answer Sheet', ['class' => 'btn-lg btn btn-success btn-block', 'name'=> 'review', 'value' => 1, 'data' => [
                                                     'method' => 'post',
                                                 ]

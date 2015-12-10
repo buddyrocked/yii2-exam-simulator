@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 'template' => '{question}',
                                                 'buttons' => [
                                                                 'question' => function ($url, $model, $key) {
-                                                                    if($model->simulation->timer_mode == 0):
+                                                                    if($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1):
                                                                         return Html::a('<i class="fa fa-search"></i>', ['/simulation/question', 'id'=>$model->simulation_id, 'question'=>$model->id], ['class'=>'btn btn-danger btn-xs']);
                                                                     else:
                                                                         return Html::a('<i class="fa fa-search"></i>', ['/simulation/question', 'id'=>$model->simulation_id, 'question'=>$model->id], ['class'=>'btn btn-danger btn-xs disabled']);

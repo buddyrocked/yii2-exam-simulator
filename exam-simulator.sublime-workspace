@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"domai",
+				"domain_id"
+			],
+			[
+				"ques",
+				"questionSources"
+			],
+			[
+				"Quest",
+				"QuestionDomain"
+			],
+			[
+				"exist",
+				"existQuestion"
+			],
+			[
+				"quest",
+				"question"
+			],
+			[
+				"subj",
+				"subject_id"
+			],
+			[
+				"Ques",
+				"QuestionOptions"
+			],
+			[
+				"Que",
+				"QuestionDomain"
+			],
+			[
+				"ne",
+				"newQuestion"
+			],
+			[
+				"opt",
+				"option"
+			],
+			[
+				"new",
+				"newQuestion"
+			],
+			[
+				"domain",
+				"domainNew"
+			],
+			[
 				"fon",
 				"font-family"
 			],
@@ -36,10 +84,6 @@
 				"modelPrev"
 			],
 			[
-				"ques",
-				"question"
-			],
-			[
 				"tex",
 				"text-decoration"
 			],
@@ -62,10 +106,6 @@
 			[
 				"getSim",
 				"getSimulationDomains"
-			],
-			[
-				"domain",
-				"domain_id"
 			],
 			[
 				"question_domain",
@@ -98,10 +138,6 @@
 			[
 				"tim",
 				"timer-question"
-			],
-			[
-				"quest",
-				"question_option_id"
 			],
 			[
 				"is_a",
@@ -248,16 +284,8 @@
 				"subject"
 			],
 			[
-				"subj",
-				"subject"
-			],
-			[
 				"S",
 				"Simulation"
-			],
-			[
-				"Quest",
-				"QuestionDomain"
 			],
 			[
 				"arra",
@@ -286,10 +314,6 @@
 			[
 				"modelsOp",
 				"modelsOptions"
-			],
-			[
-				"new",
-				"newIDs"
 			],
 			[
 				"btn-",
@@ -490,30 +514,6 @@
 			[
 				"FR",
 				"FrontEndController"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"a",
-				"anim"
-			],
-			[
-				"ani",
-				"animate"
-			],
-			[
-				"gr",
-				"graph"
-			],
-			[
-				"f0",
-				"f0f0f0"
-			],
-			[
-				"par",
-				"parent"
 			]
 		]
 	},
@@ -564,6 +564,62 @@
 			"settings":
 			{
 				"buffer_size": 8903,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/controllers/DomainController.php",
+			"settings":
+			{
+				"buffer_size": 14369,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/_formquestion.php",
+			"settings":
+			{
+				"buffer_size": 24392,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/profile/_form.php",
+			"settings":
+			{
+				"buffer_size": 7977,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/controllers/QuestionController.php",
+			"settings":
+			{
+				"buffer_size": 11767,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/domain/_transferperdomain.php",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/view.php",
+			"settings":
+			{
+				"buffer_size": 57341,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "backend/views/subject/_search.php",
+			"settings":
+			{
+				"buffer_size": 1448,
 				"line_ending": "Windows"
 			}
 		},
@@ -903,6 +959,7 @@
 	[
 		"/D/xampp/htdocs/exam-simulator",
 		"/D/xampp/htdocs/exam-simulator/backend",
+		"/D/xampp/htdocs/exam-simulator/backend/controllers",
 		"/D/xampp/htdocs/exam-simulator/backend/themes",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets",
@@ -910,6 +967,10 @@
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/assets/js",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/components",
 		"/D/xampp/htdocs/exam-simulator/backend/themes/adminLTE/layouts",
+		"/D/xampp/htdocs/exam-simulator/backend/views",
+		"/D/xampp/htdocs/exam-simulator/backend/views/domain",
+		"/D/xampp/htdocs/exam-simulator/backend/views/profile",
+		"/D/xampp/htdocs/exam-simulator/backend/views/subject",
 		"/D/xampp/htdocs/exam-simulator/common",
 		"/D/xampp/htdocs/exam-simulator/common/config",
 		"/D/xampp/htdocs/exam-simulator/common/mail",
@@ -927,8 +988,7 @@
 		"/D/xampp/htdocs/exam-simulator/frontend/views/eventregistration",
 		"/D/xampp/htdocs/exam-simulator/frontend/views/site",
 		"/D/xampp/htdocs/exam-simulator/frontend/web",
-		"/D/xampp/htdocs/exam-simulator/frontend/web/css",
-		"/D/xampp/htdocs/exam-simulator/frontend/web/uploads/cms"
+		"/D/xampp/htdocs/exam-simulator/frontend/web/css"
 	],
 	"file_history":
 	[
@@ -1063,7 +1123,7 @@
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 51.0
 	},
 	"find_in_files":
 	{
@@ -1108,6 +1168,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"remov",
+			"remove",
+			"$subject_id",
+			"transfert to",
+			"transfer",
+			"QuestionOptions",
+			"generate",
 			"andFilterWhere",
 			"00BF96",
 			"imageFileName",
@@ -1228,14 +1295,7 @@
 			"{{%auth_item_child}}",
 			"{{%auth_item}}",
 			"auth",
-			"defaultRoute",
-			"getUser",
-			"107.659922",
-			"6.936786",
-			"Our Consultancy Services",
-			"h2",
-			"text-ce",
-			"brand"
+			"defaultRoute"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1381,7 +1441,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -1411,7 +1471,7 @@
 						"translation.y": 988.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
@@ -1441,7 +1501,7 @@
 						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
@@ -1471,7 +1531,7 @@
 						"translation.y": 1033.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
@@ -1501,7 +1561,7 @@
 						"translation.y": 2533.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1531,7 +1591,7 @@
 						"translation.y": 454.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -1557,15 +1617,225 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 77.0,
+						"translation.x": 0.0,
 						"translation.y": 1360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "backend/controllers/DomainController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14100,
+								14100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5698.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "backend/views/subject/_formquestion.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11913,
+								11919
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2944.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "backend/views/profile/_form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7977,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6460,
+								6687
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 420.0,
+						"translation.y": 1711.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "backend/controllers/QuestionController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11767,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6143,
+								6671
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2848.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "backend/views/domain/_transferperdomain.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								1064
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "backend/views/subject/view.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 57341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48738,
+								48823
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 118.0,
+						"translation.y": 8923.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 12,
+					"file": "backend/views/subject/_search.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1412,
+								1439
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 410.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
 					"file": "frontend/views/site/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1591,11 +1861,11 @@
 						"translation.y": 3724.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 14,
 					"file": "frontend/views/cms/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1621,11 +1891,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 15,
 					"file": "frontend/views/eventregistration/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1651,11 +1921,11 @@
 						"translation.y": 631.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 16,
 					"file": "frontend/models/EventRegistrationSearch.php",
 					"semi_transient": false,
 					"settings":
@@ -1681,11 +1951,11 @@
 						"translation.y": 973.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 17,
 					"file": "frontend/models/EventSearch.php",
 					"semi_transient": false,
 					"settings":
@@ -1711,11 +1981,11 @@
 						"translation.y": 930.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 18,
 					"file": "frontend/views/event/_search.php",
 					"semi_transient": false,
 					"settings":
@@ -1741,11 +2011,11 @@
 						"translation.y": 40.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 19,
 					"file": "frontend/views/eventregistration/_search.php",
 					"semi_transient": false,
 					"settings":
@@ -1771,11 +2041,11 @@
 						"translation.y": 72.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 20,
 					"file": "frontend/views/eventregistration/create.php",
 					"semi_transient": false,
 					"settings":
@@ -1801,11 +2071,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 21,
 					"file": "frontend/views/eventregistration/update.php",
 					"semi_transient": false,
 					"settings":
@@ -1831,11 +2101,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 22,
 					"file": "frontend/views/eventregistration/view.php",
 					"semi_transient": false,
 					"settings":
@@ -1861,11 +2131,11 @@
 						"translation.y": 692.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 23,
 					"file": "common/mail/event-register.php",
 					"semi_transient": false,
 					"settings":
@@ -1891,11 +2161,11 @@
 						"translation.y": 351.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 24,
 					"file": "frontend/views/site/detail.php",
 					"semi_transient": false,
 					"settings":
@@ -1921,11 +2191,11 @@
 						"translation.y": 1416.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 25,
 					"file": "frontend/web/css/site.css",
 					"semi_transient": false,
 					"settings":
@@ -1951,11 +2221,11 @@
 						"translation.y": 1190.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 26,
 					"file": "frontend/assets/AppAsset.php",
 					"semi_transient": false,
 					"settings":
@@ -1981,11 +2251,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 27,
 					"file": "frontend/config/main.php",
 					"semi_transient": false,
 					"settings":
@@ -2011,11 +2281,11 @@
 						"translation.y": 218.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 28,
 					"file": "backend/themes/adminLTE/layouts/front-end.php",
 					"semi_transient": false,
 					"settings":
@@ -2041,11 +2311,11 @@
 						"translation.y": 536.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 29,
 					"file": "backend/themes/adminLTE/layouts/frontendLayout.php",
 					"semi_transient": false,
 					"settings":
@@ -2071,11 +2341,11 @@
 						"translation.y": 1083.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 30,
 					"file": "backend/themes/adminLTE/components/FrontendAsset.php",
 					"semi_transient": false,
 					"settings":
@@ -2101,11 +2371,11 @@
 						"translation.y": 138.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 31,
 					"file": "backend/themes/adminLTE/assets/js/app.js",
 					"semi_transient": false,
 					"settings":
@@ -2129,11 +2399,11 @@
 						"translation.y": 8204.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 32,
 					"file": "backend/themes/adminLTE/assets/css/front.css",
 					"semi_transient": false,
 					"settings":
@@ -2159,11 +2429,11 @@
 						"translation.y": 33830.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 33,
 					"file": "frontend/views/site/_form_registration.php",
 					"semi_transient": false,
 					"settings":
@@ -2189,11 +2459,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 34,
 					"file": "frontend/models/EventRegistration.php",
 					"semi_transient": false,
 					"settings":
@@ -2219,11 +2489,11 @@
 						"translation.y": 1491.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 35,
 					"file": "common/config/main-local.php",
 					"semi_transient": false,
 					"settings":
@@ -2249,11 +2519,11 @@
 						"translation.y": 33.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 36,
 					"file": "console/migrations/m151130_074001_create_table_event_registration.php",
 					"semi_transient": false,
 					"settings":
@@ -2279,11 +2549,11 @@
 						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 37,
 					"file": "console/migrations/m151201_064005_add_column_event_id_to_table_event_registration.php",
 					"semi_transient": false,
 					"settings":
@@ -2309,11 +2579,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 38,
 					"file": "console/migrations/m151118_064515_add_column_true_false_and_blank_to_table_simulation.php",
 					"semi_transient": false,
 					"settings":
@@ -2339,11 +2609,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 39,
 					"file": "frontend/views/eventregistration/_form.php",
 					"semi_transient": false,
 					"settings":
@@ -2369,11 +2639,11 @@
 						"translation.y": 10.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 40,
 					"file": "/D/xampp/htdocs/SDIA/backend/views/requesttype/view.php",
 					"semi_transient": false,
 					"settings":
@@ -2399,11 +2669,11 @@
 						"translation.y": 208.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 41,
 					"file": "/D/xampp/htdocs/SDIA/backend/views/requesttype/_form.php",
 					"semi_transient": false,
 					"settings":
@@ -2429,11 +2699,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 42,
 					"file": "frontend/controllers/EventregistrationController.php",
 					"semi_transient": false,
 					"settings":
@@ -2459,11 +2729,11 @@
 						"translation.y": 1151.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 43,
 					"file": "frontend/views/site/training.php",
 					"semi_transient": false,
 					"settings":
@@ -2489,11 +2759,11 @@
 						"translation.y": 3829.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 44,
 					"file": "frontend/views/site/_event.php",
 					"semi_transient": false,
 					"settings":
@@ -2519,11 +2789,11 @@
 						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 45,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2547,11 +2817,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 46,
 					"file": "frontend/views/event/view.php",
 					"semi_transient": false,
 					"settings":
@@ -2577,11 +2847,11 @@
 						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
+					"buffer": 47,
 					"file": "frontend/views/cms/view.php",
 					"semi_transient": false,
 					"settings":
@@ -2607,11 +2877,11 @@
 						"translation.y": 546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 48,
 					"file": "frontend/controllers/CmsController.php",
 					"semi_transient": false,
 					"settings":
@@ -2637,11 +2907,11 @@
 						"translation.y": 2296.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
+					"buffer": 49,
 					"file": "frontend/views/cms/_form.php",
 					"semi_transient": false,
 					"settings":
@@ -2667,7 +2937,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 40,
 					"type": "text"
 				}
 			]

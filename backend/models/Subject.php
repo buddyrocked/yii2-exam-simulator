@@ -111,7 +111,7 @@ class Subject extends \yii\db\ActiveRecord
     }
 
     public function getQuestionAll(){
-        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id', 'question_domain.id AS question_domain_id', 'question_domain.domain_id'])->orderBy('RAND()');
+        return $this->getQuestions()->joinWith('questionDomains')->select(['question.id', 'question_domain.id AS question_domain_id', 'question_domain.domain_id'])->limit($this->question_number)->orderBy('RAND()');
     }
 
     public function getQuestionForSimulations(){

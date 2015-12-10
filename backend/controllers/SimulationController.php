@@ -213,7 +213,7 @@ class SimulationController extends Controller
                 $modelsAnswer = new SimulationQuestionAnswer;
             endif;
         else:            
-            if($modelQuestion->simulation->timer_mode != 0):
+            if($modelQuestion->simulation->timer_mode != 0 && $modelQuestion->simulation->timer_mode != 1):
                 Yii::$app->getSession()->setFlash('success', [
                     'type' => 'danger',
                     'duration' => 500000,
