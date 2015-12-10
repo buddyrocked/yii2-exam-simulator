@@ -83,17 +83,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-md-12">
                             <?php
-                                if($model->timer_mode == 2 || $model->timer_mode == 1  ): 
-                                    
-                                    $diff2 = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation'.$model->id)));
-                                    $time2 = $model->convertSecondstoTimes($diff2);
+                                if($model->timer_mode == 1): 
+                                    $diff = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->id)));
+                                    $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">
-                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time2; ?>"></h1>         
+                                    <h1 class="text-center bebas text-bold" id="timer-question" data-timer="<?= $time; ?>"></h1>
                                 </div>
                             <?php else: ?>
                                 <div class="well">
-                                    <h1 class="text-center bebas text-bold">No Timer</h1>
+                                    <h1 class="text-center bebas text-bold"></h1>
                                 </div>
                             <?php endif; ?>
                             <?= Html::a('<i class="fa fa-check"></i> Finish Exam', ['postfinish', 'id'=>$model->id], ['class' => 'btn-lg btn-block btn btn-danger', 'data' => [

@@ -132,7 +132,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <hr />
                             <div>
                             <?php
-                                if($model->simulation->timer_mode == 0):
+                                if($model->simulation->timer_mode == 0 || $model->simulation->timer_mode == 1):
                                     echo CheckboxX::widget([
                                         'name'=>'mark',
                                         'disabled'=>false,
