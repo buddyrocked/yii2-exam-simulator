@@ -47,12 +47,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4 class="bebas"></div>
-                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
+                                                    <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->count(); ?></h4></div>
                                                 </div>
                                                 
                                             <div class="row">
                                                 <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>0])->count(); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>null])->count(); ?></h4></div>
                                             </div>
                                                 <div class="row">
                                                      <div class="col-xs-12">
