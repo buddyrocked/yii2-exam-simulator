@@ -284,10 +284,14 @@ class SimulationController extends Controller
 
 
                     if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
-                        if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
-                            $modelQuestion->correct = 1;
+                        if(Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'] != ''):
+                            if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
+                                $modelQuestion->correct = 1;
+                            else:
+                                $modelQuestion->correct = 0;
+                            endif;
                         else:
-                            $modelQuestion->correct = 0;
+                            $modelQuestion->correct = null;
                         endif;
 
                         $modelsAnswer->simulation_question_id = $modelQuestion->id;
@@ -341,15 +345,20 @@ class SimulationController extends Controller
                         endif;
 
                     else:
-                        if(is_array($modelsAnswer->question_option_id)):
-                            if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
-                                $modelQuestion->correct = 1;
+                        if(Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'] != ''):
+                            if(is_array($modelsAnswer->question_option_id)):
+                                if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
+                                    $modelQuestion->correct = 1;
+                                else:
+                                    $modelQuestion->correct = 0;
+                                endif;
                             else:
                                 $modelQuestion->correct = 0;
                             endif;
                         else:
-                            $modelQuestion->correct = 0;
+                            $modelQuestion->correct = null;
                         endif;
+
                         $answers = Yii::$app->request->post('SimulationQuestionAnswer');
                         if(!empty($answers['question_option_id'])):
                             SimulationQuestionAnswer::deleteAll(['simulation_question_id'=>$modelQuestion->id]);
