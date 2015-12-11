@@ -59,21 +59,21 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Incorrect Answer</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count(); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->where(['correct'=>0])->count(); ?></h4></div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Incorrect Score</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->where(['correct'=>0])->andWhere(['status'=>1])->count()) * (($model->false != null)?$model->false:1); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->where(['correct'=>0])->count()) * (($model->false != null)?$model->false:1); ?></h4></div>
                                             </div>
                                             </div>
                                             <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Blank Answer</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->andWhere(['status'=>0])->count(); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= $model->getSimulationQuestions()->andWhere(['correct'=>null])->count(); ?></h4></div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="col-xs-6"><h4 class="bebas">Blank Score</h4></div>
-                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->andWhere(['status'=>0])->count()) * (($model->blank != null)?$model->blank:1); ?></h4></div>
+                                                <div class="col-xs-1"><h4 class="bebas"><?= ($model->getSimulationQuestions()->andWhere(['correct'=>null])->count()) * (($model->blank != null)?$model->blank:1); ?></h4></div>
                                             </div>
                                             </div>
                                             <hr />
