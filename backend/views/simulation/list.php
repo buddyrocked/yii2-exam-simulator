@@ -84,13 +84,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                     [
                                         'class' => 'yii\grid\ActionColumn',
-                                        'template' => '<div class="btn-group">{view}</div>',
+                                        'template' => '<div class="btn-group">{view}{review}</div>',
                                         'buttons' => [
                                                         'view' => function ($url, $model, $key) {
                                                             return Html::a('<i class="fa fa-search"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
                                                         },
-                                                        'update' => function ($url, $model, $key) {
-                                                            return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-danger outline']);
+                                                        'review' => function ($url, $model, $key) {
+                                                            return Html::a('<i class="fa fa-pencil"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'target'=>'_blank']);
                                                         },
                                                         'delete' => function ($url, $model, $key) {
                                                             return Html::a('<i class="fa fa-trash"></i>', $url, ['class'=>'btn btn-xs btn-danger outline', 'data-confirm'=>'Are you sure you want to delete this item?', 'data-method'=>'post']);

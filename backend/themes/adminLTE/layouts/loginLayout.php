@@ -58,7 +58,9 @@ $content2 = Content::find()->where(['id' => '15'])->one();
                 <li><?php //echo Html::a('About', '#about'); ?></li>
                 <li><?php //echo Html::a('Contact', '#contact'); ?></li>
                 <li><?php echo Html::a('Exam', ['/simulation/take'], ['class'=>'external']); ?></li>
-                
+                <?php if (!Yii::$app->user->isGuest): ?>
+                    <li><?php echo Html::a('My Exam', ['/simulation/list'], ['class'=>'external']); ?></li>
+                <?php endif; ?>
                 <?php if (Yii::$app->user->isGuest): ?>
                     <li><?php echo Html::a('Sign In', ['/user-management/auth/login'], ['class'=>'external']); ?></li>
                     <li class="dropdown">
