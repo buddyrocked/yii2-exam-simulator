@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <span>Answered : <?= $model->getSimulationQuestions()->andWhere(['status'=>1])->count(); ?></span> |
                                     <span>Blank : <?= $model->getSimulationQuestions()->andWhere(['status'=>0])->count(); ?></span> |
                                     <span>Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->count(); ?></span> |
-                                    <span>Answered Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->andWhere(['correct'=>'IS NOT NULL'])->count(); ?></span> |
+                                    <span>Answered Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->andWhere(['not', ['correct'=>null]])->count(); ?></span> |
                                     <span>Blank Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->andWhere(['correct'=>null])->count(); ?></span>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             $modelx->status = 3;
                                         elseif($status == 4):
                                             //answer mark
-                                            $query = $query->where(['status'=>2])->andWhere(['=', 'correct', 0])->orFilterWhere(['correct'=>1]);
+                                            $query = $query->where(['status'=>2])->andWhere(['not', ['correct'=>null]]);
                                             $modelx->status = 4;
                                         endif;
                                         
