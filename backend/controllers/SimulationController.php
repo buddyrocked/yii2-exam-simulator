@@ -472,6 +472,7 @@ class SimulationController extends Controller
         $model = $this->findMine($id, 0);
         return $this->render('review', [
             'model' => $model,
+            'modelx' => new SimulationQuestion,
         ]);
     }
 

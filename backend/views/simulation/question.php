@@ -178,6 +178,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?php 
                                 if($model->simulation->timer_mode == 1): 
                                     $diff = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
+                                    //var_dump(Yii::$app->session->get('simulation_'.$model->simulation->id));
                                     $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">

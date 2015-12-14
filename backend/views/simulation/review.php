@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
+use kartik\widgets\Select2;
 
 $this->title = 'Exam Simulator';
 $this->params['breadcrumbs'][] = $this->title;
@@ -27,11 +28,64 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div>Please review & re-check before you finished the exam.</div>
                                 
                             </div>
+                            <div class="subject-search well">
+
+                                <?php 
+                                    $query = $model->getSimulationQuestions();
+                                    if(isset(Yii::$app->request->queryParams['SimulationQuestion']['status'])):
+                                        $status = Yii::$app->request->queryParams['SimulationQuestion']['status'];
+
+                                        if(Yii::$app->request->queryParams['SimulationQuestion']['status'] == 0 || Yii::$app->request->queryParams['SimulationQuestion']['status'] == 1 || Yii::$app->request->queryParams['SimulationQuestion']['status'] == 2):                                            
+                                            $query = $query->where(['status'=>$status]);
+                                            $modelx->status = Yii::$app->request->queryParams['SimulationQuestion']['status'];
+                                        elseif($status == 3):
+                                            //blank mark
+                                            $query = $query->where(['status'=>2])->andWhere(['correct'=>null]);
+                                            $modelx->status = 3;
+                                        elseif($status == 4):
+                                            //answer mark
+                                            $query = $query->where(['status'=>2])->andWhere(['=', 'correct', 0])->orFilterWhere(['correct'=>1]);
+                                            $modelx->status = 4;
+                                        endif;
+                                        
+                                    endif;
+
+                                    $form = ActiveForm::begin([
+                                    'action' => Url::to(['review', 'id'=>$model->id]),
+                                    'method' => 'get',
+                                ]); ?>
+                                <div class='row'>
+                                <div class="col-md-10">
+                                        <?= $form->field($modelx, 'status')->widget(Select2::className(),  [
+                                            'data' => ['0'=>'Blank', '1'=>'Answer', '2'=>'Mark', '3'=>'Blank Mark', '4'=>'Answer Mark'],
+                                            'options'=>['placeholder'=>'Choose Status'],
+                                            'pluginOptions'=>[
+                                               'allowClear'=>true 
+                                            ],
+                                            'pluginEvents'=>[
+                                                
+                                            ]
+                                        ]) ?>
+                                </div>
+                                <div class="col-md-2">
+                                    <div>&nbsp;</div>
+                                        <div class="form-group">
+                                            <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php ActiveForm::end(); ?>
+
+                            </div>
                             <div>
                                 <?php \yii\widgets\Pjax::begin(); ?>
-                                    <?= GridView::widget([
+                                <?php
+
+                                    
+
+                                    echo GridView::widget([
                                     'dataProvider' => new ActiveDataProvider([
-                                                    'query' => $model->getSimulationQuestions(),
+                                                    'query' => $query,
                                     ]),
                                     'columns' => [
                                             ['class' => 'yii\grid\SerialColumn'],
