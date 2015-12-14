@@ -177,8 +177,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <?php 
                                 if($model->simulation->timer_mode == 1): 
-                                    $diff = ($model->simulation->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)));
-                                    //var_dump(Yii::$app->session->get('simulation_'.$model->simulation->id));
+                                    $diff = ($model->simulation->duration * 60) - (strtotime((string)$model->simulation->timer) - (strtotime((string)$model->simulation->start) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->simulation->id)))));
                                     $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">
@@ -186,7 +185,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             <?php 
                                 elseif($model->simulation->timer_mode == 2): 
-                                    $diff = ($model->question->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
+                                    $diff = ($model->question->time * 60) - (strtotime((string)$model->simulation->timer) - strtotime((string)Yii::$app->session->get($model->simulation->id.'_'.$model->id)));
                                     $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">

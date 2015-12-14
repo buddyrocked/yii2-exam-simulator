@@ -162,6 +162,7 @@ class SimulationController extends Controller
                 $model->false = $subject->false;
                 $model->blank = $subject->blank;
                 $model->start = date('H:i:s');
+                $model->timer = date('H:i:s');
                 $model->status = 0;
                 $model->is_dummy = $subject->status;
                 $model->minimum_score = $subject->minimum_score;
@@ -187,7 +188,7 @@ class SimulationController extends Controller
 
                 $firstQuestion = $model->getSimulationQuestions()->orderBy('id ASC')->one();
                 if(Yii::$app->session->get('simulation_'.$model->id) === NULL):
-                    Yii::$app->session->set('simulation_'.$model->id, date('H:i:s'));
+                    Yii::$app->session->set('simulation_'.$model->id, $model->timer);
                 endif;
 
                 return $this->redirect(['/simulation/question/', 'id'=>$model->id, 'question'=>$firstQuestion->id]);
@@ -240,7 +241,8 @@ class SimulationController extends Controller
 
         //checking time is over
         if($modelQuestion->simulation->timer_mode == 3 || $modelQuestion->simulation->timer_mode == 1):
-            $time = ($modelQuestion->simulation->subject->time * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)));
+            $time = ($modelQuestion->simulation->duration * 60) - (strtotime((string)$modelQuestion->simulation->timer) - (strtotime((string)$modelQuestion->simulation->start) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$modelQuestion->simulation->id)))));
+            
             if($time <= 0):
                 Yii::$app->getSession()->setFlash('success', [
                     'type' => 'danger',
@@ -279,11 +281,16 @@ class SimulationController extends Controller
             $modelsAnswer->question_option_id = Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'];
             $transaction = Yii::$app->db->beginTransaction();  
             try{
+                    //update last timer simulation
+                    $mine->timer = date('H:i:s');
+                    $mine->save();
+
                     $the_answer = $modelQuestion->question->getQuestionRightOptions()->select('id')->asArray()->all();
                     //not multiple answer
 
 
                     if($modelQuestion->question->getQuestionRightOptions()->count() == 1):
+                        //condition blank answer
                         if(Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'] != ''):
                             if(in_array($modelsAnswer->question_option_id, ArrayHelper::getColumn($the_answer, 'id'))):
                                 $modelQuestion->correct = 1;
@@ -294,6 +301,7 @@ class SimulationController extends Controller
                             $modelQuestion->correct = null;
                         endif;
 
+                        //conditions blank answer
                         $modelsAnswer->simulation_question_id = $modelQuestion->id;
                         if( $modelsAnswer->question_option_id != null):
                             $modelQuestion->status = 1;
@@ -301,12 +309,15 @@ class SimulationController extends Controller
                             $modelQuestion->status = 0;
                         endif;
 
+                        //conditions mark answer
                         if(Yii::$app->request->post('mark') != 0):
                             $modelQuestion->status = 2;
                         endif;
 
                         $modelsAnswer->status = 0;
                         $modelQuestion->is_read = 1;
+
+                        $modelQuestion->timer = date('H:i:s');
 
                         if($modelQuestion->save()):
                             if($modelsAnswer->question_option_id != null):
@@ -345,6 +356,7 @@ class SimulationController extends Controller
                         endif;
 
                     else:
+                        //conditions blank answer
                         if(Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'] != ''):
                             if(is_array($modelsAnswer->question_option_id)):
                                 if(array_intersect(ArrayHelper::getColumn($the_answer, 'id'), $modelsAnswer->question_option_id) != NULL):
@@ -359,6 +371,7 @@ class SimulationController extends Controller
                             $modelQuestion->correct = null;
                         endif;
 
+                        //conditions delete old answer
                         $answers = Yii::$app->request->post('SimulationQuestionAnswer');
                         if(!empty($answers['question_option_id'])):
                             SimulationQuestionAnswer::deleteAll(['simulation_question_id'=>$modelQuestion->id]);
@@ -375,6 +388,7 @@ class SimulationController extends Controller
                             endforeach;
                         endif;
 
+                        //conditions blank answer
                         if($modelsAnswer->question_option_id != null):
                             $modelQuestion->status = 1;
                         else:
@@ -384,6 +398,8 @@ class SimulationController extends Controller
                         if(Yii::$app->request->post('mark') != 0):
                             $modelQuestion->status = 2;
                         endif;
+
+                        $modelQuestion->timer = date('H:i:s');
 
                         if($modelQuestion->save()):
                             if($modelsAnswer->question_option_id != null):

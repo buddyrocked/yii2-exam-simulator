@@ -156,7 +156,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-12">
                             <?php
                                 if($model->timer_mode == 1): 
-                                    $diff = ($model->duration * 60) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->id)));
+                                    $diff = ($model->duration * 60) - (strtotime((string)$model->timer) - (strtotime((string)$model->start) - (strtotime((string)date('H:i:s')) - strtotime((string)Yii::$app->session->get('simulation_'.$model->id)))));
                                     $time = $model->convertSecondstoTimes($diff);
                             ?>
                                 <div class="well">
