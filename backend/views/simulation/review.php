@@ -26,7 +26,25 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="well">
                                 <h1 class="bebas">Exam Review</h1>
                                 <div>Please review & re-check before you finished the exam.</div>
-                                
+                                <div>&nbsp;</div>
+                                <div>
+                                    <span>Answered : <?= $model->getSimulationQuestions()->andWhere(['status'=>1])->count(); ?></span> |
+                                    <span>Blank : <?= $model->getSimulationQuestions()->andWhere(['status'=>0])->count(); ?></span> |
+                                    <span>Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->count(); ?></span> |
+                                    <span>Answered Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->andWhere(['correct'=>'IS NOT NULL'])->count(); ?></span> |
+                                    <span>Blank Marked : <?= $model->getSimulationQuestions()->andWhere(['status'=>2])->andWhere(['correct'=>null])->count(); ?></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h1>
+
+                                    </h1>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4">
+                                </div>
                             </div>
                             <div class="subject-search well">
 
