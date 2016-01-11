@@ -278,6 +278,10 @@ class SimulationController extends Controller
         endif;
 
         if ($modelsAnswer->load(Yii::$app->request->post())) {
+            
+            $session = Yii::$app->session;
+            $session->remove('simulation_'.$id);
+
             $modelsAnswer->question_option_id = Yii::$app->request->post('SimulationQuestionAnswer')['question_option_id'];
             $transaction = Yii::$app->db->beginTransaction();  
             try{
