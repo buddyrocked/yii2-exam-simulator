@@ -17,7 +17,11 @@ use backend\models\Passage;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'desc')->widget(\yii\redactor\widgets\Redactor::className(), [
+        'clientOptions' => [
+            'plugins' => ['clips', 'fontcolor','imagemanager', 'fontfamily', 'fontsize', 'table', 'filemanager', 'fullscreen']
+        ]
+    ])?>
 
     <div class="form-group form-action">
     	<?= Html::a('<i class="fa fa-remove"></i> Cancel', ['index'], ['class' => 'btn btn-danger']) ?>
