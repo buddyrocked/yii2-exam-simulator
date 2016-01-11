@@ -2,7 +2,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
+use webvimark\modules\UserManagement\models\User;
+use backend\models\Subject;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SimulationSearch */
@@ -31,10 +34,18 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'filterModel' => $searchModel,
                                 'columns' => [
                                     ['class' => 'yii\grid\SerialColumn'],
-                                    
+                                    [
+                                        'attribute'=>'user_id',
+                                        'format'=>'raw',
+                                        'filter'=>ArrayHelper::map(User::find()->all(), 'id', 'username'),
+                                        'value'=>function($data){
+                                            return $data->user->username;
+                                        }
+                                    ],
                                     [
                                         'attribute'=>'subject_id',
                                         'format'=>'raw',
+                                        'filter'=>ArrayHelper::map(Subject::find()->all(), 'id', 'name'),
                                         'value'=>function($data){
                                             return $data->subject->name;
                                         }
@@ -42,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     [
                                         'attribute'=>'timer_mode',
                                         'format'=>'raw',
+                                        'filter'=>array('0'=>'No Timer', '1'=>'Timer per Exam', '2'=>'Timer per Question'),
                                         'value'=>function($data){
                                             return $data->getLabelTimer();
                                         }
@@ -57,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     // 'finish',
                                     // 'status',
                                     // 'score',
-                                    // 'created',
+                                    'created',
                                     // 'updated',
 
                                     [
