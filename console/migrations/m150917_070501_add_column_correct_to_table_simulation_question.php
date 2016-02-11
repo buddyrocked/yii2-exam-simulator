@@ -7,7 +7,7 @@ class m150917_070501_add_column_correct_to_table_simulation_question extends Mig
 {
     public function up()
     {
-        'desc'=>Schema::TYPE_TEXT.' NULL',
+        $this->addColumn('simulation_question', 'correct', 'BOOLEAN NULL');
     }
 
     public function down()
