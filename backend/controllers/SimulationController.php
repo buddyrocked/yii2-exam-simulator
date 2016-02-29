@@ -166,35 +166,60 @@ class SimulationController extends Controller
                 $model->status = 0;
                 $model->is_dummy = $subject->status;
                 $model->minimum_score = $subject->minimum_score;
-                $model->save();
+                if($model->save()):
 
-                $model->insertSimulationDomain();
+                    $model->insertSimulationDomain();
 
-                $model->insertQuestionSimulations();
+                    $model->insertQuestionSimulations();
 
-                $model->insertDomainStrength();
+                    $model->insertDomainStrength();
 
-                $transaction->commit();
+                    $transaction->commit();
+
+                    Yii::$app->getSession()->setFlash('success', [
+                        'type' => 'info',
+                        'duration' => 500000,
+                        'icon' => 'fa fa-volume-up',
+                        'message' => 'Data has been saved.',
+                        'title' => 'Information',
+                        'positonY' => 'bottom',
+                        'positonX' => 'right'
+                    ]);
+
+                    $firstQuestion = $model->getSimulationQuestions()->orderBy('id ASC')->one();
+                    if(Yii::$app->session->get('simulation_'.$model->id) === NULL):
+                        Yii::$app->session->set('simulation_'.$model->id, $model->timer);
+                    endif;
+
+                    return $this->redirect(['/simulation/question/', 'id'=>$model->id, 'question'=>$firstQuestion->id]);
+                else:
+                    $transaction->rollBack();
+                    Yii::$app->getSession()->setFlash('success', [
+                        'type' => 'danger',
+                        'duration' => 500000,
+                        'icon' => 'fa fa-volume-up',
+                        'message' => 'Exam failed.',
+                        'title' => 'Information',
+                        'positonY' => 'bottom',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['/simulation/preview', 'id'=>$id]);
+                endif;
+            }catch(Exception $e){
+                $transaction->rollBack();
 
                 Yii::$app->getSession()->setFlash('success', [
-                    'type' => 'info',
+                    'type' => 'danger',
                     'duration' => 500000,
                     'icon' => 'fa fa-volume-up',
-                    'message' => 'Data has been saved.',
+                    'message' => 'Database error failed.',
                     'title' => 'Information',
                     'positonY' => 'bottom',
                     'positonX' => 'right'
                 ]);
 
-                $firstQuestion = $model->getSimulationQuestions()->orderBy('id ASC')->one();
-                if(Yii::$app->session->get('simulation_'.$model->id) === NULL):
-                    Yii::$app->session->set('simulation_'.$model->id, $model->timer);
-                endif;
-
-                return $this->redirect(['/simulation/question/', 'id'=>$model->id, 'question'=>$firstQuestion->id]);
-
-            }catch(Exception $e){
-                $transaction->rollBack();
+                return $this->redirect(['/simulation/preview', 'id'=>$id]);
             }
         endif;
     }
