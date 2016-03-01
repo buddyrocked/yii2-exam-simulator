@@ -157,11 +157,16 @@ class SiteController extends Controller
         endif;
     }
 
-    public function actionPartners()
+    public function actionClients()
     {
         $clients = Cms::find()->where(['type'=>6])->orderBy('updated DESC');
-        $partners = Cms::find()->where(['type'=>7])->all();
-        return $this->render('partners', ['clients'=>$clients, 'partners'=>$partners]);
+        return $this->render('clients', ['clients'=>$clients]);
+    } 
+
+    public function actionPartners()
+    {
+        $partners = Cms::find()->where(['type'=>7])->orderBy('updated DESC');
+        return $this->render('partners', ['partners'=>$partners]);
     }    
 
 

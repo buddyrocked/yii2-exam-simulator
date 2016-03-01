@@ -68,7 +68,8 @@ backend\themes\adminLTE\components\FrontendAsset::register($this);
                 <li><?php echo Html::a('Consultancy Services', ['/site/services'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Training', ['/site/training'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Product', ['/site/product'], ['class'=>'external']); ?></li>
-                <li><?php echo Html::a('Our Client & Partners', ['/site/partners'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Clients', ['/site/clients'], ['class'=>'external']); ?></li>
+                <li><?php echo Html::a('Partners', ['/site/partners'], ['class'=>'external']); ?></li>
                 <li><?php echo Html::a('Contact', ['/site/contact'], ['class'=>'external']); ?></li>
                 <?php if (!Yii::$app->user->isGuest): ?>
                     <li class="dropdown">
