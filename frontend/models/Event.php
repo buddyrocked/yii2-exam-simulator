@@ -50,10 +50,10 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'datetime', 'venue', 'address', 'published'], 'required'],
+            [['name', 'datetime', 'venue', 'address', 'published', 'popup'], 'required'],
             [['description', 'note', 'address'], 'string'],
             [['datetime', 'created', 'updated'], 'safe'],
-            [['published'], 'integer'],
+            [['published', 'popup'], 'integer'],
             [['name', 'venue', 'file', 'image'], 'string', 'max' => 255],
             [['image', 'file'], 'file', 'skipOnEmpty' => true],
         ];
@@ -77,6 +77,7 @@ class Event extends \yii\db\ActiveRecord
             'published' => 'Published',
             'created' => 'Created',
             'updated' => 'Updated',
+            'popup' => 'Pop Up'
         ];
     }
 

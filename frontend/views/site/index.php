@@ -226,7 +226,7 @@ $this->title = '| Consulting | Implementation | Audit | Training | - Rialachas .
     </div>
 </div>-->
 <?php
-    if($latest_event != null):
+    if($latest_event != null && $latest_event->popup == 1):
 ?>
     <a href="<?= Url::to(['/site/popup', 'id'=>$latest_event->id]); ?>" id="event-pop" class="hide" title="Latest Event">Latest event</a>
 <?php

@@ -77,8 +77,11 @@ use kartik\widgets\DateTimePicker;
                         'options' => ['accept' => '*'],
                 ]); ?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <?= $form->field($model, 'published')->widget(SwitchInput::classname(), []); ?>
+            </div>
+            <div class="col-md-2">            
+                <?= $form->field($model, 'popup')->widget(SwitchInput::classname(), []); ?>
             </div>
             <div class="col-md-12">
                 <div class="form-group form-action well">
