@@ -8,7 +8,7 @@ use yii\helpers\Html;
         <div class="row">
             <div class="col-md-4">
                 <div class="process-img">
-                    <?= Html::img('@web/uploads/event/'.$model->image, []); ?>
+                    <?= Html::img('@web/uploads/event/'.$model->image, ['class'=>'thumbnail']); ?>
                 </div>
             </div>
             <div class="col-md-8">
@@ -26,11 +26,11 @@ use yii\helpers\Html;
                     <div class="row">
                         <div class="col-md-3">
                             <label>Tempat dan Alamat</label>
-                            <div class="text-bold">
+                            <div class="text-bold text-left">
                                 <?= Html::encode($model->venue); ?>
                             </div>
                             <div>&nbsp;</div>
-                            <div>
+                            <div class="text-left">
                                 <?= Html::decode($model->address); ?>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ use yii\helpers\Html;
                         </div>
                         <div class="col-md-6">
                             <label>Catatan</label>
-                            <div>
+                            <div class="text-left">
                                 <?= Html::decode($model->note); ?>
                             </div>
                         </div>
