@@ -16,13 +16,26 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\helpers\Html;
-use Yii\helpers\Url;
+use yii\helpers\Url;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    public function init()
+    {
+        parent::init();
+        Yii::$app->seo->title = '| Consulting | Implementation | Audit | Training | - Rialachas ...means governance';
+        Yii::$app->seo->metakeys = 'Rialachas, Consulting, Implementation, Audit, Training';
+        Yii::$app->seo->metadesc = 'Rialachas provide services in consultancy and training related to information systems security in Indonesia.';
+        Yii::$app->seo->tags['og:type'] = 'website';
+        Yii::$app->seo->tags['og:title'] = '| Consulting | Implementation | Audit | Training | - Rialachas ...means governance';
+        Yii::$app->seo->tags['og:site_name'] = 'Rialachas';
+        Yii::$app->seo->tags['og:image'] = Url::to('@web/uploads/logo.png');
+        Yii::$app->seo->tags['og:description'] = 'Rialachas provide services in consultancy and training related to information systems security in Indonesia.';
+    }
+
     public $layout = 'frontendLayout';
     /**
      * @inheritdoc
@@ -85,6 +98,10 @@ class SiteController extends Controller
 
     public function actionEvent()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Events';
+        Yii::$app->seo->tags['og:type'] = 'Event';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Events';
+
         $events = Event::find()->where(['published'=>1])->all();
         return $this->render('events', ['events'=>$events]);
     }
@@ -99,18 +116,30 @@ class SiteController extends Controller
 
     public function actionServices()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Services';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Services';
+
         $services = Cms::find()->where(['type'=>3])->all();
         return $this->render('services', ['services'=>$services]);
     }
 
     public function actionProduct()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Products';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Products';
+
         $products = Cms::find()->where(['type'=>5])->orderBy('updated DESC');
         return $this->render('product', ['products'=>$products]);
     }
 
     public function actionTraining()
     {   
+        Yii::$app->seo->title = 'Rialachas - Our Training';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Training';
+
         $trainings = Cms::find()->where(['type'=>2])->all();
         //$events = Cms::find()->where(['type'=>4])->orderBy('updated DESC');
         $events = Event::find()->where(['published'=>1])->orderBy('datetime DESC');
@@ -136,6 +165,10 @@ class SiteController extends Controller
             ]);
             return $this->redirect(['detail', 'id' => $id, 'name'=>$name]);
         } else {
+            Yii::$app->seo->title = 'Rialachas - Our Event '.$model_event->name;
+            Yii::$app->seo->tags['og:type'] = 'Event';
+            Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Events'.$model_event->name;
+
             return $this->render('detail', [
                 'model' => $model,
                 'model_event' => $model_event
@@ -159,12 +192,20 @@ class SiteController extends Controller
 
     public function actionClients()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Clients';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Clients';
+
         $clients = Cms::find()->where(['type'=>6])->orderBy('updated DESC');
         return $this->render('clients', ['clients'=>$clients]);
     } 
 
     public function actionPartners()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Partners';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Partners';
+
         $partners = Cms::find()->where(['type'=>7])->orderBy('updated DESC');
         return $this->render('partners', ['partners'=>$partners]);
     }    
@@ -196,6 +237,10 @@ class SiteController extends Controller
 
     public function actionContact()
     {
+        Yii::$app->seo->title = 'Rialachas - Our Contact';
+        Yii::$app->seo->tags['og:type'] = 'Website';
+        Yii::$app->seo->tags['og:title'] = 'Rialachas - Our Contact';
+
         $model = new ContactForm();
         $address = Cms::find()->where(['title'=>'address'])->one();
         $hire = Cms::find()->where(['title'=>'hire'])->one();

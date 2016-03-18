@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'seo'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
@@ -66,6 +66,9 @@ return [
                 'port' => '587',
                 //'encryption' => 'STARTTLS',
             ],
+        ],
+        'seo' => [
+            'class' => 'Amirax\SeoTools\Meta'
         ],
     ],
     'modules' => [
